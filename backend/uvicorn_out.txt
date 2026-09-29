@@ -1,0 +1,49 @@
+[NEMRAS] Loaded 64,182 patient records from I:\Nemras FYP\backend\NEMRAS_Dataset.csv
+INFO:     192.168.1.3:53212 - "GET / HTTP/1.1" 200 OK
+INFO:     192.168.1.3:53284 - "GET / HTTP/1.1" 200 OK
+INFO:     192.168.1.3:53285 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     192.168.1.3:53286 - "GET /api/dashboard/critical?limit=15 HTTP/1.1" 200 OK
+INFO:     192.168.1.3:53288 - "GET /api/patients/sample?n=8 HTTP/1.1" 200 OK
+INFO:     192.168.1.3:63613 - "GET /api/patient/25101-9143903-4 HTTP/1.1" 200 OK
+INFO:     192.168.1.3:64268 - "GET /api/patient/52101-9897858-1 HTTP/1.1" 200 OK
+INFO:     192.168.1.3:64292 - "POST /api/chat HTTP/1.1" 200 OK
+INFO:     192.168.1.3:65015 - "GET /api/patient/42101-9519948-2 HTTP/1.1" 200 OK
+INFO:     192.168.1.3:65061 - "GET /api/patient/58101-2867825-1 HTTP/1.1" 200 OK
+INFO:     192.168.1.3:65075 - "GET /api/patient/22101-9478454-1 HTTP/1.1" 200 OK
+INFO:     192.168.1.3:61884 - "GET /api/patient/63101-5437001-2 HTTP/1.1" 200 OK
+INFO:     192.168.1.3:49927 - "GET / HTTP/1.1" 200 OK
+INFO:     192.168.1.3:49928 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     192.168.1.3:49929 - "GET /api/dashboard/critical?limit=15 HTTP/1.1" 200 OK
+INFO:     192.168.1.3:49930 - "GET /api/patients/sample?n=8 HTTP/1.1" 200 OK
+INFO:     192.168.1.3:61115 - "GET / HTTP/1.1" 200 OK
+INFO:     192.168.1.3:61116 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     192.168.1.3:61117 - "GET /api/dashboard/critical?limit=15 HTTP/1.1" 200 OK
+INFO:     192.168.1.3:61118 - "GET /api/patients/sample?n=8 HTTP/1.1" 200 OK
+INFO:     192.168.1.3:61017 - "GET /api/patient/58101-2867825-1 HTTP/1.1" 200 OK
+INFO:     192.168.1.3:62844 - "GET / HTTP/1.1" 200 OK
+INFO:     192.168.1.3:62845 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     192.168.1.3:62846 - "GET /api/dashboard/critical?limit=15 HTTP/1.1" 200 OK
+INFO:     192.168.1.3:62847 - "GET /api/patients/sample?n=8 HTTP/1.1" 200 OK
+INFO:     192.168.1.3:62863 - "GET /api/patient/58101-2867825-1 HTTP/1.1" 200 OK
+INFO:     192.168.1.3:57997 - "POST /api/chat HTTP/1.1" 200 OK
+INFO:     192.168.1.3:61652 - "POST /api/chat HTTP/1.1" 200 OK
+INFO:     192.168.1.3:61686 - "POST /api/chat HTTP/1.1" 200 OK
+INFO:     192.168.1.3:53618 - "GET / HTTP/1.1" 200 OK
+INFO:     192.168.1.3:56782 - "GET /api/patient/37101-1036161-7 HTTP/1.1" 200 OK
+INFO:     192.168.1.3:56787 - "GET /api/patient/37101-1036161-7 HTTP/1.1" 200 OK
+INFO:     192.168.1.3:55298 - "GET /api/patient/37101-1036161-7 HTTP/1.1" 200 OK
+INFO:     192.168.1.3:57135 - "GET /api/patient/37101-1036161-7 HTTP/1.1" 200 OK
+INFO:     192.168.1.3:61832 - "GET / HTTP/1.1" 200 OK
+INFO:     192.168.1.3:58508 - "GET /api/patient/36302-2493960-7 HTTP/1.1" 404 Not Found
+INFO:     192.168.1.3:58513 - "GET /api/patient/36302-2493960-7 HTTP/1.1" 404 Not Found
+INFO:     192.168.1.3:58528 - "GET /api/patient/36302-2493960-7 HTTP/1.1" 404 Not Found
+INFO:     192.168.1.3:58529 - "GET /api/patient/36302-2493960-7 HTTP/1.1" 404 Not Found
+INFO:     192.168.1.3:64931 - "GET /api/patient/36302-2493960-7 HTTP/1.1" 404 Not Found
+INFO:     192.168.1.3:56740 - "GET / HTTP/1.1" 200 OK
+INFO:     192.168.1.3:56753 - "GET /api/patient/36302-2493960-7 HTTP/1.1" 404 Not Found
+INFO:     192.168.1.3:56754 - "GET /api/patient/36302-2493960-7 HTTP/1.1" 404 Not Found
+INFO:     192.168.1.3:56480 - "GET /api/patient/36302-2493960-7 HTTP/1.1" 404 Not Found
+INFO:     192.168.1.3:56481 - "GET /api/patient/36302-2493960-7 HTTP/1.1" 404 Not Found
+INFO:     192.168.1.3:56483 - "GET /api/patient/36302-2493960-7 HTTP/1.1" 404 Not Found
+INFO:     192.168.1.3:56484 - "GET /api/patient/36302-2493960-7 HTTP/1.1" 404 Not Found
+INFO:     192.168.1.3:56485 - "GET /api/patient/36302-2493960-7 HTTP/1.1" 404 Not Found

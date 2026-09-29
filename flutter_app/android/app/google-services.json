@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "611133957942",
+    "project_id": "nemras-3230f",
+    "storage_bucket": "nemras-3230f.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:611133957942:android:3ac994687a9e597907b597",
+        "android_client_info": {
+          "package_name": "com.example.nemras"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGD0B589MFYPyD-IpA8NIEbV2KO3oZsFk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
