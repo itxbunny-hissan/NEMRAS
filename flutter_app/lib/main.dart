@@ -1,11 +1,22 @@
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 import 'package:flutter/material.dart';
 import 'theme.dart';
 import 'screens/splash_screen.dart';
 
-void main() => runApp(const NemrasApp());
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
+  runApp(const NemrasApp());
+}
 
 class NemrasApp extends StatelessWidget {
   const NemrasApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

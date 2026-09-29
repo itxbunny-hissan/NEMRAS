@@ -168,6 +168,47 @@ class _ScanScreenState extends State<ScanScreen> {
           _error = 'Enter the 6-digit OTP. Tap "Send OTP" to receive it.');
       return;
     }
+
+    // ---- DEMO LOGIN (works without backend) ----
+    final digitsOnly = _cnicCtrl.text.replaceAll('-', '').trim();
+    if (digitsOnly == '3630224939607' && _otpCtrl.text.trim() == '123456') {
+      final demoRecord = PatientRecord(
+        PatientSummary.fromJson({
+          'cnic': '36302-2493960-7',
+          'patient_name': 'Mirza Hissan',
+          'age': 22,
+          'gender': 'Male',
+          'blood_type': 'A+',
+          'medical_condition': 'Dermatitis',
+          'medication': 'Hydrocortisone',
+          'allergy': 'Penicillin',
+          'chronic_condition': 'No',
+          'drug_interaction_risk': 'No',
+          'triage_level': '3',
+          'risk_score': 'Low',
+          'admission_type': 'Emergency',
+          'test_results': 'Normal',
+          'hospital': 'Nishtar Hospital',
+          'doctor': 'Dr. Irfan',
+          'insurance_provider': 'State Life',
+          'admission_date': '2025-03-10',
+          'discharge_date': '2025-03-12',
+        }),
+        [
+          Alert.fromJson({
+            'severity': 'info',
+            'title': 'Known allergy on file',
+            'detail': 'Patient is allergic to Penicillin. Avoid related drugs.',
+          }),
+        ],
+      );
+      if (!mounted) return;
+      Navigator.pushReplacement(context,
+          MaterialPageRoute(builder: (_) => PatientShell(record: demoRecord)));
+      return;
+    }
+    // ---- END DEMO LOGIN ----
+
     setState(() => _loading = true);
     try {
       final record = await Api.getPatient(_cnicCtrl.text.trim());
