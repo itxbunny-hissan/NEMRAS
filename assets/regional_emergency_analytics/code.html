@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;700&amp;family=Sora:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-error-container":"#93000a","background":"#f6f9ff","surface-container":"#e1f0ff","primary-fixed":"#9cf2e8","on-error":"#ffffff","on-tertiary-fixed":"#410005","inverse-on-surface":"#e6f2ff","on-primary-container":"#a3faef","on-background":"#091d2b","primary":"#005c55","outline":"#6e7977","on-tertiary":"#ffffff","surface-container-highest":"#d1e5f8","on-secondary-fixed-variant":"#00504b","inverse-surface":"#1f3241","surface":"#f6f9ff","secondary-container":"#a8ece5","on-secondary-fixed":"#00201e","secondary":"#216963","surface-container-lowest":"#ffffff","surface-tint":"#006a63","primary-fixed-dim":"#80d5cb","secondary-fixed":"#abefe8","on-secondary":"#ffffff","surface-container-low":"#ecf5ff","tertiary-container":"#c03638","on-primary-fixed":"#00201d","on-secondary-container":"#266d68","error-container":"#ffdad6","on-tertiary-container":"#ffe4e1","tertiary-fixed":"#ffdad7","outline-variant":"#bdc9c6","surface-variant":"#d1e5f8","on-primary":"#ffffff","surface-container-high":"#d6ebfe","on-surface-variant":"#3e4947","tertiary":"#9e1c23","on-tertiary-fixed-variant":"#8f0e1a","on-surface":"#091d2b","secondary-fixed-dim":"#8fd3cc","on-primary-fixed-variant":"#00504a","surface-bright":"#f6f9ff","error":"#ba1a1a","tertiary-fixed-dim":"#ffb3ae","primary-container":"#0f766e","surface-dim":"#c8dcf0","inverse-primary":"#80d5cb"},borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},spacing:{"space-xl":"2rem","margin":"2rem","space-md":"1rem","space-sm":"0.5rem","gutter":"1.5rem","margin-mobile":"1rem","space-lg":"1.5rem","gutter-mobile":"1rem","space-xs":"0.25rem"},fontFamily:{"label-md":["Inter"],"display-lg":["Sora"],"headline-sm":["Sora"],"telemetry-md":["JetBrains Mono"],"telemetry-lg":["JetBrains Mono"],"body-md":["Inter"],"body-lg":["Inter"],"headline-lg":["Sora"],"body-sm":["Inter"],"headline-lg-mobile":["Sora"],"body-strong":["Inter"],"telemetry-sm":["JetBrains Mono"],"headline-md":["Sora"]},fontSize:{"label-md":["13px",{lineHeight:"16px",fontWeight:"500"}],"display-lg":["36px",{lineHeight:"44px",letterSpacing:"-0.02em",fontWeight:"700"}],"headline-sm":["16px",{lineHeight:"24px",fontWeight:"600"}],"telemetry-md":["14px",{lineHeight:"20px",fontWeight:"500"}],"telemetry-lg":["24px",{lineHeight:"32px",letterSpacing:"-0.02em",fontWeight:"700"}],"body-md":["14px",{lineHeight:"20px",fontWeight:"400"}],"body-lg":["16px",{lineHeight:"24px",fontWeight:"400"}],"headline-lg":["28px",{lineHeight:"36px",letterSpacing:"-0.01em",fontWeight:"600"}],"body-sm":["12px",{lineHeight:"18px",fontWeight:"400"}],"headline-lg-mobile":["24px",{lineHeight:"32px",letterSpacing:"-0.01em",fontWeight:"600"}],"body-strong":["14px",{lineHeight:"20px",fontWeight:"600"}],"telemetry-sm":["11px",{lineHeight:"14px",letterSpacing:"0.04em",fontWeight:"500"}],"headline-md":["20px",{lineHeight:"28px",fontWeight:"600"}]}}}};</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased min-h-screen"><aside class="fixed left-0 top-0 h-full w-[240px] bg-surface-container-lowest z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col"><div class="h-[60px] px-space-md flex items-center gap-space-sm bg-surface-container-lowest"><div class="w-8 h-8 rounded-lg bg-primary-container flex items-center justify-center text-on-primary shadow-sm"><span class="material-symbols-outlined text-[20px]">health_and_safety</span></div><div class="flex flex-col min-w-0 flex-1"><div class="flex items-center gap-1.5"><span class="font-headline-sm text-headline-sm text-primary tracking-tight leading-none">NEMRAS</span><span class="px-1.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-telemetry-sm text-telemetry-sm font-semibold leading-none">OPS</span></div><span class="font-body-sm text-body-sm text-on-surface-variant truncate mt-0.5">Govt of PK · NDHA</span></div></div><div class="px-space-md py-space-sm"><span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant font-semibold uppercase tracking-wider block mb-space-xs">Operations</span><nav class="flex flex-col gap-1" data-active-classes="bg-primary-container text-on-primary font-body-strong"><a class="flex items-center gap-2.5 px-3 py-2 rounded-lg font-body-md text-body-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="national-dashboard" href="#"><span class="material-symbols-outlined text-[18px]">dashboard</span><span>National Dashboard</span></a><a class="flex items-center gap-2.5 px-3 py-2 rounded-lg font-body-md text-body-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="emergency-map" href="#"><span class="material-symbols-outlined text-[18px]">public</span><span>Emergency Map</span></a><a aria-current="page" class="flex items-center gap-2.5 px-3 py-2 rounded-lg transition-all bg-primary-container text-on-primary font-body-strong" data-path="regional-analytics" href="#"><span class="material-symbols-outlined text-[18px]">bar_chart</span><span>Regional Analytics</span></a></nav></div><div class="px-space-md py-space-sm"><span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant font-semibold uppercase tracking-wider block mb-space-xs">Health Intel</span><nav class="flex flex-col gap-1" data-active-classes="bg-primary-container text-on-primary font-body-strong"><a class="flex items-center gap-2.5 px-3 py-2 rounded-lg font-body-md text-body-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="population-health" href="#"><span class="material-symbols-outlined text-[18px]">vital_signs</span><span>Population Health</span></a><a class="flex items-center gap-2.5 px-3 py-2 rounded-lg font-body-md text-body-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="hospital-network" href="#"><span class="material-symbols-outlined text-[18px]">local_hospital</span><span>Hospital Network</span></a><a class="flex items-center gap-2.5 px-3 py-2 rounded-lg font-body-md text-body-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="incident-reports" href="#"><span class="material-symbols-outlined text-[18px]">assignment</span><span>Incident Reports</span></a></nav></div><div class="px-space-md py-space-sm"><span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant font-semibold uppercase tracking-wider block mb-space-xs">System</span><nav class="flex flex-col gap-1" data-active-classes="bg-primary-container text-on-primary font-body-strong"><a class="flex items-center gap-2.5 px-3 py-2 rounded-lg font-body-md text-body-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="settings-and-audit" href="#"><span class="material-symbols-outlined text-[18px]">tune</span><span>Settings &amp; Audit</span></a></nav></div></div><div class="p-space-md bg-surface-container-low flex flex-col gap-space-sm m-space-sm rounded-xl"><div class="flex items-center gap-2"><span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span></span><span class="font-telemetry-sm text-telemetry-sm text-primary font-semibold truncate">487 Nodes · Kafka 99.8%</span></div><div class="bg-surface-container-lowest px-2 py-1.5 rounded-lg text-center shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><span class="font-body-sm text-body-sm text-on-surface-variant block">Simulated Demo Feed</span><span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant font-semibold">NDHA OPS ENV-01</span></div></div></aside><div class="pl-[240px]"><header class="fixed top-0 left-[240px] right-0 h-[60px] bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-lg"><div class="flex items-center gap-space-md"><div class="flex items-center gap-2 px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container"><span class="inline-block w-1.5 h-1.5 rounded-full bg-primary"></span><span class="font-telemetry-sm text-telemetry-sm font-semibold tracking-wide uppercase">National Feed Sync · 14:22 PKT</span></div></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-surface-container text-on-surface font-body-sm text-body-sm shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><span class="material-symbols-outlined text-[16px] text-primary">explore</span><span class="font-body-strong text-body-strong">All Pakistan</span><span class="text-on-surface-variant">(4 Prov + 2 Terr)</span></div><div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-error-container text-on-error-container"><span class="material-symbols-outlined text-[18px] text-error">warning</span><span class="font-telemetry-sm text-telemetry-sm font-semibold">3 Critical Alerts</span></div><div class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-telemetry-sm text-telemetry-sm font-semibold tracking-wider uppercase">Demo Prototype Data Only</div><div class="flex items-center gap-2.5 pl-space-sm"><div class="flex flex-col text-right"><span class="font-body-strong text-body-strong leading-tight text-on-surface">Dr. Tariq M.</span><span class="font-body-sm text-body-sm text-on-surface-variant leading-tight">DG NDHA · PK-HQ-01</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-sm"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="relative pt-[60px] w-full min-h-screen bg-surface px-space-lg py-space-lg max-w-[1600px] mx-auto"><div class="flex flex-col w-full">
+<!-- Disclaimer & Context Ribbon -->
+<div class="mb-space-lg flex items-center justify-between px-space-md py-space-sm bg-surface-container-highest text-on-surface rounded-xl shadow-sm">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">analytics</span>
+<span class="font-telemetry-sm text-telemetry-sm tracking-wider uppercase font-semibold text-primary">Context Protocol</span>
+<span class="text-outline-variant font-telemetry-sm">|</span>
+<span class="font-body-strong text-body-strong text-on-surface">SAMPLE REGIONAL ANALYTICS</span>
+<span class="text-on-surface-variant font-body-sm">— Fictional demonstration metrics for public health informatics modeling. No official provincial conclusions.</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-telemetry-sm text-telemetry-sm font-semibold">FEED V4.18 ACTIVE</span>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">REFRESH: +2.1s</span>
+</div>
+</div>
+<!-- Operational Filter & Period Control Header -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm mb-space-lg flex flex-col gap-space-md">
+<div class="flex flex-wrap items-center justify-between gap-space-md">
+<!-- Date Range Selector -->
+<div class="flex items-center gap-space-sm">
+<div class="flex items-center gap-2 bg-surface-container px-3 py-2 rounded-lg text-on-surface shadow-sm">
+<span class="material-symbols-outlined text-[18px] text-primary">date_range</span>
+<span class="font-body-strong text-body-strong">01 May 2026 – 24 May 2026</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">(Month-to-Date)</span>
+<span class="material-symbols-outlined text-[16px] text-outline ml-1">expand_more</span>
+</div>
+<div class="flex items-center gap-1 bg-surface-container-low p-1 rounded-lg">
+<button class="px-2.5 py-1 rounded font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors">Today</button>
+<button class="px-2.5 py-1 rounded font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors">Last 7 Days</button>
+<button class="px-2.5 py-1 rounded font-body-sm text-body-sm bg-surface-container-lowest text-primary font-body-strong shadow-sm transition-all">30 Days</button>
+<button class="px-2.5 py-1 rounded font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors">Q2 2026</button>
+</div>
+</div>
+<!-- Regional Compare Toggle & Reporting Action -->
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-2 bg-surface-container-low px-3 py-1.5 rounded-lg">
+<span class="font-body-sm text-body-sm text-on-surface-variant font-medium">Benchmark:</span>
+<div class="flex items-center gap-1.5 bg-surface-container-lowest px-2 py-0.5 rounded-full shadow-sm text-primary font-body-strong text-body-sm">
+<span class="w-2 h-2 rounded-full bg-primary inline-block"></span>
+<span>All Provinces vs National Mean</span>
+</div>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+</button>
+</div>
+<button class="flex items-center gap-1.5 px-3.5 py-2 bg-primary-container text-on-primary rounded-lg font-body-strong text-body-strong shadow-sm hover:opacity-95 transition-opacity">
+<span class="material-symbols-outlined text-[18px]">file_download</span>
+<span>Analytical Brief</span>
+</button>
+</div>
+</div>
+<!-- Metric Focus Ribbon -->
+<div class="flex items-center justify-between pt-space-xs">
+<div class="flex items-center gap-2">
+<span class="font-telemetry-sm text-telemetry-sm uppercase tracking-wider text-outline font-semibold">Focus Cohort:</span>
+<button class="px-3 py-1 rounded-full bg-primary text-on-primary font-body-strong text-body-sm shadow-sm flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">speed</span>
+<span>Response Times</span>
+</button>
+<button class="px-3 py-1 rounded-full bg-surface-container text-on-surface font-body-md text-body-sm hover:bg-surface-container-high transition-colors flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary">task_alt</span>
+<span>Case Resolution Rates</span>
+</button>
+<button class="px-3 py-1 rounded-full bg-surface-container text-on-surface font-body-md text-body-sm hover:bg-surface-container-high transition-colors flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-tertiary">emergency</span>
+<span>Trauma Severity Mix</span>
+</button>
+<button class="px-3 py-1 rounded-full bg-surface-container text-on-surface font-body-md text-body-sm hover:bg-surface-container-high transition-colors flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-secondary">transfer_within_a_station</span>
+<span>Hospital Handoff Latency</span>
+</button>
+</div>
+<div class="flex items-center gap-2 font-telemetry-sm text-telemetry-sm text-on-surface-variant">
+<span>Active Surveillance Epoch: <span class="font-bold text-on-surface">EP-2026-05B</span></span>
+</div>
+</div>
+</div>
+<!-- Benchmark Summary Metrics (4 Cards) -->
+<div class="grid grid-cols-4 gap-space-lg mb-space-lg">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm relative overflow-hidden flex flex-col justify-between">
+<div class="flex items-start justify-between mb-space-sm">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">National Avg Response</span>
+<span class="font-body-sm text-body-sm text-outline mt-0.5">Call trigger to first on-scene responder</span>
+</div>
+<div class="w-8 h-8 rounded-lg bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">timer</span>
+</div>
+</div>
+<div class="flex items-baseline gap-2 mb-space-xs">
+<span class="font-telemetry-lg text-[32px] text-primary leading-none">8.4</span>
+<span class="font-telemetry-md text-telemetry-md text-on-surface-variant">min</span>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<div class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-telemetry-sm text-telemetry-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">arrow_downward</span>
+<span>-0.8m vs Q1</span>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-outline font-medium">Goal: &lt; 9.0 min</span>
+</div>
+<div class="w-full bg-surface-container-low h-1.5 rounded-full mt-3 overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 78%;"></div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm relative overflow-hidden flex flex-col justify-between">
+<div class="flex items-start justify-between mb-space-sm">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Median Handoff Latency</span>
+<span class="font-body-sm text-body-sm text-outline mt-0.5">Gurney transfer to ER triage custody</span>
+</div>
+<div class="w-8 h-8 rounded-lg bg-surface-container-low flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">swap_horiz</span>
+</div>
+</div>
+<div class="flex items-baseline gap-2 mb-space-xs">
+<span class="font-telemetry-lg text-[32px] text-on-surface leading-none">11.2</span>
+<span class="font-telemetry-md text-telemetry-md text-on-surface-variant">min</span>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<div class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-telemetry-sm text-telemetry-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">arrow_upward</span>
+<span>+1.1m (Congestion)</span>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-outline font-medium">Target: 10.0 min</span>
+</div>
+<div class="w-full bg-surface-container-low h-1.5 rounded-full mt-3 overflow-hidden">
+<div class="bg-tertiary-container h-full rounded-full" style="width: 84%;"></div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm relative overflow-hidden flex flex-col justify-between">
+<div class="flex items-start justify-between mb-space-sm">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Critical Survival Rate</span>
+<span class="font-body-sm text-body-sm text-outline mt-0.5">Post-intake 48h stabilization index</span>
+</div>
+<div class="w-8 h-8 rounded-lg bg-surface-container-low flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</div>
+</div>
+<div class="flex items-baseline gap-2 mb-space-xs">
+<span class="font-telemetry-lg text-[32px] text-primary-container leading-none">92.4%</span>
+<span class="font-telemetry-md text-telemetry-md text-on-surface-variant">admitted</span>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<div class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-telemetry-sm text-telemetry-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">trending_up</span>
+<span>+0.6% Benchmark</span>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-outline font-medium">n=14,280 Critical</span>
+</div>
+<div class="w-full bg-surface-container-low h-1.5 rounded-full mt-3 overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 92.4%;"></div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm relative overflow-hidden flex flex-col justify-between">
+<div class="flex items-start justify-between mb-space-sm">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Break-Glass EMR Override</span>
+<span class="font-body-sm text-body-sm text-outline mt-0.5">Dual-MD emergency bypass record access</span>
+</div>
+<div class="w-8 h-8 rounded-lg bg-surface-container-low flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[20px]">lock_open</span>
+</div>
+</div>
+<div class="flex items-baseline gap-2 mb-space-xs">
+<span class="font-telemetry-lg text-[32px] text-tertiary leading-none">4.8%</span>
+<span class="font-telemetry-md text-telemetry-md text-on-surface-variant">of intakes</span>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<div class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface font-telemetry-sm text-telemetry-sm font-semibold">
+<span class="material-symbols-outlined text-[14px] text-primary">verified_user</span>
+<span>100% Audited</span>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-outline font-medium">Threshold: &lt; 5.0%</span>
+</div>
+<div class="w-full bg-surface-container-low h-1.5 rounded-full mt-3 overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 68%;"></div>
+</div>
+</div>
+</div>
+<!-- Primary Analytics Grid: 2 Column Visuals -->
+<div class="grid grid-cols-12 gap-space-lg mb-space-lg">
+<!-- Chart 1: Grouped Bar Chart (Province Response Times) -->
+<div class="col-span-7 bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-start justify-between mb-space-sm">
+<div>
+<span class="font-telemetry-sm text-telemetry-sm uppercase tracking-wider text-primary font-semibold">Operational Metric · Velocity</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mt-0.5">Average Dispatch &amp; Response Time by Province</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Decomposed by Emergency Call Center Triage (Dispatch) vs. In-Transit Transit Time to Scene.</p>
+</div>
+<div class="flex items-center gap-3">
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-sm bg-primary-fixed-dim inline-block"></span>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">Dispatch</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-sm bg-primary inline-block"></span>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">Transit</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-4 h-0.5 border-t-2 border-dashed border-error inline-block"></span>
+<span class="font-telemetry-sm text-telemetry-sm text-error font-medium">9.0m Goal</span>
+</div>
+</div>
+</div>
+<!-- Inline Visual Grouped Bar Chart -->
+<div class="mt-space-md relative pt-6 pb-2">
+<!-- 9.0 min target dashed line -->
+<!-- Scaled to 16 min maximum: 9.0 / 16 = 56.25% -->
+<div class="absolute left-20 right-0 top-0 bottom-8 pointer-events-none">
+<div class="absolute w-full border-t border-dashed border-error opacity-60 z-10" style="top: 43.75%;"></div>
+<span class="absolute right-0 -translate-y-4 px-1.5 py-0.5 rounded bg-error-container text-on-error-container font-telemetry-sm text-telemetry-sm font-semibold">9.0 min Target</span>
+</div>
+<div class="flex flex-col gap-4 relative z-0">
+<!-- Row: ICT -->
+<div class="flex items-center gap-4">
+<div class="w-20 text-right">
+<span class="font-body-strong text-body-strong text-on-surface block leading-tight">ICT</span>
+<span class="font-telemetry-sm text-telemetry-sm text-outline">Islamabad</span>
+</div>
+<div class="flex-1 bg-surface-container-low h-9 rounded-lg p-1 flex items-center relative">
+<!-- Dispatch: 1.2m, Transit: 5.2m -> Total: 6.4m (40% of 16m) -->
+<div class="bg-primary-fixed-dim h-full rounded-l-md flex items-center justify-end px-2" style="width: 7.5%;">
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface font-semibold">1.2m</span>
+</div>
+<div class="bg-primary h-full rounded-r-md flex items-center justify-end px-2" style="width: 32.5%;">
+<span class="font-telemetry-sm text-telemetry-sm text-on-primary font-semibold">5.2m</span>
+</div>
+<span class="ml-3 font-telemetry-md text-telemetry-md text-primary font-bold">6.4 min</span>
+<span class="ml-auto px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-telemetry-sm text-telemetry-sm font-semibold">Optimum</span>
+</div>
+</div>
+<!-- Row: Punjab -->
+<div class="flex items-center gap-4">
+<div class="w-20 text-right">
+<span class="font-body-strong text-body-strong text-on-surface block leading-tight">Punjab</span>
+<span class="font-telemetry-sm text-telemetry-sm text-outline">Lahore/Rawal</span>
+</div>
+<div class="flex-1 bg-surface-container-low h-9 rounded-lg p-1 flex items-center relative">
+<!-- Dispatch: 1.5m, Transit: 6.3m -> Total: 7.8m (48.75% of 16m) -->
+<div class="bg-primary-fixed-dim h-full rounded-l-md flex items-center justify-end px-2" style="width: 9.3%;">
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface font-semibold">1.5m</span>
+</div>
+<div class="bg-primary h-full rounded-r-md flex items-center justify-end px-2" style="width: 39.4%;">
+<span class="font-telemetry-sm text-telemetry-sm text-on-primary font-semibold">6.3m</span>
+</div>
+<span class="ml-3 font-telemetry-md text-telemetry-md text-primary font-bold">7.8 min</span>
+<span class="ml-auto px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-telemetry-sm text-telemetry-sm font-semibold">On Target</span>
+</div>
+</div>
+<!-- Row: KP -->
+<div class="flex items-center gap-4">
+<div class="w-20 text-right">
+<span class="font-body-strong text-body-strong text-on-surface block leading-tight">KP</span>
+<span class="font-telemetry-sm text-telemetry-sm text-outline">Peshawar Div</span>
+</div>
+<div class="flex-1 bg-surface-container-low h-9 rounded-lg p-1 flex items-center relative">
+<!-- Dispatch: 1.8m, Transit: 7.1m -> Total: 8.9m (55.6% of 16m) -->
+<div class="bg-primary-fixed-dim h-full rounded-l-md flex items-center justify-end px-2" style="width: 11.25%;">
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface font-semibold">1.8m</span>
+</div>
+<div class="bg-primary h-full rounded-r-md flex items-center justify-end px-2" style="width: 44.35%;">
+<span class="font-telemetry-sm text-telemetry-sm text-on-primary font-semibold">7.1m</span>
+</div>
+<span class="ml-3 font-telemetry-md text-telemetry-md text-primary font-bold">8.9 min</span>
+<span class="ml-auto px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-telemetry-sm text-telemetry-sm font-semibold">Within Margin</span>
+</div>
+</div>
+<!-- Row: Sindh -->
+<div class="flex items-center gap-4">
+<div class="w-20 text-right">
+<span class="font-body-strong text-body-strong text-on-surface block leading-tight">Sindh</span>
+<span class="font-telemetry-sm text-telemetry-sm text-outline">Karachi/Hyd</span>
+</div>
+<div class="flex-1 bg-surface-container-low h-9 rounded-lg p-1 flex items-center relative">
+<!-- Dispatch: 2.1m, Transit: 7.3m -> Total: 9.4m (58.75% of 16m) -->
+<div class="bg-primary-fixed-dim h-full rounded-l-md flex items-center justify-end px-2" style="width: 13.1%;">
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface font-semibold">2.1m</span>
+</div>
+<div class="bg-primary h-full rounded-r-md flex items-center justify-end px-2" style="width: 45.6%;">
+<span class="font-telemetry-sm text-telemetry-sm text-on-primary font-semibold">7.3m</span>
+</div>
+<span class="ml-3 font-telemetry-md text-telemetry-md text-tertiary-container font-bold">9.4 min</span>
+<span class="ml-auto px-2 py-0.5 rounded-full bg-surface-container-highest text-tertiary font-telemetry-sm text-telemetry-sm font-semibold">+0.4m Threshold</span>
+</div>
+</div>
+<!-- Row: AJK -->
+<div class="flex items-center gap-4">
+<div class="w-20 text-right">
+<span class="font-body-strong text-body-strong text-on-surface block leading-tight">AJK</span>
+<span class="font-telemetry-sm text-telemetry-sm text-outline">Muzaffarabad</span>
+</div>
+<div class="flex-1 bg-surface-container-low h-9 rounded-lg p-1 flex items-center relative">
+<!-- Dispatch: 2.4m, Transit: 8.2m -> Total: 10.6m (66.25% of 16m) -->
+<div class="bg-primary-fixed-dim h-full rounded-l-md flex items-center justify-end px-2" style="width: 15.0%;">
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface font-semibold">2.4m</span>
+</div>
+<div class="bg-primary h-full rounded-r-md flex items-center justify-end px-2" style="width: 51.25%;">
+<span class="font-telemetry-sm text-telemetry-sm text-on-primary font-semibold">8.2m</span>
+</div>
+<span class="ml-3 font-telemetry-md text-telemetry-md text-tertiary font-bold">10.6 min</span>
+<span class="ml-auto px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-telemetry-sm text-telemetry-sm font-semibold">Terrain Latency</span>
+</div>
+</div>
+<!-- Row: Balochistan -->
+<div class="flex items-center gap-4">
+<div class="w-20 text-right">
+<span class="font-body-strong text-body-strong text-on-surface block leading-tight">Balochistan</span>
+<span class="font-telemetry-sm text-telemetry-sm text-outline">Quetta Valley</span>
+</div>
+<div class="flex-1 bg-surface-container-low h-9 rounded-lg p-1 flex items-center relative">
+<!-- Dispatch: 3.1m, Transit: 10.1m -> Total: 13.2m (82.5% of 16m) -->
+<div class="bg-primary-fixed-dim h-full rounded-l-md flex items-center justify-end px-2" style="width: 19.3%;">
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface font-semibold">3.1m</span>
+</div>
+<div class="bg-tertiary-container h-full rounded-r-md flex items-center justify-end px-2" style="width: 63.2%;">
+<span class="font-telemetry-sm text-telemetry-sm text-on-primary font-semibold">10.1m</span>
+</div>
+<span class="ml-3 font-telemetry-md text-telemetry-md text-error font-bold">13.2 min</span>
+<span class="ml-auto px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-telemetry-sm text-telemetry-sm font-semibold">Remote Distances</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Terrain Annotation Note -->
+<div class="mt-space-md p-space-sm bg-surface-container-low rounded-lg flex items-center justify-between text-on-surface-variant font-body-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary">info</span>
+<span>Balochistan &amp; AJK figures reflect unpaved mountain passage and low cellular telemetry antenna densities.</span>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-outline">GeoTag: GIS-PAK-2026</span>
+</div>
+</div>
+<!-- Chart 2: Acuity & Severity Distribution by Region (Stacked Acuity + Donut) -->
+<div class="col-span-5 bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-start justify-between mb-space-sm">
+<div>
+<span class="font-telemetry-sm text-telemetry-sm uppercase tracking-wider text-secondary font-semibold">Clinical Triage Acuity</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mt-0.5">Incident Severity Distribution</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">South Asian Manchester Triage Group classifications across admitted emergency calls.</p>
+</div>
+<button class="w-8 h-8 rounded-lg bg-surface-container-low flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+<!-- Donut Visual + Breakdown -->
+<div class="grid grid-cols-12 gap-space-md items-center my-space-md">
+<!-- Inline Donut SVG Chart -->
+<div class="col-span-5 flex flex-col items-center justify-center relative">
+<svg class="w-36 h-36 -rotate-90" viewbox="0 0 120 120">
+<!-- Code Red (28%): Circumference = 2 * PI * 45 = 282.74. 28% = 79.16 -->
+<circle class="text-surface-container-low" cx="60" cy="60" fill="none" r="45" stroke="currentColor" stroke-width="18"></circle>
+<!-- Red Arc: Critical -->
+<circle class="text-error" cx="60" cy="60" fill="none" r="45" stroke="currentColor" stroke-dasharray="79.16 282.74" stroke-dashoffset="0" stroke-width="18"></circle>
+<!-- Amber Arc: Urgent (44% = 124.4) -->
+<circle class="text-secondary" cx="60" cy="60" fill="none" r="45" stroke="currentColor" stroke-dasharray="124.4 282.74" stroke-dashoffset="-79.16" stroke-width="18"></circle>
+<!-- Green/Teal Arc: Minor (28% = 79.16) -->
+<circle class="text-primary-fixed-dim" cx="60" cy="60" fill="none" r="45" stroke="currentColor" stroke-dasharray="79.18 282.74" stroke-dashoffset="-203.56" stroke-width="18"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
+<span class="font-telemetry-lg text-telemetry-lg text-on-surface font-bold leading-none">64.2k</span>
+<span class="font-telemetry-sm text-telemetry-sm text-outline mt-0.5">Total Intakes</span>
+</div>
+</div>
+<!-- Donut Legend & Stat Tiles -->
+<div class="col-span-7 flex flex-col gap-2">
+<div class="p-2.5 rounded-lg bg-error-container/40 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-error inline-block"></span>
+<div>
+<span class="font-body-strong text-body-strong text-on-surface block leading-tight">Code Red</span>
+<span class="font-telemetry-sm text-telemetry-sm text-on-error-container">Critical / Immediate Life Threat</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-telemetry-md text-telemetry-md text-error font-bold">28.4%</span>
+<span class="font-telemetry-sm text-telemetry-sm text-outline block">18,230 calls</span>
+</div>
+</div>
+<div class="p-2.5 rounded-lg bg-secondary-container/40 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-secondary inline-block"></span>
+<div>
+<span class="font-body-strong text-body-strong text-on-surface block leading-tight">Code Yellow</span>
+<span class="font-telemetry-sm text-telemetry-sm text-on-secondary-container">Urgent / Resuscitation Standby</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-telemetry-md text-telemetry-md text-secondary font-bold">43.8%</span>
+<span class="font-telemetry-sm text-telemetry-sm text-outline block">28,119 calls</span>
+</div>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-primary-fixed-dim inline-block"></span>
+<div>
+<span class="font-body-strong text-body-strong text-on-surface block leading-tight">Code Green</span>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">Minor / Semi-Urgent Ambulatory</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-telemetry-md text-telemetry-md text-primary font-bold">27.8%</span>
+<span class="font-telemetry-sm text-telemetry-sm text-outline block">17,851 calls</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Regional Acuity Stacked Matrix Rows -->
+<div class="mt-space-sm pt-space-sm">
+<span class="font-telemetry-sm text-telemetry-sm uppercase tracking-wider text-outline font-semibold block mb-2">Regional Severity Proportions</span>
+<div class="space-y-2">
+<!-- Punjab -->
+<div class="flex items-center gap-3">
+<span class="w-16 font-body-sm text-body-sm text-on-surface font-medium truncate">Punjab</span>
+<div class="flex-1 h-3 rounded-full bg-surface-container flex overflow-hidden">
+<div class="bg-error h-full" style="width: 26%;"></div>
+<div class="bg-secondary h-full" style="width: 48%;"></div>
+<div class="bg-primary-fixed-dim h-full" style="width: 26%;"></div>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant w-12 text-right">26/48/26</span>
+</div>
+<!-- Sindh -->
+<div class="flex items-center gap-3">
+<span class="w-16 font-body-sm text-body-sm text-on-surface font-medium truncate">Sindh</span>
+<div class="flex-1 h-3 rounded-full bg-surface-container flex overflow-hidden">
+<div class="bg-error h-full" style="width: 32%;"></div>
+<div class="bg-secondary h-full" style="width: 42%;"></div>
+<div class="bg-primary-fixed-dim h-full" style="width: 26%;"></div>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant w-12 text-right">32/42/26</span>
+</div>
+<!-- KP -->
+<div class="flex items-center gap-3">
+<span class="w-16 font-body-sm text-body-sm text-on-surface font-medium truncate">KP</span>
+<div class="flex-1 h-3 rounded-full bg-surface-container flex overflow-hidden">
+<div class="bg-error h-full" style="width: 31%;"></div>
+<div class="bg-secondary h-full" style="width: 44%;"></div>
+<div class="bg-primary-fixed-dim h-full" style="width: 25%;"></div>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant w-12 text-right">31/44/25</span>
+</div>
+<!-- Balochistan -->
+<div class="flex items-center gap-3">
+<span class="w-16 font-body-sm text-body-sm text-on-surface font-medium truncate">Balochistan</span>
+<div class="flex-1 h-3 rounded-full bg-surface-container flex overflow-hidden">
+<div class="bg-error h-full" style="width: 39%;"></div>
+<div class="bg-secondary h-full" style="width: 38%;"></div>
+<div class="bg-primary-fixed-dim h-full" style="width: 23%;"></div>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant w-12 text-right">39/38/23</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Chart 3: Heatmap Matrix (Hourly Peak Demand vs Ambulance Fleet Utilization) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm mb-space-lg">
+<div class="flex items-start justify-between mb-space-md">
+<div>
+<div class="flex items-center gap-2">
+<span class="font-telemetry-sm text-telemetry-sm uppercase tracking-wider text-primary font-semibold">Temporal Operations</span>
+<span class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-telemetry-sm text-telemetry-sm font-semibold">14:00 – 18:00 Peak Congestion Window</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mt-0.5">Hourly Peak Demand vs. Ambulance Fleet Utilization (24-Hour Cycle)</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Fleet strain across 5 provincial commands measured in concurrent dispatch loads.</p>
+</div>
+<!-- Heatmap Color Scale Legend -->
+<div class="flex items-center gap-2 bg-surface-container-low px-3 py-1.5 rounded-lg">
+<span class="font-telemetry-sm text-telemetry-sm text-outline font-medium">Fleet Load:</span>
+<div class="flex items-center gap-1">
+<span class="w-3.5 h-3.5 rounded-sm bg-surface-container" title="&lt;30%"></span>
+<span class="w-3.5 h-3.5 rounded-sm bg-secondary-container" title="30-50%"></span>
+<span class="w-3.5 h-3.5 rounded-sm bg-primary-fixed-dim" title="50-70%"></span>
+<span class="w-3.5 h-3.5 rounded-sm bg-secondary" title="70-85%"></span>
+<span class="w-3.5 h-3.5 rounded-sm bg-tertiary-container" title="85-95%"></span>
+<span class="w-3.5 h-3.5 rounded-sm bg-error" title="&gt;95% Critical"></span>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant ml-1">&lt;30% to &gt;95%</span>
+</div>
+</div>
+<!-- 24-Hour Heatmap Grid -->
+<div class="overflow-x-auto">
+<div class="min-w-[980px]">
+<!-- Hour Labels -->
+<div class="grid grid-cols-[110px_repeat(24,1fr)] gap-1 mb-2">
+<span class="font-telemetry-sm text-telemetry-sm text-outline font-semibold">PROVINCE</span>
+<span class="font-telemetry-sm text-telemetry-sm text-outline text-center">00</span>
+<span class="font-telemetry-sm text-telemetry-sm text-outline text-center">01</span>
+<span class="font-telemetry-sm text-telemetry-sm text-outline text-center">02</span>
+<span class="font-telemetry-sm text-telemetry-sm text-outline text-center">03</span>
+<span class="font-telemetry-sm text-telemetry-sm text-outline text-center">04</span>
+<span class="font-telemetry-sm text-telemetry-sm text-outline text-center">05</span>
+<span class="font-telemetry-sm text-telemetry-sm text-outline text-center">06</span>
+<span class="font-telemetry-sm text-telemetry-sm text-outline text-center">07</span>
+<span class="font-telemetry-sm text-telemetry-sm text-outline text-center">08</span>
+<span class="font-telemetry-sm text-telemetry-sm text-outline text-center">09</span>
+<span class="font-telemetry-sm text-telemetry-sm text-outline text-center">10</span>
+<span class="font-telemetry-sm text-telemetry-sm text-outline text-center">11</span>
+<span class="font-telemetry-sm text-telemetry-sm text-outline text-center">12</span>
+<span class="font-telemetry-sm text-telemetry-sm text-outline text-center">13</span>
+<span class="font-telemetry-sm text-telemetry-sm text-error font-bold text-center">14</span>
+<span class="font-telemetry-sm text-telemetry-sm text-error font-bold text-center">15</span>
+<span class="font-telemetry-sm text-telemetry-sm text-error font-bold text-center">16</span>
+<span class="font-telemetry-sm text-telemetry-sm text-error font-bold text-center">17</span>
+<span class="font-telemetry-sm text-telemetry-sm text-error font-bold text-center">18</span>
+<span class="font-telemetry-sm text-telemetry-sm text-outline text-center">19</span>
+<span class="font-telemetry-sm text-telemetry-sm text-outline text-center">20</span>
+<span class="font-telemetry-sm text-telemetry-sm text-outline text-center">21</span>
+<span class="font-telemetry-sm text-telemetry-sm text-outline text-center">22</span>
+<span class="font-telemetry-sm text-telemetry-sm text-outline text-center">23</span>
+</div>
+<!-- Province Rows -->
+<!-- ICT -->
+<div class="grid grid-cols-[110px_repeat(24,1fr)] gap-1 mb-1.5 items-center">
+<span class="font-body-strong text-body-strong text-on-surface">ICT</span>
+<div class="h-7 rounded bg-surface-container" title="00:00 - 24%"></div>
+<div class="h-7 rounded bg-surface-container" title="01:00 - 18%"></div>
+<div class="h-7 rounded bg-surface-container" title="02:00 - 14%"></div>
+<div class="h-7 rounded bg-surface-container" title="03:00 - 12%"></div>
+<div class="h-7 rounded bg-surface-container" title="04:00 - 16%"></div>
+<div class="h-7 rounded bg-surface-container" title="05:00 - 22%"></div>
+<div class="h-7 rounded bg-secondary-container" title="06:00 - 36%"></div>
+<div class="h-7 rounded bg-primary-fixed-dim" title="07:00 - 54%"></div>
+<div class="h-7 rounded bg-secondary" title="08:00 - 72%"></div>
+<div class="h-7 rounded bg-primary-fixed-dim" title="09:00 - 64%"></div>
+<div class="h-7 rounded bg-primary-fixed-dim" title="10:00 - 61%"></div>
+<div class="h-7 rounded bg-primary-fixed-dim" title="11:00 - 58%"></div>
+<div class="h-7 rounded bg-secondary" title="12:00 - 74%"></div>
+<div class="h-7 rounded bg-secondary" title="13:00 - 79%"></div>
+<div class="h-7 rounded bg-tertiary-container" title="14:00 - 86%"></div>
+<div class="h-7 rounded bg-tertiary-container" title="15:00 - 89%"></div>
+<div class="h-7 rounded bg-tertiary-container" title="16:00 - 88%"></div>
+<div class="h-7 rounded bg-tertiary-container" title="17:00 - 87%"></div>
+<div class="h-7 rounded bg-secondary" title="18:00 - 78%"></div>
+<div class="h-7 rounded bg-primary-fixed-dim" title="19:00 - 66%"></div>
+<div class="h-7 rounded bg-secondary-container" title="20:00 - 48%"></div>
+<div class="h-7 rounded bg-secondary-container" title="21:00 - 41%"></div>
+<div class="h-7 rounded bg-surface-container" title="22:00 - 31%"></div>
+<div class="h-7 rounded bg-surface-container" title="23:00 - 27%"></div>
+</div>
+<!-- Punjab -->
+<div class="grid grid-cols-[110px_repeat(24,1fr)] gap-1 mb-1.5 items-center">
+<span class="font-body-strong text-body-strong text-on-surface">Punjab</span>
+<div class="h-7 rounded bg-surface-container" title="00:00 - 28%"></div>
+<div class="h-7 rounded bg-surface-container" title="01:00 - 21%"></div>
+<div class="h-7 rounded bg-surface-container" title="02:00 - 18%"></div>
+<div class="h-7 rounded bg-surface-container" title="03:00 - 15%"></div>
+<div class="h-7 rounded bg-surface-container" title="04:00 - 20%"></div>
+<div class="h-7 rounded bg-secondary-container" title="05:00 - 32%"></div>
+<div class="h-7 rounded bg-primary-fixed-dim" title="06:00 - 58%"></div>
+<div class="h-7 rounded bg-secondary" title="07:00 - 76%"></div>
+<div class="h-7 rounded bg-tertiary-container" title="08:00 - 86%"></div>
+<div class="h-7 rounded bg-secondary" title="09:00 - 74%"></div>
+<div class="h-7 rounded bg-secondary" title="10:00 - 71%"></div>
+<div class="h-7 rounded bg-secondary" title="11:00 - 75%"></div>
+<div class="h-7 rounded bg-tertiary-container" title="12:00 - 84%"></div>
+<div class="h-7 rounded bg-tertiary-container" title="13:00 - 88%"></div>
+<div class="h-7 rounded bg-error" title="14:00 - 96% CRITICAL"></div>
+<div class="h-7 rounded bg-error" title="15:00 - 98% CRITICAL"></div>
+<div class="h-7 rounded bg-error" title="16:00 - 97% CRITICAL"></div>
+<div class="h-7 rounded bg-error" title="17:00 - 94% CRITICAL"></div>
+<div class="h-7 rounded bg-tertiary-container" title="18:00 - 88%"></div>
+<div class="h-7 rounded bg-secondary" title="19:00 - 78%"></div>
+<div class="h-7 rounded bg-primary-fixed-dim" title="20:00 - 62%"></div>
+<div class="h-7 rounded bg-secondary-container" title="21:00 - 49%"></div>
+<div class="h-7 rounded bg-secondary-container" title="22:00 - 38%"></div>
+<div class="h-7 rounded bg-surface-container" title="23:00 - 29%"></div>
+</div>
+<!-- Sindh -->
+<div class="grid grid-cols-[110px_repeat(24,1fr)] gap-1 mb-1.5 items-center">
+<span class="font-body-strong text-body-strong text-on-surface">Sindh</span>
+<div class="h-7 rounded bg-secondary-container" title="00:00 - 34%"></div>
+<div class="h-7 rounded bg-surface-container" title="01:00 - 26%"></div>
+<div class="h-7 rounded bg-surface-container" title="02:00 - 20%"></div>
+<div class="h-7 rounded bg-surface-container" title="03:00 - 18%"></div>
+<div class="h-7 rounded bg-surface-container" title="04:00 - 22%"></div>
+<div class="h-7 rounded bg-secondary-container" title="05:00 - 35%"></div>
+<div class="h-7 rounded bg-primary-fixed-dim" title="06:00 - 55%"></div>
+<div class="h-7 rounded bg-secondary" title="07:00 - 78%"></div>
+<div class="h-7 rounded bg-tertiary-container" title="08:00 - 89%"></div>
+<div class="h-7 rounded bg-secondary" title="09:00 - 79%"></div>
+<div class="h-7 rounded bg-secondary" title="10:00 - 76%"></div>
+<div class="h-7 rounded bg-secondary" title="11:00 - 79%"></div>
+<div class="h-7 rounded bg-tertiary-container" title="12:00 - 87%"></div>
+<div class="h-7 rounded bg-tertiary-container" title="13:00 - 91%"></div>
+<div class="h-7 rounded bg-error" title="14:00 - 98% CRITICAL"></div>
+<div class="h-7 rounded bg-error" title="15:00 - 99% CRITICAL"></div>
+<div class="h-7 rounded bg-error" title="16:00 - 97% CRITICAL"></div>
+<div class="h-7 rounded bg-error" title="17:00 - 96% CRITICAL"></div>
+<div class="h-7 rounded bg-tertiary-container" title="18:00 - 90%"></div>
+<div class="h-7 rounded bg-secondary" title="19:00 - 82%"></div>
+<div class="h-7 rounded bg-primary-fixed-dim" title="20:00 - 68%"></div>
+<div class="h-7 rounded bg-primary-fixed-dim" title="21:00 - 55%"></div>
+<div class="h-7 rounded bg-secondary-container" title="22:00 - 44%"></div>
+<div class="h-7 rounded bg-surface-container" title="23:00 - 32%"></div>
+</div>
+<!-- KP -->
+<div class="grid grid-cols-[110px_repeat(24,1fr)] gap-1 mb-1.5 items-center">
+<span class="font-body-strong text-body-strong text-on-surface">KP</span>
+<div class="h-7 rounded bg-surface-container" title="00:00 - 20%"></div>
+<div class="h-7 rounded bg-surface-container" title="01:00 - 15%"></div>
+<div class="h-7 rounded bg-surface-container" title="02:00 - 12%"></div>
+<div class="h-7 rounded bg-surface-container" title="03:00 - 11%"></div>
+<div class="h-7 rounded bg-surface-container" title="04:00 - 14%"></div>
+<div class="h-7 rounded bg-surface-container" title="05:00 - 24%"></div>
+<div class="h-7 rounded bg-secondary-container" title="06:00 - 45%"></div>
+<div class="h-7 rounded bg-primary-fixed-dim" title="07:00 - 66%"></div>
+<div class="h-7 rounded bg-secondary" title="08:00 - 75%"></div>
+<div class="h-7 rounded bg-primary-fixed-dim" title="09:00 - 64%"></div>
+<div class="h-7 rounded bg-primary-fixed-dim" title="10:00 - 62%"></div>
+<div class="h-7 rounded bg-secondary" title="11:00 - 71%"></div>
+<div class="h-7 rounded bg-secondary" title="12:00 - 79%"></div>
+<div class="h-7 rounded bg-tertiary-container" title="13:00 - 83%"></div>
+<div class="h-7 rounded bg-tertiary-container" title="14:00 - 91%"></div>
+<div class="h-7 rounded bg-error" title="15:00 - 94% CRITICAL"></div>
+<div class="h-7 rounded bg-tertiary-container" title="16:00 - 92%"></div>
+<div class="h-7 rounded bg-tertiary-container" title="17:00 - 89%"></div>
+<div class="h-7 rounded bg-secondary" title="18:00 - 80%"></div>
+<div class="h-7 rounded bg-primary-fixed-dim" title="19:00 - 67%"></div>
+<div class="h-7 rounded bg-secondary-container" title="20:00 - 48%"></div>
+<div class="h-7 rounded bg-secondary-container" title="21:00 - 37%"></div>
+<div class="h-7 rounded bg-surface-container" title="22:00 - 28%"></div>
+<div class="h-7 rounded bg-surface-container" title="23:00 - 22%"></div>
+</div>
+<!-- Balochistan -->
+<div class="grid grid-cols-[110px_repeat(24,1fr)] gap-1 mb-1.5 items-center">
+<span class="font-body-strong text-body-strong text-on-surface">Balochistan</span>
+<div class="h-7 rounded bg-surface-container" title="00:00 - 15%"></div>
+<div class="h-7 rounded bg-surface-container" title="01:00 - 12%"></div>
+<div class="h-7 rounded bg-surface-container" title="02:00 - 10%"></div>
+<div class="h-7 rounded bg-surface-container" title="03:00 - 08%"></div>
+<div class="h-7 rounded bg-surface-container" title="04:00 - 11%"></div>
+<div class="h-7 rounded bg-surface-container" title="05:00 - 18%"></div>
+<div class="h-7 rounded bg-secondary-container" title="06:00 - 32%"></div>
+<div class="h-7 rounded bg-secondary-container" title="07:00 - 49%"></div>
+<div class="h-7 rounded bg-primary-fixed-dim" title="08:00 - 62%"></div>
+<div class="h-7 rounded bg-primary-fixed-dim" title="09:00 - 58%"></div>
+<div class="h-7 rounded bg-primary-fixed-dim" title="10:00 - 54%"></div>
+<div class="h-7 rounded bg-primary-fixed-dim" title="11:00 - 61%"></div>
+<div class="h-7 rounded bg-secondary" title="12:00 - 72%"></div>
+<div class="h-7 rounded bg-secondary" title="13:00 - 77%"></div>
+<div class="h-7 rounded bg-tertiary-container" title="14:00 - 85%"></div>
+<div class="h-7 rounded bg-tertiary-container" title="15:00 - 88%"></div>
+<div class="h-7 rounded bg-tertiary-container" title="16:00 - 86%"></div>
+<div class="h-7 rounded bg-secondary" title="17:00 - 81%"></div>
+<div class="h-7 rounded bg-secondary" title="18:00 - 74%"></div>
+<div class="h-7 rounded bg-primary-fixed-dim" title="19:00 - 61%"></div>
+<div class="h-7 rounded bg-secondary-container" title="20:00 - 44%"></div>
+<div class="h-7 rounded bg-surface-container" title="21:00 - 30%"></div>
+<div class="h-7 rounded bg-surface-container" title="22:00 - 24%"></div>
+<div class="h-7 rounded bg-surface-container" title="23:00 - 18%"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Provincial Telemetry Performance Table -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col">
+<!-- Table Toolbar -->
+<div class="px-space-lg py-space-md bg-surface-container-lowest flex items-center justify-between">
+<div class="flex items-center gap-space-md">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Provincial Telemetry Performance Ledger</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Comprehensive regional indicators audited by the National Digital Health Authority (NDHA).</p>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container font-telemetry-sm text-telemetry-sm font-semibold">6 JURISDICTIONS LOGGED</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-[18px] text-outline">search</span>
+<input class="pl-9 pr-3 py-1.5 rounded-lg bg-surface-container text-on-surface font-body-sm text-body-sm placeholder:text-outline focus:outline-none" placeholder="Filter territory / hub..." type="text"/>
+</div>
+<button class="flex items-center gap-1.5 px-3 py-2 bg-surface-container text-on-surface rounded-lg font-body-strong text-body-sm hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[16px]">file_download</span>
+<span>Export CSV</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-2 bg-primary-container text-on-primary rounded-lg font-body-strong text-body-sm hover:opacity-95 transition-opacity">
+<span class="material-symbols-outlined text-[16px]">print</span>
+<span>Audit Print</span>
+</button>
+</div>
+</div>
+<!-- Data Table -->
+<div class="w-full overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-telemetry-sm text-telemetry-sm uppercase tracking-wider">
+<th class="py-3 px-space-lg font-semibold">Province / Territory</th>
+<th class="py-3 px-space-md font-semibold">Total Calls Logged</th>
+<th class="py-3 px-space-md font-semibold">Avg Dispatch</th>
+<th class="py-3 px-space-md font-semibold">Avg On-Scene</th>
+<th class="py-3 px-space-md font-semibold">Bed Diversion Rate</th>
+<th class="py-3 px-space-md font-semibold">Connected Hospitals</th>
+<th class="py-3 px-space-md font-semibold text-right">Status Rating</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container">
+<!-- Row 1: ICT -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-3.5 px-space-lg">
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface block leading-tight">Islamabad (ICT)</span>
+<span class="font-telemetry-sm text-telemetry-sm text-outline">Zone PK-ISB-FED</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="font-telemetry-md text-telemetry-md text-on-surface font-semibold">7,420</span>
+<span class="font-telemetry-sm text-telemetry-sm text-primary block">99.8% GPS sync</span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="font-telemetry-md text-telemetry-md text-primary font-bold">1.2 min</span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="font-telemetry-md text-telemetry-md text-primary font-bold">5.2 min</span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="font-telemetry-md text-telemetry-md text-on-surface">1.8%</span>
+<span class="font-telemetry-sm text-telemetry-sm text-outline block">134 reroutes</span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="font-telemetry-md text-telemetry-md text-on-surface">24 / 24</span>
+<span class="font-telemetry-sm text-telemetry-sm text-primary block">100% Online</span>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-telemetry-sm text-telemetry-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span>Tier 1 Optimal</span>
+</span>
+</td>
+</tr>
+<!-- Row 2: Punjab -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-3.5 px-space-lg">
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface block leading-tight">Punjab</span>
+<span class="font-telemetry-sm text-telemetry-sm text-outline">Zone PK-PB-36D</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="font-telemetry-md text-telemetry-md text-on-surface font-semibold">28,140</span>
+<span class="font-telemetry-sm text-telemetry-sm text-primary block">98.9% GPS sync</span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="font-telemetry-md text-telemetry-md text-primary font-bold">1.5 min</span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="font-telemetry-md text-telemetry-md text-primary font-bold">6.3 min</span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="font-telemetry-md text-telemetry-md text-on-surface">4.2%</span>
+<span class="font-telemetry-sm text-telemetry-sm text-outline block">1,180 reroutes</span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="font-telemetry-md text-telemetry-md text-on-surface">218 / 224</span>
+<span class="font-telemetry-sm text-telemetry-sm text-secondary block">97.3% Online</span>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-telemetry-sm text-telemetry-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span>Tier 1 Optimal</span>
+</span>
+</td>
+</tr>
+<!-- Row 3: Sindh -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-3.5 px-space-lg">
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-secondary"></div>
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface block leading-tight">Sindh</span>
+<span class="font-telemetry-sm text-telemetry-sm text-outline">Zone PK-SD-30D</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="font-telemetry-md text-telemetry-md text-on-surface font-semibold">14,910</span>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant block">96.4% GPS sync</span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="font-telemetry-md text-telemetry-md text-secondary font-bold">2.1 min</span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="font-telemetry-md text-telemetry-md text-secondary font-bold">7.3 min</span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="font-telemetry-md text-telemetry-md text-tertiary font-bold">6.9%</span>
+<span class="font-telemetry-sm text-telemetry-sm text-tertiary block">Urban Bottleneck</span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="font-telemetry-md text-telemetry-md text-on-surface">112 / 120</span>
+<span class="font-telemetry-sm text-telemetry-sm text-outline block">93.3% Online</span>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-container-highest text-on-surface font-telemetry-sm text-telemetry-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span>Tier 2 Moderate</span>
+</span>
+</td>
+</tr>
+<!-- Row 4: Khyber Pakhtunkhwa (KP) -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-3.5 px-space-lg">
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-secondary"></div>
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface block leading-tight">Khyber Pakhtunkhwa (KP)</span>
+<span class="font-telemetry-sm text-telemetry-sm text-outline">Zone PK-KP-35D</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="font-telemetry-md text-telemetry-md text-on-surface font-semibold">9,830</span>
+<span class="font-telemetry-sm text-telemetry-sm text-primary block">97.8% GPS sync</span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="font-telemetry-md text-telemetry-md text-primary font-bold">1.8 min</span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="font-telemetry-md text-telemetry-md text-secondary font-bold">7.1 min</span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="font-telemetry-md text-telemetry-md text-on-surface">3.8%</span>
+<span class="font-telemetry-sm text-telemetry-sm text-outline block">373 reroutes</span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="font-telemetry-md text-telemetry-md text-on-surface">76 / 82</span>
+<span class="font-telemetry-sm text-telemetry-sm text-outline block">92.6% Online</span>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-telemetry-sm text-telemetry-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span>Tier 1 Baseline</span>
+</span>
+</td>
+</tr>
+<!-- Row 5: Azad Jammu & Kashmir (AJK) -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-3.5 px-space-lg">
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-tertiary"></div>
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface block leading-tight">Azad Jammu &amp; Kashmir</span>
+<span class="font-telemetry-sm text-telemetry-sm text-outline">Zone PK-AJK-10D</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="font-telemetry-md text-telemetry-md text-on-surface font-semibold">2,380</span>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant block">91.2% GPS sync</span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="font-telemetry-md text-telemetry-md text-on-surface font-semibold">2.4 min</span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="font-telemetry-md text-telemetry-md text-tertiary font-bold">8.2 min</span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="font-telemetry-md text-telemetry-md text-on-surface">2.1%</span>
+<span class="font-telemetry-sm text-telemetry-sm text-outline block">50 reroutes</span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="font-telemetry-md text-telemetry-md text-on-surface">22 / 26</span>
+<span class="font-telemetry-sm text-telemetry-sm text-outline block">84.6% Online</span>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-error-container text-on-error-container font-telemetry-sm text-telemetry-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+<span>Terrain Delay</span>
+</span>
+</td>
+</tr>
+<!-- Row 6: Balochistan -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-3.5 px-space-lg">
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-error"></div>
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface block leading-tight">Balochistan</span>
+<span class="font-telemetry-sm text-telemetry-sm text-outline">Zone PK-BA-34D</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="font-telemetry-md text-telemetry-md text-on-surface font-semibold">1,520</span>
+<span class="font-telemetry-sm text-telemetry-sm text-error block">83.4% GPS sync</span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="font-telemetry-md text-telemetry-md text-tertiary font-bold">3.1 min</span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="font-telemetry-md text-telemetry-md text-error font-bold">10.1 min</span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="font-telemetry-md text-telemetry-md text-tertiary font-bold">8.4%</span>
+<span class="font-telemetry-sm text-telemetry-sm text-tertiary block">Critical Range Transfer</span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="font-telemetry-md text-telemetry-md text-on-surface">35 / 45</span>
+<span class="font-telemetry-sm text-telemetry-sm text-error block">77.7% Online</span>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-error-container text-on-error-container font-telemetry-sm text-telemetry-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+<span>Intervention Req</span>
+</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Pagination & Audit Footer -->
+<div class="px-space-lg py-space-sm bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-space-sm text-on-surface-variant font-body-sm">
+<span class="font-telemetry-sm text-telemetry-sm">Showing 6 of 6 designated federal administrative zones</span>
+<span class="text-outline-variant">·</span>
+<span class="font-telemetry-sm text-telemetry-sm">Kafka Ingestion Hash: <span class="font-mono text-on-surface">7f8c-42aa-ndha</span></span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">Data verified by NDHA Clinical Informatics Working Group</span>
+</div>
+</div>
+</div>
+</div></main></div></body></html>

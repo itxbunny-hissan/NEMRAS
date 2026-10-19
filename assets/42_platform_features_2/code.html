@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>NEMRAS - Platform &amp; Features Architecture</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;700&amp;family=Sora:wght@600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"outline-variant":"#bdc9c6","on-tertiary-container":"#ffe4e1","primary-fixed-dim":"#80d5cb","inverse-primary":"#80d5cb","primary-fixed":"#9cf2e8","surface-bright":"#f6f9ff","inverse-surface":"#1f3241","surface":"#f6f9ff","secondary-container":"#a8ece5","inverse-on-surface":"#e6f2ff","on-tertiary-fixed":"#410005","on-secondary-container":"#266d68","on-surface-variant":"#3e4947","on-tertiary-fixed-variant":"#8f0e1a","on-error":"#ffffff","tertiary-fixed-dim":"#ffb3ae","error":"#ba1a1a","tertiary-container":"#c03638","outline":"#6e7977","on-primary-fixed-variant":"#00504a","background":"#f6f9ff","on-background":"#091d2b","secondary-fixed":"#abefe8","surface-container-low":"#ecf5ff","on-surface":"#091d2b","surface-variant":"#d1e5f8","surface-dim":"#c8dcf0","secondary-fixed-dim":"#8fd3cc","primary-container":"#0f766e","on-primary-fixed":"#00201d","error-container":"#ffdad6","surface-container":"#e1f0ff","surface-container-highest":"#d1e5f8","surface-tint":"#006a63","primary":"#005c55","tertiary":"#9e1c23","on-primary":"#ffffff","on-primary-container":"#a3faef","on-secondary-fixed-variant":"#00504b","on-secondary-fixed":"#00201e","secondary":"#216963","surface-container-lowest":"#ffffff","on-error-container":"#93000a","on-tertiary":"#ffffff","surface-container-high":"#d6ebfe","on-secondary":"#ffffff","tertiary-fixed":"#ffdad7"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"gutter":"1.5rem","space-md":"1rem","margin-mobile":"1rem","space-xl":"2rem","margin":"2rem","gutter-mobile":"1rem","space-lg":"1.5rem","space-sm":"0.5rem","space-xs":"0.25rem"},"fontFamily":{"headline-md":["Sora"],"headline-sm":["Sora"],"body-lg":["Inter"],"body-sm":["Inter"],"telemetry-sm":["JetBrains Mono"],"body-strong":["Inter"],"display-lg":["Sora"],"telemetry-md":["JetBrains Mono"],"headline-lg":["Sora"],"body-md":["Inter"],"headline-lg-mobile":["Sora"],"label-md":["Inter"],"telemetry-lg":["JetBrains Mono"]},"fontSize":{"headline-md":["20px",{"lineHeight":"28px","fontWeight":"600"}],"headline-sm":["16px",{"lineHeight":"24px","fontWeight":"600"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"body-sm":["12px",{"lineHeight":"18px","fontWeight":"400"}],"telemetry-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.04em","fontWeight":"500"}],"body-strong":["14px",{"lineHeight":"20px","fontWeight":"600"}],"display-lg":["36px",{"lineHeight":"44px","letterSpacing":"-0.02em","fontWeight":"700"}],"telemetry-md":["14px",{"lineHeight":"20px","fontWeight":"500"}],"headline-lg":["28px",{"lineHeight":"36px","letterSpacing":"-0.01em","fontWeight":"600"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"headline-lg-mobile":["24px",{"lineHeight":"32px","letterSpacing":"-0.01em","fontWeight":"600"}],"label-md":["13px",{"lineHeight":"16px","fontWeight":"500"}],"telemetry-lg":["24px",{"lineHeight":"32px","letterSpacing":"-0.02em","fontWeight":"700"}]}}}};</script></head><body class="bg-background font-body-md text-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 w-full z-50 bg-surface-container-lowest/95 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="bg-surface-container-low py-1.5 px-margin"><div class="max-w-7xl mx-auto flex items-center justify-between font-telemetry-sm text-telemetry-sm text-on-surface-variant"><div class="flex items-center gap-2"><span class="inline-block w-2 h-2 rounded-full bg-tertiary animate-pulse"></span><span class="uppercase font-semibold tracking-wider text-tertiary">ACADEMIC FYP RESEARCH PROTOTYPE</span><span class="hidden sm:inline text-outline-variant">·</span><span class="hidden sm:inline">FOR DEMONSTRATION PURPOSES ONLY</span><span class="hidden md:inline text-outline-variant">·</span><span class="hidden md:inline">NOT A LIVE 1122 DISPATCH SERVICE</span></div><div class="flex items-center gap-3"><span class="text-primary font-bold">SPEC: BS-DS-2024</span><span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-medium">Emerson Univ Multan</span></div></div></div><div class="h-20 max-w-7xl mx-auto px-margin flex items-center justify-between gap-4"><div class="flex items-center gap-3"><div class="w-10 h-10 rounded-lg bg-primary-container flex items-center justify-center text-on-primary shadow-sm relative"><span class="material-symbols-outlined text-[24px]">local_hospital</span><div class="w-3 h-3 rounded-full bg-primary-fixed border-2 border-surface-container-lowest absolute -bottom-0.5 -right-0.5"></div></div><div class="flex flex-col"><div class="flex items-center gap-1.5"><span class="font-headline-sm text-headline-sm text-primary tracking-tight font-bold">NEMRAS</span><span class="px-1.5 py-0.2 rounded text-[10px] font-telemetry-sm font-semibold uppercase bg-surface-container-high text-on-surface-variant">Gov-PK</span></div><span class="font-body-sm text-body-sm text-on-surface-variant">Emergency Health Platform · Pakistan</span></div></div><nav class="hidden lg:flex items-center gap-8 font-body-md text-body-md"><a class="text-on-surface-variant hover:text-on-surface transition-colors py-2" data-path="41-homepage" href="#">Home</a><a aria-current="page" class="transition-colors py-2 text-primary font-body-strong border-b-2 border-primary" data-path="42-features" href="#">Platform &amp; Features</a><a class="text-on-surface-variant hover:text-on-surface transition-colors py-2" data-path="43-how-it-works" href="#">How It Works</a><a class="text-on-surface-variant hover:text-on-surface transition-colors py-2" data-path="44-showcase" href="#">Project Case Study</a></nav><div class="flex items-center gap-3"><a class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-lg bg-primary-container text-on-primary hover:bg-primary font-body-strong text-body-strong shadow-sm transition-all" data-path="platform-exploration" href="#"><span class="material-symbols-outlined text-[18px]">login</span>Access Portal →</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-on-primary"><span class="material-symbols-outlined text-[18px]">person</span></div></div></div></header><main class="w-full pt-28 bg-background min-h-screen"><div class="flex flex-col w-full">
+<!-- Top Technical Breadcrumb & Meta Strip -->
+<section class="max-w-7xl mx-auto px-margin pt-space-md w-full">
+<div class="flex flex-wrap items-center justify-between gap-3 bg-surface-container-low px-space-md py-space-sm rounded-lg shadow-sm">
+<div class="flex items-center gap-2 font-telemetry-sm text-telemetry-sm text-on-surface-variant">
+<span class="text-primary font-bold uppercase tracking-wider">DOC-REF:</span>
+<span class="font-telemetry-md text-primary">NEMRAS-ARCH-V2.4</span>
+<span class="text-outline-variant">/</span>
+<span>SECURITY LEVEL 4 ACCESS MATRIX</span>
+<span class="text-outline-variant">/</span>
+<span class="text-secondary font-medium">HL7-FHIR v4.0.1</span>
+</div>
+<div class="flex items-center gap-3 font-telemetry-sm text-telemetry-sm">
+<span class="flex items-center gap-1 text-on-surface-variant">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-ping"></span>
+          5 Operational Subsystems Configured
+        </span>
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface font-medium">Design Specification</span>
+</div>
+</div>
+</section>
+<!-- Hero Banner -->
+<section class="max-w-7xl mx-auto px-margin pt-space-lg pb-space-lg w-full">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-end">
+<div class="lg:col-span-8 space-y-3">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container font-telemetry-sm text-telemetry-sm font-semibold tracking-wider uppercase">
+<span class="material-symbols-outlined text-[15px]">lan</span>
+          NEMRAS ARCHITECTURE &amp; CAPABILITY MATRIX
+        </div>
+<h1 class="font-display-lg text-display-lg text-on-background tracking-tight">
+          A Coordinated Five-Tier Architecture for Emergency Response
+        </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl leading-relaxed">
+          Explore the proposed purpose-built modules designed for citizens, first responders, emergency clinicians, hospital administrators, and national health overseers — operating in deterministic synchronization during the critical Golden Hour.
+        </p>
+</div>
+<div class="lg:col-span-4 flex flex-col justify-end gap-3 font-telemetry-sm text-telemetry-sm">
+<div class="bg-surface-container-lowest p-4 rounded-xl shadow-sm border border-surface-container space-y-2">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-body-strong text-body-strong text-on-surface">Golden Hour Protocol Target</span>
+<span class="text-primary font-bold">&lt; 90s Record Access</span>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[94%]"></div>
+</div>
+<div class="flex items-center justify-between text-body-sm text-on-surface-variant pt-0.5">
+<span>P99 Retrieval Latency</span>
+<span>Offline Fallback: Local Cache</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Module Navigator Tabs -->
+<div class="sticky top-20 z-40 bg-surface-container-lowest/95 backdrop-blur-md shadow-sm border-y border-surface-container">
+<div class="max-w-7xl mx-auto px-margin py-2.5 overflow-x-auto no-scrollbar">
+<div class="flex items-center gap-2 min-w-max">
+<a class="flex items-center gap-2 px-3.5 py-2 rounded-lg bg-surface-container-low text-primary hover:bg-surface-container font-body-strong text-body-strong transition-all" href="#module-citizen">
+<span class="material-symbols-outlined text-[18px]">smartphone</span>
+          Tier 1 · Citizen Enclave
+        </a>
+<a class="flex items-center gap-2 px-3.5 py-2 rounded-lg bg-surface-container-low text-primary hover:bg-surface-container font-body-strong text-body-strong transition-all" href="#module-responder">
+<span class="material-symbols-outlined text-[18px]">ambulance</span>
+          Tier 2 · Field Terminal
+        </a>
+<a class="flex items-center gap-2 px-3.5 py-2 rounded-lg bg-surface-container-low text-primary hover:bg-surface-container font-body-strong text-body-strong transition-all" href="#module-er">
+<span class="material-symbols-outlined text-[18px]">emergency</span>
+          Tier 3 · Hospital ER Triage
+        </a>
+<a class="flex items-center gap-2 px-3.5 py-2 rounded-lg bg-surface-container-low text-primary hover:bg-surface-container font-body-strong text-body-strong transition-all" href="#module-admin">
+<span class="material-symbols-outlined text-[18px]">shield_person</span>
+          Tier 4 · Hospital Enclave Admin
+        </a>
+<a class="flex items-center gap-2 px-3.5 py-2 rounded-lg bg-surface-container-low text-primary hover:bg-surface-container font-body-strong text-body-strong transition-all" href="#module-command">
+<span class="material-symbols-outlined text-[18px]">monitor_heart</span>
+          Tier 5 · National Ops Command
+        </a>
+</div>
+</div>
+</div>
+<!-- MODULE 01: Citizen & Patient Enclave -->
+<section class="max-w-7xl mx-auto px-margin py-space-xl w-full scroll-mt-36" id="module-citizen">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+<div class="lg:col-span-6 space-y-space-md">
+<div class="flex items-center gap-2 font-telemetry-sm text-telemetry-sm text-primary uppercase font-bold tracking-widest">
+<span class="px-2 py-0.5 rounded bg-surface-container-high">MODULE 01</span>
+<span>Mobile Tier · Citizen &amp; Patient Enclave</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-semibold tracking-tight">
+          Citizen Vital Enclave: Sovereign Health Profile &amp; Instant SOS
+        </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+          Provides citizens with a secure, sovereign critical health summary and automated emergency SOS dispatch tied to verified national identity.
+        </p>
+<!-- Problem / Capability / Benefit Framework -->
+<div class="space-y-3 pt-1">
+<div class="p-3.5 rounded-xl bg-surface-container-low border-l-4 border-tertiary">
+<div class="text-[11px] font-telemetry-sm uppercase tracking-wider text-tertiary font-bold">Problem Addressed</div>
+<p class="font-body-md text-body-md text-on-surface mt-0.5">
+              Panic during emergencies, unknown drug allergies, and unconscious victims completely unable to speak or provide vital medical history at trauma scenes.
+            </p>
+</div>
+<div class="p-3.5 rounded-xl bg-surface-container-low border-l-4 border-primary">
+<div class="text-[11px] font-telemetry-sm uppercase tracking-wider text-primary font-bold">Proposed Capabilities</div>
+<ul class="font-body-sm text-body-sm text-on-surface-variant space-y-1 mt-1">
+<li class="flex items-start gap-1.5"><span class="material-symbols-outlined text-[16px] text-primary shrink-0">check</span><span><strong>Encrypted Critical Health Summary (CHS):</strong> Blood group, allergies, implants, and chronic conditions.</span></li>
+<li class="flex items-start gap-1.5"><span class="material-symbols-outlined text-[16px] text-primary shrink-0">check</span><span><strong>3-Second Hold SOS Trigger:</strong> Instant panic-resistant beacon dispatching GPS coordinates to Rescue 1122.</span></li>
+<li class="flex items-start gap-1.5"><span class="material-symbols-outlined text-[16px] text-primary shrink-0">check</span><span><strong>Biometric &amp; CNIC Lookup Authorization:</strong> Break-glass token derivation for on-scene medics.</span></li>
+<li class="flex items-start gap-1.5"><span class="material-symbols-outlined text-[16px] text-primary shrink-0">check</span><span><strong>Proxy Guardianship &amp; Family Alerts:</strong> Automatic SMS notifications with geo-tracking to verified emergency contacts.</span></li>
+</ul>
+</div>
+<div class="p-3.5 rounded-xl bg-secondary-container/40 border-l-4 border-secondary">
+<div class="text-[11px] font-telemetry-sm uppercase tracking-wider text-secondary font-bold">Intended Benefit</div>
+<p class="font-body-md text-body-md text-on-surface mt-0.5">
+              Instant on-scene medical identification during the first 10 minutes of trauma while maintaining full personal privacy control and immutable access receipts.
+            </p>
+</div>
+</div>
+</div>
+<!-- Mobile Card Preview -->
+<div class="lg:col-span-6 relative">
+<div class="p-5 sm:p-6 rounded-2xl bg-surface-container-lowest shadow-md border border-surface-container space-y-5">
+<div class="flex items-center justify-between pb-3 border-b border-surface-container-low">
+<div class="flex items-center gap-3">
+<div class="w-11 h-11 rounded-full bg-surface-container-high flex items-center justify-center font-headline-sm text-headline-sm text-primary font-bold">ZK</div>
+<div>
+<div class="flex items-center gap-2">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Zainab Khan</h3>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-telemetry-sm text-telemetry-sm font-semibold">VERIFIED</span>
+</div>
+<div class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">CNIC: 36302-8821943-2 · DOB: 14-AUG-1994</div>
+</div>
+</div>
+<div class="text-right">
+<span class="px-3 py-1 rounded bg-error-container text-tertiary-container font-telemetry-lg text-telemetry-lg font-bold block">O+</span>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">RH-POSITIVE</span>
+</div>
+</div>
+<div class="p-3.5 rounded-xl bg-error-container/40 flex items-start gap-3 border border-error-container">
+<span class="material-symbols-outlined text-tertiary text-[24px]">crisis_alert</span>
+<div class="space-y-0.5">
+<div class="font-body-strong text-body-strong text-tertiary flex items-center gap-2">
+<span>ANAPHYLAXIS ALERT: PENICILLIN GROUP</span>
+<span class="px-1.5 py-0.2 rounded text-[10px] font-telemetry-sm bg-tertiary text-on-tertiary">SEVERE</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface">Exposure triggers acute airway spasm &amp; shock. Cephalosporin contraindicated; use Macrolides.</p>
+</div>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+<div class="p-3 rounded-lg bg-surface-container-low">
+<span class="font-label-md text-label-md text-on-surface-variant block">Chronic Condition</span>
+<span class="font-body-strong text-body-strong text-on-surface block mt-0.5">Type-1 Diabetes</span>
+<span class="font-telemetry-sm text-telemetry-sm text-primary">Insulin Pump #821</span>
+</div>
+<div class="p-3 rounded-lg bg-surface-container-low">
+<span class="font-label-md text-label-md text-on-surface-variant block">Organ Donor</span>
+<span class="font-body-strong text-body-strong text-primary block mt-0.5">Registered Donor</span>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">PK-DOTS #9812</span>
+</div>
+<div class="p-3 rounded-lg bg-surface-container-low col-span-2 sm:col-span-1">
+<span class="font-label-md text-label-md text-on-surface-variant block">Emergency Guardian</span>
+<span class="font-body-strong text-body-strong text-on-surface block mt-0.5">Tariq Khan (Spouse)</span>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">+92 300 8642109</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2">
+<div class="flex items-center gap-2">
+<button class="px-4 py-2 rounded-lg bg-tertiary text-on-tertiary font-body-strong text-body-strong hover:bg-tertiary-container transition-all flex items-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-[18px]">e911_emergency</span>
+                Hold 3s SOS Beacon
+              </button>
+<button class="px-3.5 py-2 rounded-lg bg-surface-container-low text-on-surface hover:bg-surface-container font-body-strong text-body-strong transition-all flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">qr_code_2</span>
+                Display QR Pass
+              </button>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">Last Synced: Nishtar Multan</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- MODULE 02: Rescue 1122 Field Terminal -->
+<section class="bg-surface-container-low py-space-xl w-full scroll-mt-36" id="module-responder">
+<div class="max-w-7xl mx-auto px-margin">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+<!-- Left: Tablet Card Preview -->
+<div class="lg:col-span-6 order-2 lg:order-1">
+<div class="p-5 sm:p-6 rounded-2xl bg-surface-container-lowest shadow-md border border-surface-container space-y-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-primary-container text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">ambulance</span>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm text-on-surface font-semibold">UNIT 1122-ALPHA-07</div>
+<div class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">Paramedic: Farooq Azam · Call ID: PK-MLT-9042</div>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container font-telemetry-sm text-telemetry-sm font-bold animate-pulse">MIC ON-SCENE</span>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+<div class="p-3 rounded-xl bg-surface-container text-center">
+<span class="font-label-md text-label-md text-on-surface-variant block">BP (SYS/DIA)</span>
+<span class="font-telemetry-lg text-telemetry-lg text-on-surface font-bold block">118/74</span>
+<span class="font-telemetry-sm text-telemetry-sm text-primary font-medium">mmHg · NORMO</span>
+</div>
+<div class="p-3 rounded-xl bg-surface-container text-center">
+<span class="font-label-md text-label-md text-on-surface-variant block">PULSE</span>
+<span class="font-telemetry-lg text-telemetry-lg text-on-surface font-bold block">94</span>
+<span class="font-telemetry-sm text-telemetry-sm text-primary font-medium">BPM · SINUS</span>
+</div>
+<div class="p-3 rounded-xl bg-surface-container text-center">
+<span class="font-label-md text-label-md text-on-surface-variant block">SpO2 SAT</span>
+<span class="font-telemetry-lg text-telemetry-lg text-tertiary-container font-bold block">91%</span>
+<span class="font-telemetry-sm text-telemetry-sm text-tertiary-container font-medium">LOW · O2 ON</span>
+</div>
+<div class="p-3 rounded-xl bg-surface-container text-center">
+<span class="font-label-md text-label-md text-on-surface-variant block">GCS SCORE</span>
+<span class="font-telemetry-lg text-telemetry-lg text-on-surface font-bold block">14/15</span>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant font-medium">E4 V4 M6</span>
+</div>
+</div>
+<div class="p-3.5 rounded-xl bg-surface-container-high space-y-1.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-primary font-telemetry-sm text-telemetry-sm font-bold uppercase">
+<span class="material-symbols-outlined text-[16px]">graphic_eq</span>
+<span>Voice Sitrep (Urdu / English Whisper)</span>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">00:18s transcribed</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface italic">"Bilateral chest trauma confirmed, right side shallow respirations. 10L high-flow O2 administered via non-rebreather. IV Saline 500ml initiated."</p>
+</div>
+<div class="flex flex-wrap items-center justify-between gap-3 pt-1">
+<div class="flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[18px] text-primary">wifi_channel</span>
+<span>Encrypted In-Transit Telemetry Live</span>
+</div>
+<button class="px-4 py-2.5 rounded-lg bg-primary-container text-on-primary font-body-strong text-body-strong hover:bg-primary transition-all flex items-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-[18px]">send</span>
+              Push Instant SBAR to ER Bay
+            </button>
+</div>
+</div>
+</div>
+<!-- Right: Content Breakdown -->
+<div class="lg:col-span-6 space-y-space-md order-1 lg:order-2">
+<div class="flex items-center gap-2 font-telemetry-sm text-telemetry-sm text-primary uppercase font-bold tracking-widest">
+<span class="px-2 py-0.5 rounded bg-surface-container-high">MODULE 02</span>
+<span>Ruggedized Field Tier · Rescue 1122 Terminal</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-semibold tracking-tight">
+            Rescue 1122 Field Terminal: Sub-Second Paramedic Triage
+          </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+            Constructed specifically for first responders in transit vans and roadside conditions, enabling immediate clinical assessment and handoff preparation.
+          </p>
+<!-- Problem / Capability / Benefit Framework -->
+<div class="space-y-3 pt-1">
+<div class="p-3.5 rounded-xl bg-surface-container-lowest border-l-4 border-tertiary">
+<div class="text-[11px] font-telemetry-sm uppercase tracking-wider text-tertiary font-bold">Problem Addressed</div>
+<p class="font-body-md text-body-md text-on-surface mt-0.5">
+              Paramedics operating in vibrating moving ambulances, blinding outdoor midday sun, and fragmented manual carbon-copy paper slips that delay emergency department admission.
+            </p>
+</div>
+<div class="p-3.5 rounded-xl bg-surface-container-lowest border-l-4 border-primary">
+<div class="text-[11px] font-telemetry-sm uppercase tracking-wider text-primary font-bold">Proposed Capabilities</div>
+<ul class="font-body-sm text-body-sm text-on-surface-variant space-y-1 mt-1">
+<li class="flex items-start gap-1.5"><span class="material-symbols-outlined text-[16px] text-primary shrink-0">check</span><span><strong>Daylight High-Contrast UI:</strong> Surgical teal and crisp high-contrast cards legible in 45°C Punjab sunlight.</span></li>
+<li class="flex items-start gap-1.5"><span class="material-symbols-outlined text-[16px] text-primary shrink-0">check</span><span><strong>Offline Caching of Summaries:</strong> Zero downtime when ambulance transit travels through weak rural cellular coverage.</span></li>
+<li class="flex items-start gap-1.5"><span class="material-symbols-outlined text-[16px] text-primary shrink-0">check</span><span><strong>Voice Sitrep Transcription:</strong> Hands-free clinical dictation converting audio impressions to structured notes.</span></li>
+<li class="flex items-start gap-1.5"><span class="material-symbols-outlined text-[16px] text-primary shrink-0">check</span><span><strong>Standardized Electronic SBAR:</strong> Situation, Background, Assessment, Recommendation packet sent with 1 tap.</span></li>
+</ul>
+</div>
+<div class="p-3.5 rounded-xl bg-secondary-container/40 border-l-4 border-secondary">
+<div class="text-[11px] font-telemetry-sm uppercase tracking-wider text-secondary font-bold">Intended Benefit</div>
+<p class="font-body-md text-body-md text-on-surface mt-0.5">
+              Sub-second contraindication checking during IV administration and elimination of clinical handover delays upon reaching the trauma center bay.
+            </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- MODULE 03: Hospital ER Triage Station -->
+<section class="max-w-7xl mx-auto px-margin py-space-xl w-full scroll-mt-36" id="module-er">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+<div class="lg:col-span-6 space-y-space-md">
+<div class="flex items-center gap-2 font-telemetry-sm text-telemetry-sm text-primary uppercase font-bold tracking-widest">
+<span class="px-2 py-0.5 rounded bg-surface-container-high">MODULE 03</span>
+<span>Hospital Clinical Tier · ER Triage Station</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-semibold tracking-tight">
+          Hospital ER Triage Station: Pre-Arrival Inbound Radar
+        </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+          Provides emergency room trauma teams with live operational foresight, eliminating guesswork before the ambulance arrives.
+        </p>
+<!-- Problem / Capability / Benefit Framework -->
+<div class="space-y-3 pt-1">
+<div class="p-3.5 rounded-xl bg-surface-container-low border-l-4 border-tertiary">
+<div class="text-[11px] font-telemetry-sm uppercase tracking-wider text-tertiary font-bold">Problem Addressed</div>
+<p class="font-body-md text-body-md text-on-surface mt-0.5">
+              Trauma surgeons, blood bank technicians, and triage teams are frequently completely blind to incoming patient conditions until the stretcher is wheeled through the entrance.
+            </p>
+</div>
+<div class="p-3.5 rounded-xl bg-surface-container-low border-l-4 border-primary">
+<div class="text-[11px] font-telemetry-sm uppercase tracking-wider text-primary font-bold">Proposed Capabilities</div>
+<ul class="font-body-sm text-body-sm text-on-surface-variant space-y-1 mt-1">
+<li class="flex items-start gap-1.5"><span class="material-symbols-outlined text-[16px] text-primary shrink-0">check</span><span><strong>Inbound Ambulance Telemetry Radar:</strong> Streaming SpO2, ECG trends, and accurate GPS countdown ETAs.</span></li>
+<li class="flex items-start gap-1.5"><span class="material-symbols-outlined text-[16px] text-primary shrink-0">check</span><span><strong>1-Click Resuscitation Bay Reservation:</strong> Hold critical beds, crossmatch blood units, and pre-alert radiology.</span></li>
+<li class="flex items-start gap-1.5"><span class="material-symbols-outlined text-[16px] text-primary shrink-0">check</span><span><strong>Automated Contraindication Cross-Check:</strong> Real-time alerts against active chronic prescriptions before rapid-sequence intubation.</span></li>
+<li class="flex items-start gap-1.5"><span class="material-symbols-outlined text-[16px] text-primary shrink-0">check</span><span><strong>Structured Digital Custody Sign-Off:</strong> Legal chain-of-custody transfer between paramedic crew and attending physician.</span></li>
+</ul>
+</div>
+<div class="p-3.5 rounded-xl bg-secondary-container/40 border-l-4 border-secondary">
+<div class="text-[11px] font-telemetry-sm uppercase tracking-wider text-secondary font-bold">Intended Benefit</div>
+<p class="font-body-md text-body-md text-on-surface mt-0.5">
+              Trauma resuscitation teams are fully assembled, blood is staged, and CT slots are secured before wheels touch the ambulance unloading dock.
+            </p>
+</div>
+</div>
+</div>
+<!-- ER Queue Preview -->
+<div class="lg:col-span-6">
+<div class="p-5 sm:p-6 rounded-2xl bg-surface-container-lowest shadow-md border border-surface-container space-y-4">
+<div class="flex items-center justify-between pb-2">
+<div>
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary animate-ping"></span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Trauma Center Inbound Radar</h3>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">Nishtar Medical Hospital · Red Zone Bay A</span>
+</div>
+<span class="px-2.5 py-1 rounded bg-error-container text-tertiary-container font-telemetry-sm text-telemetry-sm font-bold">
+              3 CODE RED INBOUND
+            </span>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low space-y-3 relative overflow-hidden border border-surface-container">
+<div class="absolute top-0 left-0 bottom-0 w-1.5 bg-tertiary"></div>
+<div class="flex flex-wrap items-center justify-between gap-2 pl-2">
+<div class="flex items-center gap-2">
+<span class="font-telemetry-md text-telemetry-md text-primary font-bold">AMB-37 (1122)</span>
+<span class="text-outline-variant">·</span>
+<span class="font-body-strong text-body-strong text-on-surface">M. Rizwan (42M)</span>
+<span class="px-2 py-0.5 rounded-full bg-error-container text-tertiary-container font-telemetry-sm text-telemetry-sm font-semibold">GCS 8</span>
+</div>
+<div class="text-right">
+<span class="font-telemetry-lg text-telemetry-lg text-tertiary font-bold">03:45</span>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant block">MINS ETA</span>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-2 pl-2 font-telemetry-sm text-telemetry-sm">
+<div class="p-2 rounded bg-surface-container-lowest">
+<span class="text-on-surface-variant block">Diagnosis</span>
+<span class="font-semibold text-on-surface">Subdural Bleed</span>
+</div>
+<div class="p-2 rounded bg-surface-container-lowest">
+<span class="text-on-surface-variant block">Allocated Bay</span>
+<span class="font-semibold text-primary">Resus Bay 03</span>
+</div>
+<div class="p-2 rounded bg-surface-container-lowest">
+<span class="text-on-surface-variant block">Blood Cross</span>
+<span class="font-semibold text-tertiary">B+ (2 Units Hold)</span>
+</div>
+</div>
+<div class="flex items-center justify-between pl-2 pt-1">
+<div class="flex items-center gap-1.5 text-on-surface-variant font-telemetry-sm text-telemetry-sm">
+<span class="material-symbols-outlined text-[16px] text-primary">verified</span>
+<span>Dr. Ayesha Malik (Attending) acknowledged</span>
+</div>
+<button class="px-3 py-1.5 rounded-lg bg-primary-container text-on-primary font-body-sm text-body-sm hover:bg-primary font-semibold transition-all">
+                Pre-Authorize CT Scan
+              </button>
+</div>
+</div>
+<div class="p-3.5 rounded-xl bg-surface-container-lowest shadow-sm border border-surface-container flex items-center justify-between gap-3">
+<div class="flex items-center gap-3">
+<div class="w-2 h-10 rounded bg-secondary"></div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-telemetry-sm text-telemetry-sm font-bold text-secondary">AMB-12</span>
+<span class="font-body-strong text-body-strong text-on-surface">Kalsoom Bibi (68F)</span>
+<span class="px-2 py-0.2 rounded bg-surface-container text-on-surface-variant font-telemetry-sm text-telemetry-sm">STEMI</span>
+</div>
+<div class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">Cath Lab Prep Notified · ETA 09:12 mins</div>
+</div>
+</div>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-low text-on-surface hover:bg-surface-container font-body-sm text-body-sm transition-all">
+              Details
+            </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- MODULE 04: Hospital Enclave Administration -->
+<section class="bg-surface-container-low py-space-xl w-full scroll-mt-36" id="module-admin">
+<div class="max-w-7xl mx-auto px-margin">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+<!-- Left: Privilege Preview -->
+<div class="lg:col-span-6 order-2 lg:order-1">
+<div class="p-5 sm:p-6 rounded-2xl bg-surface-container-lowest shadow-md border border-surface-container space-y-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-primary-container text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">admin_panel_settings</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Clinician Identity Clearance</h3>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">Punjab Health Care Commission (PHC) Node</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-telemetry-sm text-telemetry-sm">ENCLAVE ID: #PK-PB-884</span>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low space-y-3 border border-surface-container">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-xl bg-surface-container-highest flex items-center justify-center font-headline-sm text-headline-sm text-primary font-bold">DR</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Dr. Bilal Hassan</span>
+<span class="px-2 py-0.2 rounded-full bg-secondary-container text-on-secondary-container font-telemetry-sm text-telemetry-sm">PENDING DUAL-AUTH</span>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">PM&amp;DC Reg: 94821-P · Senior Registrar Neurotrauma</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-2 font-telemetry-sm text-telemetry-sm">
+<div class="flex items-center gap-1.5 p-2 rounded bg-surface-container-lowest text-primary">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+<span>PM&amp;DC Active License</span>
+</div>
+<div class="flex items-center gap-1.5 p-2 rounded bg-surface-container-lowest text-primary">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+<span>Hardware FIDO2 Bound</span>
+</div>
+<div class="flex items-center gap-1.5 p-2 rounded bg-surface-container-lowest text-primary">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+<span>NADRA Biometrics OK</span>
+</div>
+<div class="flex items-center gap-1.5 p-2 rounded bg-surface-container-lowest text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-outline">schedule</span>
+<span>Awaiting MS Signoff</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2">
+<button class="px-3.5 py-2 rounded-lg bg-surface-container text-error hover:bg-error-container font-body-strong text-body-strong transition-all">
+                Revoke Credentials
+              </button>
+<button class="px-4 py-2 rounded-lg bg-primary-container text-on-primary hover:bg-primary font-body-strong text-body-strong transition-all flex items-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-[18px]">key</span>
+                Approve Trauma Access
+              </button>
+</div>
+</div>
+<div class="p-3 rounded-xl bg-surface-container-high space-y-1">
+<div class="flex items-center justify-between font-telemetry-sm text-telemetry-sm text-on-surface-variant">
+<span>WORM Audit Hash</span>
+<span>SHA256: 9b2d...f4e1</span>
+</div>
+<p class="font-telemetry-sm text-telemetry-sm text-on-surface">14:02:11 UTC · Break-Glass invocation by #STF-491 logged to tamper-proof provincial ledger.</p>
+</div>
+</div>
+</div>
+<!-- Right: Content Breakdown -->
+<div class="lg:col-span-6 space-y-space-md order-1 lg:order-2">
+<div class="flex items-center gap-2 font-telemetry-sm text-telemetry-sm text-primary uppercase font-bold tracking-widest">
+<span class="px-2 py-0.5 rounded bg-surface-container-high">MODULE 04</span>
+<span>Administration &amp; Governance Tier · Hospital Console</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-semibold tracking-tight">
+            Hospital Enclave Administration: Zero-Trust Governance &amp; Diversion
+          </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+            Maintains the critical boundary between life-saving clinical utility and patient constitutional data privacy under strict statutory control.
+          </p>
+<!-- Problem / Capability / Benefit Framework -->
+<div class="space-y-3 pt-1">
+<div class="p-3.5 rounded-xl bg-surface-container-lowest border-l-4 border-tertiary">
+<div class="text-[11px] font-telemetry-sm uppercase tracking-wider text-tertiary font-bold">Problem Addressed</div>
+<p class="font-body-md text-body-md text-on-surface mt-0.5">
+              Siloed hospital EMR systems, untracked staff record lookups, and unauthorized or unprovable access to patient files under the guise of fake emergency conditions.
+            </p>
+</div>
+<div class="p-3.5 rounded-xl bg-surface-container-lowest border-l-4 border-primary">
+<div class="text-[11px] font-telemetry-sm uppercase tracking-wider text-primary font-bold">Proposed Capabilities</div>
+<ul class="font-body-sm text-body-sm text-on-surface-variant space-y-1 mt-1">
+<li class="flex items-start gap-1.5"><span class="material-symbols-outlined text-[16px] text-primary shrink-0">check</span><span><strong>Role-Based Credential Verification:</strong> Live integration concept with PM&amp;DC licensing registries.</span></li>
+<li class="flex items-start gap-1.5"><span class="material-symbols-outlined text-[16px] text-primary shrink-0">check</span><span><strong>Automated Trauma Diversion:</strong> Real-time ICU/resus saturation broadcast that reroutes ambulances before bottlenecks worsen.</span></li>
+<li class="flex items-start gap-1.5"><span class="material-symbols-outlined text-[16px] text-primary shrink-0">check</span><span><strong>Immutable WORM Audit Logs:</strong> Write-Once-Read-Many cryptographic audit streams for all break-glass actions.</span></li>
+</ul>
+</div>
+<div class="p-3.5 rounded-xl bg-secondary-container/40 border-l-4 border-secondary">
+<div class="text-[11px] font-telemetry-sm uppercase tracking-wider text-secondary font-bold">Intended Benefit</div>
+<p class="font-body-md text-body-md text-on-surface mt-0.5">
+              Strict least-privilege compliance and legally defensible transparency for break-glass events, protecting hospital liability and citizen rights.
+            </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- MODULE 05: National Operations Command -->
+<section class="max-w-7xl mx-auto px-margin py-space-xl w-full scroll-mt-36" id="module-command">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+<div class="lg:col-span-6 space-y-space-md">
+<div class="flex items-center gap-2 font-telemetry-sm text-telemetry-sm text-primary uppercase font-bold tracking-widest">
+<span class="px-2 py-0.5 rounded bg-surface-container-high">MODULE 05</span>
+<span>Federated National Tier · Operations &amp; Population Health</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-semibold tracking-tight">
+          National Operations Command: Federation Telemetry
+        </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+          Aggregates anonymized, distributed emergency incident streams across all provinces, ICT, and AJK without centralizing sensitive medical histories.
+        </p>
+<!-- Problem / Capability / Benefit Framework -->
+<div class="space-y-3 pt-1">
+<div class="p-3.5 rounded-xl bg-surface-container-low border-l-4 border-tertiary">
+<div class="text-[11px] font-telemetry-sm uppercase tracking-wider text-tertiary font-bold">Problem Addressed</div>
+<p class="font-body-md text-body-md text-on-surface mt-0.5">
+              Inability of health authorities to coordinate mass-casualty events, major highway pileups, or seasonal disease surges across municipal, district, and provincial boundaries.
+            </p>
+</div>
+<div class="p-3.5 rounded-xl bg-surface-container-low border-l-4 border-primary">
+<div class="text-[11px] font-telemetry-sm uppercase tracking-wider text-primary font-bold">Proposed Capabilities</div>
+<ul class="font-body-sm text-body-sm text-on-surface-variant space-y-1 mt-1">
+<li class="flex items-start gap-1.5"><span class="material-symbols-outlined text-[16px] text-primary shrink-0">check</span><span><strong>Geospatial CAD Dispatch Monitoring:</strong> Real-time positioning and status of over 2,400 Rescue 1122 response units.</span></li>
+<li class="flex items-start gap-1.5"><span class="material-symbols-outlined text-[16px] text-primary shrink-0">check</span><span><strong>Regional Ambulance Fleet Strain Tracking:</strong> Live dispatch load heatmaps across Punjab, Sindh, KP, and Balochistan.</span></li>
+<li class="flex items-start gap-1.5"><span class="material-symbols-outlined text-[16px] text-primary shrink-0">check</span><span><strong>Aggregate De-Identified Disease Trend Indicators:</strong> k-anonymity clustering algorithms detecting localized fever, cholera, or trauma surges.</span></li>
+</ul>
+</div>
+<div class="p-3.5 rounded-xl bg-secondary-container/40 border-l-4 border-secondary">
+<div class="text-[11px] font-telemetry-sm uppercase tracking-wider text-secondary font-bold">Intended Benefit</div>
+<p class="font-body-md text-body-md text-on-surface mt-0.5">
+              Rapid inter-facility patient diversion during metropolitan hospital overload and proactive epidemiological early warning.
+            </p>
+</div>
+</div>
+</div>
+<!-- Provincial Stream Preview -->
+<div class="lg:col-span-6">
+<div class="p-5 sm:p-6 rounded-2xl bg-surface-container-lowest shadow-md border border-surface-container space-y-4">
+<div class="flex items-center justify-between">
+<div>
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary animate-pulse"></span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Provincial Telemetry Stream</h3>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">National Emergency Management Gateway (NDMA/NIH)</span>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-primary font-bold">2,418 Active Units</span>
+</div>
+<div class="space-y-2.5">
+<div class="p-3 rounded-xl bg-surface-container-low flex items-center justify-between gap-4">
+<div class="flex items-center gap-3">
+<span class="font-telemetry-sm text-telemetry-sm font-bold px-2 py-0.5 rounded bg-surface-container-highest text-on-surface">PUNJAB</span>
+<div>
+<div class="font-body-strong text-body-strong text-on-surface">1,240 Units Deployed</div>
+<div class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">Avg: 06m 42s</div>
+</div>
+</div>
+<div class="text-right">
+<span class="font-telemetry-md text-telemetry-md text-primary font-bold">98.4%</span>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant block">GOLDEN HR</span>
+</div>
+</div>
+<div class="p-3 rounded-xl bg-surface-container-low flex items-center justify-between gap-4">
+<div class="flex items-center gap-3">
+<span class="font-telemetry-sm text-telemetry-sm font-bold px-2 py-0.5 rounded bg-surface-container-highest text-on-surface">SINDH</span>
+<div>
+<div class="font-body-strong text-body-strong text-on-surface">620 Units Deployed</div>
+<div class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">Avg: 08m 15s</div>
+</div>
+</div>
+<div class="text-right">
+<span class="font-telemetry-md text-telemetry-md text-primary font-bold">92.1%</span>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant block">GOLDEN HR</span>
+</div>
+</div>
+<div class="p-3 rounded-xl bg-surface-container-low flex items-center justify-between gap-4">
+<div class="flex items-center gap-3">
+<span class="font-telemetry-sm text-telemetry-sm font-bold px-2 py-0.5 rounded bg-surface-container-highest text-on-surface">KP &amp; BALOCHISTAN</span>
+<div>
+<div class="font-body-strong text-body-strong text-on-surface">558 Combined Units</div>
+<div class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">Rural Corridors Monitored</div>
+</div>
+</div>
+<div class="text-right">
+<span class="font-telemetry-md text-telemetry-md text-secondary font-bold">84.2%</span>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant block">GOLDEN HR</span>
+</div>
+</div>
+</div>
+<div class="p-3 rounded-xl bg-surface-container space-y-1.5">
+<div class="flex items-center justify-between font-telemetry-sm text-telemetry-sm text-on-surface-variant">
+<span>National Incident Inflow Curve</span>
+<span class="font-bold text-primary">Peak: 1,840 Calls/Hr</span>
+</div>
+<svg class="w-full h-12 text-primary" fill="none" preserveaspectratio="none" viewbox="0 0 400 48">
+<path d="M0,35 Q30,40 60,30 T120,24 T180,36 T240,12 T300,18 T360,6 L400,22" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2.5"></path>
+<path d="M0,35 Q30,40 60,30 T120,24 T180,36 T240,12 T300,18 T360,6 L400,22 L400,48 L0,48 Z" fill="currentColor" fill-opacity="0.08"></path>
+</svg>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 4: Honest Implementation Status Table -->
+<section class="max-w-7xl mx-auto px-margin py-space-xl w-full">
+<div class="space-y-space-md">
+<div class="max-w-3xl space-y-2">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container font-telemetry-sm text-telemetry-sm font-semibold tracking-wider uppercase">
+<span class="material-symbols-outlined text-[15px]">fact_check</span>
+          FEASIBILITY &amp; GOVERNANCE DISCLOSURE
+        </div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-semibold tracking-tight">
+          Implementation Status: Academic Prototype vs. Live Prerequisites
+        </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+          In strict compliance with academic research standards, this matrix differentiates what is implemented in our functional prototype versus institutional requirements for production deployment across Pakistan.
+        </p>
+</div>
+<div class="bg-surface-container-lowest rounded-2xl shadow-md border border-surface-container overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left font-body-md text-body-md border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-telemetry-sm text-telemetry-sm uppercase tracking-wider border-b border-surface-container">
+<th class="p-4 sm:p-5 w-1/4">System Dimension</th>
+<th class="p-4 sm:p-5 w-3/8 text-primary font-bold bg-surface-container/50">Current Academic Prototype Deliverable</th>
+<th class="p-4 sm:p-5 w-3/8 text-on-surface-variant">Prerequisites for Live Operational Deployment</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container text-on-surface">
+<tr class="hover:bg-surface-container-low/40 transition-colors">
+<td class="p-4 sm:p-5 font-body-strong text-body-strong">
+                  Citizen Identity &amp; CNIC Verification
+                  <span class="block font-body-sm text-body-sm text-on-surface-variant font-normal">Individual identification &amp; matching</span>
+</td>
+<td class="p-4 sm:p-5 bg-surface-container/20 font-body-sm text-body-sm">
+<span class="inline-flex items-center gap-1 text-primary font-bold mb-1">
+<span class="material-symbols-outlined text-[16px]">check_circle</span> Simulated Verifiable Credentials
+                  </span>
+                  Mock NADRA CNIC hashing engine, procedural biometric QR generators, and simulated proxy guardian links.
+</td>
+<td class="p-4 sm:p-5 font-body-sm text-body-sm text-on-surface-variant">
+<span class="inline-flex items-center gap-1 text-tertiary font-bold mb-1">
+<span class="material-symbols-outlined text-[16px]">pending</span> Official NADRA API Integration
+                  </span>
+                  Statutory MOU with NADRA for Citizen Identification APIs and biometric e-KYC hardware SDK authorization.
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/40 transition-colors">
+<td class="p-4 sm:p-5 font-body-strong text-body-strong">
+                  Rescue 1122 CAD Integration
+                  <span class="block font-body-sm text-body-sm text-on-surface-variant font-normal">Computer-Aided Dispatch communication</span>
+</td>
+<td class="p-4 sm:p-5 bg-surface-container/20 font-body-sm text-body-sm">
+<span class="inline-flex items-center gap-1 text-primary font-bold mb-1">
+<span class="material-symbols-outlined text-[16px]">check_circle</span> Field Terminal Emulator
+                  </span>
+                  Functional mock MDT application with offline SQLite caching, Whisper audio transcription mock, and SBAR transmission protocols.
+</td>
+<td class="p-4 sm:p-5 font-body-sm text-body-sm text-on-surface-variant">
+<span class="inline-flex items-center gap-1 text-tertiary font-bold mb-1">
+<span class="material-symbols-outlined text-[16px]">pending</span> Provincial Emergency Service Adoption
+                  </span>
+                  Installation on ruggedized vehicle MDTs across district fleets and secure VPN peering into Punjab Rescue 1122 command servers.
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/40 transition-colors">
+<td class="p-4 sm:p-5 font-body-strong text-body-strong">
+                  Hospital EMR &amp; FHIR Interchange
+                  <span class="block font-body-sm text-body-sm text-on-surface-variant font-normal">Interoperability with existing facilities</span>
+</td>
+<td class="p-4 sm:p-5 bg-surface-container/20 font-body-sm text-body-sm">
+<span class="inline-flex items-center gap-1 text-primary font-bold mb-1">
+<span class="material-symbols-outlined text-[16px]">check_circle</span> HL7-FHIR v4.0.1 Data Schemas
+                  </span>
+                  Validated JSON schemas for Observation, Condition, AllergyIntolerance, and MedicationRequest endpoints.
+</td>
+<td class="p-4 sm:p-5 font-body-sm text-body-sm text-on-surface-variant">
+<span class="inline-flex items-center gap-1 text-tertiary font-bold mb-1">
+<span class="material-symbols-outlined text-[16px]">pending</span> EHR Vendor FHIR Adapter Deployment
+                  </span>
+                  HL7 middleware bridges integrated into major Pakistani tertiary hospital software (HMIS/EMR instances).
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/40 transition-colors">
+<td class="p-4 sm:p-5 font-body-strong text-body-strong">
+                  Doctor Licensing &amp; Legal Break-Glass
+                  <span class="block font-body-sm text-body-sm text-on-surface-variant font-normal">Staff verification &amp; liability</span>
+</td>
+<td class="p-4 sm:p-5 bg-surface-container/20 font-body-sm text-body-sm">
+<span class="inline-flex items-center gap-1 text-primary font-bold mb-1">
+<span class="material-symbols-outlined text-[16px]">check_circle</span> Cryptographic WORM Audit Stream
+                  </span>
+                  SHA-256 break-glass audit trail simulation with role-based privilege elevation controls.
+</td>
+<td class="p-4 sm:p-5 font-body-sm text-body-sm text-on-surface-variant">
+<span class="inline-flex items-center gap-1 text-tertiary font-bold mb-1">
+<span class="material-symbols-outlined text-[16px]">pending</span> PM&amp;DC Live Roster &amp; Gazette Rule
+                  </span>
+                  Real-time licensing lookup via Pakistan Medical and Dental Council (PM&amp;DC) and official provincial legislative break-glass framework.
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<!-- Closing Call to Action Strip -->
+<section class="max-w-7xl mx-auto px-margin pb-space-xl pt-space-lg w-full">
+<div class="p-6 sm:p-8 rounded-2xl bg-surface-container-high shadow-md border border-surface-container">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+<div class="lg:col-span-8 space-y-2">
+<div class="flex items-center gap-2 text-primary font-telemetry-sm text-telemetry-sm font-bold uppercase tracking-wider">
+<span class="material-symbols-outlined text-[18px]">school</span>
+            EMERSON UNIVERSITY MULTAN · FINAL YEAR PROJECT RESEARCH
+          </div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface font-semibold tracking-tight">
+            Explore the Detailed Workflow &amp; Technical Case Study
+          </h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+            See how the 5 tiers collaborate step-by-step during a live emergency trauma incident, or examine our academic methodology and research documentation.
+          </p>
+</div>
+<div class="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-3 justify-end">
+<a class="px-5 py-3 rounded-xl bg-primary-container text-on-primary hover:bg-primary font-body-strong text-body-strong flex items-center justify-center gap-2 shadow-sm transition-all text-center" data-path="43-how-it-works" href="#">
+<span class="material-symbols-outlined text-[20px]">account_tree</span>
+            View Protocol Workflow (How It Works)
+          </a>
+<a class="px-5 py-3 rounded-xl bg-surface-container-lowest text-on-surface hover:bg-surface-container font-body-strong text-body-strong flex items-center justify-center gap-2 shadow-sm transition-all text-center border border-surface-container" data-path="44-showcase" href="#">
+<span class="material-symbols-outlined text-[20px]">description</span>
+            Read Project Case Study
+          </a>
+</div>
+</div>
+</div>
+</section>
+</div></main><footer class="w-full bg-surface-container-lowest shadow-[0_-1px_6px_rgba(0,0,0,0.02)] border-t border-surface-container"><div class="max-w-7xl mx-auto px-margin pt-space-xl pb-space-lg"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter mb-space-xl"><div class="space-y-3"><div class="flex items-center gap-2"><div class="w-7 h-7 rounded-md bg-primary-container flex items-center justify-center text-on-primary"><span class="material-symbols-outlined text-[18px]">local_hospital</span></div><span class="font-headline-sm text-headline-sm text-on-surface font-bold">NEMRAS</span></div><p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">National Emergency Medical Record Access System. A distributed, unified emergency health record exchange architecture engineered to empower paramedics and emergency trauma centers during Golden Hour incidents.</p><div class="pt-2 space-y-1 font-body-sm text-body-sm text-on-surface-variant"><div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[16px] text-primary">school</span><span>BS Data Science Capstone Project</span></div><p class="text-[11px] text-outline pl-5">Department of Computer Science &amp; IT<br/>Emerson University, Multan, Pakistan</p><p class="text-[11px] text-outline pl-5 pt-1">Faculty Supervisor: Capstone Committee</p></div></div><div class="space-y-3"><span class="font-body-strong text-body-strong text-on-surface uppercase tracking-wider block">Platform Modules</span><ul class="space-y-2 font-body-sm text-body-sm"><li class="flex items-center gap-2 text-on-surface-variant"><span class="material-symbols-outlined text-[16px] text-primary">smartphone</span>Citizen Vital Enclave (Mobile)</li><li class="flex items-center gap-2 text-on-surface-variant"><span class="material-symbols-outlined text-[16px] text-primary">ambulance</span>1122 First Responder Terminal</li><li class="flex items-center gap-2 text-on-surface-variant"><span class="material-symbols-outlined text-[16px] text-primary">emergency</span>Hospital ER Triage Station</li><li class="flex items-center gap-2 text-on-surface-variant"><span class="material-symbols-outlined text-[16px] text-primary">monitor_heart</span>National Command Telemetry</li><li class="flex items-center gap-2 text-on-surface-variant"><span class="material-symbols-outlined text-[16px] text-primary">shield_person</span>Hospital Enclave Admin</li></ul></div><div class="space-y-3"><span class="font-body-strong text-body-strong text-on-surface uppercase tracking-wider block">Architecture &amp; Privacy</span><ul class="space-y-2 font-body-sm text-body-sm"><li class="flex items-center gap-2 text-on-surface-variant"><span class="material-symbols-outlined text-[16px] text-primary">dataset</span>HL7 FHIR Release 4 Interchange</li><li class="flex items-center gap-2 text-on-surface-variant"><span class="material-symbols-outlined text-[16px] text-primary">lock</span>Zero-Trust Ledger &amp; Break-Glass</li><li class="flex items-center gap-2 text-on-surface-variant"><span class="material-symbols-outlined text-[16px] text-primary">verified_user</span>RBAC &amp; Attribute-Based Access</li><li class="flex items-center gap-2 text-on-surface-variant"><span class="material-symbols-outlined text-[16px] text-primary">analytics</span>k-Anonymity Epidemiological Feed</li><li class="flex items-center gap-2 text-on-surface-variant"><span class="material-symbols-outlined text-[16px] text-primary">fingerprint</span>Biometric Identity Gateway</li></ul></div><div class="space-y-3"><span class="font-body-strong text-body-strong text-on-surface uppercase tracking-wider block">Disclaimers &amp; Compliance</span><div class="p-3 rounded-lg bg-surface-container-low space-y-2"><span class="inline-block px-2 py-0.5 rounded text-[11px] font-telemetry-sm bg-error-container text-tertiary-container font-semibold uppercase">Research Specimen</span><p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">This application is an educational prototype and does not connect to live NADRA or Rescue 1122 databases. All clinical patient records, telemetry, and CNICs rendered across this system are procedurally synthesized mocks.</p></div><div class="text-body-sm font-body-sm text-on-surface-variant"><p>Pakistan Data Protection Bill (2023) Compliant Spec</p></div></div></div><div class="pt-space-md border-t border-surface-container flex flex-col md:flex-row items-center justify-between gap-4 font-body-sm text-body-sm text-on-surface-variant"><div>© 2024 NEMRAS Research Group. Emerson University Multan. All Rights Reserved.</div><div class="flex items-center gap-6 font-telemetry-sm text-telemetry-sm"><a class="hover:text-primary transition-colors" href="#">Terms of Research</a><a class="hover:text-primary transition-colors" href="#">Bioethics Clearance</a><a class="hover:text-primary transition-colors" href="#">Security Whitepaper</a><span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant font-medium">v2.4 Prototype Spec</span></div></div></div></footer></body></html>

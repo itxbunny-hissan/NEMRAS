@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>11 Notification Permission - NEMRAS</title>
+<!-- Tailwind CSS CDN with plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration for NEMRAS Design System -->
+<script data-purpose="tailwind-config">
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            nemras: {
+              bg: '#F7FAFC',
+              slate: '#243746',
+              muted: '#64748B',
+              teal: '#0F766E',
+              tealDark: '#0D655E',
+              border: '#E2E8F0',
+              redBadge: '#D94848',
+              cardRed: '#FEF2F2',
+              cardRedBorder: '#FEE2E2',
+              cardBlue: '#EAF3FF',
+              cardBlueBorder: '#DCEBFC',
+              cardMint: '#E8F6F3',
+              cardMintBorder: '#CDEEE7',
+              pillBg: '#E6F4F1'
+            }
+          },
+          fontFamily: {
+            sans: ['-apple-system', 'BlinkMacSystemFont', '"SF Pro Display"', '"SF Pro Text"', 'Inter', 'Segoe UI', 'Roboto', 'sans-serif'],
+          },
+          boxShadow: {
+            'subtle': '0 2px 8px -2px rgba(15, 118, 110, 0.08), 0 1px 3px rgba(0, 0, 0, 0.04)',
+            'cta': '0 8px 20px -4px rgba(15, 118, 110, 0.28)'
+          }
+        }
+      }
+    };
+  </script>
+<!-- Custom Styles for Animations and Pulse Graphic -->
+<style data-purpose="custom-animations">
+    @keyframes pulseRing {
+      0% {
+        transform: scale(0.85);
+        opacity: 0.9;
+      }
+      50% {
+        transform: scale(1.18);
+        opacity: 0.45;
+      }
+      100% {
+        transform: scale(0.85);
+        opacity: 0.9;
+      }
+    }
+
+    @keyframes pulseWaves {
+      0% {
+        transform: scale(0.95);
+        opacity: 0.7;
+      }
+      50% {
+        transform: scale(1.3);
+        opacity: 0.25;
+      }
+      100% {
+        transform: scale(0.95);
+        opacity: 0.7;
+      }
+    }
+
+    .animate-pulse-ring {
+      animation: pulseRing 3.2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+
+    .animate-pulse-wave {
+      animation: pulseWaves 3.2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+  </style>
+<style data-purpose="base-styling">
+    body {
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
+    }
+  </style>
+</head>
+<body class="bg-slate-200 min-h-screen flex justify-center items-start sm:py-6 font-sans antialiased text-nemras-slate selection:bg-teal-100 selection:text-nemras-teal">
+<!-- BEGIN: MobileContainer -->
+<!-- Constrained strictly to 390px iPhone viewport canvas -->
+<div class="w-full max-w-[390px] min-h-[844px] bg-nemras-bg flex flex-col justify-between shadow-2xl relative sm:rounded-[36px] overflow-hidden border-0 sm:border sm:border-slate-300" data-purpose="screen-wrapper">
+<!-- Top Status Bar Area (iOS Native Simulation) -->
+<div class="w-full pt-3 px-7 pb-2 flex justify-between items-center text-xs font-semibold text-slate-800 tracking-tight" data-purpose="ios-status-bar">
+<span>09:41</span>
+<div class="flex items-center space-x-1.5">
+<span class="text-[11px] font-medium tracking-normal text-slate-700">5G</span>
+<svg class="w-3.5 h-3.5 text-slate-800 inline" fill="currentColor" viewbox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L4.35 19.4c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l1.9-1.9C9.37 19.64 10.63 20 12 20c4.97 0 9-4.03 9-9s-4.03-9-9-9zm0 15c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"></path></svg>
+<span class="text-[11px] text-slate-700 font-medium">100%</span>
+</div>
+</div>
+<!-- BEGIN: HeaderSection -->
+<header class="px-5 pt-1 pb-3" data-purpose="screen-header">
+<!-- Navigation Bar -->
+<div class="flex items-center justify-between mb-4">
+<!-- Back Navigation Button -->
+<button aria-label="Go Back" class="w-10 h-10 rounded-xl bg-white border border-nemras-border flex items-center justify-center shadow-sm text-slate-600 hover:text-nemras-slate active:scale-95 transition-all" data-purpose="back-button" onclick="history.back()" type="button">
+<svg class="w-5 h-5 stroke-[2.2]" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<!-- Stepper Pill Badge -->
+<div class="inline-flex items-center px-3 py-1 rounded-full bg-nemras-pillBg text-nemras-teal text-[11px] font-bold tracking-wider uppercase border border-teal-200/60" data-purpose="step-badge">
+          PERMISSIONS · 2 OF 2
+        </div>
+</div>
+<!-- Main Heading & Subtext -->
+<div class="space-y-1">
+<h1 class="text-[26px] leading-[32px] font-extrabold text-nemras-slate tracking-tight">
+          Emergency Alerts &amp; Updates
+        </h1>
+<p class="text-[14px] text-nemras-muted leading-relaxed">
+          Stay informed when seconds count.
+        </p>
+</div>
+</header>
+<!-- END: HeaderSection -->
+<!-- BEGIN: MainContent -->
+<main class="flex-1 px-5 overflow-y-auto space-y-4 pb-4" data-purpose="content-area">
+<!-- BEGIN: HeroGraphic -->
+<!-- Visual icon badge with multi-layer pulsing waves -->
+<div class="flex justify-center items-center py-2" data-purpose="hero-illustration">
+<div class="relative w-28 h-28 flex items-center justify-center">
+<!-- Outer Pulsing Teal/Blue Radiance Wave -->
+<div class="absolute inset-0 rounded-full bg-nemras-cardBlue border border-sky-200 animate-pulse-wave opacity-50"></div>
+<!-- Inner Soft Teal Alert Ring -->
+<div class="absolute w-20 h-20 rounded-full bg-teal-50 border border-teal-200 animate-pulse-ring"></div>
+<!-- Center Solid Badge with Glow -->
+<div class="relative z-10 w-16 h-16 rounded-2xl bg-gradient-to-tr from-teal-700 to-nemras-teal text-white flex items-center justify-center shadow-lg shadow-teal-900/15">
+<!-- Alert Bell SVG with critical dot indicator -->
+<svg class="w-8 h-8 text-white stroke-[1.8]" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0M10.5 5.25V4.5a1.5 1.5 0 013 0v.75" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<!-- Critical Red Ping Pip -->
+<span class="absolute top-3 right-3 flex h-3 w-3">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-nemras-redBadge opacity-75"></span>
+<span class="relative inline-flex rounded-full h-3 w-3 bg-nemras-redBadge border-2 border-white"></span>
+</span>
+</div>
+</div>
+</div>
+<!-- END: HeroGraphic -->
+<!-- BEGIN: ValueBreakdownCards -->
+<section aria-label="Notification Permission Value Points" class="space-y-3" data-purpose="permissions-breakdown">
+<!-- Card 1: Critical Break-Glass Alert (#FEF2F2) -->
+<article class="bg-nemras-cardRed border border-nemras-cardRedBorder rounded-[16px] p-3.5 shadow-subtle transition-all" data-purpose="value-card-emergency">
+<div class="flex items-start gap-3">
+<div class="w-9 h-9 rounded-xl bg-red-100 flex-shrink-0 flex items-center justify-center text-nemras-redBadge">
+<!-- Urgent Bell / Trauma Icon -->
+<svg class="w-5 h-5 stroke-[2]" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-2 mb-0.5">
+<h2 class="text-[14px] font-bold text-slate-900 tracking-tight">Critical Break-Glass Notifications</h2>
+<span class="text-[9px] font-extrabold uppercase px-1.5 py-0.5 rounded bg-red-200/80 text-red-800">Priority</span>
+</div>
+<p class="text-[12px] text-slate-600 leading-normal">
+                Instant SMS &amp; Push alerts when ER clinicians or Rescue 1122 access your emergency record during trauma intake.
+              </p>
+</div>
+</div>
+</article>
+<!-- Card 2: Real-Time Telemetry & Dispatch (#EAF3FF) -->
+<article class="bg-nemras-cardBlue border border-nemras-cardBlueBorder rounded-[16px] p-3.5 shadow-subtle transition-all" data-purpose="value-card-telemetry">
+<div class="flex items-start gap-3">
+<div class="w-9 h-9 rounded-xl bg-sky-100 flex-shrink-0 flex items-center justify-center text-sky-700">
+<!-- Telemetry / Ambulance Pulse Icon -->
+<svg class="w-5 h-5 stroke-[2]" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<div class="flex-1 min-w-0">
+<h2 class="text-[14px] font-bold text-slate-900 tracking-tight mb-0.5">Ambulance &amp; ER Queue Updates</h2>
+<p class="text-[12px] text-slate-600 leading-normal">
+                Live arrival ETAs, hospital bed reservation confirmations, and lab result alerts.
+              </p>
+</div>
+</div>
+</article>
+<!-- Card 3: Family Proxy Consent (#E8F6F3) -->
+<article class="bg-nemras-cardMint border border-nemras-cardMintBorder rounded-[16px] p-3.5 shadow-subtle transition-all" data-purpose="value-card-proxy">
+<div class="flex items-start gap-3">
+<div class="w-9 h-9 rounded-xl bg-teal-100/90 flex-shrink-0 flex items-center justify-center text-nemras-teal">
+<!-- Family / Proxy Shield Icon -->
+<svg class="w-5 h-5 stroke-[2]" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<div class="flex-1 min-w-0">
+<h2 class="text-[14px] font-bold text-slate-900 tracking-tight mb-0.5">Proxy Access Requests</h2>
+<p class="text-[12px] text-slate-600 leading-normal">
+                Approve or pause access for registered family guardians in real time.
+              </p>
+</div>
+</div>
+</article>
+</section>
+<!-- END: ValueBreakdownCards -->
+<!-- BEGIN: RecoveryStateInfo -->
+<!-- Denied / Blocked OS fallback instructions card -->
+<section class="bg-white border border-slate-200/90 rounded-[14px] p-3 shadow-sm text-[11px] leading-relaxed text-slate-600" data-purpose="denied-recovery-hint">
+<div class="flex items-start gap-2">
+<svg class="w-4 h-4 text-nemras-teal flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<div>
+<span class="font-semibold text-slate-700">If notifications were blocked in browser/OS:</span> Go to <span class="text-slate-800 font-medium">Device Settings &gt; Apps &gt; NEMRAS &gt; Notifications &gt; Allow All.</span>
+</div>
+</div>
+</section>
+<!-- END: RecoveryStateInfo -->
+</main>
+<!-- END: MainContent -->
+<!-- BEGIN: InteractiveControls -->
+<!-- Sticky / Bottom pinned CTA actions -->
+<footer class="px-5 pt-3 pb-5 bg-white border-t border-nemras-border space-y-2.5" data-purpose="screen-footer">
+<!-- Primary Enable Action Button -->
+<button class="w-full h-12 bg-nemras-teal hover:bg-nemras-tealDark active:scale-[0.98] text-white font-semibold text-[15px] rounded-xl flex items-center justify-center space-x-2 shadow-cta transition-all" data-purpose="primary-action-button" id="enable-notifications-btn" type="button">
+<span>Enable Urgent Notifications</span>
+<svg class="w-4 h-4 stroke-[2.5]" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<!-- Secondary Ghost Action Button -->
+<button class="w-full h-10 bg-transparent text-nemras-muted hover:text-nemras-slate font-medium text-[13px] rounded-xl flex items-center justify-center transition-colors" data-purpose="secondary-action-button" id="remind-later-btn" type="button">
+        Remind Me Later
+      </button>
+<!-- Direct Recovery / Prototype Bypass Link -->
+<div class="text-center pt-0.5">
+<a class="inline-flex items-center text-[12px] font-semibold text-nemras-teal hover:underline space-x-1" data-purpose="dashboard-direct-link" href="#patient-home" id="skip-to-dashboard">
+<span>Continue to Patient Dashboard</span>
+<span aria-hidden="true">→</span>
+</a>
+</div>
+<!-- Compliance & Prototype Notice -->
+<p class="text-center text-[10px] text-slate-400 tracking-tight leading-tight pt-1" data-purpose="disclaimer-text">
+        Visual design prototype. Push notification services are simulated for interface validation.
+      </p>
+<!-- iOS Home Bar Indicator -->
+<div class="w-32 h-1 bg-slate-300 rounded-full mx-auto mt-2" data-purpose="ios-home-indicator"></div>
+</footer>
+<!-- END: InteractiveControls -->
+</div>
+<!-- END: MobileContainer -->
+<!-- Interactivity Handler Script -->
+<script data-purpose="button-interactions">
+    document.addEventListener('DOMContentLoaded', () => {
+      const enableBtn = document.getElementById('enable-notifications-btn');
+      const remindBtn = document.getElementById('remind-later-btn');
+      const dashboardLink = document.getElementById('skip-to-dashboard');
+
+      // Feedback on CTA click
+      enableBtn?.addEventListener('click', () => {
+        enableBtn.disabled = true;
+        enableBtn.innerHTML = `
+          <svg class="animate-spin -ml-1 mr-2 h-4 w-4 text-white" fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
+          </svg>
+          Authorizing...
+        `;
+        setTimeout(() => {
+          enableBtn.className = "w-full h-12 bg-emerald-600 text-white font-semibold text-[15px] rounded-xl flex items-center justify-center space-x-2";
+          enableBtn.innerHTML = `✓ Notifications Configured`;
+        }, 900);
+      });
+
+      remindBtn?.addEventListener('click', () => {
+        alert('Reminder set. Critical break-glass alerts will be sent via SMS fallback.');
+      });
+
+      dashboardLink?.addEventListener('click', (e) => {
+        // Keeps user aware of prototype environment
+        console.log('Navigating to Patient Dashboard Home');
+      });
+    });
+  </script>
+</body></html>

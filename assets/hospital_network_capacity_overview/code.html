@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;700&amp;family=Sora:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-error-container":"#93000a","background":"#f6f9ff","surface-container":"#e1f0ff","primary-fixed":"#9cf2e8","on-error":"#ffffff","on-tertiary-fixed":"#410005","inverse-on-surface":"#e6f2ff","on-primary-container":"#a3faef","on-background":"#091d2b","primary":"#005c55","outline":"#6e7977","on-tertiary":"#ffffff","surface-container-highest":"#d1e5f8","on-secondary-fixed-variant":"#00504b","inverse-surface":"#1f3241","surface":"#f6f9ff","secondary-container":"#a8ece5","on-secondary-fixed":"#00201e","secondary":"#216963","surface-container-lowest":"#ffffff","surface-tint":"#006a63","primary-fixed-dim":"#80d5cb","secondary-fixed":"#abefe8","on-secondary":"#ffffff","surface-container-low":"#ecf5ff","tertiary-container":"#c03638","on-primary-fixed":"#00201d","on-secondary-container":"#266d68","error-container":"#ffdad6","on-tertiary-container":"#ffe4e1","tertiary-fixed":"#ffdad7","outline-variant":"#bdc9c6","surface-variant":"#d1e5f8","on-primary":"#ffffff","surface-container-high":"#d6ebfe","on-surface-variant":"#3e4947","tertiary":"#9e1c23","on-tertiary-fixed-variant":"#8f0e1a","on-surface":"#091d2b","secondary-fixed-dim":"#8fd3cc","on-primary-fixed-variant":"#00504a","surface-bright":"#f6f9ff","error":"#ba1a1a","tertiary-fixed-dim":"#ffb3ae","primary-container":"#0f766e","surface-dim":"#c8dcf0","inverse-primary":"#80d5cb"},borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},spacing:{"space-xl":"2rem","margin":"2rem","space-md":"1rem","space-sm":"0.5rem","gutter":"1.5rem","margin-mobile":"1rem","space-lg":"1.5rem","gutter-mobile":"1rem","space-xs":"0.25rem"},fontFamily:{"label-md":["Inter"],"display-lg":["Sora"],"headline-sm":["Sora"],"telemetry-md":["JetBrains Mono"],"telemetry-lg":["JetBrains Mono"],"body-md":["Inter"],"body-lg":["Inter"],"headline-lg":["Sora"],"body-sm":["Inter"],"headline-lg-mobile":["Sora"],"body-strong":["Inter"],"telemetry-sm":["JetBrains Mono"],"headline-md":["Sora"]},fontSize:{"label-md":["13px",{lineHeight:"16px",fontWeight:"500"}],"display-lg":["36px",{lineHeight:"44px",letterSpacing:"-0.02em",fontWeight:"700"}],"headline-sm":["16px",{lineHeight:"24px",fontWeight:"600"}],"telemetry-md":["14px",{lineHeight:"20px",fontWeight:"500"}],"telemetry-lg":["24px",{lineHeight:"32px",letterSpacing:"-0.02em",fontWeight:"700"}],"body-md":["14px",{lineHeight:"20px",fontWeight:"400"}],"body-lg":["16px",{lineHeight:"24px",fontWeight:"400"}],"headline-lg":["28px",{lineHeight:"36px",letterSpacing:"-0.01em",fontWeight:"600"}],"body-sm":["12px",{lineHeight:"18px",fontWeight:"400"}],"headline-lg-mobile":["24px",{lineHeight:"32px",letterSpacing:"-0.01em",fontWeight:"600"}],"body-strong":["14px",{lineHeight:"20px",fontWeight:"600"}],"telemetry-sm":["11px",{lineHeight:"14px",letterSpacing:"0.04em",fontWeight:"500"}],"headline-md":["20px",{lineHeight:"28px",fontWeight:"600"}]}}}};</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased min-h-screen"><aside class="fixed left-0 top-0 h-full w-[240px] bg-surface-container-lowest z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col"><div class="h-[60px] px-space-md flex items-center gap-space-sm bg-surface-container-lowest"><div class="w-8 h-8 rounded-lg bg-primary-container flex items-center justify-center text-on-primary shadow-sm"><span class="material-symbols-outlined text-[20px]">health_and_safety</span></div><div class="flex flex-col min-w-0 flex-1"><div class="flex items-center gap-1.5"><span class="font-headline-sm text-headline-sm text-primary tracking-tight leading-none">NEMRAS</span><span class="px-1.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-telemetry-sm text-telemetry-sm font-semibold leading-none">OPS</span></div><span class="font-body-sm text-body-sm text-on-surface-variant truncate mt-0.5">Govt of PK · NDHA</span></div></div><div class="px-space-md py-space-sm"><span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant font-semibold uppercase tracking-wider block mb-space-xs">Operations</span><nav class="flex flex-col gap-1" data-active-classes="bg-primary-container text-on-primary font-body-strong"><a class="flex items-center gap-2.5 px-3 py-2 rounded-lg font-body-md text-body-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="national-dashboard" href="#"><span class="material-symbols-outlined text-[18px]">dashboard</span><span>National Dashboard</span></a><a class="flex items-center gap-2.5 px-3 py-2 rounded-lg font-body-md text-body-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="emergency-map" href="#"><span class="material-symbols-outlined text-[18px]">public</span><span>Emergency Map</span></a><a class="flex items-center gap-2.5 px-3 py-2 rounded-lg font-body-md text-body-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="regional-analytics" href="#"><span class="material-symbols-outlined text-[18px]">bar_chart</span><span>Regional Analytics</span></a></nav></div><div class="px-space-md py-space-sm"><span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant font-semibold uppercase tracking-wider block mb-space-xs">Health Intel</span><nav class="flex flex-col gap-1" data-active-classes="bg-primary-container text-on-primary font-body-strong"><a class="flex items-center gap-2.5 px-3 py-2 rounded-lg font-body-md text-body-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="population-health" href="#"><span class="material-symbols-outlined text-[18px]">vital_signs</span><span>Population Health</span></a><a aria-current="page" class="flex items-center gap-2.5 px-3 py-2 rounded-lg transition-all bg-primary-container text-on-primary font-body-strong" data-path="hospital-network" href="#"><span class="material-symbols-outlined text-[18px]">local_hospital</span><span>Hospital Network</span></a><a class="flex items-center gap-2.5 px-3 py-2 rounded-lg font-body-md text-body-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="incident-reports" href="#"><span class="material-symbols-outlined text-[18px]">assignment</span><span>Incident Reports</span></a></nav></div><div class="px-space-md py-space-sm"><span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant font-semibold uppercase tracking-wider block mb-space-xs">System</span><nav class="flex flex-col gap-1" data-active-classes="bg-primary-container text-on-primary font-body-strong"><a class="flex items-center gap-2.5 px-3 py-2 rounded-lg font-body-md text-body-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="settings-and-audit" href="#"><span class="material-symbols-outlined text-[18px]">tune</span><span>Settings &amp; Audit</span></a></nav></div></div><div class="p-space-md bg-surface-container-low flex flex-col gap-space-sm m-space-sm rounded-xl"><div class="flex items-center gap-2"><span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span></span><span class="font-telemetry-sm text-telemetry-sm text-primary font-semibold truncate">487 Nodes · Kafka 99.8%</span></div><div class="bg-surface-container-lowest px-2 py-1.5 rounded-lg text-center shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><span class="font-body-sm text-body-sm text-on-surface-variant block">Simulated Demo Feed</span><span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant font-semibold">NDHA OPS ENV-01</span></div></div></aside><div class="pl-[240px]"><header class="fixed top-0 left-[240px] right-0 h-[60px] bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-lg"><div class="flex items-center gap-space-md"><div class="flex items-center gap-2 px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container"><span class="inline-block w-1.5 h-1.5 rounded-full bg-primary"></span><span class="font-telemetry-sm text-telemetry-sm font-semibold tracking-wide uppercase">National Feed Sync · 14:22 PKT</span></div></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-surface-container text-on-surface font-body-sm text-body-sm shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><span class="material-symbols-outlined text-[16px] text-primary">explore</span><span class="font-body-strong text-body-strong">All Pakistan</span><span class="text-on-surface-variant">(4 Prov + 2 Terr)</span></div><div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-error-container text-on-error-container"><span class="material-symbols-outlined text-[18px] text-error">warning</span><span class="font-telemetry-sm text-telemetry-sm font-semibold">3 Critical Alerts</span></div><div class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-telemetry-sm text-telemetry-sm font-semibold tracking-wider uppercase">Demo Prototype Data Only</div><div class="flex items-center gap-2.5 pl-space-sm"><div class="flex flex-col text-right"><span class="font-body-strong text-body-strong leading-tight text-on-surface">Dr. Tariq M.</span><span class="font-body-sm text-body-sm text-on-surface-variant leading-tight">DG NDHA · PK-HQ-01</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-sm"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="relative pt-[60px] w-full min-h-screen bg-surface px-space-lg py-space-lg max-w-[1600px] mx-auto"><div class="flex flex-col w-full gap-space-lg">
+<!-- Disclaimer Notice Banner -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container-low p-space-md shadow-sm">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-secondary"></div>
+<div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-space-md pl-space-xs">
+<div class="flex items-center gap-space-sm min-w-0">
+<span class="material-symbols-outlined text-primary text-[24px] shrink-0" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface">SIMULATED HOSPITAL NETWORK CAPACITY</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-telemetry-sm text-telemetry-sm font-semibold uppercase">NDHA-ENV01</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">
+            Fictional bed availability and staff figures for architectural evaluation. Real patient admissions require hospital EMR sign-off.
+          </span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm self-end lg:self-auto shrink-0">
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">CAD PROTOCOL v4.19</span>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container text-primary font-telemetry-sm text-telemetry-sm font-semibold">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span> 487 NODES SYNCED
+        </span>
+</div>
+</div>
+</div>
+<!-- Command Strip & Filters Header -->
+<section class="flex flex-col gap-space-md bg-surface-container-lowest p-space-lg rounded-xl shadow-sm">
+<div class="flex flex-col xl:flex-row items-stretch xl:items-center justify-between gap-space-md">
+<!-- Search Input -->
+<div class="relative flex-1 min-w-[320px]">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">search</span>
+<input class="w-full pl-11 pr-4 py-2.5 rounded-lg bg-surface-container-low font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant focus:bg-surface-container-lowest focus:outline-none transition-all" id="facilitySearchInput" placeholder="Search 487 connected facilities by name, city, trauma level (e.g. Nishtar, PIMS, Level-1)..." type="text"/>
+<div class="absolute right-3 top-1/2 -translate-y-1/2 flex items-center gap-1 text-on-surface-variant font-telemetry-sm text-telemetry-sm bg-surface-container px-1.5 py-0.5 rounded">
+<span>⌘</span><span>K</span>
+</div>
+</div>
+<!-- Quick Action Controls -->
+<div class="flex items-center gap-space-sm shrink-0">
+<button class="flex items-center gap-2 px-3.5 py-2.5 rounded-lg bg-surface-container text-on-surface font-body-strong text-body-strong hover:bg-surface-container-high transition-all">
+<span class="material-symbols-outlined text-[18px] text-primary">swap_horiz</span>
+<span>Inter-Facility Routing</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-2.5 rounded-lg bg-primary-container text-on-primary font-body-strong text-body-strong shadow-sm hover:opacity-95 transition-all">
+<span class="material-symbols-outlined text-[18px]">publish</span>
+<span>Broadcast Cadence</span>
+</button>
+</div>
+</div>
+<!-- Filter Multi-Select Strip -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-sm pt-space-xs">
+<!-- Province Filter -->
+<div class="flex flex-col gap-1">
+<label class="font-telemetry-sm text-telemetry-sm text-on-surface-variant font-medium">PROVINCE / TERRITORY</label>
+<div class="relative">
+<select class="w-full appearance-none px-3 py-2 rounded-lg bg-surface-container-low font-body-sm text-body-sm text-on-surface pr-8 cursor-pointer focus:outline-none">
+<option>All (Punjab 214, Sindh 118, KP 74, Balochistan 42, ICT 24, AJK 15)</option>
+<option>Punjab (214)</option>
+<option>Sindh (118)</option>
+<option>Khyber Pakhtunkhwa (74)</option>
+<option>Balochistan (42)</option>
+<option>Islamabad Capital Territory (24)</option>
+<option>Azad Jammu &amp; Kashmir (15)</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px] pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Facility Tier Filter -->
+<div class="flex flex-col gap-1">
+<label class="font-telemetry-sm text-telemetry-sm text-on-surface-variant font-medium">FACILITY DESIGNATION</label>
+<div class="relative">
+<select class="w-full appearance-none px-3 py-2 rounded-lg bg-surface-container-low font-body-sm text-body-sm text-on-surface pr-8 cursor-pointer focus:outline-none">
+<option>All (Tertiary Teaching, DHQ, THQ)</option>
+<option>Tertiary Teaching (Level-1)</option>
+<option>District Headquarter [DHQ] (Level-2)</option>
+<option>Tehsil Headquarter [THQ] (Level-3)</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px] pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Specialization Filter -->
+<div class="flex flex-col gap-1">
+<label class="font-telemetry-sm text-telemetry-sm text-on-surface-variant font-medium">CLINICAL CAPABILITY</label>
+<div class="relative">
+<select class="w-full appearance-none px-3 py-2 rounded-lg bg-surface-container-low font-body-sm text-body-sm text-on-surface pr-8 cursor-pointer focus:outline-none">
+<option>All (Adult Trauma, Pediatric ER, Cardiac ICU, Burn Enclave)</option>
+<option>Level-1 Adult Resuscitation</option>
+<option>Pediatric Emergency Subspecialty</option>
+<option>Cath Lab / Primary PCI Active</option>
+<option>Specialized Burn Treatment Unit</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px] pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Status Filter -->
+<div class="flex flex-col gap-1">
+<label class="font-telemetry-sm text-telemetry-sm text-on-surface-variant font-medium">OPERATIONAL STATUS</label>
+<div class="relative">
+<select class="w-full appearance-none px-3 py-2 rounded-lg bg-surface-container-low font-body-sm text-body-sm text-on-surface pr-8 cursor-pointer focus:outline-none">
+<option>All (Open, Elevated Demand, Diversion Active)</option>
+<option>Nominal Operations (Beds &gt; 20%)</option>
+<option>Elevated Demand (&gt; 80% Occupancy)</option>
+<option>Critical Surge (&gt; 90% Occupancy)</option>
+<option>DIVERSION ACTIVE (CAD Alert)</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px] pointer-events-none">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Quick Summary Metric Strip -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-space-sm pt-space-xs">
+<div class="flex flex-col p-3 rounded-lg bg-surface-container-low">
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant uppercase font-medium">Total Network Beds</span>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-telemetry-lg text-telemetry-lg text-on-surface">18,900</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Cap</span>
+</div>
+</div>
+<div class="flex flex-col p-3 rounded-lg bg-surface-container-low">
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant uppercase font-medium">Network Occupancy</span>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-telemetry-lg text-telemetry-lg text-on-surface">14,820</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-telemetry-sm text-telemetry-sm font-semibold">78.4%</span>
+</div>
+</div>
+<div class="flex flex-col p-3 rounded-lg bg-surface-container-low">
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant uppercase font-medium">Immediate Available Beds</span>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-telemetry-lg text-telemetry-lg text-primary">4,080</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Ready</span>
+</div>
+</div>
+<div class="flex flex-col p-3 rounded-lg bg-error-container">
+<span class="font-telemetry-sm text-telemetry-sm text-on-error-container uppercase font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">crisis_alert</span> Active Diversions
+        </span>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-telemetry-lg text-telemetry-lg text-on-error-container">12</span>
+<span class="font-body-sm text-body-sm text-on-error-container">Facilities Locked</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Two-Panel Main Operations Workspace -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-lg items-start">
+<!-- LEFT PANEL (65% on XL -> 8 Columns) -->
+<div class="xl:col-span-8 flex flex-col gap-space-md">
+<div class="flex items-center justify-between px-1">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface">Emergency Facilities Stream</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant font-telemetry-sm text-telemetry-sm">Showing 6 Priority Hubs</span>
+</div>
+<div class="flex items-center gap-2 font-telemetry-sm text-telemetry-sm text-on-surface-variant">
+<span>Sort:</span>
+<button class="font-semibold text-primary underline underline-offset-4">Triage Priority</button>
+<span>·</span>
+<button class="hover:text-on-surface">Distance</button>
+<span>·</span>
+<button class="hover:text-on-surface">ER Fill %</button>
+</div>
+</div>
+<!-- Hospital Cards Grid / List -->
+<div class="flex flex-col gap-space-sm" id="hospitalCardsContainer">
+<!-- CARD 1 (ACTIVE / SELECTED) -->
+<div class="hospital-card active-card cursor-pointer relative flex flex-col p-space-md rounded-xl bg-surface-container-lowest shadow-md transition-all duration-150 overflow-hidden" data-id="nishtar" onclick="selectHospitalCard(this, 'nishtar')">
+<div class="absolute left-0 top-0 bottom-0 w-2 bg-primary"></div>
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-2 pl-2">
+<div class="flex items-start gap-3 min-w-0">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-[22px]" style="font-variation-settings: 'FILL' 1;">local_hospital</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2 flex-wrap">
+<h3 class="font-headline-sm text-headline-sm text-on-surface truncate">Nishtar Hospital Emergency Complex</h3>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-telemetry-sm text-telemetry-sm font-semibold">SELECTED DOSSIER</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Multan, Punjab · Tertiary Level 1 Trauma Referral Hub</p>
+</div>
+</div>
+<div class="flex items-center gap-2 self-start md:self-auto shrink-0 pl-2 md:pl-0">
+<span class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface font-telemetry-sm text-telemetry-sm font-semibold">
+                Elevated Demand · 88% ER
+              </span>
+<span class="flex items-center gap-1 px-2 py-1 rounded-md bg-surface-container text-on-surface-variant font-telemetry-sm text-telemetry-sm">
+<span class="material-symbols-outlined text-[14px] text-primary">sync</span> 1.2s P95
+              </span>
+</div>
+</div>
+<!-- Capacity & Telemetry Gauge Bars -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md mt-space-md pt-space-xs pl-2">
+<!-- Bed Capacity Mini Bar -->
+<div class="flex flex-col gap-1.5">
+<div class="flex justify-between items-baseline font-telemetry-sm text-telemetry-sm">
+<span class="text-on-surface-variant">TOTAL ADMISSIONS</span>
+<span class="font-semibold text-on-surface">187 / 240 <span class="text-primary">(78%)</span></span>
+</div>
+<div class="h-2 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 78%;"></div>
+</div>
+</div>
+<!-- Resus Bay Saturation -->
+<div class="flex flex-col gap-1.5">
+<div class="flex justify-between items-baseline font-telemetry-sm text-telemetry-sm">
+<span class="text-on-surface-variant">RESUS BAYS</span>
+<span class="font-semibold text-on-surface">3 / 4 Occupied <span class="text-tertiary-container">(75%)</span></span>
+</div>
+<div class="h-2 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary rounded-full" style="width: 75%;"></div>
+</div>
+</div>
+<!-- 1122 Dispatch Status -->
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary">ambulance</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Rescue 1122 Inbound</span>
+</div>
+<span class="font-telemetry-md text-telemetry-md font-bold text-on-surface">3 Active</span>
+</div>
+</div>
+</div>
+<!-- CARD 2: PIMS Islamabad -->
+<div class="hospital-card cursor-pointer relative flex flex-col p-space-md rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all duration-150 overflow-hidden" data-id="pims" onclick="selectHospitalCard(this, 'pims')">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-surface-container-highest"></div>
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-2 pl-2">
+<div class="flex items-start gap-3 min-w-0">
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-secondary text-[22px]">domain</span>
+</div>
+<div class="flex flex-col min-w-0">
+<h3 class="font-headline-sm text-headline-sm text-on-surface truncate">Pakistan Institute of Medical Sciences (PIMS)</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Islamabad, ICT · Level 1 National Referral Centre</p>
+</div>
+</div>
+<div class="flex items-center gap-2 self-start md:self-auto shrink-0 pl-2 md:pl-0">
+<span class="px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container font-telemetry-sm text-telemetry-sm font-semibold">
+                Nominal Operations
+              </span>
+<span class="flex items-center gap-1 px-2 py-1 rounded-md bg-surface-container-low text-on-surface-variant font-telemetry-sm text-telemetry-sm">
+<span class="material-symbols-outlined text-[14px] text-primary">wifi</span> Live CAD
+              </span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md mt-space-md pt-space-xs pl-2">
+<div class="flex flex-col gap-1.5">
+<div class="flex justify-between items-baseline font-telemetry-sm text-telemetry-sm">
+<span class="text-on-surface-variant">TOTAL ADMISSIONS</span>
+<span class="font-semibold text-on-surface">312 / 380 <span class="text-secondary">(82%)</span></span>
+</div>
+<div class="h-2 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary rounded-full" style="width: 82%;"></div>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<div class="flex justify-between items-baseline font-telemetry-sm text-telemetry-sm">
+<span class="text-on-surface-variant">ICU SURGE HEADROOM</span>
+<span class="font-semibold text-on-surface">14 Beds Available</span>
+</div>
+<div class="h-2 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 70%;"></div>
+</div>
+</div>
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-secondary">ambulance</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Rescue 1122 Inbound</span>
+</div>
+<span class="font-telemetry-md text-telemetry-md font-bold text-on-surface">4 Active</span>
+</div>
+</div>
+</div>
+<!-- CARD 3: Civil Hospital Karachi -->
+<div class="hospital-card cursor-pointer relative flex flex-col p-space-md rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all duration-150 overflow-hidden" data-id="civil" onclick="selectHospitalCard(this, 'civil')">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-surface-container-highest"></div>
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-2 pl-2">
+<div class="flex items-start gap-3 min-w-0">
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-secondary text-[22px]">local_hospital</span>
+</div>
+<div class="flex flex-col min-w-0">
+<h3 class="font-headline-sm text-headline-sm text-on-surface truncate">Civil Hospital Karachi / Dr. Ruth Pfau</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Karachi, Sindh · Level 1 Trauma &amp; Major Burns Centre</p>
+</div>
+</div>
+<div class="flex items-center gap-2 self-start md:self-auto shrink-0 pl-2 md:pl-0">
+<span class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface font-telemetry-sm text-telemetry-sm font-semibold">
+                Near Surge Capacity
+              </span>
+<span class="flex items-center gap-1 px-2 py-1 rounded-md bg-surface-container-low text-on-surface-variant font-telemetry-sm text-telemetry-sm">
+<span class="material-symbols-outlined text-[14px]">speed</span> 89% Cap
+              </span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md mt-space-md pt-space-xs pl-2">
+<div class="flex flex-col gap-1.5">
+<div class="flex justify-between items-baseline font-telemetry-sm text-telemetry-sm">
+<span class="text-on-surface-variant">TOTAL ADMISSIONS</span>
+<span class="font-semibold text-on-surface">410 / 460 <span class="text-on-surface">(89%)</span></span>
+</div>
+<div class="h-2 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary-container rounded-full" style="width: 89%;"></div>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<div class="flex justify-between items-baseline font-telemetry-sm text-telemetry-sm">
+<span class="text-on-surface-variant">BURN UNIT</span>
+<span class="font-semibold text-on-surface">22 / 24 Occupied (91%)</span>
+</div>
+<div class="h-2 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 91%;"></div>
+</div>
+</div>
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-tertiary-container">ambulance</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Inbound High-Volume</span>
+</div>
+<span class="font-telemetry-md text-telemetry-md font-bold text-on-surface">7 Active</span>
+</div>
+</div>
+</div>
+<!-- CARD 4: Mayo Hospital Emergency Tower (DIVERSION ACTIVE) -->
+<div class="hospital-card cursor-pointer relative flex flex-col p-space-md rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all duration-150 overflow-hidden" data-id="mayo" onclick="selectHospitalCard(this, 'mayo')">
+<div class="absolute left-0 top-0 bottom-0 w-2 bg-error"></div>
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-2 pl-2">
+<div class="flex items-start gap-3 min-w-0">
+<div class="w-10 h-10 rounded-lg bg-error-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-error text-[22px]">warning</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2 flex-wrap">
+<h3 class="font-headline-sm text-headline-sm text-on-surface truncate">Mayo Hospital Emergency Tower</h3>
+<span class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-telemetry-sm text-telemetry-sm font-bold">DIVERSION ACTIVE (Level 2)</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Lahore, Punjab · Level 1 Trauma Facility</p>
+</div>
+</div>
+<div class="flex items-center gap-2 self-start md:self-auto shrink-0 pl-2 md:pl-0">
+<span class="px-2.5 py-1 rounded-full bg-error-container text-on-error-container font-telemetry-sm text-telemetry-sm font-semibold">
+                96% Critical Cap
+              </span>
+<span class="flex items-center gap-1 px-2 py-1 rounded-md bg-surface-container text-error font-telemetry-sm text-telemetry-sm">
+                CAD RED ALERT
+              </span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md mt-space-md pt-space-xs pl-2">
+<div class="flex flex-col gap-1.5">
+<div class="flex justify-between items-baseline font-telemetry-sm text-telemetry-sm">
+<span class="text-on-surface-variant">TOTAL ADMISSIONS</span>
+<span class="font-semibold text-error">345 / 360 (96%)</span>
+</div>
+<div class="h-2 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-error rounded-full" style="width: 96%;"></div>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<div class="flex justify-between items-baseline font-telemetry-sm text-telemetry-sm">
+<span class="text-on-surface-variant">DIVERSION REROUTE</span>
+<span class="font-semibold text-on-surface">Auto-Forward Jinnah Hosp</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px] text-primary">navigation</span>
+<span>Distance Delta +4.6 km</span>
+</div>
+</div>
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-error">alt_route</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Inbound Rerouted</span>
+</div>
+<span class="font-telemetry-md text-telemetry-md font-bold text-error">Diverted (Jinnah)</span>
+</div>
+</div>
+</div>
+<!-- CARD 5: Lady Reading Hospital -->
+<div class="hospital-card cursor-pointer relative flex flex-col p-space-md rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all duration-150 overflow-hidden" data-id="lrh" onclick="selectHospitalCard(this, 'lrh')">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-surface-container-highest"></div>
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-2 pl-2">
+<div class="flex items-start gap-3 min-w-0">
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-secondary text-[22px]">apartment</span>
+</div>
+<div class="flex flex-col min-w-0">
+<h3 class="font-headline-sm text-headline-sm text-on-surface truncate">Lady Reading Hospital (LRH)</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Peshawar, Khyber Pakhtunkhwa · Level 1 Trauma</p>
+</div>
+</div>
+<div class="flex items-center gap-2 self-start md:self-auto shrink-0 pl-2 md:pl-0">
+<span class="px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container font-telemetry-sm text-telemetry-sm font-semibold">
+                Nominal Operations
+              </span>
+<span class="flex items-center gap-1 px-2 py-1 rounded-md bg-surface-container-low text-on-surface-variant font-telemetry-sm text-telemetry-sm">
+                P95: 1.1s
+              </span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md mt-space-md pt-space-xs pl-2">
+<div class="flex flex-col gap-1.5">
+<div class="flex justify-between items-baseline font-telemetry-sm text-telemetry-sm">
+<span class="text-on-surface-variant">TOTAL ADMISSIONS</span>
+<span class="font-semibold text-on-surface">215 / 280 <span class="text-secondary">(77%)</span></span>
+</div>
+<div class="h-2 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary rounded-full" style="width: 77%;"></div>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<div class="flex justify-between items-baseline font-telemetry-sm text-telemetry-sm">
+<span class="text-on-surface-variant">NEURO-TRAUMA SUITES</span>
+<span class="font-semibold text-on-surface">4 of 5 Functional</span>
+</div>
+<div class="h-2 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 80%;"></div>
+</div>
+</div>
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-secondary">ambulance</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Rescue 1122 Inbound</span>
+</div>
+<span class="font-telemetry-md text-telemetry-md font-bold text-on-surface">2 Active</span>
+</div>
+</div>
+</div>
+<!-- CARD 6: Sandeman Provincial Hospital Quetta -->
+<div class="hospital-card cursor-pointer relative flex flex-col p-space-md rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all duration-150 overflow-hidden" data-id="sandeman" onclick="selectHospitalCard(this, 'sandeman')">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-surface-container-highest"></div>
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-2 pl-2">
+<div class="flex items-start gap-3 min-w-0">
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-secondary text-[22px]">medical_services</span>
+</div>
+<div class="flex flex-col min-w-0">
+<h3 class="font-headline-sm text-headline-sm text-on-surface truncate">Sandeman Provincial Civil Hospital</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Quetta, Balochistan · Level 2 Trauma Regional Center</p>
+</div>
+</div>
+<div class="flex items-center gap-2 self-start md:self-auto shrink-0 pl-2 md:pl-0">
+<span class="px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container font-telemetry-sm text-telemetry-sm font-semibold">
+                Nominal Operations
+              </span>
+<span class="flex items-center gap-1 px-2 py-1 rounded-md bg-surface-container-low text-on-surface-variant font-telemetry-sm text-telemetry-sm">
+                P95: 1.8s
+              </span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md mt-space-md pt-space-xs pl-2">
+<div class="flex flex-col gap-1.5">
+<div class="flex justify-between items-baseline font-telemetry-sm text-telemetry-sm">
+<span class="text-on-surface-variant">TOTAL ADMISSIONS</span>
+<span class="font-semibold text-on-surface">142 / 200 <span class="text-secondary">(71%)</span></span>
+</div>
+<div class="h-2 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary rounded-full" style="width: 71%;"></div>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<div class="flex justify-between items-baseline font-telemetry-sm text-telemetry-sm">
+<span class="text-on-surface-variant">BLOOD BANK RESERVE</span>
+<span class="font-semibold text-on-surface">O-Positive: Normal (24u)</span>
+</div>
+<div class="h-2 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 65%;"></div>
+</div>
+</div>
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-secondary">ambulance</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Rescue 1122 Inbound</span>
+</div>
+<span class="font-telemetry-md text-telemetry-md font-bold text-on-surface">1 Active</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT PANEL: DETAILED FACILITY TELEMETRY DOSSIER (35% on XL -> 4 Columns) -->
+<div class="xl:col-span-4 flex flex-col gap-space-md xl:sticky xl:top-[80px]">
+<!-- Inspector Master Container -->
+<div class="flex flex-col bg-surface-container-lowest rounded-xl shadow-md p-space-lg gap-space-md">
+<!-- Hospital Header Dossier -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="px-2.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-telemetry-sm text-telemetry-sm font-bold uppercase">
+              FACILITY DOSSIER PK-MLT-01
+            </span>
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant font-medium">LIVE STREAM</span>
+</div>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface mt-1 leading-snug">
+            Nishtar Hospital Emergency Complex
+          </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Nishtar Road, Multan Sector 4, Punjab
+          </p>
+<div class="grid grid-cols-2 gap-space-sm p-3 rounded-lg bg-surface-container-low mt-2">
+<div class="flex flex-col">
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">MEDICAL DIRECTOR</span>
+<span class="font-body-strong text-body-strong text-on-surface">Dr. F. Alam (#8812)</span>
+</div>
+<div class="flex flex-col">
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">CAD DISPATCH FREQ</span>
+<span class="font-telemetry-sm text-telemetry-sm text-primary font-bold">1122 Cantt Ch 4</span>
+</div>
+</div>
+</div>
+<div class="h-px bg-surface-container w-full"></div>
+<!-- Real-Time Departmental Breakdown -->
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-on-surface">Departmental Load</span>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">4 Units Reporting</span>
+</div>
+<div class="flex flex-col gap-2.5">
+<!-- Resuscitation Bays -->
+<div class="p-3 rounded-lg bg-surface-container-low flex flex-col gap-1.5">
+<div class="flex items-center justify-between font-body-sm text-body-sm">
+<span class="font-body-strong text-body-strong text-on-surface">Resuscitation / Trauma Bays</span>
+<span class="font-telemetry-sm text-telemetry-sm font-semibold text-primary">3 / 4 Occupied</span>
+</div>
+<div class="h-2 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 75%;"></div>
+</div>
+<div class="flex items-center gap-1.5 font-telemetry-sm text-telemetry-sm text-primary">
+<span class="material-symbols-outlined text-[14px]">lock_clock</span>
+<span>Bay 03 pre-reserved for incoming AMB-37 (ETA 4 min)</span>
+</div>
+</div>
+<!-- Cardiac Care Unit (CCU) -->
+<div class="p-3 rounded-lg bg-surface-container-low flex flex-col gap-1.5">
+<div class="flex items-center justify-between font-body-sm text-body-sm">
+<span class="font-body-strong text-body-strong text-on-surface">Cardiac Care Unit (CCU)</span>
+<span class="font-telemetry-sm text-telemetry-sm font-semibold text-error">9 / 10 (90%)</span>
+</div>
+<div class="h-2 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary-container rounded-full" style="width: 90%;"></div>
+</div>
+<div class="flex items-center justify-between font-telemetry-sm text-telemetry-sm text-on-surface-variant">
+<span>1 Critical Bed Remaining</span>
+<span class="text-secondary font-medium">Cath Lab Ready</span>
+</div>
+</div>
+<!-- Acute Observation Unit -->
+<div class="p-3 rounded-lg bg-surface-container-low flex flex-col gap-1.5">
+<div class="flex items-center justify-between font-body-sm text-body-sm">
+<span class="font-body-strong text-body-strong text-on-surface">Acute Observation Unit</span>
+<span class="font-telemetry-sm text-telemetry-sm font-semibold text-error">6 / 6 (100% Full)</span>
+</div>
+<div class="h-2 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-error rounded-full" style="width: 100%;"></div>
+</div>
+<div class="flex items-center gap-1 font-telemetry-sm text-telemetry-sm text-on-error-container bg-error-container px-2 py-0.5 rounded">
+<span class="material-symbols-outlined text-[13px]">notification_important</span>
+<span>Discharge Review Active (3 transfers pending)</span>
+</div>
+</div>
+<!-- Fast Track / Minor Injury -->
+<div class="p-3 rounded-lg bg-surface-container-low flex flex-col gap-1.5">
+<div class="flex items-center justify-between font-body-sm text-body-sm">
+<span class="font-body-strong text-body-strong text-on-surface">Fast Track / Minor Injury</span>
+<span class="font-telemetry-sm text-telemetry-sm font-semibold text-on-surface">3 / 4 (75%)</span>
+</div>
+<div class="h-2 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary rounded-full" style="width: 75%;"></div>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">Triage queue avg wait: 14 mins</span>
+</div>
+</div>
+</div>
+<div class="h-px bg-surface-container w-full"></div>
+<!-- Equipment & Blood Reserve Telemetry -->
+<div class="flex flex-col gap-space-sm">
+<span class="font-headline-sm text-headline-sm text-on-surface">Critical Assets &amp; Reserves</span>
+<div class="grid grid-cols-1 gap-2">
+<!-- Ventilators -->
+<div class="flex items-center justify-between p-3 rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-primary text-[20px]">air</span>
+<div class="flex flex-col">
+<span class="font-body-strong text-body-strong text-on-surface">Ventilators Active</span>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">18 In Use · 24 Total</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-telemetry-md text-telemetry-md font-bold text-primary">6 Ready</span>
+<span class="block font-telemetry-sm text-telemetry-sm text-on-surface-variant">Sterilized</span>
+</div>
+</div>
+<!-- Blood Reserve (Alert State) -->
+<div class="flex items-center justify-between p-3 rounded-lg bg-error-container">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-error text-[20px]" style="font-variation-settings: 'FILL' 1;">bloodtype</span>
+<div class="flex flex-col">
+<span class="font-body-strong text-body-strong text-on-error-container">O-Negative PRBC Units</span>
+<span class="font-telemetry-sm text-telemetry-sm text-on-error-container font-semibold">1 unit remaining</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-lowest text-on-error-container font-telemetry-sm text-telemetry-sm font-bold">
+                REQUISITION SENT
+              </span>
+</div>
+<!-- Oxygen Manifold -->
+<div class="flex items-center justify-between p-3 rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-secondary text-[20px]">compress</span>
+<div class="flex flex-col">
+<span class="font-body-strong text-body-strong text-on-surface">Oxygen Manifold Pressure</span>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">Main Bulk Tank #1 &amp; #2</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-telemetry-md text-telemetry-md font-bold text-on-surface">4.2 bar</span>
+<span class="block font-telemetry-sm text-telemetry-sm text-secondary font-semibold">Nominal 100%</span>
+</div>
+</div>
+</div>
+</div>
+<div class="h-px bg-surface-container w-full"></div>
+<!-- Rapid Clinical Command Actions -->
+<div class="flex flex-col gap-space-xs pt-1">
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant uppercase font-semibold">Emergency Dispatch Overrides</span>
+<button class="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-primary-container text-on-primary font-body-strong text-body-strong hover:opacity-90 active:scale-[0.99] transition-all shadow-sm" onclick="triggerAlert('Surge Protocol Triggered: Automated alerts routed to Multan Commissioner &amp; Provincial NDHA Hub.')">
+<span class="material-symbols-outlined text-[20px]">crisis_alert</span>
+<span>Declare Regional Trauma Surge Protocol</span>
+</button>
+<button class="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-surface-container text-on-surface font-body-strong text-body-strong hover:bg-surface-container-high active:scale-[0.99] transition-all" onclick="triggerAlert('Transfer Dossier Exported: Cryptographically signed HL7/FHIR package dispatched.')">
+<span class="material-symbols-outlined text-[18px] text-primary">send</span>
+<span>Transmit Inter-Hospital Transfer Dossier</span>
+</button>
+<button class="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm hover:bg-surface-container active:scale-[0.99] transition-all" onclick="triggerAlert('1122 CAD Synchronized: Nishtar Trauma bays set to priority routing only.')">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">podcasts</span>
+<span>Broadcast Availability Override to 1122 CAD</span>
+</button>
+</div>
+</div>
+<!-- Live Hospital Node Metadata Card -->
+<div class="flex items-center justify-between p-space-md rounded-xl bg-surface-container-low font-telemetry-sm text-telemetry-sm text-on-surface-variant">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">verified</span>
+<span>HL7 v2.8 / FHIR R4 Bridge Active</span>
+</div>
+<span class="font-semibold text-on-surface">Audit ID: #NIST-9921</span>
+</div>
+</div>
+</div>
+<!-- Interactive JavaScript -->
+<script>
+    function selectHospitalCard(cardElement, hospitalId) {
+      // Clear previous active styling from all cards
+      document.querySelectorAll('.hospital-card').forEach(function(card) {
+        card.classList.remove('shadow-md');
+        card.classList.add('shadow-sm');
+        // Reset indicator rail
+        const rail = card.querySelector('div:first-child');
+        if (rail) {
+          if (!card.dataset.id.includes('mayo')) {
+            rail.className = 'absolute left-0 top-0 bottom-0 w-1 bg-surface-container-highest';
+          }
+        }
+      });
+
+      // Highlight selected card
+      cardElement.classList.remove('shadow-sm');
+      cardElement.classList.add('shadow-md');
+      const activeRail = cardElement.querySelector('div:first-child');
+      if (activeRail && !cardElement.dataset.id.includes('mayo')) {
+        activeRail.className = 'absolute left-0 top-0 bottom-0 w-2 bg-primary';
+      }
+    }
+
+    function triggerAlert(message) {
+      alert(message);
+    }
+
+    // Filter keyboard shortcut
+    document.addEventListener('keydown', function(e) {
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+        e.preventDefault();
+        const search = document.getElementById('facilitySearchInput');
+        if (search) search.focus();
+      }
+    });
+  </script>
+</div></main></div></body></html>

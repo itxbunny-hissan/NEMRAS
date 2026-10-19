@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;700&amp;family=Sora:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"outline":"#6e7977","on-primary":"#ffffff","on-secondary":"#ffffff","surface-tint":"#006a63","surface-container-lowest":"#ffffff","on-tertiary-container":"#ffe4e1","on-surface-variant":"#3e4947","primary-fixed":"#9cf2e8","secondary":"#216963","secondary-fixed":"#abefe8","on-secondary-container":"#266d68","inverse-surface":"#1f3241","surface-variant":"#d1e5f8","inverse-on-surface":"#e6f2ff","background":"#f6f9ff","secondary-fixed-dim":"#8fd3cc","surface-dim":"#c8dcf0","primary-fixed-dim":"#80d5cb","tertiary-container":"#c03638","surface":"#f6f9ff","on-tertiary-fixed-variant":"#8f0e1a","primary-container":"#0f766e","on-background":"#091d2b","inverse-primary":"#80d5cb","tertiary":"#9e1c23","surface-bright":"#f6f9ff","surface-container-high":"#d6ebfe","on-tertiary-fixed":"#410005","surface-container":"#e1f0ff","on-primary-container":"#a3faef","surface-container-highest":"#d1e5f8","outline-variant":"#bdc9c6","on-secondary-fixed":"#00201e","on-error":"#ffffff","on-error-container":"#93000a","primary":"#005c55","on-tertiary":"#ffffff","on-primary-fixed":"#00201d","error-container":"#ffdad6","error":"#ba1a1a","on-surface":"#091d2b","tertiary-fixed-dim":"#ffb3ae","secondary-container":"#a8ece5","on-secondary-fixed-variant":"#00504b","on-primary-fixed-variant":"#00504a","tertiary-fixed":"#ffdad7","surface-container-low":"#ecf5ff"},borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},spacing:{"space-sm":"0.5rem","space-xs":"0.25rem","gutter":"1.5rem","space-md":"1rem","space-lg":"1.5rem","margin-mobile":"1rem","margin":"2rem","space-xl":"2rem","gutter-mobile":"1rem"},fontFamily:{"telemetry-lg":["JetBrains Mono"],"headline-sm":["Sora"],"telemetry-md":["JetBrains Mono"],"body-sm":["Inter"],"body-md":["Inter"],"label-md":["Inter"],"display-lg":["Sora"],"headline-md":["Sora"],"headline-lg":["Sora"],"body-strong":["Inter"],"body-lg":["Inter"],"telemetry-sm":["JetBrains Mono"],"headline-lg-mobile":["Sora"]},fontSize:{"telemetry-lg":["24px",{"lineHeight":"32px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-sm":["16px",{"lineHeight":"24px","fontWeight":"600"}],"telemetry-md":["14px",{"lineHeight":"20px","fontWeight":"500"}],"body-sm":["12px",{"lineHeight":"18px","fontWeight":"400"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"label-md":["13px",{"lineHeight":"16px","fontWeight":"500"}],"display-lg":["36px",{"lineHeight":"44px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-md":["20px",{"lineHeight":"28px","fontWeight":"600"}],"headline-lg":["28px",{"lineHeight":"36px","letterSpacing":"-0.01em","fontWeight":"600"}],"body-strong":["14px",{"lineHeight":"20px","fontWeight":"600"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"telemetry-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.04em","fontWeight":"500"}],"headline-lg-mobile":["24px",{"lineHeight":"32px","letterSpacing":"-0.01em","fontWeight":"600"}]}}}};</script></head><body class="bg-background font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col flex-1 min-h-0"><div class="h-20 flex items-center px-gutter gap-space-sm bg-surface-container-lowest"><div class="w-10 h-10 rounded-lg bg-primary-container flex items-center justify-center text-on-primary font-headline-sm text-headline-sm font-bold shadow-sm">N</div><div class="flex flex-col min-w-0"><span class="font-headline-sm text-headline-sm font-bold text-on-surface tracking-tight truncate">NEMRAS PORTAL</span><span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant uppercase tracking-wider truncate">Govt PK · NDHA Core</span></div></div><div class="px-gutter py-space-sm"><div class="p-space-sm bg-surface-container-low rounded-lg flex flex-col gap-space-xs"><span class="font-telemetry-sm text-telemetry-sm text-primary font-bold uppercase tracking-wider">Enclave Trust State</span><div class="flex items-center gap-space-xs text-on-surface-variant font-body-sm text-body-sm"><span class="w-2 h-2 rounded-full bg-secondary"></span><span class="truncate">Active Zero-Trust Enclave</span></div></div></div><nav class="flex-1 px-space-md py-space-xs overflow-y-auto space-y-space-md" data-active-classes="bg-primary-container text-on-primary font-body-strong"><div class="space-y-space-xs"><div class="px-space-sm py-space-xs font-telemetry-sm text-telemetry-sm uppercase tracking-wider text-outline font-semibold">Administration</div><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="admin-overview" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">grid_view</span><span class="font-body-md text-body-md">Admin Overview</span></div></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="user-verification" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">verified_user</span><span class="font-body-md text-body-md">User Verification</span></div><span class="px-space-xs py-0.5 rounded-full bg-secondary-container text-on-secondary-fixed-variant font-telemetry-sm text-telemetry-sm font-bold">14 Pending</span></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="roles-permissions" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">shield_lock</span><span class="font-body-md text-body-md">Roles &amp; Permissions</span></div></a></div><div class="space-y-space-xs"><div class="px-space-sm py-space-xs font-telemetry-sm text-telemetry-sm uppercase tracking-wider text-outline font-semibold">Registry &amp; Fleet</div><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="hospital-network" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">local_hospital</span><span class="font-body-md text-body-md">Hospital Network</span></div></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="responders-fleet" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">emergency</span><span class="font-body-md text-body-md">Responders &amp; Fleet</span></div></a></div><div class="space-y-space-xs"><div class="px-space-sm py-space-xs font-telemetry-sm text-telemetry-sm uppercase tracking-wider text-outline font-semibold">Governance</div><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="audit-logs-settings" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">receipt_long</span><span class="font-body-md text-body-md">Audit Logs &amp; Settings</span></div></a></div></nav></div><div class="p-space-md bg-surface-container-low"><div class="p-space-sm bg-surface-container-lowest rounded-lg shadow-[0_1px_8px_rgba(0,0,0,0.04)] flex flex-col gap-space-xs"><div class="flex items-center gap-space-xs text-primary"><span class="material-symbols-outlined text-[16px]">lock</span><span class="font-telemetry-sm text-telemetry-sm font-bold uppercase tracking-wider">Audit Ledger Verified</span></div><p class="font-telemetry-sm text-telemetry-sm text-on-surface-variant leading-relaxed">NDHA Admin Protocol v4.19 · SHA-256 Signed Audit Ledger Active</p></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-20 bg-surface-container-lowest z-40 shadow-[0_1px_8px_rgba(0,0,0,0.04)] flex items-center justify-between px-gutter"><div class="flex items-center gap-space-md min-w-0 max-w-xl"><div class="flex flex-col min-w-0"><div class="flex items-center gap-space-sm flex-wrap"><span class="font-body-strong text-body-strong text-on-surface truncate">ADMIN PORTAL · Govt of PK NDHA Enclave</span><span class="px-space-xs py-0.5 rounded-full bg-error-container text-on-error-container font-telemetry-sm text-telemetry-sm font-bold tracking-wider">DEMO PROTOTYPE DATA ONLY</span></div><span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant truncate">Zero-Trust Administrative Console</span></div></div><div class="hidden xl:flex items-center gap-space-md flex-1 max-w-md mx-space-md"><div class="w-full flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg bg-surface-container-low text-on-surface-variant focus-within:ring-2 focus-within:ring-primary-container"><span class="material-symbols-outlined text-outline text-[20px]">search</span><input class="bg-transparent w-full text-on-surface placeholder:text-outline font-body-md text-body-md outline-none border-none p-0" placeholder="Search Users, Hospitals, Responders, Logs..." type="text"/></div><div class="hidden 2xl:flex items-center gap-space-xs whitespace-nowrap px-space-sm py-space-xs rounded-full bg-surface-container-high text-on-surface"><span class="w-2 h-2 rounded-full bg-primary"></span><span class="font-telemetry-sm text-telemetry-sm font-medium">Federated Registry · All 4 Provinces + ICT/AJK</span></div></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs px-space-sm py-space-xs rounded-full bg-tertiary-container text-on-tertiary-container shadow-sm"><span class="material-symbols-outlined text-[18px]">warning</span><span class="font-telemetry-sm text-telemetry-sm font-bold">3 Alerts</span></div><div class="flex items-center gap-space-xs px-space-sm py-space-xs rounded-full bg-secondary-container text-on-secondary-fixed-variant"><span class="material-symbols-outlined text-[16px]">pulse_alert</span><span class="font-telemetry-sm text-telemetry-sm font-bold">99.8% Online</span></div><div class="flex items-center gap-space-sm pl-space-sm"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="hidden md:flex flex-col text-left"><span class="font-body-strong text-body-strong text-on-surface leading-tight">Dr. Tariq M.</span><span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant leading-tight truncate">Super Admin · NDHA-01</span></div></div><a class="flex items-center justify-center p-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="portal-switch" href="#" title="Logout or Switch Portal"><span class="material-symbols-outlined text-[22px]">logout</span></a></div></header><main class="w-full pt-20 px-gutter bg-background min-h-screen"><div class="flex flex-col w-full pb-margin">
+<!-- Breadcrumb & Top Executive Context -->
+<div class="flex flex-col gap-space-xs py-space-md">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-telemetry-sm text-telemetry-sm uppercase tracking-wider">
+<span class="hover:text-primary transition-colors cursor-pointer">National Administration Console</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-on-surface font-semibold">Roles &amp; Permissions Management</span>
+<span class="mx-space-xs text-outline">|</span>
+<span class="font-telemetry-sm text-telemetry-sm text-secondary font-bold">SCR-37 RBAC/ABAC MATRIX</span>
+</div>
+<!-- Statutory Header Banner -->
+<div class="p-space-md bg-surface-container-lowest rounded-xl shadow-sm flex flex-col lg:flex-row lg:items-center justify-between gap-space-md relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-primary-container"></div>
+<div class="flex items-start gap-space-md pl-space-xs">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">policy</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<div class="flex items-center gap-space-sm flex-wrap">
+<span class="font-headline-md text-headline-md text-on-surface tracking-tight">Zero-Trust Statutory Privilege Boundary</span>
+<span class="px-space-xs py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-telemetry-sm text-telemetry-sm font-semibold">NDHA Act 2024 · Sec 14(b)</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-4xl">
+            LEAST-PRIVILEGE SECURITY ARCHITECTURE — Role-Based Access Control (RBAC) &amp; Attribute-Based Access Control (ABAC) Matrix. Simulated live policy engine. Administrative escalation and Break-Glass protocols require Dual-Officer PKI sign-off to mitigate privilege drift.
+          </p>
+</div>
+</div>
+<div class="flex items-center gap-space-sm self-end lg:self-center shrink-0">
+<div class="flex flex-col text-right">
+<span class="font-telemetry-sm text-telemetry-sm text-outline uppercase font-semibold">Ledger Hash</span>
+<span class="font-telemetry-md text-telemetry-md text-primary font-bold">0x8F4E...12D9</span>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[20px]">verified</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Role Selection Tabs -->
+<div class="w-full bg-surface-container-lowest p-space-xs rounded-xl shadow-sm mb-space-lg">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-space-xs">
+<!-- Tab 1 -->
+<button class="flex flex-col items-start p-space-sm rounded-lg text-left transition-all hover:bg-surface-container-low text-on-surface-variant group" type="button">
+<div class="flex items-center justify-between w-full mb-1">
+<span class="font-telemetry-sm text-telemetry-sm text-outline group-hover:text-primary">01 / CITIZEN</span>
+<span class="material-symbols-outlined text-[16px] text-outline">person</span>
+</div>
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface group-hover:text-primary">Patient / Citizen</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate w-full mt-0.5">Self-access &amp; proxy consent</span>
+</button>
+<!-- Tab 2 -->
+<button class="flex flex-col items-start p-space-sm rounded-lg text-left transition-all hover:bg-surface-container-low text-on-surface-variant group" type="button">
+<div class="flex items-center justify-between w-full mb-1">
+<span class="font-telemetry-sm text-telemetry-sm text-outline group-hover:text-primary">02 / FIELD</span>
+<span class="material-symbols-outlined text-[16px] text-outline">ambulance</span>
+</div>
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface group-hover:text-primary">Emergency Responder</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate w-full mt-0.5">Vitals &amp; CAD mobile dossier</span>
+</button>
+<!-- Tab 3 -->
+<button class="flex flex-col items-start p-space-sm rounded-lg text-left transition-all hover:bg-surface-container-low text-on-surface-variant group" type="button">
+<div class="flex items-center justify-between w-full mb-1">
+<span class="font-telemetry-sm text-telemetry-sm text-outline group-hover:text-primary">03 / CLINICAL</span>
+<span class="material-symbols-outlined text-[16px] text-outline">medical_services</span>
+</div>
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface group-hover:text-primary">Clinician / Staff</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate w-full mt-0.5">EMR intake &amp; triage orders</span>
+</button>
+<!-- Tab 4 [ACTIVE] -->
+<button class="flex flex-col items-start p-space-sm rounded-lg text-left bg-primary-container text-on-primary shadow-sm relative overflow-hidden" type="button">
+<div class="absolute right-0 top-0 w-16 h-16 bg-on-primary/10 rounded-full blur-md -mr-4 -mt-4"></div>
+<div class="flex items-center justify-between w-full mb-1">
+<span class="font-telemetry-sm text-telemetry-sm text-on-primary-container font-bold">04 / OPERATIONS</span>
+<span class="px-space-xs py-0.5 rounded-full bg-on-primary/20 text-on-primary font-telemetry-sm text-telemetry-sm font-bold">ACTIVE ROLE</span>
+</div>
+<span class="font-headline-sm text-headline-sm font-bold text-on-primary">Hospital Administrator</span>
+<span class="font-body-sm text-body-sm text-on-primary-container truncate w-full mt-0.5">Bed surge, onboarding &amp; logs</span>
+</button>
+<!-- Tab 5 -->
+<button class="flex flex-col items-start p-space-sm rounded-lg text-left transition-all hover:bg-surface-container-low text-on-surface-variant group" type="button">
+<div class="flex items-center justify-between w-full mb-1">
+<span class="font-telemetry-sm text-telemetry-sm text-outline group-hover:text-primary">05 / FEDERATION</span>
+<span class="material-symbols-outlined text-[16px] text-outline">hub</span>
+</div>
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface group-hover:text-primary">National / System Admin</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate w-full mt-0.5">Enclave nodes &amp; audit root</span>
+</button>
+</div>
+</div>
+<!-- Main Grid: Permission Matrix (2/3) + Guard Panel (1/3) -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-lg items-start">
+<!-- LEFT COLUMN: 8 Columns -->
+<div class="xl:col-span-8 flex flex-col gap-space-lg">
+<!-- Matrix Header & Search/Filter Strip -->
+<div class="p-space-md bg-surface-container-lowest rounded-xl shadow-sm flex flex-col sm:flex-row items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm w-full sm:w-auto">
+<div class="w-10 h-10 rounded-lg bg-secondary-container text-on-secondary-fixed-variant flex items-center justify-center font-bold">
+<span class="material-symbols-outlined text-[22px]">admin_panel_settings</span>
+</div>
+<div>
+<h2 class="font-headline-md text-headline-md font-bold text-on-surface">Hospital Administrator Policy Set</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Scope: Institutional Scope (Provincial Cluster · Tertiary Facilities)</p>
+</div>
+</div>
+<div class="flex items-center gap-space-sm w-full sm:w-auto justify-end">
+<span class="px-space-sm py-1 rounded-full bg-surface-container-low text-on-surface-variant font-telemetry-sm text-telemetry-sm font-semibold">14 Permissions Defined</span>
+<div class="h-6 w-px bg-outline-variant"></div>
+<button class="px-space-sm py-1.5 rounded-lg bg-surface-container-high text-on-surface font-body-sm text-body-sm font-semibold hover:bg-surface-variant transition-colors flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">tune</span>
+<span>Policy JSON</span>
+</button>
+</div>
+</div>
+<!-- CATEGORY A: Clinical & Patient Records -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<div class="px-space-lg py-space-md bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">Category A: Clinical &amp; Patient Records</span>
+<span class="px-space-xs py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-telemetry-sm text-telemetry-sm font-bold">HIPAA / NDHA Privacy Strict</span>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-outline">EHR-SEC-01</span>
+</div>
+<div class="p-space-lg flex flex-col gap-space-md">
+<!-- Row 1 -->
+<div class="flex items-start justify-between gap-space-md p-space-sm rounded-lg hover:bg-surface-container-low transition-colors">
+<div class="flex flex-col gap-0.5 max-w-xl">
+<div class="flex items-center gap-space-sm">
+<span class="font-body-strong text-body-strong text-on-surface">View De-Identified Patient Summary</span>
+<span class="px-space-xs py-0.5 rounded-full bg-secondary-container text-on-secondary-fixed-variant font-telemetry-sm text-telemetry-sm font-bold">Allowed / Inherited</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Access to anonymized age, primary triage acuity category, bed occupancy duration, and disposition routing without PHI identifiers.</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer shrink-0 mt-1">
+<input checked="" class="sr-only peer" disabled="" type="checkbox"/>
+<div class="w-11 h-6 bg-secondary peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-on-primary after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-on-primary after:border-outline-variant after:border after:rounded-full after:h-5 after:w-5 after:transition-all"></div>
+</label>
+</div>
+<!-- Row 2 -->
+<div class="flex items-start justify-between gap-space-md p-space-sm rounded-lg bg-surface-container-low/40">
+<div class="flex flex-col gap-0.5 max-w-xl">
+<div class="flex items-center gap-space-sm">
+<span class="font-body-strong text-body-strong text-on-surface">Full Patient EMR Dossier Access</span>
+<span class="px-space-xs py-0.5 rounded-full bg-error-container text-on-error-container font-telemetry-sm text-telemetry-sm font-bold">Restricted · Clinician Only</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Unrestricted view of diagnostic lab results, clinical history, prescription logs, and physician SOAP notes. Prohibited for administrative roles.</p>
+</div>
+<label class="relative inline-flex items-center cursor-not-allowed shrink-0 mt-1" title="Restricted by NDHA Policy">
+<input class="sr-only peer" disabled="" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-on-primary after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-outline after:border-outline-variant after:border after:rounded-full after:h-5 after:w-5 after:transition-all"></div>
+</label>
+</div>
+<!-- Row 3 -->
+<div class="flex items-start justify-between gap-space-md p-space-sm rounded-lg hover:bg-surface-container-low transition-colors">
+<div class="flex flex-col gap-0.5 max-w-xl">
+<div class="flex items-center gap-space-sm">
+<span class="font-body-strong text-body-strong text-on-surface">Emergency Break-Glass Override</span>
+<span class="px-space-xs py-0.5 rounded-full bg-surface-container-high text-on-surface font-telemetry-sm text-telemetry-sm font-bold">Conditional Attestation</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Direct operational bypass during mass-casualty events. Mandates dual-physician digital signature and auto-triggers external NDHA watchdog alerts.</p>
+</div>
+<div class="flex items-center gap-space-xs shrink-0 mt-1">
+<span class="font-telemetry-sm text-telemetry-sm text-tertiary font-bold px-space-xs py-0.5 rounded bg-error-container">2-MFA Required</span>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:bg-primary peer-checked:after:translate-x-full peer-checked:after:border-on-primary after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-on-primary after:border-outline-variant after:border after:rounded-full after:h-5 after:w-5 after:transition-all"></div>
+</label>
+</div>
+</div>
+<!-- Row 4 -->
+<div class="flex items-start justify-between gap-space-md p-space-sm rounded-lg bg-surface-container-low/40">
+<div class="flex flex-col gap-0.5 max-w-xl">
+<div class="flex items-center gap-space-sm">
+<span class="font-body-strong text-body-strong text-on-surface">SBAR Clinical Handoff Sign-off</span>
+<span class="px-space-xs py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant font-telemetry-sm text-telemetry-sm font-bold">Attending Clinicians Only</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Formal clinical handoff and transfer protocol validation. Hospital Administrators cannot sign off on clinical shift handoffs.</p>
+</div>
+<label class="relative inline-flex items-center cursor-not-allowed shrink-0 mt-1">
+<input class="sr-only peer" disabled="" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-on-primary after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-outline after:border-outline-variant after:border after:rounded-full after:h-5 after:w-5 after:transition-all"></div>
+</label>
+</div>
+</div>
+</div>
+<!-- CATEGORY B: Facility & Capacity Operations -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<div class="px-space-lg py-space-md bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container"></span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">Category B: Facility &amp; Capacity Operations</span>
+<span class="px-space-xs py-0.5 rounded-full bg-secondary-container text-on-secondary-fixed-variant font-telemetry-sm text-telemetry-sm font-bold">Operational Command</span>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-outline">OPS-CAP-04</span>
+</div>
+<div class="p-space-lg flex flex-col gap-space-md">
+<!-- Row 1 -->
+<div class="flex items-start justify-between gap-space-md p-space-sm rounded-lg hover:bg-surface-container-low transition-colors">
+<div class="flex flex-col gap-0.5 max-w-xl">
+<div class="flex items-center gap-space-sm">
+<span class="font-body-strong text-body-strong text-on-surface">Update Emergency Department Bed Capacity</span>
+<span class="px-space-xs py-0.5 rounded-full bg-secondary-container text-on-secondary-fixed-variant font-telemetry-sm text-telemetry-sm font-bold">Live Synced</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Modify available Resus, High Dependency Unit (HDU), and Intensive Care (ICU) slot counts published to the 1122 CAD Dispatch Network.</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer shrink-0 mt-1">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:bg-primary-container peer-checked:after:translate-x-full peer-checked:after:border-on-primary after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-on-primary after:border-outline-variant after:border after:rounded-full after:h-5 after:w-5 after:transition-all"></div>
+</label>
+</div>
+<!-- Row 2 -->
+<div class="flex items-start justify-between gap-space-md p-space-sm rounded-lg hover:bg-surface-container-low transition-colors">
+<div class="flex flex-col gap-0.5 max-w-xl">
+<div class="flex items-center gap-space-sm">
+<span class="font-body-strong text-body-strong text-on-surface">Declare Regional Trauma Surge / Diversion Protocol</span>
+<span class="px-space-xs py-0.5 rounded-full bg-surface-container-high text-on-surface font-telemetry-sm text-telemetry-sm font-bold">Requires Admin Key</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Reroutes all inbound Level 1 trauma ambulances to secondary tier hospitals within the district enclave during acute overload.</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer shrink-0 mt-1">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:bg-primary-container peer-checked:after:translate-x-full peer-checked:after:border-on-primary after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-on-primary after:border-outline-variant after:border after:rounded-full after:h-5 after:w-5 after:transition-all"></div>
+</label>
+</div>
+<!-- Row 3 -->
+<div class="flex items-start justify-between gap-space-md p-space-sm rounded-lg hover:bg-surface-container-low transition-colors">
+<div class="flex flex-col gap-0.5 max-w-xl">
+<div class="flex items-center gap-space-sm">
+<span class="font-body-strong text-body-strong text-on-surface">Reassign Triage Staff &amp; Shift Rosters</span>
+<span class="px-space-xs py-0.5 rounded-full bg-secondary-container text-on-secondary-fixed-variant font-telemetry-sm text-telemetry-sm font-bold">Standard Privilege</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Update duty schedules, active triage bay nursing allocations, and physician on-call rotations across emergency modules.</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer shrink-0 mt-1">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:bg-primary-container peer-checked:after:translate-x-full peer-checked:after:border-on-primary after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-on-primary after:border-outline-variant after:border after:rounded-full after:h-5 after:w-5 after:transition-all"></div>
+</label>
+</div>
+<!-- Row 4 -->
+<div class="flex items-start justify-between gap-space-md p-space-sm rounded-lg hover:bg-surface-container-low transition-colors">
+<div class="flex flex-col gap-0.5 max-w-xl">
+<div class="flex items-center gap-space-sm">
+<span class="font-body-strong text-body-strong text-on-surface">Broadcast Critical Blood Bank Shortages</span>
+<span class="px-space-xs py-0.5 rounded-full bg-secondary-container text-on-secondary-fixed-variant font-telemetry-sm text-telemetry-sm font-bold">Standard Privilege</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Transmit emergency supply bulletins to National Blood Transfusion Authority (NBTA) and regional cluster banks.</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer shrink-0 mt-1">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:bg-primary-container peer-checked:after:translate-x-full peer-checked:after:border-on-primary after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-on-primary after:border-outline-variant after:border after:rounded-full after:h-5 after:w-5 after:transition-all"></div>
+</label>
+</div>
+</div>
+</div>
+<!-- CATEGORY C: User & Staff Governance -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<div class="px-space-lg py-space-md bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">Category C: User &amp; Staff Governance</span>
+<span class="px-space-xs py-0.5 rounded-full bg-surface-container-high text-on-surface font-telemetry-sm text-telemetry-sm font-bold">Local Credentialing</span>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-outline">GOV-USR-09</span>
+</div>
+<div class="p-space-lg flex flex-col gap-space-md">
+<!-- Row 1 -->
+<div class="flex items-start justify-between gap-space-md p-space-sm rounded-lg hover:bg-surface-container-low transition-colors">
+<div class="flex flex-col gap-0.5 max-w-xl">
+<div class="flex items-center gap-space-sm">
+<span class="font-body-strong text-body-strong text-on-surface">Approve Local Hospital Staff &amp; Clinicians</span>
+<span class="px-space-xs py-0.5 rounded-full bg-secondary-container text-on-secondary-fixed-variant font-telemetry-sm text-telemetry-sm font-bold">Enabled</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Onboard validated PMDC-licensed clinicians, resident doctors, and certified trauma nursing staff to the hospital node.</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer shrink-0 mt-1">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:bg-primary-container peer-checked:after:translate-x-full peer-checked:after:border-on-primary after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-on-primary after:border-outline-variant after:border after:rounded-full after:h-5 after:w-5 after:transition-all"></div>
+</label>
+</div>
+<!-- Row 2 -->
+<div class="flex items-start justify-between gap-space-md p-space-sm rounded-lg bg-surface-container-low/40">
+<div class="flex flex-col gap-0.5 max-w-xl">
+<div class="flex items-center gap-space-sm">
+<span class="font-body-strong text-body-strong text-on-surface">Provision Administrative Enclave Keys</span>
+<span class="px-space-xs py-0.5 rounded-full bg-error-container text-on-error-container font-telemetry-sm text-telemetry-sm font-bold">National Admin Only</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Generate hardware security module (HSM) tokens or cryptographic root certs. Strictly reserved for NDHA Federal Trust Officers.</p>
+</div>
+<label class="relative inline-flex items-center cursor-not-allowed shrink-0 mt-1">
+<input class="sr-only peer" disabled="" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-on-primary after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-outline after:border-outline-variant after:border after:rounded-full after:h-5 after:w-5 after:transition-all"></div>
+</label>
+</div>
+<!-- Row 3 -->
+<div class="flex items-start justify-between gap-space-md p-space-sm rounded-lg hover:bg-surface-container-low transition-colors">
+<div class="flex flex-col gap-0.5 max-w-xl">
+<div class="flex items-center gap-space-sm">
+<span class="font-body-strong text-body-strong text-on-surface">Suspend Compromised Staff Accounts</span>
+<span class="px-space-xs py-0.5 rounded-full bg-secondary-container text-on-secondary-fixed-variant font-telemetry-sm text-telemetry-sm font-bold">Enabled</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Immediate operational revoking of active session tokens and facility smart badge access upon suspected breach.</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer shrink-0 mt-1">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:bg-primary-container peer-checked:after:translate-x-full peer-checked:after:border-on-primary after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-on-primary after:border-outline-variant after:border after:rounded-full after:h-5 after:w-5 after:transition-all"></div>
+</label>
+</div>
+</div>
+</div>
+<!-- CATEGORY D: Security & Audit Logging -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden mb-space-md">
+<div class="px-space-lg py-space-md bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary"></span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">Category D: Security &amp; Audit Logging</span>
+<span class="px-space-xs py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-telemetry-sm text-telemetry-sm font-bold">WORM Immutable</span>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-outline">AUD-WORM-12</span>
+</div>
+<div class="p-space-lg flex flex-col gap-space-md">
+<!-- Row 1 -->
+<div class="flex items-start justify-between gap-space-md p-space-sm rounded-lg hover:bg-surface-container-low transition-colors">
+<div class="flex flex-col gap-0.5 max-w-xl">
+<div class="flex items-center gap-space-sm">
+<span class="font-body-strong text-body-strong text-on-surface">View Facility EMR Access Audit Logs</span>
+<span class="px-space-xs py-0.5 rounded-full bg-secondary-container text-on-secondary-fixed-variant font-telemetry-sm text-telemetry-sm font-bold">Enabled · Read Only</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Inspect user timestamp logs, IP addresses, and patient dossier views originating within this hospital's network perimeter.</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer shrink-0 mt-1">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:bg-primary-container peer-checked:after:translate-x-full peer-checked:after:border-on-primary after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-on-primary after:border-outline-variant after:border after:rounded-full after:h-5 after:w-5 after:transition-all"></div>
+</label>
+</div>
+<!-- Row 2 -->
+<div class="flex items-start justify-between gap-space-md p-space-sm rounded-lg bg-error-container/20">
+<div class="flex flex-col gap-0.5 max-w-xl">
+<div class="flex items-center gap-space-sm">
+<span class="font-body-strong text-body-strong text-tertiary">Modify Historical Audit Trails</span>
+<span class="px-space-xs py-0.5 rounded-full bg-tertiary text-on-tertiary font-telemetry-sm text-telemetry-sm font-bold uppercase tracking-wider">Strictly Forbidden</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Alteration of ledger block history or retroactive timestamp manipulation. Cryptographically disabled by hardware write-once ledger.</p>
+</div>
+<div class="flex items-center gap-space-xs shrink-0 mt-1 text-tertiary font-telemetry-sm text-telemetry-sm font-bold">
+<span class="material-symbols-outlined text-[18px]">lock</span>
+<span>LOCKED</span>
+</div>
+</div>
+<!-- Row 3 -->
+<div class="flex items-start justify-between gap-space-md p-space-sm rounded-lg hover:bg-surface-container-low transition-colors">
+<div class="flex flex-col gap-0.5 max-w-xl">
+<div class="flex items-center gap-space-sm">
+<span class="font-body-strong text-body-strong text-on-surface">Export Statutory Compliance Reports (PDF/CSV)</span>
+<span class="px-space-xs py-0.5 rounded-full bg-secondary-container text-on-secondary-fixed-variant font-telemetry-sm text-telemetry-sm font-bold">Enabled</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Export quarterly utilization and patient safety telemetry formatted for NDHA Provincial Health Commission submission.</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer shrink-0 mt-1">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:bg-primary-container peer-checked:after:translate-x-full peer-checked:after:border-on-primary after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-on-primary after:border-outline-variant after:border after:rounded-full after:h-5 after:w-5 after:transition-all"></div>
+</label>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN: 4 Columns (Privilege Escalation Guard Side Panel) -->
+<div class="xl:col-span-4 flex flex-col gap-space-md sticky top-24">
+<!-- Primary Guard Card -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg flex flex-col gap-space-md relative overflow-hidden">
+<div class="flex items-center justify-between pb-space-sm">
+<div class="flex items-center gap-space-xs text-primary font-body-strong text-body-strong">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">security</span>
+<span>Privilege Security Guard</span>
+</div>
+<span class="px-space-xs py-0.5 rounded-full bg-secondary-container text-on-secondary-fixed-variant font-telemetry-sm text-telemetry-sm font-bold">Policy v4.20.1</span>
+</div>
+<!-- Risk Metric Badge -->
+<div class="p-space-md bg-surface-container-low rounded-lg flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-telemetry-sm text-telemetry-sm text-outline uppercase font-semibold">Risk Classification</span>
+<span class="px-space-xs py-0.5 rounded-full bg-error-container text-on-error-container font-telemetry-sm text-telemetry-sm font-bold">High Sensitivity</span>
+</div>
+<span class="font-headline-md text-headline-md font-bold text-on-surface">Level 3 — Elevated Operational</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Grants capacity rerouting authority and local credentialing privileges across tier-1 facilities.</p>
+</div>
+<!-- Role Population & Blast Radius -->
+<div class="space-y-space-sm pt-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Active Verified Users:</span>
+<span class="font-telemetry-md text-telemetry-md font-bold text-on-surface">642 Accounts</span>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 78%;"></div>
+</div>
+<div class="flex items-center justify-between text-telemetry-sm font-telemetry-sm text-outline">
+<span>487 Healthcare Facilities</span>
+<span>4 Provinces + ICT</span>
+</div>
+</div>
+<!-- Dual-Signoff Alert Block -->
+<div class="p-space-md bg-error-container/30 rounded-lg flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-tertiary text-[20px] shrink-0 mt-0.5">verified_user</span>
+<div class="flex flex-col gap-0.5">
+<span class="font-body-strong text-body-strong text-on-surface">Dual-Sign-off Protocol Active</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Any schema alteration requires concurrent cryptographic co-signing by 2 National Health Directorate Signers prior to node broadcast.</p>
+</div>
+</div>
+<!-- Historical Modification Delta -->
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<span class="font-telemetry-sm text-telemetry-sm text-outline uppercase font-semibold">Pending Delta Summary</span>
+<div class="p-space-sm bg-surface-container-low rounded-lg flex items-center justify-between font-telemetry-sm text-telemetry-sm">
+<span class="text-on-surface-variant">Toggles Toggled:</span>
+<span class="font-bold text-primary">0 Mod (Clean Baseline)</span>
+</div>
+<div class="p-space-sm bg-surface-container-low rounded-lg flex items-center justify-between font-telemetry-sm text-telemetry-sm">
+<span class="text-on-surface-variant">Last Root Signer:</span>
+<span class="font-bold text-on-surface">Dir. Gen. Health (ICT)</span>
+</div>
+<div class="p-space-sm bg-surface-container-low rounded-lg flex items-center justify-between font-telemetry-sm text-telemetry-sm">
+<span class="text-on-surface-variant">Last Audit Verification:</span>
+<span class="font-bold text-on-surface">Today, 08:42 PKT</span>
+</div>
+</div>
+<!-- Action CTAs -->
+<div class="flex flex-col gap-space-sm pt-space-sm">
+<button class="w-full h-11 px-space-md bg-primary-container hover:bg-primary text-on-primary font-body-strong text-body-strong rounded-lg shadow-sm transition-all flex items-center justify-center gap-space-xs active:scale-[0.99]" id="openModalBtn" type="button">
+<span class="material-symbols-outlined text-[18px]">publish</span>
+<span>Save &amp; Deploy Permission Schema</span>
+</button>
+<button class="w-full h-10 px-space-md bg-transparent hover:bg-surface-container-high text-on-surface-variant font-body-sm text-body-sm rounded-lg transition-colors flex items-center justify-center gap-space-xs" type="button">
+<span class="material-symbols-outlined text-[16px]">restart_alt</span>
+<span>Reset to NDHA Standard Baseline</span>
+</button>
+</div>
+</div>
+<!-- Statutory Compliance Stamp Widget -->
+<div class="p-space-md bg-surface-container-lowest rounded-xl shadow-sm flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-fixed-variant shrink-0 font-bold">
+<span class="material-symbols-outlined text-[20px]">gavel</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-strong text-body-strong text-on-surface truncate">ISO 27799:2016 Compliant</span>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant truncate">Health informatics security management validated.</span>
+</div>
+</div>
+</div>
+</div>
+<!-- PRIVILEGE ESCALATION CONFIRMATION MODAL -->
+<div class="fixed inset-0 z-50 flex items-center justify-center bg-inverse-surface/40 backdrop-blur-xs opacity-0 pointer-events-none transition-opacity duration-200" id="confirmationModal">
+<div class="bg-surface-container-lowest rounded-xl shadow-xl w-full max-w-lg mx-space-md p-space-lg flex flex-col gap-space-md transform scale-95 transition-transform duration-200" id="modalBox">
+<!-- Modal Header -->
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-tertiary-container text-on-tertiary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">key_vertical</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Dual-Officer PKI Attestation</h3>
+<span class="font-telemetry-sm text-telemetry-sm text-tertiary font-bold uppercase tracking-wider">Privilege Escalation Gate</span>
+</div>
+</div>
+<button class="p-1 rounded-lg text-outline hover:bg-surface-container-high hover:text-on-surface transition-colors" id="closeModalBtn" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Warning Impact Banner -->
+<div class="p-space-md bg-surface-container-low rounded-lg flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs text-on-surface font-body-strong text-body-strong">
+<span class="material-symbols-outlined text-tertiary text-[18px]">warning</span>
+<span>Wide-Area Policy Impact Notice</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Deploying this updated permission matrix will immediately invalidate existing cache tokens and take effect across <strong class="text-on-surface font-semibold">642 active Hospital Administrator accounts</strong> in <strong class="text-on-surface font-semibold">487 facilities</strong> nationwide.
+        </p>
+</div>
+<!-- PKI Token Input Field Cluster -->
+<div class="flex flex-col gap-space-sm">
+<label class="font-label-md text-label-md text-on-surface font-semibold flex items-center justify-between" for="pkiKeyInput">
+<span>Primary Officer PKI Authorization Key</span>
+<span class="text-primary font-telemetry-sm text-telemetry-sm">HSM FIPS 140-3 Slot #1</span>
+</label>
+<div class="relative">
+<input class="w-full h-11 px-space-md rounded-lg bg-surface-container-lowest text-on-surface font-telemetry-md text-telemetry-md focus:outline-none focus:ring-2 focus:ring-primary shadow-xs" id="pkiKeyInput" placeholder="Enter or paste NDHA cryptographic token..." type="password" value="PKI-NDHA-SEC-9921-X992-AUTH"/>
+<span class="material-symbols-outlined absolute right-3 top-2.5 text-outline text-[20px]">fingerprint</span>
+</div>
+<div class="flex items-center justify-between text-telemetry-sm font-telemetry-sm text-outline">
+<span>Key Owner: Tariq M. (NDHA-01 Super Admin)</span>
+<span class="text-primary font-bold">Hardware Present ✓</span>
+</div>
+</div>
+<!-- Secondary Signer Status Pill -->
+<div class="p-space-sm bg-surface-container-high rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-space-xs text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[18px]">sync</span>
+<span class="font-body-sm text-body-sm">Secondary Signer Queue:</span>
+</div>
+<span class="px-space-xs py-0.5 rounded-full bg-secondary-container text-on-secondary-fixed-variant font-telemetry-sm text-telemetry-sm font-bold">DG-Health (Awaiting Remote Tap)</span>
+</div>
+<!-- Modal Action Buttons -->
+<div class="flex items-center justify-end gap-space-sm pt-space-xs">
+<button class="h-10 px-space-md rounded-lg text-on-surface-variant hover:bg-surface-container-high font-body-sm text-body-sm transition-colors" id="cancelModalBtn" type="button">
+          Cancel &amp; Review
+        </button>
+<button class="h-10 px-space-lg rounded-lg bg-primary-container hover:bg-primary text-on-primary font-body-strong text-body-strong shadow-sm transition-all flex items-center gap-space-xs" id="confirmDeployBtn" type="button">
+<span class="material-symbols-outlined text-[18px]">security_update_good</span>
+<span>Sign &amp; Propagate Schema</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Notification Toast Container -->
+<div class="fixed bottom-6 right-6 z-50 hidden bg-inverse-surface text-inverse-on-surface px-space-md py-space-sm rounded-lg shadow-xl flex items-center gap-space-sm animate-bounce" id="toast">
+<span class="material-symbols-outlined text-primary-fixed text-[20px]">check_circle</span>
+<span class="font-body-sm text-body-sm">Schema broadcast initialized across all 487 enclave nodes.</span>
+</div>
+</div>
+<script>
+  (function initRBACConsole() {
+    const openBtn = document.getElementById('openModalBtn');
+    const closeBtn = document.getElementById('closeModalBtn');
+    const cancelBtn = document.getElementById('cancelModalBtn');
+    const confirmBtn = document.getElementById('confirmDeployBtn');
+    const modal = document.getElementById('confirmationModal');
+    const modalBox = document.getElementById('modalBox');
+    const toast = document.getElementById('toast');
+
+    function showModal() {
+      if (!modal) return;
+      modal.classList.remove('opacity-0', 'pointer-events-none');
+      modal.classList.add('opacity-100');
+      modalBox.classList.remove('scale-95');
+      modalBox.classList.add('scale-100');
+    }
+
+    function hideModal() {
+      if (!modal) return;
+      modal.classList.add('opacity-0', 'pointer-events-none');
+      modal.classList.remove('opacity-100');
+      modalBox.classList.add('scale-95');
+      modalBox.classList.remove('scale-100');
+    }
+
+    if (openBtn) openBtn.addEventListener('click', showModal);
+    if (closeBtn) closeBtn.addEventListener('click', hideModal);
+    if (cancelBtn) cancelBtn.addEventListener('click', hideModal);
+
+    if (modal) {
+      modal.addEventListener('click', function(e) {
+        if (e.target === modal) hideModal();
+      });
+    }
+
+    if (confirmBtn) {
+      confirmBtn.addEventListener('click', function() {
+        hideModal();
+        if (toast) {
+          toast.classList.remove('hidden');
+          setTimeout(() => {
+            toast.classList.add('hidden');
+          }, 4500);
+        }
+      });
+    }
+  })();
+</script></main></div></body></html>

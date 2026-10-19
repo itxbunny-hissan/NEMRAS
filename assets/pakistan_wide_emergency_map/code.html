@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;700&amp;family=Sora:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-error-container":"#93000a","background":"#f6f9ff","surface-container":"#e1f0ff","primary-fixed":"#9cf2e8","on-error":"#ffffff","on-tertiary-fixed":"#410005","inverse-on-surface":"#e6f2ff","on-primary-container":"#a3faef","on-background":"#091d2b","primary":"#005c55","outline":"#6e7977","on-tertiary":"#ffffff","surface-container-highest":"#d1e5f8","on-secondary-fixed-variant":"#00504b","inverse-surface":"#1f3241","surface":"#f6f9ff","secondary-container":"#a8ece5","on-secondary-fixed":"#00201e","secondary":"#216963","surface-container-lowest":"#ffffff","surface-tint":"#006a63","primary-fixed-dim":"#80d5cb","secondary-fixed":"#abefe8","on-secondary":"#ffffff","surface-container-low":"#ecf5ff","tertiary-container":"#c03638","on-primary-fixed":"#00201d","on-secondary-container":"#266d68","error-container":"#ffdad6","on-tertiary-container":"#ffe4e1","tertiary-fixed":"#ffdad7","outline-variant":"#bdc9c6","surface-variant":"#d1e5f8","on-primary":"#ffffff","surface-container-high":"#d6ebfe","on-surface-variant":"#3e4947","tertiary":"#9e1c23","on-tertiary-fixed-variant":"#8f0e1a","on-surface":"#091d2b","secondary-fixed-dim":"#8fd3cc","on-primary-fixed-variant":"#00504a","surface-bright":"#f6f9ff","error":"#ba1a1a","tertiary-fixed-dim":"#ffb3ae","primary-container":"#0f766e","surface-dim":"#c8dcf0","inverse-primary":"#80d5cb"},borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},spacing:{"space-xl":"2rem","margin":"2rem","space-md":"1rem","space-sm":"0.5rem","gutter":"1.5rem","margin-mobile":"1rem","space-lg":"1.5rem","gutter-mobile":"1rem","space-xs":"0.25rem"},fontFamily:{"label-md":["Inter"],"display-lg":["Sora"],"headline-sm":["Sora"],"telemetry-md":["JetBrains Mono"],"telemetry-lg":["JetBrains Mono"],"body-md":["Inter"],"body-lg":["Inter"],"headline-lg":["Sora"],"body-sm":["Inter"],"headline-lg-mobile":["Sora"],"body-strong":["Inter"],"telemetry-sm":["JetBrains Mono"],"headline-md":["Sora"]},fontSize:{"label-md":["13px",{lineHeight:"16px",fontWeight:"500"}],"display-lg":["36px",{lineHeight:"44px",letterSpacing:"-0.02em",fontWeight:"700"}],"headline-sm":["16px",{lineHeight:"24px",fontWeight:"600"}],"telemetry-md":["14px",{lineHeight:"20px",fontWeight:"500"}],"telemetry-lg":["24px",{lineHeight:"32px",letterSpacing:"-0.02em",fontWeight:"700"}],"body-md":["14px",{lineHeight:"20px",fontWeight:"400"}],"body-lg":["16px",{lineHeight:"24px",fontWeight:"400"}],"headline-lg":["28px",{lineHeight:"36px",letterSpacing:"-0.01em",fontWeight:"600"}],"body-sm":["12px",{lineHeight:"18px",fontWeight:"400"}],"headline-lg-mobile":["24px",{lineHeight:"32px",letterSpacing:"-0.01em",fontWeight:"600"}],"body-strong":["14px",{lineHeight:"20px",fontWeight:"600"}],"telemetry-sm":["11px",{lineHeight:"14px",letterSpacing:"0.04em",fontWeight:"500"}],"headline-md":["20px",{lineHeight:"28px",fontWeight:"600"}]}}}};</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased min-h-screen"><aside class="fixed left-0 top-0 h-full w-[240px] bg-surface-container-lowest z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col"><div class="h-[60px] px-space-md flex items-center gap-space-sm bg-surface-container-lowest"><div class="w-8 h-8 rounded-lg bg-primary-container flex items-center justify-center text-on-primary shadow-sm"><span class="material-symbols-outlined text-[20px]">health_and_safety</span></div><div class="flex flex-col min-w-0 flex-1"><div class="flex items-center gap-1.5"><span class="font-headline-sm text-headline-sm text-primary tracking-tight leading-none">NEMRAS</span><span class="px-1.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-telemetry-sm text-telemetry-sm font-semibold leading-none">OPS</span></div><span class="font-body-sm text-body-sm text-on-surface-variant truncate mt-0.5">Govt of PK · NDHA</span></div></div><div class="px-space-md py-space-sm"><span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant font-semibold uppercase tracking-wider block mb-space-xs">Operations</span><nav class="flex flex-col gap-1" data-active-classes="bg-primary-container text-on-primary font-body-strong"><a class="flex items-center gap-2.5 px-3 py-2 rounded-lg font-body-md text-body-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="national-dashboard" href="#"><span class="material-symbols-outlined text-[18px]">dashboard</span><span>National Dashboard</span></a><a aria-current="page" class="flex items-center gap-2.5 px-3 py-2 rounded-lg transition-all bg-primary-container text-on-primary font-body-strong" data-path="emergency-map" href="#"><span class="material-symbols-outlined text-[18px]">public</span><span>Emergency Map</span></a><a class="flex items-center gap-2.5 px-3 py-2 rounded-lg font-body-md text-body-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="regional-analytics" href="#"><span class="material-symbols-outlined text-[18px]">bar_chart</span><span>Regional Analytics</span></a></nav></div><div class="px-space-md py-space-sm"><span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant font-semibold uppercase tracking-wider block mb-space-xs">Health Intel</span><nav class="flex flex-col gap-1" data-active-classes="bg-primary-container text-on-primary font-body-strong"><a class="flex items-center gap-2.5 px-3 py-2 rounded-lg font-body-md text-body-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="population-health" href="#"><span class="material-symbols-outlined text-[18px]">vital_signs</span><span>Population Health</span></a><a class="flex items-center gap-2.5 px-3 py-2 rounded-lg font-body-md text-body-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="hospital-network" href="#"><span class="material-symbols-outlined text-[18px]">local_hospital</span><span>Hospital Network</span></a><a class="flex items-center gap-2.5 px-3 py-2 rounded-lg font-body-md text-body-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="incident-reports" href="#"><span class="material-symbols-outlined text-[18px]">assignment</span><span>Incident Reports</span></a></nav></div><div class="px-space-md py-space-sm"><span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant font-semibold uppercase tracking-wider block mb-space-xs">System</span><nav class="flex flex-col gap-1" data-active-classes="bg-primary-container text-on-primary font-body-strong"><a class="flex items-center gap-2.5 px-3 py-2 rounded-lg font-body-md text-body-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="settings-and-audit" href="#"><span class="material-symbols-outlined text-[18px]">tune</span><span>Settings &amp; Audit</span></a></nav></div></div><div class="p-space-md bg-surface-container-low flex flex-col gap-space-sm m-space-sm rounded-xl"><div class="flex items-center gap-2"><span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span></span><span class="font-telemetry-sm text-telemetry-sm text-primary font-semibold truncate">487 Nodes · Kafka 99.8%</span></div><div class="bg-surface-container-lowest px-2 py-1.5 rounded-lg text-center shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><span class="font-body-sm text-body-sm text-on-surface-variant block">Simulated Demo Feed</span><span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant font-semibold">NDHA OPS ENV-01</span></div></div></aside><div class="pl-[240px]"><header class="fixed top-0 left-[240px] right-0 h-[60px] bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-lg"><div class="flex items-center gap-space-md"><div class="flex items-center gap-2 px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container"><span class="inline-block w-1.5 h-1.5 rounded-full bg-primary"></span><span class="font-telemetry-sm text-telemetry-sm font-semibold tracking-wide uppercase">National Feed Sync · 14:22 PKT</span></div></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-surface-container text-on-surface font-body-sm text-body-sm shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><span class="material-symbols-outlined text-[16px] text-primary">explore</span><span class="font-body-strong text-body-strong">All Pakistan</span><span class="text-on-surface-variant">(4 Prov + 2 Terr)</span></div><div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-error-container text-on-error-container"><span class="material-symbols-outlined text-[18px] text-error">warning</span><span class="font-telemetry-sm text-telemetry-sm font-semibold">3 Critical Alerts</span></div><div class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-telemetry-sm text-telemetry-sm font-semibold tracking-wider uppercase">Demo Prototype Data Only</div><div class="flex items-center gap-2.5 pl-space-sm"><div class="flex flex-col text-right"><span class="font-body-strong text-body-strong leading-tight text-on-surface">Dr. Tariq M.</span><span class="font-body-sm text-body-sm text-on-surface-variant leading-tight">DG NDHA · PK-HQ-01</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-sm"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="relative pt-[60px] w-full min-h-screen bg-surface px-space-lg py-space-lg max-w-[1600px] mx-auto"><div class="flex flex-col w-full gap-space-md">
+<!-- Top Notice / Disclaimer Bar -->
+<div class="flex items-center justify-between px-space-md py-2 rounded-lg bg-surface-container-high text-on-surface-variant shadow-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<span class="material-symbols-outlined text-primary text-[18px] flex-shrink-0">satellite_alt</span>
+<p class="font-telemetry-sm text-telemetry-sm font-semibold truncate tracking-wide">
+<span class="text-tertiary">DEMONSTRATION GEOSPATIAL CAD TELEMETRY</span>
+<span class="mx-1 text-outline">·</span>
+        Fictional incident distribution for system validation. Live GPS and CAD integrations are simulated.
+      </p>
+</div>
+<div class="flex items-center gap-space-sm flex-shrink-0">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-telemetry-sm text-telemetry-sm font-semibold">
+<span class="h-1.5 w-1.5 rounded-full bg-primary animate-pulse"></span>
+        GIS BUFFER 1.2ms
+      </span>
+<span class="font-telemetry-sm text-telemetry-sm text-outline-variant font-medium">EPSG:3857 (WGS84 Web)</span>
+</div>
+</div>
+<!-- Command & Controls Bar -->
+<div class="flex flex-col gap-space-sm p-space-md bg-surface-container-lowest rounded-xl shadow-sm">
+<div class="flex flex-wrap items-center gap-space-sm">
+<!-- Search Input -->
+<div class="relative flex-1 min-w-[340px]">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[18px]">search</span>
+<input class="w-full pl-9 pr-3 py-2 bg-surface-container-low rounded-lg text-on-surface font-body-md text-body-md placeholder:text-outline-variant focus:outline-none focus:bg-surface-container transition-colors" id="mapSearchInput" placeholder="Search by City, District, Incident ID, or Hospital (e.g., Nishtar, Multan, #PK-1122)..." type="text"/>
+</div>
+<!-- Urgency Filter -->
+<div class="relative min-w-[170px]">
+<select class="w-full appearance-none pl-3 pr-8 py-2 bg-surface-container-low text-on-surface rounded-lg font-body-sm text-body-sm focus:outline-none focus:bg-surface-container cursor-pointer font-medium">
+<option>All Tiers (Red/Yellow/Green)</option>
+<option>Code Red (Critical Life-Threat)</option>
+<option>Code Yellow (Severe Trauma/RTA)</option>
+<option>Code Green (Non-Acute Triage)</option>
+</select>
+<span class="material-symbols-outlined pointer-events-none absolute right-2.5 top-1/2 -translate-y-1/2 text-outline text-[16px]">expand_more</span>
+</div>
+<!-- Category Filter -->
+<div class="relative min-w-[180px]">
+<select class="w-full appearance-none pl-3 pr-8 py-2 bg-surface-container-low text-on-surface rounded-lg font-body-sm text-body-sm focus:outline-none focus:bg-surface-container cursor-pointer font-medium">
+<option>All Categories (Cardiac, RTA...)</option>
+<option>Cardiac / Coronary Shock</option>
+<option>RTA Trauma &amp; Multi-Collision</option>
+<option>Severe Respiratory Distress</option>
+<option>High-Risk Maternal &amp; Neonatal</option>
+</select>
+<span class="material-symbols-outlined pointer-events-none absolute right-2.5 top-1/2 -translate-y-1/2 text-outline text-[16px]">expand_more</span>
+</div>
+<!-- Region Filter -->
+<div class="relative min-w-[160px]">
+<select class="w-full appearance-none pl-3 pr-8 py-2 bg-surface-container-low text-on-surface rounded-lg font-body-sm text-body-sm focus:outline-none focus:bg-surface-container cursor-pointer font-medium">
+<option>All Provinces (PK-Full)</option>
+<option>Punjab (Divisions 1-9)</option>
+<option>Sindh (Karachi/Hyderabad)</option>
+<option>Khyber Pakhtunkhwa (KP)</option>
+<option>Balochistan (Quetta)</option>
+<option>ICT Islamabad</option>
+<option>Azad Jammu &amp; Kashmir</option>
+<option>Gilgit-Baltistan</option>
+</select>
+<span class="material-symbols-outlined pointer-events-none absolute right-2.5 top-1/2 -translate-y-1/2 text-outline text-[16px]">expand_more</span>
+</div>
+<!-- Status Filter -->
+<div class="relative min-w-[160px]">
+<select class="w-full appearance-none pl-3 pr-8 py-2 bg-surface-container-low text-on-surface rounded-lg font-body-sm text-body-sm focus:outline-none focus:bg-surface-container cursor-pointer font-medium">
+<option>Active Response &amp; En Route</option>
+<option>Ambulance On Scene</option>
+<option>Patient Handover In Progress</option>
+<option>Resolved in Last 60m</option>
+</select>
+<span class="material-symbols-outlined pointer-events-none absolute right-2.5 top-1/2 -translate-y-1/2 text-outline text-[16px]">expand_more</span>
+</div>
+</div>
+<!-- Secondary Switchers & Simulation State Selector -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm pt-2">
+<!-- Layer Toggles -->
+<div class="flex items-center gap-space-sm">
+<label class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-container-low text-on-surface cursor-pointer select-none hover:bg-surface-container transition-colors">
+<input checked="" class="accent-primary h-3.5 w-3.5 rounded" id="toggleHospitals" type="checkbox"/>
+<span class="material-symbols-outlined text-[16px] text-primary">local_hospital</span>
+<span class="font-body-sm text-body-sm font-semibold">Trauma Hospitals (487)</span>
+</label>
+<label class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-container-low text-on-surface cursor-pointer select-none hover:bg-surface-container transition-colors">
+<input checked="" class="accent-primary h-3.5 w-3.5 rounded" id="toggleResponders" type="checkbox"/>
+<span class="material-symbols-outlined text-[16px] text-secondary">emergency</span>
+<span class="font-body-sm text-body-sm font-semibold">Responders (1,240 Units)</span>
+</label>
+<div class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-secondary-container/40 text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-primary">router</span>
+<span class="font-telemetry-sm text-telemetry-sm font-medium">Telemetry Cluster: Karachi, Lahore, Multan, Pindi, Quetta</span>
+</div>
+</div>
+<!-- Simulation State Pills -->
+<div class="flex items-center gap-1.5 p-1 bg-surface-container-low rounded-lg">
+<button class="px-2.5 py-1 rounded-md bg-surface-container-lowest text-primary font-telemetry-sm text-telemetry-sm font-bold shadow-sm transition-all flex items-center gap-1" id="simActiveBtn">
+<span class="inline-block w-2 h-2 rounded-full bg-primary"></span>
+          Viewing Active Map
+        </button>
+<button class="px-2.5 py-1 rounded-md text-on-surface-variant font-telemetry-sm text-telemetry-sm font-medium hover:text-on-surface hover:bg-surface-container transition-all flex items-center gap-1" id="simOutageBtn">
+<span class="inline-block w-2 h-2 rounded-full bg-tertiary"></span>
+          Simulate Network Outage
+        </button>
+<button class="px-2.5 py-1 rounded-md text-on-surface-variant font-telemetry-sm text-telemetry-sm font-medium hover:text-on-surface hover:bg-surface-container transition-all flex items-center gap-1" id="simEmptyBtn">
+<span class="material-symbols-outlined text-[14px]">filter_alt_off</span>
+          Empty Search State
+        </button>
+</div>
+</div>
+</div>
+<!-- Interactive Map Workspace (Split Screen 70% / 30%) -->
+<div class="grid grid-cols-12 gap-space-md w-full items-start">
+<!-- LEFT: Large Stylized Pakistan Vector Map Canvas (8.5 cols ≈ 70%) -->
+<div class="col-span-12 xl:col-span-8 bg-surface-container-lowest rounded-xl shadow-sm relative overflow-hidden min-h-[760px] flex flex-col justify-between">
+<!-- Network Outage Simulator Banner (hidden by default) -->
+<div class="hidden absolute top-0 left-0 right-0 z-30 bg-tertiary text-on-tertiary px-space-md py-2 shadow-md flex items-center justify-between animate-pulse" id="outageBanner">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px]">cloud_off</span>
+<span class="font-headline-sm text-headline-sm font-bold">CAD SIMULATION: SATELLITE DISLINK OVER BALOCHISTAN-SINDH CORRIDOR</span>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm font-semibold uppercase px-2 py-0.5 rounded bg-surface-container-lowest/20">Mesh HF Repeaters Engaged (Auto-Rebound)</span>
+</div>
+<!-- Floating Map Header / Metrics Strip -->
+<div class="absolute top-4 left-4 z-20 flex flex-wrap items-center gap-2 pointer-events-none">
+<div class="pointer-events-auto px-3 py-1.5 rounded-lg bg-surface-container-lowest/90 backdrop-blur-md shadow-md flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">public</span>
+<span class="font-headline-sm text-headline-sm text-primary font-bold">PAK CAD GRID</span>
+<span class="font-telemetry-sm text-telemetry-sm px-1.5 py-0.5 rounded bg-surface-container text-on-surface font-semibold">LIVE V3.4</span>
+</div>
+<div class="pointer-events-auto px-2.5 py-1.5 rounded-lg bg-surface-container-lowest/90 backdrop-blur-md shadow-md flex items-center gap-2">
+<span class="inline-block w-2.5 h-2.5 rounded-full bg-tertiary animate-ping"></span>
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">4 Code Red Live</span>
+</div>
+<div class="pointer-events-auto px-2.5 py-1.5 rounded-lg bg-surface-container-lowest/90 backdrop-blur-md shadow-md flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-secondary">timer</span>
+<span class="font-body-sm text-body-sm font-medium text-on-surface">Avg Punjab En-Route: <strong>7.4 min</strong></span>
+</div>
+</div>
+<!-- Floating Map Navigation Tools (Top Right) -->
+<div class="absolute top-4 right-4 z-20 flex flex-col gap-1.5">
+<div class="flex flex-col rounded-lg bg-surface-container-lowest/95 backdrop-blur-md shadow-md overflow-hidden p-1 gap-1">
+<button class="w-8 h-8 rounded flex items-center justify-center text-on-surface hover:bg-surface-container transition-colors" id="zoomInBtn" title="Zoom In">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+<button class="w-8 h-8 rounded flex items-center justify-center text-on-surface hover:bg-surface-container transition-colors" id="zoomOutBtn" title="Zoom Out">
+<span class="material-symbols-outlined text-[18px]">remove</span>
+</button>
+<button class="w-8 h-8 rounded flex items-center justify-center text-on-surface hover:bg-surface-container transition-colors" id="recenterBtn" title="Recenter National Map">
+<span class="material-symbols-outlined text-[18px]">my_location</span>
+</button>
+</div>
+<div class="flex rounded-lg bg-surface-container-lowest/95 backdrop-blur-md shadow-md p-1 gap-1">
+<button class="px-2 py-1 rounded bg-primary text-on-primary font-telemetry-sm text-telemetry-sm font-bold text-center" id="layerVectorBtn">Vector</button>
+<button class="px-2 py-1 rounded text-on-surface-variant font-telemetry-sm text-telemetry-sm hover:bg-surface-container font-medium text-center" id="layerSatBtn">Terrain</button>
+</div>
+</div>
+<!-- SVG Pakistan Canvas & Telemetry Overlay -->
+<div class="relative w-full h-[760px] bg-gradient-to-b from-surface-container-low/40 via-surface-container-lowest to-surface-container-low/30 overflow-hidden flex items-center justify-center">
+<!-- Cartographic Background Grid Lines -->
+<svg class="absolute inset-0 w-full h-full pointer-events-none opacity-40" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<pattern height="48" id="grid" patternunits="userSpaceOnUse" width="48">
+<path class="text-outline-variant/30" d="M 48 0 L 0 0 0 48" fill="none" stroke="currentColor" stroke-width="0.5"></path>
+</pattern>
+</defs>
+<rect fill="url(#grid)" height="100%" width="100%"></rect>
+</svg>
+<!-- Dynamic Empty Search Placeholder View (Hidden unless active) -->
+<div class="hidden absolute inset-0 z-20 bg-surface-container-lowest/95 backdrop-blur-sm flex flex-col items-center justify-center p-space-xl text-center" id="emptyMapNotice">
+<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center text-outline mb-space-sm">
+<span class="material-symbols-outlined text-[32px]">manage_search</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-1">No Active Incidents in Filtered Sector</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md mb-space-md">
+            No Code Red, Yellow, or ambulance telemetry matched your filter combination. All responding assets in this district are currently docked or standing by at base trauma stations.
+          </p>
+<button class="px-4 py-2 rounded-lg bg-primary text-on-primary font-body-strong text-body-strong shadow-sm hover:opacity-95 transition-opacity" id="resetSearchBtn">
+            Reset Filters &amp; Reload Telemetry
+          </button>
+</div>
+<!-- Pakistan Stylized Vector Map with Province Shapes & Arterial Roadways -->
+<svg class="w-full h-full object-contain filter drop-shadow-sm select-none" id="pakistanSvgMap" viewbox="0 0 900 780" xmlns="http://www.w3.org/2000/svg">
+<!-- Province Outlines (Stylized High-Legibility Polygons for Telemetry GIS) -->
+<g class="cursor-crosshair" id="provinces">
+<!-- Gilgit-Baltistan -->
+<polygon class="hover:fill-surface-container-high transition-colors" fill="#e1f0ff" points="560,30 670,40 730,90 690,150 600,165 540,110" stroke="#bdc9c6" stroke-width="1.5"></polygon>
+<text class="font-telemetry-sm font-semibold" fill="#091d2b" font-size="11" opacity="0.6" x="620" y="90">GILGIT-BALTISTAN</text>
+<!-- Azad Jammu & Kashmir -->
+<polygon class="hover:fill-surface-container-high transition-colors" fill="#d6ebfe" points="590,155 650,155 640,210 610,240 575,200" stroke="#bdc9c6" stroke-width="1.5"></polygon>
+<text class="font-telemetry-sm font-semibold" fill="#091d2b" font-size="10" opacity="0.7" x="618" y="195">AJK</text>
+<!-- Khyber Pakhtunkhwa (KP) -->
+<polygon class="hover:fill-surface-container-high transition-colors" fill="#d1e5f8" points="460,70 550,110 575,185 530,225 480,245 440,320 405,285 435,210 445,140" stroke="#bdc9c6" stroke-width="1.5"></polygon>
+<text class="font-telemetry-sm font-semibold" fill="#091d2b" font-size="12" opacity="0.65" x="475" y="185">KHYBER PAKHTUNKHA</text>
+<!-- ICT (Federal Capital) -->
+<circle cx="545" cy="210" fill="#abefe8" r="14" stroke="#005c55" stroke-width="2"></circle>
+<text class="font-headline-sm font-bold" fill="#005c55" font-size="11" x="564" y="214">ICT ISLAMABAD</text>
+<!-- Punjab -->
+<polygon class="hover:fill-surface-container-high transition-colors" fill="#e1f0ff" points="535,228 610,245 680,310 655,420 590,490 520,495 480,440 450,380 475,320 520,270" stroke="#bdc9c6" stroke-width="1.5"></polygon>
+<text class="font-telemetry-sm font-bold" fill="#091d2b" font-size="16" letter-spacing="2" opacity="0.65" x="550" y="360">PUNJAB</text>
+<!-- Balochistan -->
+<polygon class="hover:fill-surface-container-high transition-colors" fill="#ecf5ff" points="210,320 380,315 445,390 480,445 440,510 390,560 310,600 240,580 160,540 130,440 180,380" stroke="#bdc9c6" stroke-width="1.5"></polygon>
+<text class="font-telemetry-sm font-bold" fill="#091d2b" font-size="16" letter-spacing="3" opacity="0.65" x="260" y="460">BALOCHISTAN</text>
+<!-- Sindh -->
+<polygon class="hover:fill-surface-container-high transition-colors" fill="#d1e5f8" points="440,510 520,495 560,540 550,650 490,695 420,680 390,620 395,560" stroke="#bdc9c6" stroke-width="1.5"></polygon>
+<text class="font-telemetry-sm font-bold" fill="#091d2b" font-size="16" letter-spacing="2" opacity="0.65" x="450" y="600">SINDH</text>
+</g>
+<!-- National Highway Arterials (N-5, M-2, M-3, M-4, Coastal Highway) -->
+<g fill="none" id="highways" opacity="0.85" stroke="#bdc9c6" stroke-dasharray="4,3" stroke-width="2">
+<!-- Peshawar -> Islamabad -> Lahore -> Multan -> Sukkur -> Karachi (N-5/Motorway spine) -->
+<path d="M 465,190 L 545,210 L 625,290 L 510,405 L 450,560 L 410,660"></path>
+<!-- Quetta to Karachi connector -->
+<path d="M 320,380 L 360,470 L 410,660"></path>
+<!-- Quetta to Multan connector -->
+<path d="M 320,380 L 410,390 L 510,405"></path>
+</g>
+<!-- Interactive Ambulance Vectors & Routes (Cyan/Teal Pulses) -->
+<g id="ambulanceLayer">
+<!-- AMB-37 Multan En Route Vector -->
+<line stroke="#005c55" stroke-dasharray="4,2" stroke-width="2.5" x1="535" x2="510" y1="418" y2="405"></line>
+<circle cx="522" cy="411" fill="#0f766e" r="5"></circle>
+<text class="font-telemetry-sm font-bold" fill="#005c55" font-size="9" x="532" y="415">AMB-37 (1122)</text>
+<!-- AMB-12 Karachi Port Vector -->
+<line stroke="#005c55" stroke-dasharray="3,2" stroke-width="2" x1="395" x2="410" y1="645" y2="660"></line>
+<circle cx="400" cy="650" fill="#0f766e" r="4.5"></circle>
+<!-- AMB-88 Lahore Ferozepur Vector -->
+<line stroke="#005c55" stroke-dasharray="3,2" stroke-width="2" x1="615" x2="625" y1="305" y2="290"></line>
+<circle cx="620" cy="298" fill="#0f766e" r="4.5"></circle>
+</g>
+<!-- Hospital Node Pins (Teal Crosses + Availability Pill) -->
+<g id="hospitalLayer">
+<!-- Nishtar Hospital Multan -->
+<g class="cursor-pointer group" onclick="switchIncident('multan')">
+<rect class="shadow-sm" fill="#ffffff" height="22" rx="5" stroke="#005c55" stroke-width="1.5" width="22" x="495" y="392"></rect>
+<path d="M 506 397 L 506 409 M 500 403 L 512 403" stroke="#005c55" stroke-linecap="round" stroke-width="2.5"></path>
+<g transform="translate(522, 392)">
+<rect fill="#091d2b" height="20" opacity="0.9" rx="4" width="130"></rect>
+<text class="font-telemetry-sm font-bold" fill="#ffffff" font-size="10" x="6" y="14">Nishtar Multan [3 Bays Avail]</text>
+</g>
+</g>
+<!-- Aga Khan Karachi -->
+<g class="cursor-pointer group" onclick="switchIncident('karachi')">
+<rect fill="#ffffff" height="22" rx="5" stroke="#005c55" stroke-width="1.5" width="22" x="395" y="650"></rect>
+<path d="M 406 655 L 406 667 M 400 661 L 412 661" stroke="#005c55" stroke-linecap="round" stroke-width="2.5"></path>
+<g transform="translate(422, 650)">
+<rect fill="#091d2b" height="20" opacity="0.9" rx="4" width="145"></rect>
+<text class="font-telemetry-sm font-bold" fill="#ffffff" font-size="10" x="6" y="14">Aga Khan Karachi [12 Bays Avail]</text>
+</g>
+</g>
+<!-- PIMS Islamabad -->
+<g class="cursor-pointer group" onclick="switchIncident('islamabad')">
+<rect fill="#ffffff" height="22" rx="5" stroke="#005c55" stroke-width="1.5" width="22" x="535" y="198"></rect>
+<path d="M 546 203 L 546 215 M 540 209 L 552 209" stroke="#005c55" stroke-linecap="round" stroke-width="2.5"></path>
+<g transform="translate(562, 198)">
+<rect fill="#091d2b" height="20" opacity="0.9" rx="4" width="124"></rect>
+<text class="font-telemetry-sm font-bold" fill="#ffffff" font-size="10" x="6" y="14">PIMS Islamabad [5 Bays Avail]</text>
+</g>
+</g>
+<!-- Mayo Hospital Lahore -->
+<g class="cursor-pointer group" onclick="switchIncident('lahore')">
+<rect fill="#ffffff" height="22" rx="5" stroke="#c03638" stroke-width="1.5" width="22" x="615" y="278"></rect>
+<path d="M 626 283 L 626 295 M 620 289 L 632 289" stroke="#c03638" stroke-linecap="round" stroke-width="2.5"></path>
+<g transform="translate(642, 278)">
+<rect fill="#9e1c23" height="20" opacity="0.95" rx="4" width="120"></rect>
+<text class="font-telemetry-sm font-bold" fill="#ffffff" font-size="10" x="6" y="14">Mayo Lahore [Full 96%]</text>
+</g>
+</g>
+</g>
+<!-- Incident Emergency Pins Layer -->
+<g id="incidentPins">
+<!-- Code Yellow Pin near Faisalabad -->
+<g class="cursor-pointer" onclick="switchIncident('faisalabad')">
+<circle cx="560" cy="330" fill="#d97706" fill-opacity="0.2" r="10"></circle>
+<circle cx="560" cy="330" fill="#d97706" r="6"></circle>
+<text class="font-telemetry-sm font-bold" fill="#091d2b" font-size="10" x="575" y="334">#PK-5519 (RTA M-4)</text>
+</g>
+<!-- Code Yellow Pin near Quetta -->
+<g class="cursor-pointer" onclick="switchIncident('quetta')">
+<circle cx="320" cy="380" fill="#d97706" fill-opacity="0.2" r="10"></circle>
+<circle cx="320" cy="380" fill="#d97706" r="6"></circle>
+<text class="font-telemetry-sm font-bold" fill="#091d2b" font-size="10" x="335" y="384">#PK-2204 (Quetta Bypass)</text>
+</g>
+<!-- Code Red Pin: Karachi #PK-4412 -->
+<g class="cursor-pointer group" onclick="switchIncident('karachi')">
+<circle class="animate-ping origin-center" cx="430" cy="670" fill="#ba1a1a" fill-opacity="0.25" r="16"></circle>
+<circle cx="430" cy="670" fill="#ba1a1a" r="8"></circle>
+<text class="font-telemetry-sm font-bold" fill="#ba1a1a" font-size="11" x="445" y="674">#PK-4412 (Saddar Shock)</text>
+</g>
+<!-- Code Red Pin: Lahore #PK-3021 -->
+<g class="cursor-pointer group" onclick="switchIncident('lahore')">
+<circle class="animate-ping origin-center" cx="630" cy="305" fill="#ba1a1a" fill-opacity="0.25" r="16"></circle>
+<circle cx="630" cy="305" fill="#ba1a1a" r="8"></circle>
+<text class="font-telemetry-sm font-bold" fill="#ba1a1a" font-size="11" x="645" y="309">#PK-3021 (Gulberg Cardiac)</text>
+</g>
+<!-- Code Red Pin: Peshawar #PK-7714 -->
+<g class="cursor-pointer group" onclick="switchIncident('peshawar')">
+<circle class="animate-ping origin-center" cx="460" cy="185" fill="#ba1a1a" fill-opacity="0.25" r="16"></circle>
+<circle cx="460" cy="185" fill="#ba1a1a" r="8"></circle>
+<text class="font-telemetry-sm font-bold" fill="#ba1a1a" font-size="11" x="475" y="189">#PK-7714 (Hayatabad Trauma)</text>
+</g>
+<!-- TARGET SELECTED INCIDENT: Multan #PK-1122-8921 with RADAR PULSE -->
+<g class="cursor-pointer" id="selectedMultanPin" onclick="switchIncident('multan')">
+<!-- Animated Radar Ring 1 -->
+<circle class="animate-ping origin-center" cx="510" cy="425" fill="none" opacity="0.4" r="32" stroke="#ba1a1a" stroke-width="1.5"></circle>
+<!-- Animated Radar Ring 2 -->
+<circle cx="510" cy="425" fill="#ffdad6" opacity="0.6" r="22"></circle>
+<circle cx="510" cy="425" fill="#c03638" r="12"></circle>
+<circle cx="510" cy="425" fill="#ffffff" r="5"></circle>
+<!-- Spotlight Callout Box -->
+<g transform="translate(430, 442)">
+<rect class="shadow-lg" fill="#091d2b" height="34" rx="6" width="180"></rect>
+<circle class="animate-pulse" cx="12" cy="17" fill="#c03638" r="4"></circle>
+<text class="font-headline-sm font-bold" fill="#ffffff" font-size="11" x="22" y="16">#PK-1122-8921 (Active)</text>
+<text class="font-telemetry-sm" fill="#abefe8" font-size="9" x="22" y="28">Multan Cantt · CODE RED</text>
+</g>
+</g>
+</g>
+</svg>
+</div>
+<!-- Map Legend (Bottom Right Dock) -->
+<div class="absolute bottom-4 right-4 z-20 p-2.5 rounded-lg bg-surface-container-lowest/95 backdrop-blur-md shadow-md flex items-center gap-space-md">
+<span class="font-telemetry-sm text-telemetry-sm font-bold text-on-surface uppercase tracking-wider">Legend</span>
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary"></span>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-medium">Critical (Code Red)</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-[#d97706]"></span>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-medium">Severe (Code Yellow)</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded bg-surface-container-lowest border-2 border-primary flex items-center justify-center text-primary text-[8px] font-bold">+</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-medium">Hospital ER Bay</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container"></span>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-medium">1122 Ambulance En Route</span>
+</div>
+</div>
+<!-- Quick Triage Strip (Bottom Left Dock) -->
+<div class="absolute bottom-4 left-4 z-20 flex items-center gap-2">
+<div class="px-3 py-1.5 rounded-lg bg-surface-container-lowest/90 backdrop-blur-md shadow-md flex items-center gap-2 font-telemetry-sm text-telemetry-sm">
+<span class="material-symbols-outlined text-primary text-[16px]">sensors</span>
+<span class="text-on-surface font-semibold">CAD GPS SYNC: Active (Multan Telemetry Cell 04)</span>
+</div>
+</div>
+</div>
+<!-- RIGHT: Selected Incident Detail Inspector Panel (3.5 cols ≈ 30%) -->
+<div class="col-span-12 xl:col-span-4 flex flex-col gap-space-md">
+<!-- Main Inspector Card -->
+<div class="p-space-lg bg-surface-container-lowest rounded-xl shadow-sm flex flex-col gap-space-md border-l-4 border-tertiary" id="inspectorPanel">
+<!-- Header -->
+<div class="flex items-start justify-between gap-2 pb-space-sm border-b border-surface-container">
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-telemetry-lg text-telemetry-lg text-on-surface font-bold tracking-tight" id="dispIncidentId">#PK-1122-8921</span>
+<span class="material-symbols-outlined text-primary text-[18px]" title="NADRA Bio-Verified">verified</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Dispatched via National CAD Gateway · Multan Central</span>
+</div>
+<div class="flex flex-col items-end gap-1">
+<span class="px-2.5 py-0.5 rounded-full bg-error-container text-on-error-container font-telemetry-sm text-telemetry-sm font-bold tracking-wider uppercase" id="dispUrgencyBadge">
+              CODE RED · IMMEDIATE
+            </span>
+<span class="font-telemetry-sm text-telemetry-sm text-tertiary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+<span id="dispElapsedTime">18m elapsed</span>
+</span>
+</div>
+</div>
+<!-- Patient Demographics & Bio -->
+<div class="flex flex-col gap-1 p-space-sm rounded-lg bg-surface-container-low">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold" id="dispPatientName">Kashaf Sajjad (24F)</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-primary font-telemetry-sm text-telemetry-sm font-semibold">VERIFIED EMR</span>
+</div>
+<div class="flex items-center justify-between font-telemetry-sm text-telemetry-sm text-on-surface-variant">
+<span>CNIC: <strong>36302-*******-8</strong></span>
+<span>Blood: <strong>B Positive (Rh+)</strong></span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant pt-1 border-t border-surface-container/60">
+            Known History: Mild bronchial asthma, nil known drug allergies, primary emergency contact notified via SMS.
+          </div>
+</div>
+<!-- Clinical Triage Category -->
+<div class="flex flex-col gap-1">
+<span class="font-label-md text-label-md text-outline font-semibold uppercase tracking-wider">Clinical Triage Assessment</span>
+<div class="p-2.5 rounded-lg bg-error-container/40 flex items-start gap-2.5">
+<span class="material-symbols-outlined text-tertiary text-[20px] flex-shrink-0 mt-0.5">cardiology</span>
+<div class="flex flex-col">
+<span class="font-body-strong text-body-strong text-tertiary leading-tight" id="dispTriageDiagnosis">
+                Suspected Acute Coronary Syndrome &amp; Respiratory Distress
+              </span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                SpO2 dropping to 88% on ambient air. Sublingual nitrates administered by paramedic crew under protocol #PK-EMR-04.
+              </span>
+</div>
+</div>
+</div>
+<!-- Location & Routing Triangulation -->
+<div class="flex flex-col gap-2">
+<span class="font-label-md text-label-md text-outline font-semibold uppercase tracking-wider">Routing &amp; Asset Handoff</span>
+<div class="grid grid-cols-1 gap-2">
+<!-- Origin -->
+<div class="flex items-start gap-2.5 p-2 rounded-lg bg-surface-container-low">
+<span class="material-symbols-outlined text-outline text-[18px] mt-0.5">location_on</span>
+<div class="flex flex-col min-w-0">
+<span class="font-body-sm text-body-sm text-outline-variant font-medium">Incident Origin</span>
+<span class="font-body-strong text-body-strong text-on-surface truncate" id="dispIncidentOrigin">
+                  Gate 2 Plaza, Nishtar Road, Multan Cantt
+                </span>
+</div>
+</div>
+<!-- Ambulance Unit -->
+<div class="flex items-start gap-2.5 p-2 rounded-lg bg-surface-container-low">
+<span class="material-symbols-outlined text-primary text-[18px] mt-0.5">ambulance</span>
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-outline-variant font-medium">Responding Vehicle</span>
+<span class="font-telemetry-sm text-telemetry-sm text-primary font-bold">ETA 4 MIN</span>
+</div>
+<span class="font-body-strong text-body-strong text-primary truncate" id="dispAmbulanceUnit">
+                  AMB-37 (Rescue 1122 Multan Squadron)
+                </span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Lead Paramedic: A. Khan (Reg #PK-1122-M09)</span>
+</div>
+</div>
+<!-- Receiving Trauma Facility -->
+<div class="flex items-start gap-2.5 p-2 rounded-lg bg-surface-container-low">
+<span class="material-symbols-outlined text-secondary text-[18px] mt-0.5">local_hospital</span>
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-outline-variant font-medium">Designated Trauma Bay</span>
+<span class="px-1.5 py-0.2 rounded bg-secondary-container text-on-secondary-container font-telemetry-sm text-telemetry-sm font-semibold">PRE-NOTIFIED</span>
+</div>
+<span class="font-body-strong text-body-strong text-on-surface truncate" id="dispTraumaBay">
+                  Nishtar Hospital Emergency (Bay 03 Reserved)
+                </span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Charge Physician: Dr. Haroon R. · Red Trauma Resus</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Response Milestone Stepper -->
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-outline font-semibold uppercase tracking-wider">CAD Milestones (Synchronized)</span>
+<span class="font-telemetry-sm text-telemetry-sm text-primary font-bold">5 OF 6 COMPLETE</span>
+</div>
+<div class="relative pl-6 space-y-3 before:absolute before:left-2 before:top-2 before:bottom-2 before:w-0.5 before:bg-surface-container-highest">
+<div class="relative flex flex-col">
+<span class="absolute -left-6 top-1 h-2.5 w-2.5 rounded-full bg-primary ring-4 ring-surface-container-lowest"></span>
+<div class="flex items-center justify-between">
+<span class="font-body-strong text-body-strong text-on-surface">Citizen SOS Triggered</span>
+<span class="font-telemetry-sm text-telemetry-sm text-outline">09:41 PKT</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Mobile NEMRAS 1122 App SOS trigger via GPS beacon.</span>
+</div>
+<div class="relative flex flex-col">
+<span class="absolute -left-6 top-1 h-2.5 w-2.5 rounded-full bg-primary ring-4 ring-surface-container-lowest"></span>
+<div class="flex items-center justify-between">
+<span class="font-body-strong text-body-strong text-on-surface">AMB-37 Dispatched</span>
+<span class="font-telemetry-sm text-telemetry-sm text-outline">09:42 PKT</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Station 14 Multan Cantt rolled out. Lead: A. Khan.</span>
+</div>
+<div class="relative flex flex-col">
+<span class="absolute -left-6 top-1 h-2.5 w-2.5 rounded-full bg-primary ring-4 ring-surface-container-lowest"></span>
+<div class="flex items-center justify-between">
+<span class="font-body-strong text-body-strong text-on-surface">EMR Dossier Pushed to Vehicle</span>
+<span class="font-telemetry-sm text-telemetry-sm text-outline">09:44 PKT</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">NADRA Bio-linked patient EMR encrypted sync via Kafka.</span>
+</div>
+<div class="relative flex flex-col">
+<span class="absolute -left-6 top-1 h-2.5 w-2.5 rounded-full bg-primary ring-4 ring-surface-container-lowest"></span>
+<div class="flex items-center justify-between">
+<span class="font-body-strong text-body-strong text-on-surface">On-Scene Vitals Synced</span>
+<span class="font-telemetry-sm text-telemetry-sm text-outline">09:48 PKT</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface font-telemetry-sm">BP 118/76 · HR 104 bpm · SpO2 93% (O2 started)</span>
+</div>
+<div class="relative flex flex-col">
+<span class="absolute -left-6 top-1 h-2.5 w-2.5 rounded-full bg-primary-container ring-4 ring-surface-container-lowest animate-pulse"></span>
+<div class="flex items-center justify-between">
+<span class="font-body-strong text-body-strong text-primary">In Transit to Nishtar ER</span>
+<span class="font-telemetry-sm text-telemetry-sm text-primary font-bold">09:52 PKT</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Priority corridor requested through Multan Traffic Wardens.</span>
+</div>
+</div>
+</div>
+<!-- Action Command Buttons -->
+<div class="flex flex-col gap-2 pt-space-xs">
+<button class="w-full py-2.5 px-3 rounded-lg bg-primary hover:bg-[#004e48] text-on-primary font-body-strong text-body-strong transition-colors flex items-center justify-center gap-2 shadow-sm">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+<span>Open National Audit Record</span>
+</button>
+<div class="grid grid-cols-2 gap-2">
+<button class="py-2 px-3 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-body-sm text-body-sm font-semibold transition-colors flex items-center justify-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-tertiary">alt_route</span>
+<span>Route Diversion</span>
+</button>
+<button class="py-2 px-3 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-body-sm text-body-sm font-semibold transition-colors flex items-center justify-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">picture_as_pdf</span>
+<span>Export Log (PDF)</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Live CAD Incident Queue Mini-Drawer -->
+<div class="p-space-md bg-surface-container-lowest rounded-xl shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Active Provincial Queue</span>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant font-medium">4 Critical Calls</span>
+</div>
+<div class="flex flex-col gap-1.5">
+<!-- Item 1 (Selected) -->
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container cursor-pointer transition-all border-l-2 border-tertiary" onclick="switchIncident('multan')">
+<div class="flex items-center gap-2 min-w-0">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<div class="flex flex-col min-w-0">
+<span class="font-body-strong text-body-strong text-on-surface truncate">#PK-1122-8921 · Multan Cantt</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Cardiac Shock · Kashaf S.</span>
+</div>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-tertiary font-bold flex-shrink-0">ETA 4m</span>
+</div>
+<!-- Item 2 -->
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low hover:bg-surface-container cursor-pointer transition-all" onclick="switchIncident('karachi')">
+<div class="flex items-center gap-2 min-w-0">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<div class="flex flex-col min-w-0">
+<span class="font-body-strong text-body-strong text-on-surface truncate">#PK-4412 · Karachi Saddar</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Pediatric Trauma · Bilal M.</span>
+</div>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-outline flex-shrink-0">ETA 9m</span>
+</div>
+<!-- Item 3 -->
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low hover:bg-surface-container cursor-pointer transition-all" onclick="switchIncident('lahore')">
+<div class="flex items-center gap-2 min-w-0">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<div class="flex flex-col min-w-0">
+<span class="font-body-strong text-body-strong text-on-surface truncate">#PK-3021 · Lahore Gulberg</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">CVA Stroke Protocol · Zainab F.</span>
+</div>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-outline flex-shrink-0">ETA 11m</span>
+</div>
+<!-- Item 4 -->
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low hover:bg-surface-container cursor-pointer transition-all" onclick="switchIncident('peshawar')">
+<div class="flex items-center gap-2 min-w-0">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<div class="flex flex-col min-w-0">
+<span class="font-body-strong text-body-strong text-on-surface truncate">#PK-7714 · Peshawar Ring Rd</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Multi-Vehicle Collision 1122</span>
+</div>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-outline flex-shrink-0">ETA 14m</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Dynamic Incident Mock Data for Interactive Telemetry Inspector
+  const incidentData = {
+    multan: {
+      id: "#PK-1122-8921",
+      badge: "CODE RED · IMMEDIATE",
+      elapsed: "18m elapsed",
+      patient: "Kashaf Sajjad (24F)",
+      cnic: "36302-*******-8",
+      blood: "B Positive (Rh+)",
+      triage: "Suspected Acute Coronary Syndrome & Respiratory Distress",
+      origin: "Gate 2 Plaza, Nishtar Road, Multan Cantt",
+      ambulance: "AMB-37 (Rescue 1122 Multan Squadron)",
+      bay: "Nishtar Hospital Emergency (Bay 03 Reserved)"
+    },
+    karachi: {
+      id: "#PK-4412-1082",
+      badge: "CODE RED · IMMEDIATE",
+      elapsed: "26m elapsed",
+      patient: "Bilal Mehmood (9M)",
+      cnic: "42101-*******-3",
+      blood: "O Positive (Rh+)",
+      triage: "Pediatric Head Trauma & Blunt Chest Injury",
+      origin: "Zainab Market, Saddar Town, Karachi",
+      ambulance: "AMB-12 (Sindh Rescue 1122 / Edhi Fleet)",
+      bay: "Aga Khan University Hospital ER (Trauma Bay 01)"
+    },
+    lahore: {
+      id: "#PK-3021-9941",
+      badge: "CODE RED · IMMEDIATE",
+      elapsed: "12m elapsed",
+      patient: "Zainab Fatima (61F)",
+      cnic: "35201-*******-2",
+      blood: "A Negative (Rh-)",
+      triage: "Acute Ischemic Stroke (LVO Protocol Active)",
+      origin: "Main Boulevard, Gulberg III, Lahore",
+      ambulance: "AMB-88 (Punjab Emergency Service 1122)",
+      bay: "Mayo Hospital Lahore (Bed diverted to Jinnah ER)"
+    },
+    peshawar: {
+      id: "#PK-7714-3312",
+      badge: "CODE RED · IMMEDIATE",
+      elapsed: "31m elapsed",
+      patient: "Farhan Ullah (34M)",
+      cnic: "17301-*******-9",
+      blood: "AB Positive (Rh+)",
+      triage: "Multi-Trauma with Open Tibial Fracture & Blood Loss",
+      origin: "Hayatabad Ring Road Interchange, Peshawar",
+      ambulance: "AMB-04 (KP Rescue 1122 Critical Care Unit)",
+      bay: "Hayatabad Medical Complex (Bay 05 Cleared)"
+    },
+    faisalabad: {
+      id: "#PK-5519-4820",
+      badge: "CODE YELLOW · SEVERE",
+      elapsed: "09m elapsed",
+      patient: "Umar Daraz (29M)",
+      cnic: "33100-*******-1",
+      blood: "O Negative (Rh-)",
+      triage: "Motorcycle Skid Trauma with Dislocated Shoulder",
+      origin: "M-4 Interchange, Faisalabad City",
+      ambulance: "AMB-19 (Rescue 1122 Patrol Unit)",
+      bay: "Allied Hospital Faisalabad (Bay 08 Standby)"
+    },
+    quetta: {
+      id: "#PK-2204-7104",
+      badge: "CODE YELLOW · SEVERE",
+      elapsed: "44m elapsed",
+      patient: "Gul Muhammad (42M)",
+      cnic: "54400-*******-5",
+      blood: "B Positive (Rh+)",
+      triage: "High-Altitude Asthma & Hypoxia Exposure",
+      origin: "Western Bypass, Quetta Sub-Sector 3",
+      ambulance: "AMB-02 (Balochistan Emergency Fleet)",
+      bay: "Sandeman Provincial Civil Hospital Quetta"
+    }
+  };
+
+  // Switch Incident in Inspector
+  function switchIncident(key) {
+    const data = incidentData[key];
+    if (!data) return;
+
+    document.getElementById('dispIncidentId').textContent = data.id;
+    document.getElementById('dispUrgencyBadge').textContent = data.badge;
+    document.getElementById('dispElapsedTime').textContent = data.elapsed;
+    document.getElementById('dispPatientName').textContent = data.patient;
+    document.getElementById('dispTriageDiagnosis').textContent = data.triage;
+    document.getElementById('dispIncidentOrigin').textContent = data.origin;
+    document.getElementById('dispAmbulanceUnit').textContent = data.ambulance;
+    document.getElementById('dispTraumaBay').textContent = data.bay;
+
+    // Visual feedback on inspector panel
+    const inspector = document.getElementById('inspectorPanel');
+    inspector.classList.add('ring-2', 'ring-primary');
+    setTimeout(() => inspector.classList.remove('ring-2', 'ring-primary'), 600);
+  }
+
+  // Simulation State Selectors
+  const simActiveBtn = document.getElementById('simActiveBtn');
+  const simOutageBtn = document.getElementById('simOutageBtn');
+  const simEmptyBtn = document.getElementById('simEmptyBtn');
+  const outageBanner = document.getElementById('outageBanner');
+  const emptyMapNotice = document.getElementById('emptyMapNotice');
+  const resetSearchBtn = document.getElementById('resetSearchBtn');
+
+  function resetSimPills() {
+    [simActiveBtn, simOutageBtn, simEmptyBtn].forEach(btn => {
+      btn.className = "px-2.5 py-1 rounded-md text-on-surface-variant font-telemetry-sm text-telemetry-sm font-medium hover:text-on-surface hover:bg-surface-container transition-all flex items-center gap-1";
+    });
+  }
+
+  simActiveBtn.addEventListener('click', () => {
+    resetSimPills();
+    simActiveBtn.className = "px-2.5 py-1 rounded-md bg-surface-container-lowest text-primary font-telemetry-sm text-telemetry-sm font-bold shadow-sm transition-all flex items-center gap-1";
+    outageBanner.classList.add('hidden');
+    emptyMapNotice.classList.add('hidden');
+  });
+
+  simOutageBtn.addEventListener('click', () => {
+    resetSimPills();
+    simOutageBtn.className = "px-2.5 py-1 rounded-md bg-tertiary text-on-tertiary font-telemetry-sm text-telemetry-sm font-bold shadow-sm transition-all flex items-center gap-1";
+    outageBanner.classList.remove('hidden');
+    emptyMapNotice.classList.add('hidden');
+  });
+
+  simEmptyBtn.addEventListener('click', () => {
+    resetSimPills();
+    simEmptyBtn.className = "px-2.5 py-1 rounded-md bg-surface-container text-on-surface font-telemetry-sm text-telemetry-sm font-bold shadow-sm transition-all flex items-center gap-1";
+    emptyMapNotice.classList.remove('hidden');
+    outageBanner.classList.add('hidden');
+  });
+
+  resetSearchBtn.addEventListener('click', () => {
+    simActiveBtn.click();
+    document.getElementById('mapSearchInput').value = '';
+  });
+
+  // Layer Toggles
+  const toggleHospitals = document.getElementById('toggleHospitals');
+  const toggleResponders = document.getElementById('toggleResponders');
+  const hospitalLayer = document.getElementById('hospitalLayer');
+  const ambulanceLayer = document.getElementById('ambulanceLayer');
+
+  toggleHospitals.addEventListener('change', (e) => {
+    hospitalLayer.style.display = e.target.checked ? 'block' : 'none';
+  });
+
+  toggleResponders.addEventListener('change', (e) => {
+    ambulanceLayer.style.display = e.target.checked ? 'block' : 'none';
+  });
+
+  // Zoom and Layer Controls
+  let zoomLevel = 1;
+  const svgMap = document.getElementById('pakistanSvgMap');
+
+  document.getElementById('zoomInBtn').addEventListener('click', () => {
+    if (zoomLevel < 1.6) zoomLevel += 0.15;
+    svgMap.style.transform = `scale(${zoomLevel})`;
+    svgMap.style.transition = 'transform 0.3s ease-out';
+  });
+
+  document.getElementById('zoomOutBtn').addEventListener('click', () => {
+    if (zoomLevel > 0.8) zoomLevel -= 0.15;
+    svgMap.style.transform = `scale(${zoomLevel})`;
+    svgMap.style.transition = 'transform 0.3s ease-out';
+  });
+
+  document.getElementById('recenterBtn').addEventListener('click', () => {
+    zoomLevel = 1;
+    svgMap.style.transform = 'scale(1)';
+  });
+
+  const layerVectorBtn = document.getElementById('layerVectorBtn');
+  const layerSatBtn = document.getElementById('layerSatBtn');
+
+  layerVectorBtn.addEventListener('click', () => {
+    layerVectorBtn.className = "px-2 py-1 rounded bg-primary text-on-primary font-telemetry-sm text-telemetry-sm font-bold text-center";
+    layerSatBtn.className = "px-2 py-1 rounded text-on-surface-variant font-telemetry-sm text-telemetry-sm hover:bg-surface-container font-medium text-center";
+    document.getElementById('provinces').querySelectorAll('polygon').forEach(p => p.setAttribute('fill', '#e1f0ff'));
+  });
+
+  layerSatBtn.addEventListener('click', () => {
+    layerSatBtn.className = "px-2 py-1 rounded bg-primary text-on-primary font-telemetry-sm text-telemetry-sm font-bold text-center";
+    layerVectorBtn.className = "px-2 py-1 rounded text-on-surface-variant font-telemetry-sm text-telemetry-sm hover:bg-surface-container font-medium text-center";
+    document.getElementById('provinces').querySelectorAll('polygon').forEach(p => p.setAttribute('fill', '#d1e5f8'));
+  });
+</script></main></div></body></html>

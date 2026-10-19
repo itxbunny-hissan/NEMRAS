@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;700&amp;family=Sora:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-surface": "#091d2b", "surface": "#f6f9ff", "tertiary-fixed-dim": "#ffb3ae", "on-secondary-container": "#266d68", "primary-container": "#0f766e", "primary-fixed-dim": "#80d5cb", "on-secondary-fixed-variant": "#00504b", "on-primary": "#ffffff", "on-surface-variant": "#3e4947", "secondary-container": "#a8ece5", "error-container": "#ffdad6", "surface-bright": "#f6f9ff", "surface-container-low": "#ecf5ff", "on-primary-fixed-variant": "#00504a", "primary-fixed": "#9cf2e8", "on-tertiary-fixed-variant": "#8f0e1a", "on-tertiary-fixed": "#410005", "secondary-fixed-dim": "#8fd3cc", "surface-container": "#e1f0ff", "error": "#ba1a1a", "surface-dim": "#c8dcf0", "inverse-surface": "#1f3241", "outline": "#6e7977", "on-background": "#091d2b", "surface-variant": "#d1e5f8", "primary": "#005c55", "tertiary": "#9e1c23", "surface-container-lowest": "#ffffff", "inverse-on-surface": "#e6f2ff", "outline-variant": "#bdc9c6", "secondary-fixed": "#abefe8", "surface-container-high": "#d6ebfe", "on-primary-container": "#a3faef", "on-secondary-fixed": "#00201e", "surface-container-highest": "#d1e5f8", "inverse-primary": "#80d5cb", "surface-tint": "#006a63", "background": "#f6f9ff", "on-primary-fixed": "#00201d", "on-error": "#ffffff", "tertiary-fixed": "#ffdad7", "on-tertiary-container": "#ffe4e1", "on-tertiary": "#ffffff", "tertiary-container": "#c03638", "on-error-container": "#93000a", "secondary": "#216963", "on-secondary": "#ffffff" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-xs": "0.25rem", "space-lg": "1.5rem", "space-sm": "0.5rem", "margin": "2rem", "gutter": "1.5rem", "space-md": "1rem", "gutter-mobile": "1rem", "margin-mobile": "1rem", "space-xl": "2rem" }, "fontFamily": { "headline-lg": ["Sora"], "headline-md": ["Sora"], "label-md": ["Inter"], "display-lg": ["Sora"], "telemetry-lg": ["JetBrains Mono"], "telemetry-sm": ["JetBrains Mono"], "headline-sm": ["Sora"], "telemetry-md": ["JetBrains Mono"], "body-sm": ["Inter"], "body-strong": ["Inter"], "body-lg": ["Inter"], "body-md": ["Inter"], "headline-lg-mobile": ["Sora"] }, "fontSize": { "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }], "label-md": ["13px", { "lineHeight": "16px", "fontWeight": "500" }], "display-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "telemetry-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "telemetry-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "500" }], "headline-sm": ["16px", { "lineHeight": "24px", "fontWeight": "600" }], "telemetry-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }], "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }], "body-strong": ["14px", { "lineHeight": "20px", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(9,29,43,0.04)]"><div class="h-16 px-gutter-mobile flex items-center justify-between"><div class="flex items-center gap-space-sm"><button aria-label="Back to overview" class="w-11 h-11 flex items-center justify-center rounded-lg text-on-surface active:bg-surface-container transition-colors" onclick="history.back()" type="button"><span class="material-symbols-outlined text-[22px]">arrow_back</span></button><div class="flex flex-col"><h1 class="font-headline-sm text-headline-sm text-on-surface tracking-tight leading-snug line-clamp-1">Hospital Handoff</h1><div class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span><span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant uppercase">CRITICAL INCIDENT</span></div></div></div><div class="flex items-center gap-space-sm"><div class="px-2 py-0.5 rounded bg-error-container text-on-error-container font-telemetry-sm text-telemetry-sm uppercase font-bold">AMB-37</div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-[0_1px_3px_rgba(0,92,85,0.2)]"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full pt-16 pb-safe bg-surface min-h-screen"><div class="flex flex-col w-full pb-10">
+<!-- Offline Resiliency Notice Pill -->
+<div class="px-gutter-mobile pt-space-sm mb-space-sm">
+<div class="flex items-center justify-between gap-space-sm px-3 py-2 rounded-xl bg-surface-container-high text-on-surface">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-primary text-[18px] animate-pulse">cloud_sync</span>
+<p class="font-body-sm text-body-sm text-on-surface truncate">
+          Offline buffer queued (3 items). Syncs automatically via Hospital Wi-Fi.
+        </p>
+</div>
+<button class="px-2 py-1 rounded-lg bg-surface-container-lowest text-primary font-telemetry-sm text-telemetry-sm shadow-sm active:scale-95 transition-transform flex-shrink-0" type="button">
+        Sync Now
+      </button>
+</div>
+</div>
+<!-- Incident Lifecycle Stepper -->
+<div class="px-gutter-mobile mb-space-md">
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[18px]">route</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Mission Pipeline</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-telemetry-sm text-telemetry-sm font-bold">
+          STAGE 5 OF 7
+        </span>
+</div>
+<!-- Horizontal Stepper Scrollable Track -->
+<div class="overflow-x-auto pb-1 scrollbar-none">
+<div class="flex items-center min-w-[540px] pt-1 pb-1">
+<!-- Step 1 -->
+<div class="flex flex-col items-center flex-1 relative">
+<div class="w-7 h-7 rounded-full bg-primary flex items-center justify-center text-on-primary shadow-sm mb-1 z-10">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface font-semibold text-center leading-tight">Accepted</span>
+<div class="absolute left-1/2 top-3.5 w-full h-[2px] bg-primary"></div>
+</div>
+<!-- Step 2 -->
+<div class="flex flex-col items-center flex-1 relative">
+<div class="w-7 h-7 rounded-full bg-primary flex items-center justify-center text-on-primary shadow-sm mb-1 z-10">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface font-semibold text-center leading-tight">En Route</span>
+<div class="absolute left-1/2 top-3.5 w-full h-[2px] bg-primary"></div>
+</div>
+<!-- Step 3 -->
+<div class="flex flex-col items-center flex-1 relative">
+<div class="w-7 h-7 rounded-full bg-primary flex items-center justify-center text-on-primary shadow-sm mb-1 z-10">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface font-semibold text-center leading-tight">Arrived</span>
+<div class="absolute left-1/2 top-3.5 w-full h-[2px] bg-primary"></div>
+</div>
+<!-- Step 4 -->
+<div class="flex flex-col items-center flex-1 relative">
+<div class="w-7 h-7 rounded-full bg-primary flex items-center justify-center text-on-primary shadow-sm mb-1 z-10">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface font-semibold text-center leading-tight">Assessed</span>
+<div class="absolute left-1/2 top-3.5 w-full h-[2px] bg-primary"></div>
+</div>
+<!-- Step 5 (Active) -->
+<div class="flex flex-col items-center flex-1 relative">
+<div class="w-7 h-7 rounded-full bg-primary-container flex items-center justify-center text-on-primary shadow-md mb-1 z-10 animate-bounce">
+<span class="material-symbols-outlined text-[16px]">ambulance</span>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-primary font-bold text-center leading-tight">Transit (Now)</span>
+<div class="absolute left-1/2 top-3.5 w-full h-[2px] bg-surface-container-high"></div>
+</div>
+<!-- Step 6 -->
+<div class="flex flex-col items-center flex-1 relative">
+<div class="w-7 h-7 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant mb-1 z-10">
+<span class="material-symbols-outlined text-[15px]">medical_services</span>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant text-center leading-tight">Handoff</span>
+<div class="absolute left-1/2 top-3.5 w-full h-[2px] bg-surface-container-high"></div>
+</div>
+<!-- Step 7 -->
+<div class="flex flex-col items-center flex-1">
+<div class="w-7 h-7 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant mb-1 z-10">
+<span class="material-symbols-outlined text-[15px]">task_alt</span>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant text-center leading-tight">Complete</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Mode Toggle: Transport vs Scene Resolution -->
+<div class="px-gutter-mobile mb-space-md">
+<div class="bg-surface-container p-1 rounded-xl flex items-center justify-between">
+<button class="flex-1 py-2 rounded-lg bg-surface-container-lowest text-primary font-body-strong text-body-strong shadow-sm transition-all flex items-center justify-center gap-1.5" id="tab-transport" onclick="switchMode('transport')" type="button">
+<span class="material-symbols-outlined text-[18px]">local_hospital</span>
+<span>Hospital Transfer</span>
+</button>
+<button class="flex-1 py-2 rounded-lg text-on-surface-variant font-body-strong text-body-strong transition-all flex items-center justify-center gap-1.5" id="tab-non-transport" onclick="switchMode('non-transport')" type="button">
+<span class="material-symbols-outlined text-[18px]">person_off</span>
+<span>Scene Discharge / AMA</span>
+</button>
+</div>
+</div>
+<!-- CONTAINER 1: Hospital Transport Flow -->
+<div class="flex flex-col gap-space-md px-gutter-mobile" id="flow-transport">
+<!-- Receiving Hospital Destination Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm relative overflow-hidden">
+<!-- Accent rail -->
+<div class="absolute top-0 left-0 bottom-0 w-1.5 bg-primary"></div>
+<div class="pl-2">
+<div class="flex items-start justify-between gap-space-sm mb-2">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-telemetry-sm text-telemetry-sm font-semibold">
+                Designated Trauma Bay
+              </span>
+<span class="flex items-center gap-1 font-telemetry-sm text-telemetry-sm text-primary font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-ping"></span> Live Link
+              </span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface leading-tight">
+              Nishtar Hospital Emergency Complex
+            </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+              Gate 2 Adult Trauma Bay · Multan Sector 4
+            </p>
+</div>
+<button class="w-9 h-9 rounded-lg bg-surface-container-low text-primary flex items-center justify-center active:bg-surface-container transition-colors shadow-sm" title="Call ER Receiving Desk" type="button">
+<span class="material-symbols-outlined text-[20px]">call</span>
+</button>
+</div>
+<!-- Telemetry ETA & Distance Grid -->
+<div class="grid grid-cols-2 gap-space-sm my-space-md">
+<div class="p-2.5 rounded-xl bg-surface-container-low flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-surface-container-lowest flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined text-[18px]">timer</span>
+</div>
+<div>
+<span class="font-label-md text-label-md text-on-surface-variant block">ETA</span>
+<span class="font-telemetry-md text-telemetry-md text-on-surface font-bold">5 MIN TRANSIT</span>
+</div>
+</div>
+<div class="p-2.5 rounded-xl bg-surface-container-low flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-surface-container-lowest flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined text-[18px]">near_me</span>
+</div>
+<div>
+<span class="font-label-md text-label-md text-on-surface-variant block">Proximity</span>
+<span class="font-telemetry-md text-telemetry-md text-on-surface font-bold">1.8 KM AWAY</span>
+</div>
+</div>
+</div>
+<!-- ER Readiness Telemetry Ribbon -->
+<div class="p-space-sm rounded-xl bg-surface-container-low flex flex-col gap-1.5 mb-space-md">
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant uppercase tracking-wider">Hospital Preparedness Status</span>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="font-body-strong text-body-strong text-on-surface text-[13px]">Resus Bay 03 Reserved</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="font-body-strong text-body-strong text-on-surface text-[13px]">Trauma Team Alerted &amp; Assembled</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-body-strong text-body-strong text-on-surface text-[13px]">Dr. F. Alam (On-Duty Attending) Waiting</span>
+</div>
+</div>
+<!-- Reroute Button Action -->
+<button class="w-full py-2.5 px-3 rounded-lg bg-surface-container text-on-surface font-body-strong text-body-strong hover:bg-surface-container-high transition-colors flex items-center justify-center gap-2" onclick="openRerouteSheet()" type="button">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">alt_route</span>
+<span>Change Hospital / Emergency Reroute</span>
+</button>
+</div>
+</div>
+<!-- Hospital Clinical Handoff Form -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">assignment_turned_in</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Clinical Handoff Verification</h3>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container text-primary font-telemetry-sm text-telemetry-sm font-semibold">FORM NDHA-22</span>
+</div>
+<!-- Receiving Physician Field -->
+<div class="mb-space-md">
+<label class="block font-label-md text-label-md text-on-surface mb-1.5" for="receiving-physician">
+          Receiving Physician / Triage Officer
+        </label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">stethoscope</span>
+<input class="w-full pl-9 pr-3 py-2.5 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all" id="receiving-physician" type="text" value="Dr. F. Alam (Staff ID #8812)"/>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 pl-1">
+          Identity pre-confirmed via Nishtar Central Dispatch handshake.
+        </p>
+</div>
+<!-- Transfer of Care Checklist -->
+<div class="mb-space-md">
+<span class="block font-label-md text-label-md text-on-surface mb-2">Mandatory Transfer Checklist</span>
+<div class="space-y-2">
+<label class="flex items-start gap-2.5 p-2 rounded-lg bg-surface-container-low active:bg-surface-container cursor-pointer select-none">
+<input checked="" class="mt-0.5 w-4 h-4 rounded text-primary accent-primary" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-body-strong text-body-strong text-on-surface text-[13px]">Verbal SBAR Briefing Delivered</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Situation, Background, Vital Signs baseline &amp; current state</span>
+</div>
+</label>
+<label class="flex items-start gap-2.5 p-2 rounded-lg bg-surface-container-low active:bg-surface-container cursor-pointer select-none">
+<input checked="" class="mt-0.5 w-4 h-4 rounded text-primary accent-primary" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-body-strong text-body-strong text-on-surface text-[13px]">Med Dossier Transferred via NEMRAS</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">IV access logs, oxygen titration, ECG strips #091-E</span>
+</div>
+</label>
+<label class="flex items-start gap-2.5 p-2 rounded-lg bg-surface-container-low active:bg-surface-container cursor-pointer select-none">
+<input class="mt-0.5 w-4 h-4 rounded text-primary accent-primary" id="check-physical-custody" onchange="validateHandoffState()" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-body-strong text-body-strong text-on-surface text-[13px]">Physical Custody Handed Over</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Patient transferred to Gurney Bay 03 under hospital monitor</span>
+</div>
+</label>
+</div>
+</div>
+<!-- Digital Sign-off stamp -->
+<div class="p-space-sm rounded-xl bg-surface-container-high/60 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">draw</span>
+<div>
+<span class="font-label-md text-label-md text-on-surface block">Paramedic Sign-off</span>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">Lead A. Khan (#4421)</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-primary font-telemetry-sm text-telemetry-sm font-semibold shadow-sm">
+          PKI AUTHENTICATED
+        </span>
+</div>
+</div>
+<!-- Primary Action for Transport Flow -->
+<div class="mt-space-xs">
+<button class="w-full py-3.5 px-4 rounded-xl bg-primary text-on-primary font-body-strong text-body-strong shadow-md active:bg-primary-container active:scale-[0.99] transition-all flex items-center justify-center gap-2" id="btn-submit-handoff" onclick="triggerCompletionModal()" type="button">
+<span class="material-symbols-outlined text-[20px]">verified</span>
+<span>Confirm Hospital Handoff &amp; Complete Incident</span>
+</button>
+</div>
+</div>
+<!-- CONTAINER 2: Non-Transport Alternative Flow (Hidden by default) -->
+<div class="hidden flex flex-col gap-space-md px-gutter-mobile" id="flow-non-transport">
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm relative overflow-hidden">
+<!-- Amber warning accent rail -->
+<div class="absolute top-0 left-0 bottom-0 w-1.5 bg-tertiary-container"></div>
+<div class="pl-2">
+<div class="flex items-start justify-between gap-2 mb-2">
+<div>
+<span class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-telemetry-sm text-telemetry-sm font-bold">
+              NON-TRANSPORT PROTOCOL
+            </span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mt-1.5 leading-tight">
+              Scene Discharge &amp; Refusal of Care
+            </h2>
+</div>
+<span class="material-symbols-outlined text-tertiary-container text-[24px]">front_hand</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Complete this statutory workflow when a competent patient declines hospital transport (Against Medical Advice - AMA) or when conditions resolve safely on-scene.
+        </p>
+<!-- Refusal Type Selection -->
+<div class="mt-space-md space-y-2">
+<label class="flex items-center gap-2.5 p-2.5 rounded-xl bg-surface-container-low cursor-pointer">
+<input checked="" class="text-primary accent-primary w-4 h-4" name="refusal-reason" type="radio"/>
+<div>
+<span class="font-body-strong text-body-strong text-on-surface block text-[13px]">Informed Patient Refusal (Competent Adult AMA)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Risks of non-treatment thoroughly explained.</span>
+</div>
+</label>
+<label class="flex items-center gap-2.5 p-2.5 rounded-xl bg-surface-container-low cursor-pointer">
+<input class="text-primary accent-primary w-4 h-4" name="refusal-reason" type="radio"/>
+<div>
+<span class="font-body-strong text-body-strong text-on-surface block text-[13px]">Minor Incident Resolved / First Aid Only</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Vitals normal, wound dressed, patient self-cleared.</span>
+</div>
+</label>
+</div>
+<!-- Witness & Signature Fields -->
+<div class="mt-space-md space-y-3">
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-1" for="witness-name">
+              Guardian / Scene Witness CNIC or Name
+            </label>
+<input class="w-full px-3 py-2.5 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary/20" id="witness-name" placeholder="e.g. Tariq Mehmood (Brother) - 36302-XXXXXXX-X" type="text"/>
+</div>
+<!-- Digital Canvas Mock Pad -->
+<div>
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-md text-label-md text-on-surface">Digital Signature Pad (Patient / Witness)</span>
+<button class="font-telemetry-sm text-telemetry-sm text-primary hover:underline" onclick="clearSignature()" type="button">Clear Canvas</button>
+</div>
+<div class="w-full h-28 rounded-lg bg-surface-container-low flex flex-col items-center justify-center relative cursor-crosshair" id="sig-pad">
+<span class="material-symbols-outlined text-on-surface-variant/40 text-[28px]">gesture</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant/60">Sign on screen with finger or stylus</span>
+<div class="hidden absolute inset-0 flex items-center justify-center bg-surface-container-lowest/80 rounded-lg" id="sig-indicator">
+<span class="font-telemetry-md text-telemetry-md text-primary font-bold">✓ Signature Recorded</span>
+</div>
+</div>
+</div>
+</div>
+<button class="w-full mt-3 py-2 rounded-lg bg-surface-container text-on-surface font-body-sm text-body-sm active:bg-surface-container-high transition-colors" onclick="simulateSignature()" type="button">
+          Tap to capture sample signature
+        </button>
+</div>
+</div>
+<!-- Primary Action for Non-Transport Flow -->
+<div class="mt-space-xs">
+<button class="w-full py-3.5 px-4 rounded-xl bg-tertiary text-on-tertiary font-body-strong text-body-strong shadow-md active:opacity-90 active:scale-[0.99] transition-all flex items-center justify-center gap-2" onclick="triggerCompletionModal()" type="button">
+<span class="material-symbols-outlined text-[20px]">assignment_turned_in</span>
+<span>Authorize Scene Discharge &amp; Close Mission</span>
+</button>
+</div>
+</div>
+<!-- Statutory Prototype Disclaimer Note -->
+<div class="px-gutter-mobile mt-space-lg text-center">
+<div class="p-3 rounded-xl bg-surface-container-low inline-block w-full">
+<div class="flex items-center justify-center gap-1.5 mb-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">info</span>
+<span class="font-label-md text-label-md font-semibold">Simulated Statutory Workflow</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+        Simulated handoff workflow for prototype validation. Real clinical handoff requires statutory paper/digital NDHA forms and biological signature archive.
+      </p>
+</div>
+</div>
+<!-- SUCCESS & COMPLETION POPUP MODAL (Hidden by default) -->
+<div class="hidden fixed inset-0 z-50 flex items-center justify-center px-4 bg-on-surface/40 backdrop-blur-sm" id="completion-modal">
+<div class="w-full max-w-sm rounded-2xl bg-surface-container-lowest p-space-lg shadow-xl text-center transform transition-all animate-in fade-in zoom-in-95">
+<div class="w-14 h-14 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center mx-auto mb-space-sm shadow-md">
+<span class="material-symbols-outlined text-[32px]">check_circle</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-1">
+        Incident Closed Successfully
+      </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+        Handoff dossier NDHA-22 archived. Nishtar Central Dispatch notified. Ambulance 37 status reset to <strong>AVAILABLE</strong>.
+      </p>
+<div class="p-3 rounded-xl bg-surface-container-low text-left mb-space-md space-y-1">
+<div class="flex justify-between font-telemetry-sm text-telemetry-sm text-on-surface-variant">
+<span>MISSION DURATION</span>
+<span class="font-bold text-on-surface">34m 12s</span>
+</div>
+<div class="flex justify-between font-telemetry-sm text-telemetry-sm text-on-surface-variant">
+<span>FINAL DISPOSITION</span>
+<span class="font-bold text-primary" id="summary-disposition">TRAUMA BAY HANDOFF</span>
+</div>
+</div>
+<button class="w-full py-3 rounded-xl bg-primary text-on-primary font-body-strong text-body-strong shadow-md active:scale-95 transition-transform" onclick="closeCompletionModal()" type="button">
+        Return to Dispatch Board
+      </button>
+</div>
+</div>
+<!-- REROUTE BOTTOM ACTION SHEET (Hidden by default) -->
+<div class="hidden fixed inset-0 z-50 flex items-end justify-center bg-on-surface/35 backdrop-blur-sm" id="reroute-modal">
+<div class="w-full max-w-md rounded-t-2xl bg-surface-container-lowest p-space-md shadow-xl animate-in slide-in-from-bottom">
+<div class="w-10 h-1 rounded-full bg-surface-variant mx-auto mb-3"></div>
+<div class="flex items-center justify-between mb-3">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Emergency Reroute Selection</h3>
+<button class="p-1 rounded-lg text-on-surface-variant hover:bg-surface-container" onclick="closeRerouteSheet()" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">
+        Select secondary hospital based on current ICU diversion notices:
+      </p>
+<!-- Hospital Choices -->
+<div class="space-y-2 mb-space-md">
+<div class="p-3 rounded-xl bg-surface-container-low flex items-center justify-between cursor-pointer active:bg-surface-container">
+<div>
+<div class="flex items-center gap-1.5">
+<span class="font-body-strong text-body-strong text-on-surface">Multan Institute of Cardiology</span>
+<span class="px-1.5 py-0.5 rounded bg-primary-container text-on-primary font-telemetry-sm text-[10px]">CATH READY</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">3.4 km · 8 min transit · 4 CCU beds</span>
+</div>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-lowest text-primary font-telemetry-sm text-telemetry-sm font-bold shadow-sm" onclick="selectAltHospital('Multan Institute of Cardiology')" type="button">
+            Select
+          </button>
+</div>
+<div class="p-3 rounded-xl bg-surface-container-low flex items-center justify-between cursor-pointer active:bg-surface-container">
+<div>
+<div class="flex items-center gap-1.5">
+<span class="font-body-strong text-body-strong text-on-surface">Cantonment General Hospital</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant font-telemetry-sm text-[10px]">LEVEL II</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">4.1 km · 11 min transit · 6 ER beds</span>
+</div>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-lowest text-primary font-telemetry-sm text-telemetry-sm font-bold shadow-sm" onclick="selectAltHospital('Cantonment General Hospital')" type="button">
+            Select
+          </button>
+</div>
+</div>
+<button class="w-full py-2.5 rounded-xl bg-surface-container text-on-surface font-body-strong text-body-strong" onclick="closeRerouteSheet()" type="button">
+        Cancel Reroute
+      </button>
+</div>
+</div>
+</div>
+<!-- Client-side Logic for Screen States and Interactions -->
+<script>
+  let currentMode = 'transport';
+
+  function switchMode(mode) {
+    currentMode = mode;
+    const tabTransport = document.getElementById('tab-transport');
+    const tabNonTransport = document.getElementById('tab-non-transport');
+    const flowTransport = document.getElementById('flow-transport');
+    const flowNonTransport = document.getElementById('flow-non-transport');
+
+    if (mode === 'transport') {
+      tabTransport.className = 'flex-1 py-2 rounded-lg bg-surface-container-lowest text-primary font-body-strong text-body-strong shadow-sm transition-all flex items-center justify-center gap-1.5';
+      tabNonTransport.className = 'flex-1 py-2 rounded-lg text-on-surface-variant font-body-strong text-body-strong transition-all flex items-center justify-center gap-1.5';
+      flowTransport.classList.remove('hidden');
+      flowNonTransport.classList.add('hidden');
+    } else {
+      tabNonTransport.className = 'flex-1 py-2 rounded-lg bg-surface-container-lowest text-primary font-body-strong text-body-strong shadow-sm transition-all flex items-center justify-center gap-1.5';
+      tabTransport.className = 'flex-1 py-2 rounded-lg text-on-surface-variant font-body-strong text-body-strong transition-all flex items-center justify-center gap-1.5';
+      flowNonTransport.classList.remove('hidden');
+      flowTransport.classList.add('hidden');
+    }
+  }
+
+  function validateHandoffState() {
+    const custodyCheck = document.getElementById('check-physical-custody');
+    const btn = document.getElementById('btn-submit-handoff');
+    if (custodyCheck.checked) {
+      btn.classList.add('ring-4', 'ring-primary/20');
+    } else {
+      btn.classList.remove('ring-4', 'ring-primary/20');
+    }
+  }
+
+  function triggerCompletionModal() {
+    const modal = document.getElementById('completion-modal');
+    const summary = document.getElementById('summary-disposition');
+    if (currentMode === 'transport') {
+      summary.textContent = 'NISHTAR HOSPITAL HANDOFF';
+    } else {
+      summary.textContent = 'SCENE DISCHARGE (AMA / FIRST AID)';
+    }
+    modal.classList.remove('hidden');
+  }
+
+  function closeCompletionModal() {
+    const modal = document.getElementById('completion-modal');
+    modal.classList.add('hidden');
+  }
+
+  function openRerouteSheet() {
+    document.getElementById('reroute-modal').classList.remove('hidden');
+  }
+
+  function closeRerouteSheet() {
+    document.getElementById('reroute-modal').classList.add('hidden');
+  }
+
+  function selectAltHospital(name) {
+    alert('Hospital reroute initiated to ' + name + '. Dispatcher route updated.');
+    closeRerouteSheet();
+  }
+
+  function simulateSignature() {
+    const indicator = document.getElementById('sig-indicator');
+    indicator.classList.remove('hidden');
+  }
+
+  function clearSignature() {
+    const indicator = document.getElementById('sig-indicator');
+    indicator.classList.add('hidden');
+  }
+</script></main></body></html>
