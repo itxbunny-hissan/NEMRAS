@@ -9,6 +9,15 @@
 # packages, and plugins designed to encourage good coding practices.
 include: package:flutter_lints/flutter.yaml
 
+analyzer:
+  errors:
+    # The AppTheme facade in lib/theme.dart is intentionally deprecated so the
+    # IDE steers new code towards nemras_design, but every pre-Phase-1A screen
+    # still reads colours through it. Without this the analyzer reports a
+    # warning at each of those call sites.
+    # TODO(phase-1b): remove once all screens import nemras_design directly.
+    deprecated_member_use_from_same_package: ignore
+
 linter:
   # The lint rules applied to this project can be customized in the
   # section below to disable rules from the `package:flutter_lints/flutter.yaml`

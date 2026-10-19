@@ -59,10 +59,13 @@ class _ChatScreenState extends State<ChatScreen> {
     try {
       final reply = await Api.chat(widget.cnic, text);
       if (mounted) setState(() => _msgs.add(_Msg(reply, false)));
-    } catch (_) {
+    } on ApiException catch (e) {
       if (mounted) {
-        setState(() => _msgs
-            .add(_Msg("I couldn't reach your record service right now.", false)));
+        setState(() => _msgs.add(_Msg(
+            e.isConnectivityIssue
+                ? "I couldn't reach your record service right now."
+                : e.message,
+            false)));
       }
     } finally {
       if (mounted) {

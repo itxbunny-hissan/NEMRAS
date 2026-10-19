@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../api.dart';
 import '../theme.dart';
-import 'audit_log_screen.dart';
+import '../navigation/app_router.dart';
 
 class ProfileScreen extends StatefulWidget {
   final PatientRecord record;
@@ -150,10 +150,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
           // ── Audit log link ─────────────────────────────
           GestureDetector(
             onTap: () => Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (_) =>
-                        AuditLogScreen(record: widget.record))),
+                context, AppRouter.patientAuditLog(widget.record)),
             child: Container(
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
