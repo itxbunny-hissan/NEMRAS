@@ -3,3 +3,16 @@ uvicorn[standard]==0.30.6
 pandas==2.2.2
 numpy==1.26.4
 pydantic==2.9.0
+
+# Firebase ID-token verification (backend authentication). Requires
+# Application Default Credentials; see .env.example.
+firebase-admin==7.7.0
+
+# Supabase access-token verification (supabase_auth.py). Already installed as
+# a firebase-admin dependency; pinned here because it is used directly.
+PyJWT[crypto]==2.15.1
+
+# PostgreSQL driver for the patient ID registry
+psycopg[binary]==3.3.6
+
+
