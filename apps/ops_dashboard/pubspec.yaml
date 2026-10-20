@@ -1,0 +1,30 @@
+name: ops_dashboard
+description: "NEMRAS Hospital Operational Dashboard (FYP demo)"
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.12.1
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  http: ^1.2.0
+
+  # Shared NEMRAS design system and layout infrastructure. Path dependencies
+  # keep the one-way direction established in Phase 1A:
+  # nemras_design <- nemras_layout <- surface application.
+  nemras_design:
+    path: ../../packages/nemras_design
+  nemras_layout:
+    path: ../../packages/nemras_layout
+  supabase_flutter: ^2.18.3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true

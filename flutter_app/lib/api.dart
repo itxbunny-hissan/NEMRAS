@@ -1,25 +1,80 @@
+import 'dart:async';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 /// ============================================================
-/// IMPORTANT: SET THIS TO YOUR MACHINE'S LOCAL IP ADDRESS
+/// BACKEND URL CONFIGURATION
 /// ============================================================
-/// The Android emulator's 10.0.2.2 often gets blocked by Windows
-/// Firewall. The most reliable approach is to use your PC's actual
-/// LAN IP address instead.
+/// The API base URL is supplied at build time, so no machine-specific
+/// address has to be edited into source:
 ///
-/// To find it: open CMD → type "ipconfig" → look for
-/// "IPv4 Address" under your Wi-Fi or Ethernet adapter.
-/// Example: 192.168.1.5
-///
-/// Then set: const String kBaseUrl = 'http://192.168.1.5:8000';
+///   flutter run --dart-define=NEMRAS_API_URL=http://192.168.1.5:8000
+///   flutter build apk --dart-define=NEMRAS_API_URL=https://api.nemras.pk
 ///
 /// Quick options:
-///   Android emulator:  http://10.0.2.2:8000  (often blocked)
-///   Better for emu:    http://<your-PC-IP>:8000
 ///   Chrome / Desktop:  http://127.0.0.1:8000
+///   Android emulator:  http://10.0.2.2:8000  (often blocked by Windows Firewall)
+///   Physical phone:    http://<your-PC-LAN-IP>:8000  (same Wi-Fi as the PC)
+///
+/// To find your LAN IP: open CMD → type "ipconfig" → look for
+/// "IPv4 Address" under your Wi-Fi or Ethernet adapter.
+///
+/// [kDefaultApiUrl] is the development fallback used when no
+/// --dart-define is passed. It keeps the existing local workflow working.
 /// ============================================================
-const String kBaseUrl = 'http://192.168.1.3:8000';
+const String kDefaultApiUrl = 'http://192.168.1.3:8000';
+
+/// Build-time API base URL. Override with
+/// `--dart-define=NEMRAS_API_URL=http://host:port`.
+const String kBaseUrl = String.fromEnvironment(
+  'NEMRAS_API_URL',
+  defaultValue: kDefaultApiUrl,
+);
+
+/// Why an API call failed. Lets the UI react to the cause instead of
+/// pattern-matching on exception text.
+enum ApiErrorKind {
+  /// Host unreachable, DNS failure, backend not running.
+  network,
+
+  /// Request exceeded [Api.timeout].
+  timeout,
+
+  /// 404 - the requested record does not exist.
+  notFound,
+
+  /// 401 - the access token was missing, expired or rejected.
+  unauthorized,
+
+  /// 4xx other than 404 - the request itself was rejected.
+  badRequest,
+
+  /// 5xx, including 503 when the backend has no dataset loaded.
+  server,
+
+  /// 2xx response whose body was not the expected JSON shape.
+  decode,
+}
+
+/// Typed error raised by every [Api] method.
+class ApiException implements Exception {
+  final ApiErrorKind kind;
+
+  /// Message safe to show to a user. Never contains patient data.
+  final String message;
+
+  /// HTTP status code, when the failure came from a response.
+  final int? statusCode;
+
+  const ApiException(this.kind, this.message, {this.statusCode});
+
+  /// True when retrying later could plausibly succeed.
+  bool get isConnectivityIssue =>
+      kind == ApiErrorKind.network || kind == ApiErrorKind.timeout;
+
+  @override
+  String toString() => message;
+}
 
 class PatientSummary {
   final String cnic, patientName, gender, bloodType, medicalCondition;
@@ -83,61 +138,186 @@ class DashboardStats {
   }
 }
 
+/// The caller's NEMRAS Patient ID, from `POST /api/v1/me/patient-id`.
+///
+/// Not bound to a CNIC and grants no access to any patient record.
+class IssuedPatientId {
+  final String nemrasId, displayId, status, createdAt, bindingStatus;
+  final bool newlyIssued;
+
+  IssuedPatientId.fromJson(Map<String, dynamic> j)
+      : nemrasId = j['nemras_id'] as String,
+        displayId = j['display_id'] as String,
+        status = j['status'] as String,
+        createdAt = j['created_at'] as String,
+        bindingStatus = j['binding_status'] as String,
+        newlyIssued = j['newly_issued'] as bool;
+}
+
 class Api {
   /// Timeout set to 10s so the UI doesn't hang forever.
-  static const _timeout = Duration(seconds: 10);
+  static const timeout = Duration(seconds: 10);
 
-  static Future<PatientRecord> getPatient(String cnic) async {
-    final r = await http
-        .get(Uri.parse('$kBaseUrl/api/patient/$cnic'))
-        .timeout(_timeout);
-    if (r.statusCode == 404) throw Exception('No patient found for that CNIC.');
-    if (r.statusCode != 200) throw Exception('Server error (${r.statusCode}).');
-    final j = jsonDecode(r.body);
-    return PatientRecord(
-      PatientSummary.fromJson(j['summary']),
-      (j['alerts'] as List).map((e) => Alert.fromJson(e)).toList(),
+  /// Maps a non-2xx response onto a typed [ApiException].
+  ///
+  /// The server's `detail` field is deliberately not echoed back verbatim:
+  /// it can contain the requested CNIC.
+  static ApiException errorForStatus(int statusCode, {String? notFoundMessage}) {
+    if (statusCode == 401) {
+      return ApiException(
+        ApiErrorKind.unauthorized,
+        'Your session has expired or is not valid. Sign in again.',
+        statusCode: statusCode,
+      );
+    }
+    if (statusCode == 404) {
+      return ApiException(
+        ApiErrorKind.notFound,
+        notFoundMessage ?? 'Record not found.',
+        statusCode: statusCode,
+      );
+    }
+    if (statusCode == 503) {
+      return ApiException(
+        ApiErrorKind.server,
+        'The NEMRAS service is starting up or unavailable. Try again shortly.',
+        statusCode: statusCode,
+      );
+    }
+    if (statusCode >= 500) {
+      return ApiException(
+        ApiErrorKind.server,
+        'Server error ($statusCode). Please try again.',
+        statusCode: statusCode,
+      );
+    }
+    if (statusCode >= 400) {
+      return ApiException(
+        ApiErrorKind.badRequest,
+        'Request rejected ($statusCode). Check the details and try again.',
+        statusCode: statusCode,
+      );
+    }
+    return ApiException(
+      ApiErrorKind.server,
+      'Unexpected response ($statusCode).',
+      statusCode: statusCode,
     );
   }
 
-  static Future<List<Map<String, dynamic>>> samplePatients() async {
-    final r = await http
-        .get(Uri.parse('$kBaseUrl/api/patients/sample?n=8'))
-        .timeout(_timeout);
-    return (jsonDecode(r.body) as List).cast<Map<String, dynamic>>();
+  /// Single funnel for every request: checks the status code, decodes the
+  /// body, and converts transport/parse failures into [ApiException].
+  static Future<T> _send<T>(
+    Future<http.Response> Function() request,
+    T Function(dynamic json) parse, {
+    String? notFoundMessage,
+  }) async {
+    final http.Response response;
+    try {
+      response = await request().timeout(timeout);
+    } on TimeoutException {
+      throw const ApiException(
+        ApiErrorKind.timeout,
+        'The request timed out. Check that the NEMRAS backend is reachable.',
+      );
+    } catch (_) {
+      // Not narrowed to SocketException: dart:io cannot be imported here
+      // without breaking the Flutter Web build.
+      throw const ApiException(
+        ApiErrorKind.network,
+        'Cannot reach the NEMRAS backend. Check the server and NEMRAS_API_URL.',
+      );
+    }
+
+    if (response.statusCode < 200 || response.statusCode >= 300) {
+      throw errorForStatus(response.statusCode,
+          notFoundMessage: notFoundMessage);
+    }
+
+    try {
+      return parse(jsonDecode(response.body));
+    } on ApiException {
+      rethrow;
+    } catch (_) {
+      throw const ApiException(
+        ApiErrorKind.decode,
+        'The server returned an unexpected response format.',
+      );
+    }
   }
 
-  static Future<String> chat(String cnic, String message) async {
-    final r = await http
-        .post(
-          Uri.parse('$kBaseUrl/api/chat'),
-          headers: {'Content-Type': 'application/json'},
-          body: jsonEncode({'cnic': cnic, 'message': message}),
-        )
-        .timeout(_timeout);
-    return jsonDecode(r.body)['reply'] ?? '';
+  static Future<PatientRecord> getPatient(String cnic) {
+    return _send(
+      () => http.get(Uri.parse('$kBaseUrl/api/patient/$cnic')),
+      (j) => PatientRecord(
+        PatientSummary.fromJson(j['summary'] as Map<String, dynamic>),
+        (j['alerts'] as List)
+            .map((e) => Alert.fromJson(e as Map<String, dynamic>))
+            .toList(),
+      ),
+      notFoundMessage: 'No patient found for that CNIC.',
+    );
   }
 
-  static Future<DashboardStats> getStats() async {
-    final r = await http
-        .get(Uri.parse('$kBaseUrl/api/stats'))
-        .timeout(_timeout);
-    return DashboardStats.fromJson(jsonDecode(r.body));
+  static Future<List<Map<String, dynamic>>> samplePatients() {
+    return _send(
+      () => http.get(Uri.parse('$kBaseUrl/api/patients/sample?n=8')),
+      (j) => (j as List).cast<Map<String, dynamic>>(),
+    );
+  }
+
+  static Future<String> chat(String cnic, String message) {
+    return _send(
+      () => http.post(
+        Uri.parse('$kBaseUrl/api/chat'),
+        headers: {'Content-Type': 'application/json'},
+        body: jsonEncode({'cnic': cnic, 'message': message}),
+      ),
+      (j) => (j['reply'] as String?) ?? '',
+      notFoundMessage: 'That record is no longer available.',
+    );
+  }
+
+  static Future<DashboardStats> getStats() {
+    return _send(
+      () => http.get(Uri.parse('$kBaseUrl/api/stats')),
+      (j) => DashboardStats.fromJson(j as Map<String, dynamic>),
+    );
   }
 
   static Future<List<Map<String, dynamic>>> criticalPatients(
-      {int limit = 20}) async {
-    final r = await http
-        .get(Uri.parse('$kBaseUrl/api/dashboard/critical?limit=$limit'))
-        .timeout(_timeout);
-    return (jsonDecode(r.body) as List).cast<Map<String, dynamic>>();
+      {int limit = 20}) {
+    return _send(
+      () => http.get(Uri.parse('$kBaseUrl/api/dashboard/critical?limit=$limit')),
+      (j) => (j as List).cast<Map<String, dynamic>>(),
+    );
   }
 
-  /// Quick connectivity check.
+  /// Issues, or returns, the signed-in user's NEMRAS Patient ID.
+  ///
+  /// [accessToken] goes only into the Authorization header and is never
+  /// logged. [client] exists for tests.
+  static Future<IssuedPatientId> issueMyPatientId({
+    required String accessToken,
+    http.Client? client,
+  }) {
+    final uri = Uri.parse('$kBaseUrl/api/v1/me/patient-id');
+    final headers = {'Authorization': 'Bearer $accessToken'};
+    return _send(
+      () => client != null
+          ? client.post(uri, headers: headers)
+          : http.post(uri, headers: headers),
+      (j) => IssuedPatientId.fromJson(j as Map<String, dynamic>),
+    );
+  }
+
+  /// Quick connectivity check. Returns false rather than throwing, since
+  /// callers only use it to show the offline banner.
   static Future<bool> ping() async {
     try {
-      final r = await http.get(Uri.parse('$kBaseUrl/')).timeout(
-          const Duration(seconds: 5));
+      final r = await http
+          .get(Uri.parse('$kBaseUrl/'))
+          .timeout(const Duration(seconds: 5));
       return r.statusCode == 200;
     } catch (_) {
       return false;

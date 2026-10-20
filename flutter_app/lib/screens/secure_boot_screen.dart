@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import '../theme.dart';
-import 'onboarding_screen.dart';
+import 'package:nemras_design/nemras_design.dart';
+import 'package:nemras_layout/nemras_layout.dart';
 
 class SecureBootScreen extends StatefulWidget {
   const SecureBootScreen({super.key});
@@ -39,15 +39,7 @@ class _SecureBootScreenState extends State<SecureBootScreen>
 
   void _navigate() {
     if (!mounted) return;
-    Navigator.pushReplacement(
-      context,
-      PageRouteBuilder(
-        pageBuilder: (_, __, ___) => const OnboardingScreen(),
-        transitionsBuilder: (_, anim, __, child) =>
-            FadeTransition(opacity: anim, child: child),
-        transitionDuration: const Duration(milliseconds: 500),
-      ),
-    );
+    Navigator.pushReplacementNamed(context, NemrasRouteNames.onboarding);
   }
 
   @override
@@ -78,9 +70,9 @@ class _SecureBootScreenState extends State<SecureBootScreen>
                     child: CircularProgressIndicator(
                       value: _arcCtrl.value,
                       strokeWidth: 5,
-                      backgroundColor: const Color(0xFFF0F0F0),
-                      valueColor:
-                          const AlwaysStoppedAnimation<Color>(AppTheme.primary),
+                      backgroundColor: NemrasColors.paper2,
+                      valueColor: const AlwaysStoppedAnimation<Color>(
+                          NemrasColors.teal),
                       strokeCap: StrokeCap.round,
                     ),
                   ),
@@ -90,7 +82,7 @@ class _SecureBootScreenState extends State<SecureBootScreen>
                       style: const TextStyle(
                           fontSize: 56,
                           fontWeight: FontWeight.w300,
-                          color: AppTheme.ink,
+                          color: NemrasColors.ink,
                           letterSpacing: -2),
                     ),
                     const Text(
@@ -98,7 +90,7 @@ class _SecureBootScreenState extends State<SecureBootScreen>
                       style: TextStyle(
                           fontSize: 9,
                           letterSpacing: 2.5,
-                          color: AppTheme.muted,
+                          color: NemrasColors.muted,
                           fontWeight: FontWeight.w600),
                     ),
                   ]),
@@ -112,7 +104,7 @@ class _SecureBootScreenState extends State<SecureBootScreen>
               style: TextStyle(
                   fontSize: 28,
                   fontWeight: FontWeight.w800,
-                  color: AppTheme.ink,
+                  color: NemrasColors.ink,
                   height: 1.2),
             ),
             const SizedBox(height: 18),
@@ -120,26 +112,8 @@ class _SecureBootScreenState extends State<SecureBootScreen>
               'TLS 1.3 · AES-256 · End-to-end\nencrypted connection to NEMRAS\nnational index',
               textAlign: TextAlign.center,
               style: TextStyle(
-                  fontSize: 14, color: AppTheme.muted, height: 1.65),
+                  fontSize: 14, color: NemrasColors.muted, height: 1.65),
             ),
-            const SizedBox(height: 28),
-            Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-              Container(
-                width: 9,
-                height: 9,
-                decoration: const BoxDecoration(
-                    color: AppTheme.stable, shape: BoxShape.circle),
-              ),
-              const SizedBox(width: 8),
-              const Text(
-                'CERT VERIFIED  ·  gw.nemras.pk',
-                style: TextStyle(
-                    fontSize: 12,
-                    color: AppTheme.stable,
-                    fontWeight: FontWeight.w600,
-                    letterSpacing: 0.5),
-              ),
-            ]),
             const Spacer(flex: 3),
           ]),
         ),

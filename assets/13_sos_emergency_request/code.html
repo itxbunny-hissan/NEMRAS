@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><title>NEMRAS</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;700&amp;family=Sora:wght@500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "tertiary-fixed-dim": "#ffb3ae", "on-tertiary-fixed-variant": "#8f0e1a", "on-primary": "#ffffff", "on-tertiary-container": "#ffe4e1", "surface-dim": "#c8dcf0", "error-container": "#ffdad6", "on-surface-variant": "#3e4947", "tertiary": "#9e1c23", "on-background": "#091d2b", "on-surface": "#091d2b", "error": "#ba1a1a", "primary": "#005c55", "secondary": "#216963", "on-error": "#ffffff", "inverse-surface": "#1f3241", "surface-container-lowest": "#ffffff", "surface-bright": "#f6f9ff", "surface-container-high": "#d6ebfe", "outline": "#6e7977", "surface-tint": "#006a63", "on-secondary": "#ffffff", "surface-container": "#e1f0ff", "secondary-fixed-dim": "#8fd3cc", "surface-container-low": "#ecf5ff", "tertiary-fixed": "#ffdad7", "on-secondary-container": "#266d68", "on-tertiary": "#ffffff", "surface-variant": "#d1e5f8", "surface-container-highest": "#d1e5f8", "on-tertiary-fixed": "#410005", "primary-fixed-dim": "#80d5cb", "primary-container": "#0f766e", "background": "#f6f9ff", "on-primary-container": "#a3faef", "on-secondary-fixed-variant": "#00504b", "secondary-fixed": "#abefe8", "outline-variant": "#bdc9c6", "inverse-on-surface": "#e6f2ff", "on-primary-fixed-variant": "#00504a", "on-error-container": "#93000a", "tertiary-container": "#c03638", "surface": "#f6f9ff", "secondary-container": "#a8ece5", "inverse-primary": "#80d5cb", "on-primary-fixed": "#00201d", "primary-fixed": "#9cf2e8", "on-secondary-fixed": "#00201e" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "margin-mobile": "1rem", "space-sm": "0.5rem", "space-xs": "0.25rem", "gutter-mobile": "1rem", "space-lg": "1.5rem", "margin": "2rem", "gutter": "1.5rem", "space-xl": "2rem", "space-md": "1rem" }, "fontFamily": { "headline-sm": ["Sora"], "display-lg": ["Sora"], "label-md": ["Inter"], "headline-lg-mobile": ["Sora"], "body-strong": ["Inter"], "body-md": ["Inter"], "body-lg": ["Inter"], "body-sm": ["Inter"], "headline-lg": ["Sora"], "headline-md": ["Sora"], "telemetry-md": ["JetBrains Mono"], "telemetry-lg": ["JetBrains Mono"], "telemetry-sm": ["JetBrains Mono"] }, "fontSize": { "headline-sm": ["16px", { "lineHeight": "24px", "fontWeight": "600" }], "display-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "label-md": ["13px", { "lineHeight": "16px", "fontWeight": "500" }], "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "body-strong": ["14px", { "lineHeight": "20px", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }], "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }], "telemetry-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }], "telemetry-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "telemetry-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "500" }] } } } }</script><style>@layer base{html,body{width:100vw;margin:0;padding:0;min-height:100vh;}body{overscroll-behavior-y:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface antialiased flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.03)]"><div class="h-16 px-margin-mobile flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-9 h-9 rounded-xl bg-primary-container flex items-center justify-center shadow-sm"><span class="material-symbols-outlined text-on-primary text-[20px]">emergency</span></div><div class="flex flex-col"><div class="flex items-center gap-space-xs"><span class="font-headline-sm text-headline-sm text-on-surface font-bold tracking-tight">NEMRAS</span><span class="px-1.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-telemetry-sm text-telemetry-sm uppercase tracking-wider">Citizen</span></div><div class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span><span class="font-label-md text-[11px] text-on-surface-variant leading-none">Triage Ready</span></div></div></div><div class="flex items-center gap-space-sm"><span class="font-headline-sm text-headline-sm text-on-surface hidden">Sos Emergency</span><button aria-label="Notifications" class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors"><span class="material-symbols-outlined text-[22px]">notifications</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-24 bg-surface px-margin-mobile"><div class="flex flex-col w-full gap-space-md">
+<!-- Top Dismiss & Status Bar -->
+<div class="flex items-center justify-between w-full">
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary animate-ping"></span>
+<span class="font-telemetry-sm text-telemetry-sm uppercase tracking-wider text-tertiary font-bold">Priority Triage Protocol</span>
+</div>
+<button class="flex items-center gap-1 px-3 py-1.5 rounded-full bg-surface-container-high text-on-surface hover:bg-surface-variant transition-colors shadow-sm active:scale-95" id="cancel-header-btn" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+<span class="font-body-strong text-body-sm">Cancel / Exit</span>
+</button>
+</div>
+<!-- Incident Category Selector Header & Pills -->
+<div class="flex flex-col gap-space-xs w-full">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Select Incident Nature</span>
+<span class="font-telemetry-sm text-telemetry-sm text-primary font-bold">Auto-Triage Active</span>
+</div>
+<!-- Category Selector Grid -->
+<div class="grid grid-cols-2 gap-space-xs w-full" id="category-container">
+<button class="cat-pill flex items-center gap-2 p-2.5 rounded-xl text-left bg-tertiary-fixed text-on-tertiary-fixed shadow-sm transition-all duration-150 transform active:scale-98" data-category="cardiac" type="button">
+<div class="w-8 h-8 rounded-lg bg-tertiary text-on-tertiary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">cardiology</span>
+</div>
+<div class="min-w-0 flex-1">
+<p class="font-body-strong text-body-sm leading-tight truncate">Medical / Cardiac</p>
+<p class="font-telemetry-sm text-telemetry-sm opacity-80 truncate">Priority Code 1</p>
+</div>
+</button>
+<button class="cat-pill flex items-center gap-2 p-2.5 rounded-xl text-left bg-surface-container-lowest text-on-surface shadow-sm transition-all duration-150 transform active:scale-98" data-category="rta" type="button">
+<div class="w-8 h-8 rounded-lg bg-surface-container-highest text-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">car_crash</span>
+</div>
+<div class="min-w-0 flex-1">
+<p class="font-body-strong text-body-sm leading-tight truncate">RTA / Trauma</p>
+<p class="font-telemetry-sm text-telemetry-sm text-on-surface-variant truncate">Road Collision</p>
+</div>
+</button>
+<button class="cat-pill flex items-center gap-2 p-2.5 rounded-xl text-left bg-surface-container-lowest text-on-surface shadow-sm transition-all duration-150 transform active:scale-98" data-category="fire" type="button">
+<div class="w-8 h-8 rounded-lg bg-surface-container-highest text-tertiary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">local_fire_department</span>
+</div>
+<div class="min-w-0 flex-1">
+<p class="font-body-strong text-body-sm leading-tight truncate">Fire / Burns</p>
+<p class="font-telemetry-sm text-telemetry-sm text-on-surface-variant truncate">Thermal Injury</p>
+</div>
+</button>
+<button class="cat-pill flex items-center gap-2 p-2.5 rounded-xl text-left bg-surface-container-lowest text-on-surface shadow-sm transition-all duration-150 transform active:scale-98" data-category="respiratory" type="button">
+<div class="w-8 h-8 rounded-lg bg-surface-container-highest text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">pulmonology</span>
+</div>
+<div class="min-w-0 flex-1">
+<p class="font-body-strong text-body-sm leading-tight truncate">Respiratory</p>
+<p class="font-telemetry-sm text-telemetry-sm text-on-surface-variant truncate">Choking / Unconscious</p>
+</div>
+</button>
+<button class="cat-pill col-span-2 flex items-center justify-center gap-2 py-2 px-3 rounded-xl bg-surface-container-lowest text-on-surface shadow-sm transition-all duration-150" data-category="other" type="button">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">emergency_home</span>
+<span class="font-body-strong text-body-sm">Other Critical Threat / Unspecified Crisis</span>
+</button>
+</div>
+</div>
+<!-- Central Tactile SOS Interactive Anchor -->
+<div class="relative w-full py-4 flex flex-col items-center justify-center">
+<!-- Ambient Pulse Rings -->
+<div class="absolute w-64 h-64 rounded-full bg-error-container/40 animate-ping opacity-30 pointer-events-none transition-all" id="ring-outer"></div>
+<div class="absolute w-56 h-56 rounded-full bg-tertiary/10 transition-transform duration-300 pointer-events-none scale-100" id="ring-mid"></div>
+<!-- Radial Progress SVG behind button -->
+<svg class="absolute w-56 h-56 -rotate-90 pointer-events-none z-10" viewbox="0 0 100 100">
+<circle class="opacity-30" cx="50" cy="50" fill="none" r="44" stroke="#d1e5f8" stroke-width="5"></circle>
+<circle class="transition-all duration-75" cx="50" cy="50" fill="none" id="progress-ring" r="44" stroke="#ba1a1a" stroke-dasharray="276.46" stroke-dashoffset="276.46" stroke-linecap="round" stroke-width="6"></circle>
+</svg>
+<!-- Main SOS Circular Touch Device Button -->
+<div class="relative z-20 flex flex-col items-center">
+<button class="w-48 h-48 rounded-full bg-tertiary text-on-tertiary flex flex-col items-center justify-center shadow-xl active:scale-95 transition-transform select-none cursor-pointer p-4 text-center" id="sos-trigger" type="button">
+<span class="material-symbols-outlined text-[44px] mb-1 animate-pulse" style="font-variation-settings: 'FILL' 1;">sos</span>
+<span class="font-display-lg text-headline-sm uppercase tracking-tight font-extrabold leading-none">RESCUE 1122</span>
+<span class="font-telemetry-sm text-telemetry-sm text-on-tertiary-container mt-1 font-semibold uppercase" id="sos-sublabel">Hold 3s to Dispatch</span>
+</button>
+</div>
+</div>
+<!-- Safety Auto-Countdown & Abort Panel (Reveals dynamically or displays state) -->
+<div class="w-full bg-surface-container-lowest rounded-xl p-3 shadow-md flex flex-col gap-2 transition-all" id="abort-panel">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-2.5 h-2.5 rounded-full bg-primary animate-pulse"></div>
+<span class="font-telemetry-md text-telemetry-md text-on-surface font-semibold" id="cad-status">CAD Ready: Awaiting Engagement</span>
+</div>
+<span class="hidden px-2 py-0.5 rounded-full bg-tertiary text-on-tertiary font-telemetry-sm text-telemetry-sm font-bold" id="countdown-chip">03.0s</span>
+</div>
+<!-- Micro-Countdown Visual Gauge -->
+<div class="w-full h-1.5 rounded-full bg-surface-variant overflow-hidden">
+<div class="h-full bg-primary rounded-full transition-all duration-100" id="linear-timer" style="width: 0%;"></div>
+</div>
+<!-- Instant Abort Bar Button -->
+<button class="w-full py-2.5 px-3 rounded-lg bg-surface-container-high text-on-surface hover:bg-surface-variant active:scale-98 flex items-center justify-center gap-2 transition-transform" id="cancel-dispatch-bar" type="button">
+<span class="material-symbols-outlined text-[18px] text-tertiary font-bold">stop_circle</span>
+<span class="font-body-strong text-body-sm">Instant Abort / Cancel Dispatch (X)</span>
+</button>
+</div>
+<!-- Telemetry & Dispatch Channel Indicators -->
+<div class="w-full bg-surface-container-low rounded-xl p-3.5 shadow-sm flex flex-col gap-2.5">
+<!-- Live Dispatch Handshake -->
+<div class="flex items-start gap-2.5">
+<div class="w-7 h-7 rounded-lg bg-secondary-container text-on-secondary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[16px]">cell_tower</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-body-strong text-body-sm text-on-surface">Rescue 1122 Dispatch Telemetry</span>
+<span class="font-telemetry-sm text-telemetry-sm text-secondary font-bold">99.8% Uplink</span>
+</div>
+<p class="font-telemetry-sm text-telemetry-sm text-on-surface-variant truncate mt-0.5" id="live-channel-log">Simulated handshake ready • GPS precision 4.2m</p>
+</div>
+</div>
+<!-- Medical Summary Payload Preview (CNIC Verified) -->
+<div class="flex items-start gap-2.5 bg-surface-container-lowest rounded-lg p-2.5 shadow-xs">
+<div class="w-7 h-7 rounded-lg bg-surface-variant text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">shield_with_heart</span>
+</div>
+<div class="flex-1 min-w-0">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider block">CNIC Verified Responder Payload</span>
+<p class="font-body-md text-body-sm text-on-surface font-medium mt-0.5">
+<span class="font-telemetry-sm font-bold text-tertiary">Blood: O+</span> • Penicillin Allergy • Diab-II Profile Attached
+        </p>
+</div>
+</div>
+</div>
+<!-- Direct Fallback Cellular Action -->
+<div class="flex items-center gap-2 w-full">
+<a class="flex-1 py-3 px-3 rounded-lg bg-surface-container-highest text-on-surface hover:bg-surface-variant active:scale-98 flex items-center justify-center gap-2 shadow-sm transition-all text-center" href="tel:1122">
+<span class="material-symbols-outlined text-[20px] text-tertiary" style="font-variation-settings: 'FILL' 1;">phone_forwarded</span>
+<span class="font-body-strong text-body-sm">Direct Cellular Line (Call 1122)</span>
+</a>
+<button aria-label="Refresh GPS Vector" class="w-11 h-11 rounded-lg bg-surface-container-highest text-on-surface flex items-center justify-center shadow-sm active:scale-95 transition-transform" id="geo-ping-btn" type="button">
+<span class="material-symbols-outlined text-[20px] text-primary">my_location</span>
+</button>
+</div>
+<!-- Safety Prototype Disclaimer Footnote -->
+<div class="w-full text-center px-2 py-1">
+<p class="font-telemetry-sm text-telemetry-sm text-on-surface-variant opacity-75 leading-tight">
+      Visual prototype for design validation only. No live emergency services or GPS signals are dispatched.
+    </p>
+</div>
+</div>
+<script>
+  (function () {
+    const sosBtn = document.getElementById('sos-trigger');
+    const sublabel = document.getElementById('sos-sublabel');
+    const progressRing = document.getElementById('progress-ring');
+    const linearTimer = document.getElementById('linear-timer');
+    const cadStatus = document.getElementById('cad-status');
+    const countdownChip = document.getElementById('countdown-chip');
+    const ringOuter = document.getElementById('ring-outer');
+    const ringMid = document.getElementById('ring-mid');
+    const abortBtn = document.getElementById('cancel-dispatch-bar');
+    const cancelHeaderBtn = document.getElementById('cancel-header-btn');
+    const channelLog = document.getElementById('live-channel-log');
+    const categoryContainer = document.getElementById('category-container');
+    const geoPingBtn = document.getElementById('geo-ping-btn');
+
+    let pressTimer = null;
+    let holdDuration = 3000; // 3 seconds requirement
+    let startTime = 0;
+    let isDispatched = false;
+
+    const ringCircumference = 276.46;
+
+    function resetProgress() {
+      if (isDispatched) return;
+      if (pressTimer) {
+        cancelAnimationFrame(pressTimer);
+        pressTimer = null;
+      }
+      progressRing.style.strokeDashoffset = ringCircumference;
+      linearTimer.style.width = '0%';
+      sublabel.textContent = 'Hold 3s to Dispatch';
+      cadStatus.textContent = 'CAD Ready: Awaiting Engagement';
+      cadStatus.className = 'font-telemetry-md text-telemetry-md text-on-surface font-semibold';
+      countdownChip.classList.add('hidden');
+      ringMid.classList.remove('scale-125');
+      ringOuter.classList.remove('opacity-70');
+    }
+
+    function completeDispatch() {
+      isDispatched = true;
+      progressRing.style.strokeDashoffset = '0';
+      linearTimer.style.width = '100%';
+      linearTimer.className = 'h-full bg-tertiary rounded-full';
+      countdownChip.classList.remove('hidden');
+      countdownChip.textContent = 'TRANSMITTED';
+      countdownChip.className = 'px-2 py-0.5 rounded-full bg-tertiary-container text-on-tertiary font-telemetry-sm text-telemetry-sm font-bold';
+      cadStatus.textContent = 'RESCUE 1122 DISPATCH ACTIVE';
+      cadStatus.className = 'font-telemetry-md text-telemetry-md text-tertiary font-bold';
+      sublabel.textContent = 'TRANSMISSION CONFIRMED';
+      channelLog.textContent = 'ACK Received: Amb-104 en-route • Sector G-9 Base';
+      sosBtn.classList.remove('bg-tertiary');
+      sosBtn.classList.add('bg-tertiary-container');
+      if (navigator.vibrate) {
+        navigator.vibrate([100, 50, 200, 50, 400]);
+      }
+    }
+
+    function step() {
+      const elapsed = Date.now() - startTime;
+      const progress = Math.min(elapsed / holdDuration, 1);
+      const remainingSec = Math.max(0, ((holdDuration - elapsed) / 1000)).toFixed(1);
+
+      progressRing.style.strokeDashoffset = (ringCircumference * (1 - progress)).toString();
+      linearTimer.style.width = (progress * 100) + '%';
+      countdownChip.classList.remove('hidden');
+      countdownChip.textContent = '0' + remainingSec + 's';
+      cadStatus.textContent = 'Connecting CAD Dispatch... ' + remainingSec + 's';
+      sublabel.textContent = 'HOLD TIGHT • ' + remainingSec + 's';
+
+      if (progress < 1) {
+        pressTimer = requestAnimationFrame(step);
+      } else {
+        completeDispatch();
+      }
+    }
+
+    function startPress(e) {
+      if (isDispatched) return;
+      if (e.cancelable && e.type === 'touchstart') e.preventDefault();
+      startTime = Date.now();
+      ringMid.classList.add('scale-125');
+      ringOuter.classList.add('opacity-70');
+      if (navigator.vibrate) navigator.vibrate(50);
+      pressTimer = requestAnimationFrame(step);
+    }
+
+    function endPress(e) {
+      if (isDispatched) return;
+      resetProgress();
+    }
+
+    // Touch & pointer interaction hooks
+    sosBtn.addEventListener('mousedown', startPress);
+    window.addEventListener('mouseup', endPress);
+    sosBtn.addEventListener('touchstart', startPress, { passive: false });
+    window.addEventListener('touchend', endPress);
+    window.addEventListener('touchcancel', endPress);
+
+    // Cancel / Abort actions
+    function abortEmergency() {
+      isDispatched = false;
+      if (pressTimer) cancelAnimationFrame(pressTimer);
+      resetProgress();
+      sosBtn.classList.remove('bg-tertiary-container');
+      sosBtn.classList.add('bg-tertiary');
+      cadStatus.textContent = 'DISPATCH ABORTED • STANDBY';
+      cadStatus.className = 'font-telemetry-md text-telemetry-md text-primary font-bold';
+      channelLog.textContent = 'Handshake terminated cleanly by citizen command';
+      countdownChip.classList.add('hidden');
+      linearTimer.className = 'h-full bg-primary rounded-full';
+    }
+
+    abortBtn.addEventListener('click', abortEmergency);
+    cancelHeaderBtn.addEventListener('click', () => {
+      abortEmergency();
+      const homeLink = document.querySelector('nav a[data-path="home-dashboard"]');
+      if (homeLink) homeLink.click();
+    });
+
+    // Category Selector micro-interaction
+    const catButtons = categoryContainer.querySelectorAll('.cat-pill');
+    catButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        catButtons.forEach(b => {
+          b.classList.remove('bg-tertiary-fixed', 'text-on-tertiary-fixed');
+          b.classList.add('bg-surface-container-lowest', 'text-on-surface');
+          const iconDiv = b.querySelector('div');
+          if (iconDiv) {
+            iconDiv.className = 'w-8 h-8 rounded-lg bg-surface-container-highest text-on-surface flex items-center justify-center shrink-0';
+          }
+        });
+        btn.classList.remove('bg-surface-container-lowest', 'text-on-surface');
+        btn.classList.add('bg-tertiary-fixed', 'text-on-tertiary-fixed');
+        const iconDiv = btn.querySelector('div');
+        if (iconDiv) {
+          iconDiv.className = 'w-8 h-8 rounded-lg bg-tertiary text-on-tertiary flex items-center justify-center shrink-0';
+        }
+        if (navigator.vibrate) navigator.vibrate(20);
+      });
+    });
+
+    // Simulated Geo-Refresh ping
+    geoPingBtn.addEventListener('click', () => {
+      geoPingBtn.classList.add('rotate-180');
+      channelLog.textContent = 'GPS calibrated: Lat 33.6844, Lon 73.0479 (Accuracy ±2.1m)';
+      setTimeout(() => geoPingBtn.classList.remove('rotate-180'), 400);
+    });
+  })();
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(9,29,43,0.04)]" data-active-classes="text-primary font-body-strong"><div class="flex items-center justify-around h-16 px-space-xs"><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] py-1 text-on-surface-variant transition-colors" data-path="home-dashboard" href="#"><span class="material-symbols-outlined text-[24px]">local_hospital</span><span class="font-label-md text-[11px] mt-0.5">Home</span></a><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] py-1 text-on-surface-variant transition-colors" data-path="medical-records" href="#"><span class="material-symbols-outlined text-[24px]">clinical_notes</span><span class="font-label-md text-[11px] mt-0.5">Records</span></a><a aria-current="page" class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] -mt-5 group text-primary font-body-strong" data-path="sos-emergency" href="#"><div class="w-12 h-12 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center shadow-md active:scale-95 transition-transform"><span class="material-symbols-outlined text-[26px]">e911_emergency</span></div><span class="font-label-md text-[11px] mt-0.5 text-tertiary font-semibold">SOS</span></a><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] py-1 text-on-surface-variant transition-colors" data-path="profile-and-contacts" href="#"><span class="material-symbols-outlined text-[24px]">contact_emergency</span><span class="font-label-md text-[11px] mt-0.5">Contacts</span></a><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] py-1 text-on-surface-variant transition-colors" data-path="settings-and-activity" href="#"><span class="material-symbols-outlined text-[24px]">history_toggle_off</span><span class="font-label-md text-[11px] mt-0.5">Activity</span></a></div></nav></body></html>

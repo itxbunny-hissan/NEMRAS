@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;700&amp;family=Sora:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-surface": "#091d2b", "surface": "#f6f9ff", "tertiary-fixed-dim": "#ffb3ae", "on-secondary-container": "#266d68", "primary-container": "#0f766e", "primary-fixed-dim": "#80d5cb", "on-secondary-fixed-variant": "#00504b", "on-primary": "#ffffff", "on-surface-variant": "#3e4947", "secondary-container": "#a8ece5", "error-container": "#ffdad6", "surface-bright": "#f6f9ff", "surface-container-low": "#ecf5ff", "on-primary-fixed-variant": "#00504a", "primary-fixed": "#9cf2e8", "on-tertiary-fixed-variant": "#8f0e1a", "on-tertiary-fixed": "#410005", "secondary-fixed-dim": "#8fd3cc", "surface-container": "#e1f0ff", "error": "#ba1a1a", "surface-dim": "#c8dcf0", "inverse-surface": "#1f3241", "outline": "#6e7977", "on-background": "#091d2b", "surface-variant": "#d1e5f8", "primary": "#005c55", "tertiary": "#9e1c23", "surface-container-lowest": "#ffffff", "inverse-on-surface": "#e6f2ff", "outline-variant": "#bdc9c6", "secondary-fixed": "#abefe8", "surface-container-high": "#d6ebfe", "on-primary-container": "#a3faef", "on-secondary-fixed": "#00201e", "surface-container-highest": "#d1e5f8", "inverse-primary": "#80d5cb", "surface-tint": "#006a63", "background": "#f6f9ff", "on-primary-fixed": "#00201d", "on-error": "#ffffff", "tertiary-fixed": "#ffdad7", "on-tertiary-container": "#ffe4e1", "on-tertiary": "#ffffff", "tertiary-container": "#c03638", "on-error-container": "#93000a", "secondary": "#216963", "on-secondary": "#ffffff" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-xs": "0.25rem", "space-lg": "1.5rem", "space-sm": "0.5rem", "margin": "2rem", "gutter": "1.5rem", "space-md": "1rem", "gutter-mobile": "1rem", "margin-mobile": "1rem", "space-xl": "2rem" }, "fontFamily": { "headline-lg": ["Sora"], "headline-md": ["Sora"], "label-md": ["Inter"], "display-lg": ["Sora"], "telemetry-lg": ["JetBrains Mono"], "telemetry-sm": ["JetBrains Mono"], "headline-sm": ["Sora"], "telemetry-md": ["JetBrains Mono"], "body-sm": ["Inter"], "body-strong": ["Inter"], "body-lg": ["Inter"], "body-md": ["Inter"], "headline-lg-mobile": ["Sora"] }, "fontSize": { "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }], "label-md": ["13px", { "lineHeight": "16px", "fontWeight": "500" }], "display-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "telemetry-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "telemetry-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "500" }], "headline-sm": ["16px", { "lineHeight": "24px", "fontWeight": "600" }], "telemetry-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }], "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }], "body-strong": ["14px", { "lineHeight": "20px", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(9,29,43,0.04)]"><div class="h-16 px-gutter-mobile flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="flex items-center justify-center w-9 h-9 rounded-lg bg-primary text-on-primary"><span class="material-symbols-outlined text-[20px]">emergency</span></div><div class="flex flex-col"><div class="flex items-center gap-1.5"><span class="font-headline-sm text-headline-sm text-primary tracking-tight">NEMRAS</span><span class="px-1.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-telemetry-sm text-telemetry-sm uppercase">AMB-37</span></div><span class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1">Rescue 1122 • A. Khan</span></div></div><div class="flex items-center gap-space-sm"><div class="inline-flex items-center gap-1.5 px-2 py-1 rounded-full bg-surface-container-low"><span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span><span class="font-telemetry-sm text-telemetry-sm text-primary uppercase font-bold">On Call</span></div><button aria-label="Emergency Alerts" class="w-11 h-11 flex items-center justify-center rounded-lg text-tertiary active:scale-95 transition-transform relative" type="button"><span class="material-symbols-outlined text-[24px]">e911_emergency</span><span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-tertiary"></span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-[0_1px_3px_rgba(0,92,85,0.2)]"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full pt-16 pb-24 bg-surface min-h-screen"><div class="flex flex-col w-full px-gutter-mobile space-y-space-md pb-6">
+<!-- Tactical Header Summary Bar -->
+<section class="flex items-center justify-between bg-surface-container-low px-space-md py-space-sm rounded-xl shadow-sm">
+<div class="flex items-center space-x-2">
+<div class="relative flex items-center justify-center w-3 h-3">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface leading-tight">Live Incident Stream</span>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">CAD LINK 1122 ACTIVE · SYNCED</span>
+</div>
+</div>
+<div class="flex items-center space-x-1.5 bg-surface-container-highest px-2.5 py-1 rounded-full">
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1;">cell_tower</span>
+<span class="font-telemetry-sm text-telemetry-sm text-primary font-bold">2 PENDING</span>
+</div>
+</section>
+<!-- FEATURED CARD: CODE RED DISPATCH -->
+<article class="relative bg-surface-container-lowest rounded-xl shadow-md overflow-hidden transition-all duration-300" id="urgent-dispatch-card">
+<!-- Top Alert Stripe & Telemetry Pill -->
+<div class="bg-tertiary-container px-space-md py-2.5 flex items-center justify-between">
+<div class="flex items-center space-x-2">
+<span class="relative flex h-2.5 w-2.5">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-on-tertiary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-on-tertiary"></span>
+</span>
+<span class="font-telemetry-sm text-telemetry-sm font-bold text-on-tertiary uppercase tracking-wider">
+          CODE RED · CARDIAC
+        </span>
+</div>
+<div class="flex items-center space-x-1 bg-tertiary px-2 py-0.5 rounded-full text-on-tertiary shadow-sm">
+<span class="material-symbols-outlined text-[14px]">timer</span>
+<span class="font-telemetry-sm text-telemetry-sm font-bold tracking-tight" id="countdown-timer">42s</span>
+</div>
+</div>
+<div class="p-space-md space-y-space-md">
+<!-- ETA & Distance Bento Block -->
+<div class="flex items-start justify-between bg-surface-container-low p-space-sm rounded-lg">
+<div class="flex items-center space-x-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[24px]">navigation</span>
+</div>
+<div>
+<div class="flex items-center space-x-1.5">
+<span class="font-telemetry-lg text-telemetry-lg text-on-surface">1.8</span>
+<span class="font-label-md text-label-md text-on-surface-variant">km away</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center space-x-1">
+<span>Est. transit 4 mins</span>
+<span class="inline-block w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="text-primary font-medium">via Nishtar Rd</span>
+</p>
+</div>
+</div>
+<span class="bg-error-container text-on-error-container font-telemetry-sm text-telemetry-sm px-2 py-0.5 rounded-full uppercase font-bold">
+          Tier 1
+        </span>
+</div>
+<!-- Quick Geo Map Preview -->
+<div class="relative w-full h-28 rounded-lg overflow-hidden shadow-inner group">
+<div class="w-full h-full bg-cover bg-center" data-location="Nishtar Road Sector 4-B, Karachi, Pakistan" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBcSAoNzmZ6Uuq4ycM3oNMuoP5kPm6CxsN6Gx7WHgDos9ymyPa9Zftjss0f5xQBQcDmnp0fb1DTWdEzcZNaSvJvJ2jOWdvcNl9rqfR2z300VoF3jF6KG2kTaniE89xnJguA3hC_eBRdpqCTPM4BRCeA13imHIQnkbl6wV48Lq7SWS306s5tn-ZNHIh3Eh4T7pHLXSLsxWz-huKved4ApGpjUYWPSff5nYJWGkqaOkNTuHBAY9YHYA4F')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/70 via-transparent to-transparent flex items-end p-2.5">
+<div class="flex items-center space-x-1.5 text-on-primary">
+<span class="material-symbols-outlined text-[18px] text-tertiary-fixed">pin_drop</span>
+<span class="font-body-strong text-body-strong text-on-primary truncate">Near Sector 4-B, Gate 2 Commercial Plaza</span>
+</div>
+</div>
+</div>
+<!-- Verified Citizen Emergency Health Brief -->
+<div class="bg-surface-container p-space-sm rounded-lg space-y-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-1.5">
+<span class="material-symbols-outlined text-[18px] text-primary" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<span class="font-body-strong text-body-strong text-on-surface">Verified Citizen ID</span>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm bg-surface-container-highest text-on-surface px-1.5 py-0.5 rounded">F · 24 Yrs</span>
+</div>
+<div class="flex flex-wrap gap-1.5 pt-1">
+<span class="inline-flex items-center space-x-1 bg-error-container text-on-error-container px-2 py-0.5 rounded-full font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[13px]">warning</span>
+<span>Penicillin Allergy</span>
+</span>
+<span class="inline-flex items-center space-x-1 bg-surface-container-high text-on-surface px-2 py-0.5 rounded-full font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[13px]">pulmonology</span>
+<span>Asthma</span>
+</span>
+<span class="inline-flex items-center space-x-1 bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded-full font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[13px]">lock</span>
+<span>GDPR/Health Enforced</span>
+</span>
+</div>
+</div>
+<!-- Action Cluster -->
+<div class="space-y-2 pt-1">
+<button class="w-full h-12 bg-primary hover:bg-primary-container active:scale-[0.99] text-on-primary rounded-xl font-headline-sm text-headline-sm flex items-center justify-center space-x-2 shadow-md transition-all" id="btn-accept" type="button">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span>ACCEPT DISPATCH</span>
+</button>
+<button class="w-full py-2.5 bg-surface-container-low active:bg-surface-container text-on-surface-variant hover:text-error rounded-xl font-body-strong text-body-strong flex items-center justify-center space-x-1.5 transition-colors" id="btn-toggle-decline" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+<span>Decline / Pass Request</span>
+<span class="font-body-sm text-body-sm text-outline">(Reason required)</span>
+</button>
+</div>
+<!-- Inline Decline Drawer (Hidden initially) -->
+<div class="hidden bg-surface-container-high p-space-sm rounded-xl space-y-2.5 animate-fadeIn" id="decline-panel">
+<div class="flex items-center justify-between text-on-surface">
+<span class="font-body-strong text-body-strong flex items-center space-x-1">
+<span class="material-symbols-outlined text-[16px] text-tertiary">report_problem</span>
+<span>Select CAD Decline Reason</span>
+</span>
+<button class="text-on-surface-variant hover:text-on-surface" id="btn-close-decline" type="button">
+<span class="material-symbols-outlined text-[18px]">expand_less</span>
+</button>
+</div>
+<div class="grid grid-cols-1 gap-1.5">
+<button class="decline-option text-left px-3 py-2 rounded-lg bg-surface-container-lowest hover:bg-surface-container text-on-surface font-body-sm text-body-sm flex items-center justify-between" type="button">
+<span>Gridlock / Impassable Route</span>
+<span class="material-symbols-outlined text-[16px] text-outline">arrow_forward</span>
+</button>
+<button class="decline-option text-left px-3 py-2 rounded-lg bg-surface-container-lowest hover:bg-surface-container text-on-surface font-body-sm text-body-sm flex items-center justify-between" type="button">
+<span>Essential Gear Depleted (O2 / Defib)</span>
+<span class="material-symbols-outlined text-[16px] text-outline">arrow_forward</span>
+</button>
+<button class="decline-option text-left px-3 py-2 rounded-lg bg-surface-container-lowest hover:bg-surface-container text-on-surface font-body-sm text-body-sm flex items-center justify-between" type="button">
+<span>Outside Operational Radius (&gt;5km)</span>
+<span class="material-symbols-outlined text-[16px] text-outline">arrow_forward</span>
+</button>
+</div>
+<p class="font-telemetry-sm text-telemetry-sm text-on-surface-variant text-center pt-1">Logging decline will alert Central Dispatcher instantly.</p>
+</div>
+</div>
+</article>
+<!-- SECONDARY QUEUE DISPATCH -->
+<section class="space-y-space-sm">
+<div class="flex items-center justify-between px-1">
+<span class="font-headline-sm text-headline-sm text-on-surface">Standby Queue</span>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant uppercase">Rank #2</span>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm space-y-space-sm">
+<div class="flex items-center justify-between">
+<span class="inline-flex items-center space-x-1.5 bg-surface-container-high text-on-surface-variant px-2.5 py-0.5 rounded-full font-telemetry-sm text-telemetry-sm font-semibold">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span>CODE YELLOW · TRAUMA / RTA</span>
+</span>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">Logged 3m ago</span>
+</div>
+<div class="flex items-center justify-between pt-1">
+<div>
+<h4 class="font-body-strong text-body-strong text-on-surface">Motorcycle Collision · Dual Casualty</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">2.4 km · Flyover Junction 3</p>
+</div>
+<div class="text-right">
+<span class="font-telemetry-md text-telemetry-md text-on-surface font-bold">~6 min</span>
+<p class="font-telemetry-sm text-telemetry-sm text-outline">Transit</p>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2 bg-surface-container-low p-2 rounded-lg">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Assigned backup Unit 14 monitoring</span>
+<button class="px-3 py-1 bg-surface-container-highest active:bg-surface-container-high text-on-surface rounded font-label-md text-label-md" type="button">
+          Inspect
+        </button>
+</div>
+</div>
+</section>
+<!-- RECENT CAD AUDIT & STATUS ARCHIVE -->
+<section class="space-y-space-sm pt-2">
+<div class="flex items-center justify-between px-1">
+<span class="font-headline-sm text-headline-sm text-on-surface">CAD Audit &amp; Logs</span>
+<span class="material-symbols-outlined text-[18px] text-outline">history</span>
+</div>
+<!-- Reassigned / Expired Audit Card -->
+<div class="bg-surface-container-low rounded-xl p-3.5 flex items-start space-x-3">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-outline-variant flex-shrink-0">
+<span class="material-symbols-outlined text-[18px]">sync_alt</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-body-strong text-body-strong text-on-surface truncate">Req #9401 Reassigned</span>
+<span class="font-telemetry-sm text-telemetry-sm text-outline">12m ago</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1">
+          Handed over to Unit 22 · Auto-diverted due to AMB-37 refuel cycle.
+        </p>
+</div>
+</div>
+<!-- Empty Sector Status Box (Preview for Quiet Shift) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md text-center shadow-sm space-y-2">
+<div class="w-12 h-12 mx-auto rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-[24px]">satellite_alt</span>
+</div>
+<div>
+<h5 class="font-headline-sm text-headline-sm text-on-surface">Sector 4 Clean &amp; Clear</h5>
+<p class="font-body-sm text-body-sm text-on-surface-variant px-4">
+          All high-priority dispatches handled. Standing by on Central CAD Channel 1122.
+        </p>
+</div>
+<div class="pt-1">
+<span class="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-surface-container text-primary font-telemetry-sm text-telemetry-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+<span>GEO-FENCE: 5.0 KM RADIUS</span>
+</span>
+</div>
+</div>
+</section>
+<!-- REASSURANCE DISCLAIMER -->
+<footer class="pt-2 pb-4 text-center">
+<p class="font-telemetry-sm text-telemetry-sm text-outline leading-relaxed max-w-xs mx-auto">
+      NEMRAS Responding Terminal AMB-37 · Simulated Dispatch Environment. Timers and locations adhere to Rescue 1122 CAD protocols.
+    </p>
+</footer>
+</div>
+<script>
+  (function() {
+    // Countdown Timer Simulation
+    let timeLeft = 42;
+    const timerEl = document.getElementById('countdown-timer');
+    if (timerEl) {
+      const interval = setInterval(() => {
+        timeLeft--;
+        if (timeLeft <= 0) {
+          clearInterval(interval);
+          timerEl.textContent = '00s';
+          timerEl.parentElement.classList.add('animate-pulse');
+        } else {
+          timerEl.textContent = `${timeLeft < 10 ? '0' : ''}${timeLeft}s`;
+        }
+      }, 1000);
+    }
+
+    // Decline Panel Toggle
+    const toggleDeclineBtn = document.getElementById('btn-toggle-decline');
+    const closeDeclineBtn = document.getElementById('btn-close-decline');
+    const declinePanel = document.getElementById('decline-panel');
+
+    if (toggleDeclineBtn && declinePanel) {
+      toggleDeclineBtn.addEventListener('click', () => {
+        declinePanel.classList.toggle('hidden');
+      });
+    }
+
+    if (closeDeclineBtn && declinePanel) {
+      closeDeclineBtn.addEventListener('click', () => {
+        declinePanel.classList.add('hidden');
+      });
+    }
+
+    // Interactive button accept feedback
+    const acceptBtn = document.getElementById('btn-accept');
+    if (acceptBtn) {
+      acceptBtn.addEventListener('click', function() {
+        this.innerHTML = '<span class="material-symbols-outlined text-[20px] animate-spin">sync</span><span>DISPATCHING UNIT...</span>';
+        this.classList.replace('bg-primary', 'bg-secondary');
+        setTimeout(() => {
+          this.innerHTML = '<span class="material-symbols-outlined text-[20px]">done_all</span><span>EN ROUTE · NAVIGATION SYNCED</span>';
+        }, 1200);
+      });
+    }
+
+    // Decline reason selection
+    const declineOptions = document.querySelectorAll('.decline-option');
+    declineOptions.forEach(btn => {
+      btn.addEventListener('click', () => {
+        if (confirm("Confirm dispatch pass and notify CAD?")) {
+          const card = document.getElementById('urgent-dispatch-card');
+          if (card) {
+            card.style.opacity = '0.4';
+            card.style.pointerEvents = 'none';
+          }
+          if (declinePanel) declinePanel.classList.add('hidden');
+        }
+      });
+    });
+  })();
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/80 backdrop-blur-xl shadow-[0_-2px_12px_rgba(9,29,43,0.06)]" data-active-classes="text-primary font-body-strong"><div class="h-16 px-space-sm flex items-center justify-around"><a class="flex flex-col items-center justify-center min-w-[64px] min-h-[44px] text-on-surface-variant transition-colors" data-path="paramedic-dashboard" href="#"><span class="material-symbols-outlined text-[22px]">speed</span><span class="font-label-md text-label-md mt-0.5">Dashboard</span></a><a aria-current="page" class="flex flex-col items-center justify-center min-w-[64px] min-h-[44px] transition-colors relative text-primary font-body-strong" data-path="active-dispatches" href="#"><span class="material-symbols-outlined text-[22px]">emergency_home</span><span class="font-label-md text-label-md mt-0.5">Dispatches</span><span class="absolute top-1 right-2.5 px-1 py-0.2 rounded-full bg-tertiary text-on-tertiary font-telemetry-sm text-[10px] leading-tight">3</span></a><a class="flex flex-col items-center justify-center min-w-[64px] min-h-[44px] text-on-surface-variant transition-colors" data-path="identity-scanner" href="#"><span class="material-symbols-outlined text-[22px]">document_scanner</span><span class="font-label-md text-label-md mt-0.5">Scanner</span></a><a class="flex flex-col items-center justify-center min-w-[64px] min-h-[44px] text-on-surface-variant transition-colors" data-path="responder-profile" href="#"><span class="material-symbols-outlined text-[22px]">badge</span><span class="font-label-md text-label-md mt-0.5">Profile</span></a></div></nav></body></html>

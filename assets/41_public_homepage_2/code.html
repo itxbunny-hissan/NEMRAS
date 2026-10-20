@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>NEMRAS - National Emergency Medical Record Access System | Pakistan</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;700&amp;family=Sora:wght@600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"outline-variant":"#bdc9c6","on-tertiary-container":"#ffe4e1","primary-fixed-dim":"#80d5cb","inverse-primary":"#80d5cb","primary-fixed":"#9cf2e8","surface-bright":"#f6f9ff","inverse-surface":"#1f3241","surface":"#f6f9ff","secondary-container":"#a8ece5","inverse-on-surface":"#e6f2ff","on-tertiary-fixed":"#410005","on-secondary-container":"#266d68","on-surface-variant":"#3e4947","on-tertiary-fixed-variant":"#8f0e1a","on-error":"#ffffff","tertiary-fixed-dim":"#ffb3ae","error":"#ba1a1a","tertiary-container":"#c03638","outline":"#6e7977","on-primary-fixed-variant":"#00504a","background":"#f6f9ff","on-background":"#091d2b","secondary-fixed":"#abefe8","surface-container-low":"#ecf5ff","on-surface":"#091d2b","surface-variant":"#d1e5f8","surface-dim":"#c8dcf0","secondary-fixed-dim":"#8fd3cc","primary-container":"#0f766e","on-primary-fixed":"#00201d","error-container":"#ffdad6","surface-container":"#e1f0ff","surface-container-highest":"#d1e5f8","surface-tint":"#006a63","primary":"#005c55","tertiary":"#9e1c23","on-primary":"#ffffff","on-primary-container":"#a3faef","on-secondary-fixed-variant":"#00504b","on-secondary-fixed":"#00201e","secondary":"#216963","surface-container-lowest":"#ffffff","on-error-container":"#93000a","on-tertiary":"#ffffff","surface-container-high":"#d6ebfe","on-secondary":"#ffffff","tertiary-fixed":"#ffdad7"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"gutter":"1.5rem","space-md":"1rem","margin-mobile":"1rem","space-xl":"2rem","margin":"2rem","gutter-mobile":"1rem","space-lg":"1.5rem","space-sm":"0.5rem","space-xs":"0.25rem"},"fontFamily":{"headline-md":["Sora"],"headline-sm":["Sora"],"body-lg":["Inter"],"body-sm":["Inter"],"telemetry-sm":["JetBrains Mono"],"body-strong":["Inter"],"display-lg":["Sora"],"telemetry-md":["JetBrains Mono"],"headline-lg":["Sora"],"body-md":["Inter"],"headline-lg-mobile":["Sora"],"label-md":["Inter"],"telemetry-lg":["JetBrains Mono"]},"fontSize":{"headline-md":["20px",{"lineHeight":"28px","fontWeight":"600"}],"headline-sm":["16px",{"lineHeight":"24px","fontWeight":"600"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"body-sm":["12px",{"lineHeight":"18px","fontWeight":"400"}],"telemetry-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.04em","fontWeight":"500"}],"body-strong":["14px",{"lineHeight":"20px","fontWeight":"600"}],"display-lg":["36px",{"lineHeight":"44px","letterSpacing":"-0.02em","fontWeight":"700"}],"telemetry-md":["14px",{"lineHeight":"20px","fontWeight":"500"}],"headline-lg":["28px",{"lineHeight":"36px","letterSpacing":"-0.01em","fontWeight":"600"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"headline-lg-mobile":["24px",{"lineHeight":"32px","letterSpacing":"-0.01em","fontWeight":"600"}],"label-md":["13px",{"lineHeight":"16px","fontWeight":"500"}],"telemetry-lg":["24px",{"lineHeight":"32px","letterSpacing":"-0.02em","fontWeight":"700"}]}}}};</script></head><body class="bg-background font-body-md text-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 w-full z-50 bg-surface-container-lowest/95 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)] border-b border-surface-container-high/60"><div class="bg-surface-container-low/90 py-1.5 px-margin border-b border-surface-container-high/40"><div class="max-w-7xl mx-auto flex items-center justify-between font-telemetry-sm text-telemetry-sm text-on-surface-variant"><div class="flex items-center gap-2"><span class="inline-block w-2 h-2 rounded-full bg-tertiary animate-pulse"></span><span class="font-bold tracking-wider text-tertiary uppercase">ACADEMIC FYP RESEARCH PROTOTYPE</span><span class="hidden sm:inline text-outline-variant">·</span><span class="hidden sm:inline font-medium">FOR DEMONSTRATION PURPOSES ONLY</span><span class="hidden md:inline text-outline-variant">·</span><span class="hidden md:inline text-on-surface-variant/80">NOT A LIVE 1122 DISPATCH OR EMERGENCY SERVICE</span></div><div class="flex items-center gap-3"><span class="text-primary font-bold">BS-DS-2024</span><span class="px-2.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-semibold">Emerson Univ Multan</span></div></div></div><div class="h-20 max-w-7xl mx-auto px-margin flex items-center justify-between gap-4"><div class="flex items-center gap-3.5"><div class="w-10 h-10 rounded-xl bg-primary-container flex items-center justify-center text-on-primary shadow-sm relative"><span class="material-symbols-outlined text-[24px]">local_hospital</span><div class="w-3 h-3 rounded-full bg-primary-fixed border-2 border-surface-container-lowest absolute -bottom-0.5 -right-0.5"></div></div><div class="flex flex-col"><div class="flex items-center gap-2"><span class="font-headline-sm text-headline-sm text-primary tracking-tight font-bold">NEMRAS</span><span class="px-1.5 py-0.5 rounded text-[10px] font-telemetry-sm font-semibold uppercase bg-surface-container-high text-primary">Concept</span></div><span class="text-[12px] text-on-surface-variant font-medium">Proposed Emergency Health Network • Pakistan</span></div></div><nav class="hidden lg:flex items-center gap-8 font-body-md text-body-md" data-active-classes="text-primary font-body-strong"><a aria-current="page" class="transition-colors py-2 text-primary font-body-strong" data-path="41-homepage" href="#">Home</a><a class="text-on-surface-variant hover:text-primary transition-colors py-2" data-path="42-features" href="#">Platform &amp; Modules</a><a class="text-on-surface-variant hover:text-primary transition-colors py-2" data-path="43-how-it-works" href="#">How It Works</a><a class="text-on-surface-variant hover:text-primary transition-colors py-2" data-path="44-showcase" href="#">Project Case Study</a></nav><div class="flex items-center gap-3"><span class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-error-container/60 text-tertiary-container font-telemetry-sm text-telemetry-sm font-semibold border border-tertiary-container/20"><span class="material-symbols-outlined text-[14px]">science</span>Prototype Demonstration</span><a class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-lg bg-primary-container text-on-primary hover:bg-primary font-body-strong text-body-strong shadow-sm transition-all" data-path="internal-portal-login" href="#"><span>Access Portal</span><span class="material-symbols-outlined text-[18px]">arrow_forward</span></a></div></div></header><main class="w-full pt-28 bg-background min-h-screen"><div class="flex flex-col w-full">
+<!-- SECTION 1: HERO VIEWPORT -->
+<section class="relative w-full overflow-hidden pb-space-xl">
+<!-- Ambient Subtle Backdrop Glows -->
+<div class="absolute -top-20 right-0 w-[640px] h-[640px] bg-secondary-container/20 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute top-64 -left-28 w-[500px] h-[500px] bg-primary-fixed/20 rounded-full blur-3xl pointer-events-none"></div>
+<div class="max-w-7xl mx-auto px-margin pt-6">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+<!-- Left Column: Vision Statement & Conversion CTAs -->
+<div class="lg:col-span-7 space-y-6">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-high text-primary font-telemetry-sm text-telemetry-sm border border-primary/10">
+<span class="inline-block w-2 h-2 rounded-full bg-primary animate-ping"></span>
+<span class="font-bold">PROPOSED SOVEREIGN EMERGENCY HEALTH INFRASTRUCTURE</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-on-surface tracking-tight leading-tight max-w-2xl">
+            Connecting Pakistan's Golden Hour <span class="text-primary underline decoration-secondary-container decoration-4 underline-offset-4">When Every Second Counts</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl leading-relaxed">
+            NEMRAS is a proposed federated emergency health response architecture designed to connect citizens, Rescue 1122 responders, and receiving trauma hospitals under a privacy-first, zero-trust framework.
+          </p>
+<!-- Dual Conversion Actions -->
+<div class="pt-2 flex flex-wrap items-center gap-4">
+<a class="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg bg-primary-container text-on-primary font-body-strong text-body-strong hover:bg-primary transition-all shadow-md shadow-primary/10" data-path="42-features" href="#">
+<span>Explore Interactive Prototype</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+<a class="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg bg-surface-container-lowest text-on-surface font-body-strong text-body-strong hover:bg-surface-container-low border border-outline-variant/50 transition-all shadow-sm" data-path="43-how-it-works" href="#">
+<span class="material-symbols-outlined text-[18px] text-primary">play_circle</span>
+<span>Understand How It Works</span>
+</a>
+</div>
+<!-- Academic Statutory Notice Card -->
+<div class="p-4 rounded-xl bg-surface-container-low border border-surface-container-high flex items-start gap-3 max-w-xl">
+<span class="material-symbols-outlined text-primary text-[22px] shrink-0 mt-0.5">verified_user</span>
+<div class="space-y-1">
+<p class="font-body-strong text-body-strong text-on-surface">Academic Research Specimen (Cap-Stone FYP)</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              Conceptual system engineering conducted at Emerson University Multan. All operational scenarios, patient dossiers, and vitals shown are simulated mock records under Pakistan Data Protection Bill (2023) guidelines.
+            </p>
+</div>
+</div>
+</div>
+<!-- Right Column: Illustrative Care Chain Pipeline Preview -->
+<div class="lg:col-span-5 relative">
+<div class="w-full bg-surface-container-lowest rounded-2xl shadow-xl border border-surface-container-high/80 p-space-lg space-y-4 relative">
+<!-- Card Top Bar: Status & Simulated Incident Tag -->
+<div class="flex items-center justify-between pb-3 border-b border-surface-container-high">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary animate-pulse"></span>
+<span class="font-telemetry-sm text-telemetry-sm font-bold text-on-surface uppercase tracking-wider">Simulated Incident #PK-MLT-9042</span>
+</div>
+<span class="px-2.5 py-0.5 rounded-full bg-error-container text-on-error-container font-telemetry-sm text-telemetry-sm font-bold">Priority Triage 1</span>
+</div>
+<div class="text-[12px] font-label-md text-on-surface-variant uppercase tracking-wider font-semibold">Care Chain Golden Hour Bridge</div>
+<!-- Pipeline Step 1: Citizen SOS Beacon -->
+<div class="p-3.5 rounded-xl bg-surface-container-low border border-surface-container-high/60 transition-transform hover:-translate-y-0.5">
+<div class="flex items-center justify-between mb-1.5">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-lg bg-surface-container-high text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">person_pin_circle</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-surface">Citizen SOS Beacon</span>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-tertiary font-bold">Triggered (00:01:14 Ago)</span>
+</div>
+<div class="grid grid-cols-2 gap-2 text-on-surface text-body-sm mt-2">
+<div>
+<span class="block text-outline text-[11px]">Simulated Patient</span>
+<span class="font-body-strong">Kashaf Sajjad <span class="text-on-surface-variant text-[11px] font-normal">24F</span></span>
+</div>
+<div>
+<span class="block text-outline text-[11px]">Cryptographic Identifier</span>
+<span class="font-telemetry-sm text-telemetry-sm text-primary font-semibold">36302-XXXXXXX-8</span>
+</div>
+</div>
+<div class="mt-2.5 flex flex-wrap gap-1.5 pt-1 border-t border-surface-container-high/50">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-telemetry-sm text-[10px] font-bold">
+<span class="material-symbols-outlined text-[12px]">warning</span> PENICILLIN ALLERGY
+                </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-telemetry-sm text-[10px] font-bold">
+                  BLOOD O+
+                </span>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-telemetry-sm text-[10px]">
+                  Moderate Asthma
+                </span>
+</div>
+</div>
+<!-- Arrow Connector -->
+<div class="flex items-center justify-center -my-1 text-primary">
+<div class="w-7 h-7 rounded-full bg-surface-container-high flex items-center justify-center shadow-xs">
+<span class="material-symbols-outlined text-[16px]">arrow_downward</span>
+</div>
+</div>
+<!-- Pipeline Step 2: Field Paramedic Triage -->
+<div class="p-3.5 rounded-xl bg-surface-container-lowest border border-surface-container-high shadow-sm">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-lg bg-primary-fixed text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">ambulance</span>
+</div>
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface block leading-tight">Field Paramedic Triage</span>
+<span class="text-[11px] text-outline">Rescue 1122 AMB-37 · Unit Multan</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-md bg-secondary-container text-on-secondary-container font-telemetry-sm text-telemetry-sm font-bold">ETA 4 MIN</span>
+</div>
+<div class="grid grid-cols-3 gap-2 mt-1">
+<div class="p-1.5 rounded-lg bg-surface-container-low text-center">
+<span class="block text-[10px] text-outline font-label-md">BP</span>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface font-bold">118/76</span>
+</div>
+<div class="p-1.5 rounded-lg bg-surface-container-low text-center">
+<span class="block text-[10px] text-outline font-label-md">SpO2</span>
+<span class="font-telemetry-sm text-telemetry-sm text-primary font-bold">96%</span>
+</div>
+<div class="p-1.5 rounded-lg bg-surface-container-low text-center">
+<span class="block text-[10px] text-outline font-label-md">Heart Rate</span>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface font-bold">88 bpm</span>
+</div>
+</div>
+</div>
+<!-- Arrow Connector -->
+<div class="flex items-center justify-center -my-1 text-primary">
+<div class="w-7 h-7 rounded-full bg-surface-container-high flex items-center justify-center shadow-xs">
+<span class="material-symbols-outlined text-[16px]">arrow_downward</span>
+</div>
+</div>
+<!-- Pipeline Step 3: Receiving ER Bay Staging -->
+<div class="p-3.5 rounded-xl bg-surface-container-low border border-surface-container-high/60">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-lg bg-error-container text-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">local_hospital</span>
+</div>
+<div>
+<span class="font-body-strong text-body-strong text-on-surface block leading-tight">Receiving ER Bay Staging</span>
+<span class="text-[11px] text-outline">Nishtar Trauma Complex · Resus Bay 03</span>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-telemetry-sm text-[11px] font-bold">
+<span class="material-symbols-outlined text-[12px]">check_circle</span> Bay Staged
+                </span>
+</div>
+<div class="mt-2 flex items-center justify-between text-[11px] text-on-surface-variant pt-1 border-t border-surface-container-high/50">
+<span>On Duty: Trauma Surgical Team</span>
+<span class="font-telemetry-sm text-telemetry-sm text-primary font-semibold">SBAR Handshake Ready</span>
+</div>
+</div>
+<!-- Ledger & Encryption Footer Tag -->
+<div class="flex items-center justify-between text-[10px] font-telemetry-sm text-outline px-1 pt-1">
+<span>HL7 FHIR v4.0.1 Interop</span>
+<span>SHA-256 Ledger Hash #7F4A...B901</span>
+<span>TLS 1.3 End-to-End</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 2: THE GOLDEN HOUR IMPERATIVE (VALUE PROPOSITION) -->
+<section class="w-full bg-surface-container-lowest py-space-xl border-y border-surface-container-high/60">
+<div class="max-w-7xl mx-auto px-margin space-y-10">
+<!-- Section Header -->
+<div class="max-w-3xl space-y-3">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container text-on-surface-variant font-telemetry-sm text-telemetry-sm">
+<span class="material-symbols-outlined text-[15px] text-tertiary">timer</span>
+<span class="font-bold">THE ACUTE TRAUMA CRISIS IN PAKISTAN</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">
+          Overcoming the Golden Hour Breakdown in Emergency Care
+        </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+          During road accidents, mass casualties, and acute cardiovascular collapse, the first sixty minutes determine survival. NEMRAS re-architects triage by removing blind guesswork.
+        </p>
+</div>
+<!-- 3-Column Structured Narrative -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Card A: The Emergency Information Gap -->
+<div class="p-space-lg rounded-2xl bg-surface-container-low border border-surface-container-high flex flex-col justify-between space-y-6 shadow-sm hover:shadow-md transition-shadow">
+<div class="space-y-4">
+<div class="w-12 h-12 rounded-xl bg-error-container text-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined text-[26px]">emergency_home</span>
+</div>
+<div class="space-y-1">
+<span class="font-telemetry-sm text-telemetry-sm text-tertiary font-bold uppercase tracking-wider">The Baseline Reality</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">The Emergency Information Gap</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Over 70% of trauma admissions in Pakistan reach emergency departments with zero historical background. Unconscious victims cannot communicate penicillin allergies, anticoagulation therapies, or chronic conditions, forcing blind medical interventions.
+            </p>
+</div>
+<div class="pt-4 space-y-2 border-t border-surface-container-high">
+<div class="flex items-center justify-between font-telemetry-sm text-telemetry-sm">
+<span class="text-outline">Unidentified Trauma Cases</span>
+<span class="text-tertiary font-bold">71.4% National Avg</span>
+</div>
+<div class="w-full h-1.5 rounded-full bg-surface-container-highest overflow-hidden">
+<div class="h-full bg-tertiary w-[71%] rounded-full"></div>
+</div>
+</div>
+</div>
+<!-- Card B: Proposed Rapid Retrieval -->
+<div class="p-space-lg rounded-2xl bg-surface-container-low border border-surface-container-high flex flex-col justify-between space-y-6 shadow-sm hover:shadow-md transition-shadow">
+<div class="space-y-4">
+<div class="w-12 h-12 rounded-xl bg-primary-fixed text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[26px]">speed</span>
+</div>
+<div class="space-y-1">
+<span class="font-telemetry-sm text-telemetry-sm text-primary font-bold uppercase tracking-wider">Algorithmic Resolution</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Proposed Rapid Retrieval</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Through CNIC integration or biometric summary lookup under strict break-glass governance, certified 1122 paramedics pull an immutable Critical Health Summary (CHS) within 90 seconds. Triage decisions transition from intuition to validated clinical precision.
+            </p>
+</div>
+<div class="pt-4 space-y-2 border-t border-surface-container-high">
+<div class="flex items-center justify-between font-telemetry-sm text-telemetry-sm">
+<span class="text-outline">CHS Retrieval Benchmark</span>
+<span class="text-primary font-bold">~42 Seconds Median</span>
+</div>
+<div class="w-full h-1.5 rounded-full bg-surface-container-highest overflow-hidden">
+<div class="h-full bg-primary-container w-[88%] rounded-full"></div>
+</div>
+</div>
+</div>
+<!-- Card C: Federated Data Sovereignty -->
+<div class="p-space-lg rounded-2xl bg-surface-container-low border border-surface-container-high flex flex-col justify-between space-y-6 shadow-sm hover:shadow-md transition-shadow">
+<div class="space-y-4">
+<div class="w-12 h-12 rounded-xl bg-secondary-container text-on-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[26px]">hub</span>
+</div>
+<div class="space-y-1">
+<span class="font-telemetry-sm text-telemetry-sm text-secondary font-bold uppercase tracking-wider">Sovereign Architecture</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Federated Data Sovereignty</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Hospital records remain secure inside native institutional databases. NEMRAS never consolidates lifetime medical records onto a honeypot database. Instead, only transient cryptographic emergency dossiers cross the wire when authorized.
+            </p>
+</div>
+<div class="pt-4 space-y-2 border-t border-surface-container-high">
+<div class="flex items-center justify-between font-telemetry-sm text-telemetry-sm">
+<span class="text-outline">Zero Central Medical Vault</span>
+<span class="text-secondary font-bold">100% Federated Edge</span>
+</div>
+<div class="w-full h-1.5 rounded-full bg-surface-container-highest overflow-hidden">
+<div class="h-full bg-secondary w-full rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 3: STAKEHOLDER WORKFLOW PATHWAYS (ROLE CARDS) -->
+<section class="w-full py-space-xl">
+<div class="max-w-7xl mx-auto px-margin space-y-10">
+<!-- Section Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div class="max-w-2xl space-y-2">
+<span class="font-telemetry-sm text-telemetry-sm text-primary font-bold uppercase tracking-wider">TAILORED STAKEHOLDER WORKFLOWS</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">
+            Role-Optimized Interfaces Built for Every Node in Care
+          </h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">
+          Emergency response requires citizens, ambulance squads, surgeons, and regulators to interact with tailored tools without information bottleneck.
+        </p>
+</div>
+<!-- 4 Polished Role Cards with "Explore Module" links -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Pathway 1: Citizens & Families -->
+<div class="p-space-lg rounded-2xl bg-surface-container-lowest border border-surface-container-high shadow-sm flex flex-col justify-between space-y-6 hover:shadow-md hover:border-primary/40 transition-all group">
+<div class="space-y-4">
+<div class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[24px]">family_restroom</span>
+</div>
+<div class="space-y-1">
+<span class="font-telemetry-sm text-telemetry-sm text-outline font-semibold uppercase">Pillar 01</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Citizens &amp; Families</h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              Autonomous oversight of personal emergency profiles. Citizens curate ICE contacts, authorize blood proxies, and receive real-time SMS alerts whenever their record is interrogated.
+            </p>
+<ul class="space-y-2 font-body-sm text-body-sm text-on-surface pt-2">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary">check_circle</span>
+<span>Encrypted Emergency ICE Card</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary">check_circle</span>
+<span>Biometric Consent Controls</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary">check_circle</span>
+<span>Real-time Interrogation SMS</span>
+</li>
+</ul>
+</div>
+<a class="inline-flex items-center justify-between w-full pt-4 border-t border-surface-container-high text-primary font-body-strong text-body-strong hover:underline" data-path="42-features" href="#">
+<span>Explore Citizen Module</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+<!-- Pathway 2: Rescue 1122 Responders -->
+<div class="p-space-lg rounded-2xl bg-surface-container-lowest border border-surface-container-high shadow-sm flex flex-col justify-between space-y-6 hover:shadow-md hover:border-primary/40 transition-all group">
+<div class="space-y-4">
+<div class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[24px]">directions_car</span>
+</div>
+<div class="space-y-1">
+<span class="font-telemetry-sm text-telemetry-sm text-outline font-semibold uppercase">Pillar 02</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Rescue 1122 Responders</h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              Sunlight-legible ruggedized field tablet UI. Rapid optical CNIC scanning, offline caching for connectivity dead zones, and voice-assisted clinical triage documentation.
+            </p>
+<ul class="space-y-2 font-body-sm text-body-sm text-on-surface pt-2">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary">check_circle</span>
+<span>Camera OCR for National CNIC</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary">check_circle</span>
+<span>Automated SBAR Handshake</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary">check_circle</span>
+<span>Offline-First Clinical Storage</span>
+</li>
+</ul>
+</div>
+<a class="inline-flex items-center justify-between w-full pt-4 border-t border-surface-container-high text-primary font-body-strong text-body-strong hover:underline" data-path="42-features" href="#">
+<span>Explore Responder Module</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+<!-- Pathway 3: Hospital ER Clinicians -->
+<div class="p-space-lg rounded-2xl bg-surface-container-lowest border border-surface-container-high shadow-sm flex flex-col justify-between space-y-6 hover:shadow-md hover:border-primary/40 transition-all group">
+<div class="space-y-4">
+<div class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[24px]">local_hospital</span>
+</div>
+<div class="space-y-1">
+<span class="font-telemetry-sm text-telemetry-sm text-outline font-semibold uppercase">Pillar 03</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Hospital ER Clinicians</h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              Inbound trauma dashboards that display streaming ambulance vitals and automated contraindication warnings so teams stage surgical bays and pre-order matched blood before arrival.
+            </p>
+<ul class="space-y-2 font-body-sm text-body-sm text-on-surface pt-2">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary">check_circle</span>
+<span>Pre-Arrival Trauma Countdown</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary">check_circle</span>
+<span>Drug Allergy Contraindications</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary">check_circle</span>
+<span>1-Click Admission Sign-off</span>
+</li>
+</ul>
+</div>
+<a class="inline-flex items-center justify-between w-full pt-4 border-t border-surface-container-high text-primary font-body-strong text-body-strong hover:underline" data-path="42-features" href="#">
+<span>Explore Hospital Module</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+<!-- Pathway 4: Health Policy Authorities -->
+<div class="p-space-lg rounded-2xl bg-surface-container-lowest border border-surface-container-high shadow-sm flex flex-col justify-between space-y-6 hover:shadow-md hover:border-primary/40 transition-all group">
+<div class="space-y-4">
+<div class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[24px]">analytics</span>
+</div>
+<div class="space-y-1">
+<span class="font-telemetry-sm text-telemetry-sm text-outline font-semibold uppercase">Pillar 04</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Health Policy Authorities</h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              District and provincial level telemetry on fleet velocity, trauma density hotspots, and hospital resource allocations with strict de-identification guarantees for statutory surveillance.
+            </p>
+<ul class="space-y-2 font-body-sm text-body-sm text-on-surface pt-2">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary">check_circle</span>
+<span>Provincial Density Heatmaps</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary">check_circle</span>
+<span>WORM Immutable Audit Logs</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary">check_circle</span>
+<span>k-Anonymized Epidemiological Feeds</span>
+</li>
+</ul>
+</div>
+<a class="inline-flex items-center justify-between w-full pt-4 border-t border-surface-container-high text-primary font-body-strong text-body-strong hover:underline" data-path="42-features" href="#">
+<span>Explore Analytics Module</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 4: TRUST, PRIVACY & CONSTITUTIONAL COMPLIANCE -->
+<section class="w-full bg-surface-container-low py-space-xl border-t border-surface-container-high/60">
+<div class="max-w-7xl mx-auto px-margin">
+<div class="rounded-2xl bg-surface-container-lowest p-space-xl shadow-md border border-surface-container-high/80 space-y-8">
+<!-- Header & Constitutional Stance -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-space-lg border-b border-surface-container-high">
+<div class="space-y-2">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container font-telemetry-sm text-telemetry-sm font-semibold">
+<span class="material-symbols-outlined text-[16px]">lock</span>
+<span>ZERO-TRUST GOVERNANCE</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">
+              Architectural Privacy Built for Constitutional Compliance
+            </h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
+              Engineered according to statutory guidelines of the Pakistan Personal Data Protection Bill (2023) and global emergency healthcare interoperability protocols.
+            </p>
+</div>
+<div class="shrink-0 flex items-center gap-3 p-3.5 rounded-xl bg-surface-container-low border border-surface-container-high">
+<span class="material-symbols-outlined text-primary text-[28px]">shield</span>
+<div class="text-left font-telemetry-sm text-telemetry-sm">
+<span class="block font-bold text-on-surface">ISO/TS 17975 Compliant</span>
+<span class="text-outline">Health Record Pseudonymization</span>
+</div>
+</div>
+</div>
+<!-- 4 Privacy Guarantees Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<div class="p-4 rounded-xl bg-surface-container-low border border-surface-container-high/60 space-y-2">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined text-[20px]">security</span>
+<span class="font-headline-sm text-headline-sm">Zero-Trust Access</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              No implicit network trust. Every paramedic terminal, hospital bay, and database query must verify mTLS identity and active session authorization prior to any transient packet release.
+            </p>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low border border-surface-container-high/60 space-y-2">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined text-[20px]">dataset</span>
+<span class="font-headline-sm text-headline-sm">WORM Audit Logging</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              Write-Once-Read-Many immutable append-only hash chains ensure that every record lookup, query timestamp, and location tag is cryptographically locked against retrospective manipulation.
+            </p>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low border border-surface-container-high/60 space-y-2">
+<div class="flex items-center gap-2 text-tertiary">
+<span class="material-symbols-outlined text-[20px]">emergency</span>
+<span class="font-headline-sm text-headline-sm">Break-Glass Oversight</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              Unconscious trauma victims without active consent triggers require dual-attending clinical sign-off, immediately generating tamper-evident notification logs sent to statutory ombudsmen.
+            </p>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low border border-surface-container-high/60 space-y-2">
+<div class="flex items-center gap-2 text-secondary">
+<span class="material-symbols-outlined text-[20px]">groups</span>
+<span class="font-headline-sm text-headline-sm">k-Anonymity (k ≥ 50)</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              Epidemiological disease monitoring and district trauma statistics are mathematically generalized across population thresholds so no single patient identity can ever be re-identified.
+            </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 5: HIGH-CONVERSION CTA SECTION -->
+<section class="w-full py-space-xl">
+<div class="max-w-7xl mx-auto px-margin">
+<div class="rounded-2xl bg-gradient-to-r from-primary to-primary-container text-on-primary p-space-xl flex flex-col lg:flex-row items-center justify-between gap-8 shadow-xl">
+<div class="space-y-3 max-w-2xl">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-telemetry-sm text-telemetry-sm font-bold uppercase tracking-wider">
+<span class="material-symbols-outlined text-[15px]">school</span>
+<span>CAPSTONE FYP RESEARCH DEFENSE</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg font-bold text-on-primary tracking-tight">
+            Explore the 40-Screen Interactive NEMRAS Prototype Catalog
+          </h2>
+<p class="font-body-md text-body-md text-on-primary/90 leading-relaxed">
+            Review complete architectural specifications, clinical workflows, and live screen simulations across citizen, paramedic, hospital, and national oversight personas.
+          </p>
+<div class="text-body-sm font-body-sm text-on-primary/75 pt-1">
+            Developed as an academic capstone defense at Emerson University Multan. Educational prototype for peer-review and technical evaluation.
+          </div>
+</div>
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 shrink-0 w-full lg:w-auto">
+<a class="px-5 py-3.5 rounded-lg bg-surface-container-lowest text-primary font-body-strong text-body-strong hover:bg-surface-container-low transition-all text-center shadow-md" data-path="42-features" href="#">
+            Platform Modules
+          </a>
+<a class="px-5 py-3.5 rounded-lg bg-primary-fixed text-on-primary-fixed font-body-strong text-body-strong hover:bg-primary-fixed-dim transition-all text-center shadow-md" data-path="43-how-it-works" href="#">
+            How NEMRAS Works
+          </a>
+<a class="px-5 py-3.5 rounded-lg bg-surface-container-highest/30 border border-on-primary/20 text-on-primary font-body-strong text-body-strong hover:bg-on-primary/10 transition-all text-center" data-path="44-showcase" href="#">
+            Project Case Study
+          </a>
+</div>
+</div>
+</div>
+</section>
+</div></main><footer class="w-full bg-surface-container-lowest border-t border-surface-container-high/80 shadow-[0_-1px_6px_rgba(0,0,0,0.02)]"><div class="max-w-7xl mx-auto px-margin pt-space-xl pb-space-lg"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter mb-space-xl"><div class="space-y-3.5"><div class="flex items-center gap-2"><div class="w-8 h-8 rounded-lg bg-primary-container flex items-center justify-center text-on-primary shadow-sm"><span class="material-symbols-outlined text-[20px]">local_hospital</span></div><span class="font-headline-sm text-headline-sm text-primary font-bold">NEMRAS</span></div><p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">National Emergency Medical Record Access System. A proposed federated emergency health exchange architecture engineered to empower paramedics and trauma bays during Pakistan's golden hour incidents.</p><div class="pt-2 space-y-1.5 font-body-sm text-body-sm text-on-surface-variant"><div class="flex items-center gap-2 text-primary font-medium"><span class="material-symbols-outlined text-[18px]">school</span><span>Emerson University Multan</span></div><p class="text-[12px] text-outline pl-6.5 leading-snug">Department of Data Science &amp; IT<br/>BS Data Science Final Year Project (2024)<br/>Supervised Research Committee</p></div></div><div class="space-y-3"><span class="font-body-strong text-body-strong text-on-surface uppercase tracking-wider block">Platform &amp; Modules</span><ul class="space-y-2.5 font-body-sm text-body-sm"><li class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined text-[16px] text-primary">smartphone</span>Citizen Vital Enclave (Mobile)</li><li class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined text-[16px] text-primary">ambulance</span>1122 First Responder Terminal</li><li class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined text-[16px] text-primary">emergency</span>Hospital ER Triage Station</li><li class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined text-[16px] text-primary">monitor_heart</span>National Command Telemetry</li><li class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined text-[16px] text-primary">shield_person</span>Statutory Oversight &amp; Audit</li></ul></div><div class="space-y-3"><span class="font-body-strong text-body-strong text-on-surface uppercase tracking-wider block">Architecture &amp; Standards</span><ul class="space-y-2.5 font-body-sm text-body-sm"><li class="flex items-center gap-2 text-on-surface-variant"><span class="material-symbols-outlined text-[16px] text-primary">dataset</span>HL7 FHIR Release 4 Interchange</li><li class="flex items-center gap-2 text-on-surface-variant"><span class="material-symbols-outlined text-[16px] text-primary">lock</span>Zero-Trust Ledger &amp; Break-Glass</li><li class="flex items-center gap-2 text-on-surface-variant"><span class="material-symbols-outlined text-[16px] text-primary">verified_user</span>RBAC &amp; Attribute-Based Access</li><li class="flex items-center gap-2 text-on-surface-variant"><span class="material-symbols-outlined text-[16px] text-primary">analytics</span>k-Anonymity Epidemiological Feed</li><li class="flex items-center gap-2 text-on-surface-variant"><span class="material-symbols-outlined text-[16px] text-primary">fingerprint</span>Biometric Identity Gateway</li></ul></div><div class="space-y-3"><span class="font-body-strong text-body-strong text-on-surface uppercase tracking-wider block">Institutional Disclosure</span><div class="p-3.5 rounded-xl bg-surface-container-low border border-surface-container-high space-y-2"><span class="inline-block px-2.5 py-0.5 rounded text-[11px] font-telemetry-sm bg-error-container text-tertiary-container font-semibold uppercase">Academic Disclaimer</span><p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">This software is an educational research design and does not connect to live NADRA or Rescue 1122 production systems. All records and telemetry are synthetic demonstrations.</p></div><p class="text-[12px] text-outline">Pakistan Personal Data Protection Bill (2023) Compliant Spec</p></div></div><div class="pt-space-md border-t border-surface-container-high flex flex-col md:flex-row items-center justify-between gap-4 font-body-sm text-body-sm text-on-surface-variant"><div>© 2024 NEMRAS Research Group · Emerson University Multan. All Rights Reserved.</div><div class="flex items-center gap-6 font-telemetry-sm text-telemetry-sm"><a class="hover:text-primary transition-colors" href="#">Terms of Research</a><a class="hover:text-primary transition-colors" href="#">Bioethics Clearance</a><a class="hover:text-primary transition-colors" href="#">Architecture Whitepaper</a><span class="px-2.5 py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant font-medium">v1.0 Spec</span></div></div></div></footer></body></html>

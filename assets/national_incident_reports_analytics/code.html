@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;700&amp;family=Sora:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-error-container":"#93000a","background":"#f6f9ff","surface-container":"#e1f0ff","primary-fixed":"#9cf2e8","on-error":"#ffffff","on-tertiary-fixed":"#410005","inverse-on-surface":"#e6f2ff","on-primary-container":"#a3faef","on-background":"#091d2b","primary":"#005c55","outline":"#6e7977","on-tertiary":"#ffffff","surface-container-highest":"#d1e5f8","on-secondary-fixed-variant":"#00504b","inverse-surface":"#1f3241","surface":"#f6f9ff","secondary-container":"#a8ece5","on-secondary-fixed":"#00201e","secondary":"#216963","surface-container-lowest":"#ffffff","surface-tint":"#006a63","primary-fixed-dim":"#80d5cb","secondary-fixed":"#abefe8","on-secondary":"#ffffff","surface-container-low":"#ecf5ff","tertiary-container":"#c03638","on-primary-fixed":"#00201d","on-secondary-container":"#266d68","error-container":"#ffdad6","on-tertiary-container":"#ffe4e1","tertiary-fixed":"#ffdad7","outline-variant":"#bdc9c6","surface-variant":"#d1e5f8","on-primary":"#ffffff","surface-container-high":"#d6ebfe","on-surface-variant":"#3e4947","tertiary":"#9e1c23","on-tertiary-fixed-variant":"#8f0e1a","on-surface":"#091d2b","secondary-fixed-dim":"#8fd3cc","on-primary-fixed-variant":"#00504a","surface-bright":"#f6f9ff","error":"#ba1a1a","tertiary-fixed-dim":"#ffb3ae","primary-container":"#0f766e","surface-dim":"#c8dcf0","inverse-primary":"#80d5cb"},borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},spacing:{"space-xl":"2rem","margin":"2rem","space-md":"1rem","space-sm":"0.5rem","gutter":"1.5rem","margin-mobile":"1rem","space-lg":"1.5rem","gutter-mobile":"1rem","space-xs":"0.25rem"},fontFamily:{"label-md":["Inter"],"display-lg":["Sora"],"headline-sm":["Sora"],"telemetry-md":["JetBrains Mono"],"telemetry-lg":["JetBrains Mono"],"body-md":["Inter"],"body-lg":["Inter"],"headline-lg":["Sora"],"body-sm":["Inter"],"headline-lg-mobile":["Sora"],"body-strong":["Inter"],"telemetry-sm":["JetBrains Mono"],"headline-md":["Sora"]},fontSize:{"label-md":["13px",{lineHeight:"16px",fontWeight:"500"}],"display-lg":["36px",{lineHeight:"44px",letterSpacing:"-0.02em",fontWeight:"700"}],"headline-sm":["16px",{lineHeight:"24px",fontWeight:"600"}],"telemetry-md":["14px",{lineHeight:"20px",fontWeight:"500"}],"telemetry-lg":["24px",{lineHeight:"32px",letterSpacing:"-0.02em",fontWeight:"700"}],"body-md":["14px",{lineHeight:"20px",fontWeight:"400"}],"body-lg":["16px",{lineHeight:"24px",fontWeight:"400"}],"headline-lg":["28px",{lineHeight:"36px",letterSpacing:"-0.01em",fontWeight:"600"}],"body-sm":["12px",{lineHeight:"18px",fontWeight:"400"}],"headline-lg-mobile":["24px",{lineHeight:"32px",letterSpacing:"-0.01em",fontWeight:"600"}],"body-strong":["14px",{lineHeight:"20px",fontWeight:"600"}],"telemetry-sm":["11px",{lineHeight:"14px",letterSpacing:"0.04em",fontWeight:"500"}],"headline-md":["20px",{lineHeight:"28px",fontWeight:"600"}]}}}};</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased min-h-screen"><aside class="fixed left-0 top-0 h-full w-[240px] bg-surface-container-lowest z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col"><div class="h-[60px] px-space-md flex items-center gap-space-sm bg-surface-container-lowest"><div class="w-8 h-8 rounded-lg bg-primary-container flex items-center justify-center text-on-primary shadow-sm"><span class="material-symbols-outlined text-[20px]">health_and_safety</span></div><div class="flex flex-col min-w-0 flex-1"><div class="flex items-center gap-1.5"><span class="font-headline-sm text-headline-sm text-primary tracking-tight leading-none">NEMRAS</span><span class="px-1.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-telemetry-sm text-telemetry-sm font-semibold leading-none">OPS</span></div><span class="font-body-sm text-body-sm text-on-surface-variant truncate mt-0.5">Govt of PK · NDHA</span></div></div><div class="px-space-md py-space-sm"><span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant font-semibold uppercase tracking-wider block mb-space-xs">Operations</span><nav class="flex flex-col gap-1" data-active-classes="bg-primary-container text-on-primary font-body-strong"><a class="flex items-center gap-2.5 px-3 py-2 rounded-lg font-body-md text-body-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="national-dashboard" href="#"><span class="material-symbols-outlined text-[18px]">dashboard</span><span>National Dashboard</span></a><a class="flex items-center gap-2.5 px-3 py-2 rounded-lg font-body-md text-body-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="emergency-map" href="#"><span class="material-symbols-outlined text-[18px]">public</span><span>Emergency Map</span></a><a class="flex items-center gap-2.5 px-3 py-2 rounded-lg font-body-md text-body-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="regional-analytics" href="#"><span class="material-symbols-outlined text-[18px]">bar_chart</span><span>Regional Analytics</span></a></nav></div><div class="px-space-md py-space-sm"><span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant font-semibold uppercase tracking-wider block mb-space-xs">Health Intel</span><nav class="flex flex-col gap-1" data-active-classes="bg-primary-container text-on-primary font-body-strong"><a class="flex items-center gap-2.5 px-3 py-2 rounded-lg font-body-md text-body-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="population-health" href="#"><span class="material-symbols-outlined text-[18px]">vital_signs</span><span>Population Health</span></a><a class="flex items-center gap-2.5 px-3 py-2 rounded-lg font-body-md text-body-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="hospital-network" href="#"><span class="material-symbols-outlined text-[18px]">local_hospital</span><span>Hospital Network</span></a><a aria-current="page" class="flex items-center gap-2.5 px-3 py-2 rounded-lg transition-all bg-primary-container text-on-primary font-body-strong" data-path="incident-reports" href="#"><span class="material-symbols-outlined text-[18px]">assignment</span><span>Incident Reports</span></a></nav></div><div class="px-space-md py-space-sm"><span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant font-semibold uppercase tracking-wider block mb-space-xs">System</span><nav class="flex flex-col gap-1" data-active-classes="bg-primary-container text-on-primary font-body-strong"><a class="flex items-center gap-2.5 px-3 py-2 rounded-lg font-body-md text-body-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="settings-and-audit" href="#"><span class="material-symbols-outlined text-[18px]">tune</span><span>Settings &amp; Audit</span></a></nav></div></div><div class="p-space-md bg-surface-container-low flex flex-col gap-space-sm m-space-sm rounded-xl"><div class="flex items-center gap-2"><span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span></span><span class="font-telemetry-sm text-telemetry-sm text-primary font-semibold truncate">487 Nodes · Kafka 99.8%</span></div><div class="bg-surface-container-lowest px-2 py-1.5 rounded-lg text-center shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><span class="font-body-sm text-body-sm text-on-surface-variant block">Simulated Demo Feed</span><span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant font-semibold">NDHA OPS ENV-01</span></div></div></aside><div class="pl-[240px]"><header class="fixed top-0 left-[240px] right-0 h-[60px] bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-lg"><div class="flex items-center gap-space-md"><div class="flex items-center gap-2 px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container"><span class="inline-block w-1.5 h-1.5 rounded-full bg-primary"></span><span class="font-telemetry-sm text-telemetry-sm font-semibold tracking-wide uppercase">National Feed Sync · 14:22 PKT</span></div></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-surface-container text-on-surface font-body-sm text-body-sm shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><span class="material-symbols-outlined text-[16px] text-primary">explore</span><span class="font-body-strong text-body-strong">All Pakistan</span><span class="text-on-surface-variant">(4 Prov + 2 Terr)</span></div><div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-error-container text-on-error-container"><span class="material-symbols-outlined text-[18px] text-error">warning</span><span class="font-telemetry-sm text-telemetry-sm font-semibold">3 Critical Alerts</span></div><div class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-telemetry-sm text-telemetry-sm font-semibold tracking-wider uppercase">Demo Prototype Data Only</div><div class="flex items-center gap-2.5 pl-space-sm"><div class="flex flex-col text-right"><span class="font-body-strong text-body-strong leading-tight text-on-surface">Dr. Tariq M.</span><span class="font-body-sm text-body-sm text-on-surface-variant leading-tight">DG NDHA · PK-HQ-01</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-sm"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="relative pt-[60px] w-full min-h-screen bg-surface px-space-lg py-space-lg max-w-[1600px] mx-auto"><div class="flex flex-col w-full">
+<!-- Top Statutory Disclaimer Bar -->
+<div class="w-full bg-surface-container-high text-on-surface rounded-xl p-space-md mb-space-lg flex flex-col md:flex-row items-start md:items-center justify-between gap-space-sm shadow-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-7 h-7 rounded-lg bg-primary-container text-on-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-primary tracking-tight">DE-IDENTIFIED AUDIT ARCHIVE</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-telemetry-sm text-telemetry-sm uppercase font-semibold">ISO 27799 Compliant</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Fictional incident records for prototype workflow validation. Patient PII protected by zero-trust encryption and NDHA anonymization pipeline.</span>
+</div>
+</div>
+<div class="flex items-center gap-2 shrink-0 self-end md:self-auto">
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant font-medium">Audit Block #PK-2026-904-E2</span>
+<div class="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
+</div>
+</div>
+<!-- Main Analytics KPI Ribbon -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-space-md mb-space-lg">
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant">Total Incidents (7D)</span>
+<span class="material-symbols-outlined text-primary text-[18px]">emergency</span>
+</div>
+<div class="mt-2 flex items-baseline gap-2">
+<span class="font-telemetry-lg text-telemetry-lg text-on-surface">1,284</span>
+<span class="font-telemetry-sm text-telemetry-sm text-primary font-semibold">+4.2% vs avg</span>
+</div>
+<div class="mt-3 w-full bg-surface-container rounded-full h-1.5 overflow-hidden">
+<div class="bg-primary h-full w-[72%]"></div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant">Mean Response Time</span>
+<span class="material-symbols-outlined text-primary text-[18px]">speed</span>
+</div>
+<div class="mt-2 flex items-baseline gap-2">
+<span class="font-telemetry-lg text-telemetry-lg text-on-surface">07m 42s</span>
+<span class="font-telemetry-sm text-telemetry-sm text-primary font-semibold">-34s faster</span>
+</div>
+<div class="mt-3 flex items-center justify-between font-body-sm text-body-sm text-on-surface-variant">
+<span>Golden Hour Compliance</span>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface font-semibold">98.4%</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant">EMR Break-Glass Audits</span>
+<span class="material-symbols-outlined text-tertiary text-[18px]">lock_open</span>
+</div>
+<div class="mt-2 flex items-baseline gap-2">
+<span class="font-telemetry-lg text-telemetry-lg text-tertiary">38</span>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">100% Signed</span>
+</div>
+<div class="mt-3 flex items-center justify-between font-body-sm text-body-sm text-on-surface-variant">
+<span>Allergy Overrides: 6</span>
+<span class="font-telemetry-sm text-telemetry-sm text-secondary font-semibold">Zero Adverse</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant">Active Regional Units</span>
+<span class="material-symbols-outlined text-primary text-[18px]">local_shipping</span>
+</div>
+<div class="mt-2 flex items-baseline gap-2">
+<span class="font-telemetry-lg text-telemetry-lg text-on-surface">142</span>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">/ 150 Punjab East</span>
+</div>
+<div class="mt-3 flex items-center justify-between font-body-sm text-body-sm text-on-surface-variant">
+<span>Rescue 1122 Fleet Ready</span>
+<span class="font-telemetry-sm text-telemetry-sm text-primary font-semibold">94.6%</span>
+</div>
+</div>
+</div>
+<!-- Search & Multi-Filter Bar -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm mb-space-lg">
+<!-- Primary Search row -->
+<div class="relative w-full mb-space-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[20px]">search</span>
+<input class="w-full pl-10 pr-4 py-2.5 bg-surface-container-low text-on-surface font-body-md text-body-md rounded-lg focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/20 transition-all placeholder:text-on-surface-variant/60" id="incidentSearch" placeholder="Search by Incident ID (#PK-1122-...), Landmark, Responding Unit (AMB-37), or Receiving Hospital..." type="text"/>
+</div>
+<!-- Dropdowns & Filter Selectors -->
+<div class="grid grid-cols-2 md:grid-cols-5 gap-space-sm mb-space-md">
+<!-- Date Range -->
+<div class="flex flex-col gap-1">
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant font-semibold uppercase">Date Window</span>
+<div class="flex items-center justify-between bg-surface px-3 py-2 rounded-lg text-on-surface cursor-pointer hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-1.5 min-w-0">
+<span class="material-symbols-outlined text-[16px] text-primary">calendar_today</span>
+<span class="font-body-sm text-body-sm truncate">Past 7 Days (18–24 May)</span>
+</div>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">expand_more</span>
+</div>
+</div>
+<!-- Severity -->
+<div class="flex flex-col gap-1">
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant font-semibold uppercase">Acuity / Triage</span>
+<div class="flex items-center justify-between bg-surface px-3 py-2 rounded-lg text-on-surface cursor-pointer hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-1.5 min-w-0">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="font-body-sm text-body-sm truncate">All Acuities (Red, Ylw, Grn)</span>
+</div>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">expand_more</span>
+</div>
+</div>
+<!-- Category -->
+<div class="flex flex-col gap-1">
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant font-semibold uppercase">Category</span>
+<div class="flex items-center justify-between bg-surface px-3 py-2 rounded-lg text-on-surface cursor-pointer hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-1.5 min-w-0">
+<span class="material-symbols-outlined text-[16px] text-primary">category</span>
+<span class="font-body-sm text-body-sm truncate">All (Cardiac, Trauma, Resp)</span>
+</div>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">expand_more</span>
+</div>
+</div>
+<!-- Status -->
+<div class="flex flex-col gap-1">
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant font-semibold uppercase">Lifecycle Status</span>
+<div class="flex items-center justify-between bg-surface px-3 py-2 rounded-lg text-on-surface cursor-pointer hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-1.5 min-w-0">
+<span class="material-symbols-outlined text-[16px] text-primary">donut_large</span>
+<span class="font-body-sm text-body-sm truncate">All (Closed, Transit, Bay)</span>
+</div>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">expand_more</span>
+</div>
+</div>
+<!-- Province / Territory -->
+<div class="flex flex-col gap-1">
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant font-semibold uppercase">Jurisdiction</span>
+<div class="flex items-center justify-between bg-surface px-3 py-2 rounded-lg text-on-surface cursor-pointer hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-1.5 min-w-0">
+<span class="material-symbols-outlined text-[16px] text-primary">location_on</span>
+<span class="font-body-sm text-body-sm truncate font-body-strong">Punjab (Filtered)</span>
+</div>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Filter Action Buttons & Simulation Hooks -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm pt-space-sm border-t border-surface-container">
+<div class="flex items-center gap-2">
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-primary-container text-on-primary hover:bg-primary transition-all font-body-strong text-body-strong shadow-sm" onclick="simulatePdfExport()">
+<span class="material-symbols-outlined text-[18px]">picture_as_pdf</span>
+<span>Generate Statutory Ministry Brief (PDF)</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high transition-all font-body-md text-body-md" onclick="openCsvModal()">
+<span class="material-symbols-outlined text-[18px]">table_view</span>
+<span>Export Query to CSV</span>
+</button>
+<button class="flex items-center gap-1 px-3 py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all font-body-md text-body-md" onclick="resetFilters()">
+<span class="material-symbols-outlined text-[16px]">restart_alt</span>
+<span>Reset Filters</span>
+</button>
+</div>
+<!-- Live Prototype State Toggles -->
+<div class="flex items-center gap-2 bg-surface-container-low px-2.5 py-1 rounded-lg">
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant uppercase font-semibold">Mock State:</span>
+<button class="px-2 py-0.5 rounded bg-surface-container-lowest text-on-surface font-body-sm text-body-sm hover:bg-surface transition-colors shadow-xs" id="toggleEmptyBtn" onclick="toggleEmptyState()">
+          Toggle Empty State
+        </button>
+</div>
+</div>
+</div>
+<!-- Content Split Layout (Table on left, Dossier Drawer on right) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- Table Container (8 Cols) -->
+<div class="lg:col-span-8 flex flex-col gap-space-md" id="tableSection">
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<!-- Interactive Table Header Tools -->
+<div class="px-space-md py-space-sm bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface">Active Incident Stream</span>
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-telemetry-sm text-telemetry-sm font-semibold">Live Socket Sync</span>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">Last CAD Packet: 14:22:04 PKT</span>
+</div>
+<!-- Table Viewport -->
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-surface font-telemetry-sm text-telemetry-sm uppercase tracking-wider text-on-surface-variant border-b border-surface-container">
+<tr>
+<th class="px-3 py-3 font-semibold">Incident ID</th>
+<th class="px-3 py-3 font-semibold">Time</th>
+<th class="px-3 py-3 font-semibold">Acuity</th>
+<th class="px-3 py-3 font-semibold">Category &amp; Mechanism</th>
+<th class="px-3 py-3 font-semibold">Sector / Landmark</th>
+<th class="px-3 py-3 font-semibold">Unit</th>
+<th class="px-3 py-3 font-semibold">Facility</th>
+<th class="px-3 py-3 font-semibold">Resp.</th>
+<th class="px-3 py-3 font-semibold">EMR Key</th>
+<th class="px-3 py-3 text-right font-semibold">Action</th>
+</tr>
+</thead>
+<tbody class="font-body-md text-body-md divide-y divide-surface-container" id="incidentTableBody">
+<!-- Row 1: Selected / Highlighted -->
+<tr class="bg-surface-container-low/70 hover:bg-surface-container transition-colors cursor-pointer group" id="row-8921" onclick="selectIncident('8921')">
+<td class="px-3 py-3.5 font-telemetry-md text-telemetry-md text-primary font-bold">#PK-1122-8921</td>
+<td class="px-3 py-3.5 font-telemetry-sm text-telemetry-sm text-on-surface-variant whitespace-nowrap">24 May 09:41</td>
+<td class="px-3 py-3.5">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-telemetry-sm text-telemetry-sm font-semibold whitespace-nowrap">
+<span class="w-1.5 h-1.5 rounded-full bg-error animate-ping"></span>
+                    Code Red
+                  </span>
+</td>
+<td class="px-3 py-3.5">
+<div class="font-body-strong text-body-strong text-on-surface leading-tight">Acute Coronary Synd.</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Severe Angina / STEMI</div>
+</td>
+<td class="px-3 py-3.5 font-body-sm text-body-sm text-on-surface-variant">Gate 2 Plaza, Multan</td>
+<td class="px-3 py-3.5">
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-on-surface font-telemetry-sm text-telemetry-sm font-semibold">AMB-37</span>
+</td>
+<td class="px-3 py-3.5 font-body-sm text-body-sm text-on-surface">Nishtar ER Bay 03</td>
+<td class="px-3 py-3.5 font-telemetry-sm text-telemetry-sm text-tertiary font-bold">14m (Act)</td>
+<td class="px-3 py-3.5">
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-telemetry-sm text-telemetry-sm">
+<span class="material-symbols-outlined text-[13px]">key</span> Synced
+                  </span>
+</td>
+<td class="px-3 py-3.5 text-right whitespace-nowrap">
+<button class="px-2 py-1 rounded-lg bg-primary text-on-primary font-body-sm text-body-sm font-medium group-hover:scale-105 transition-transform flex items-center gap-1 ml-auto">
+<span>Inspect</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container transition-colors cursor-pointer group" id="row-8919" onclick="selectIncident('8919')">
+<td class="px-3 py-3.5 font-telemetry-md text-telemetry-md text-on-surface font-semibold">#PK-1122-8919</td>
+<td class="px-3 py-3.5 font-telemetry-sm text-telemetry-sm text-on-surface-variant whitespace-nowrap">24 May 09:12</td>
+<td class="px-3 py-3.5">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-[#FFFBEB] text-[#D97706] font-telemetry-sm text-telemetry-sm font-semibold whitespace-nowrap">
+                    Code Yellow
+                  </span>
+</td>
+<td class="px-3 py-3.5">
+<div class="font-body-strong text-body-strong text-on-surface leading-tight">2-Wheeler Collision</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Trauma / Extremity</div>
+</td>
+<td class="px-3 py-3.5 font-body-sm text-body-sm text-on-surface-variant">Flyover Junc 3, Multan</td>
+<td class="px-3 py-3.5">
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-on-surface font-telemetry-sm text-telemetry-sm font-semibold">AMB-14</span>
+</td>
+<td class="px-3 py-3.5 font-body-sm text-body-sm text-on-surface">Nishtar ER Bay 06</td>
+<td class="px-3 py-3.5 font-telemetry-sm text-telemetry-sm text-on-surface-variant">22m</td>
+<td class="px-3 py-3.5">
+<span class="px-1.5 py-0.5 rounded text-on-surface-variant font-telemetry-sm text-telemetry-sm">No</span>
+</td>
+<td class="px-3 py-3.5 text-right whitespace-nowrap">
+<button class="px-2 py-1 rounded-lg text-primary hover:bg-surface-container font-body-sm text-body-sm font-medium flex items-center gap-1 ml-auto">
+<span>Inspect</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container transition-colors cursor-pointer group" id="row-8915" onclick="selectIncident('8915')">
+<td class="px-3 py-3.5 font-telemetry-md text-telemetry-md text-on-surface font-semibold">#PK-1122-8915</td>
+<td class="px-3 py-3.5 font-telemetry-sm text-telemetry-sm text-on-surface-variant whitespace-nowrap">24 May 08:45</td>
+<td class="px-3 py-3.5">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-telemetry-sm text-telemetry-sm font-semibold whitespace-nowrap">
+                    Code Green
+                  </span>
+</td>
+<td class="px-3 py-3.5">
+<div class="font-body-strong text-body-strong text-on-surface leading-tight">Ankle Sprain / Sports</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Closed Non-Displaced</div>
+</td>
+<td class="px-3 py-3.5 font-body-sm text-body-sm text-on-surface-variant">University Ground</td>
+<td class="px-3 py-3.5">
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-on-surface font-telemetry-sm text-telemetry-sm font-semibold">AMB-22</span>
+</td>
+<td class="px-3 py-3.5 font-body-sm text-body-sm text-on-surface">Civil Hospital OPD</td>
+<td class="px-3 py-3.5 font-telemetry-sm text-telemetry-sm text-on-surface-variant">18m</td>
+<td class="px-3 py-3.5">
+<span class="px-1.5 py-0.5 rounded text-on-surface-variant font-telemetry-sm text-telemetry-sm">No</span>
+</td>
+<td class="px-3 py-3.5 text-right whitespace-nowrap">
+<button class="px-2 py-1 rounded-lg text-primary hover:bg-surface-container font-body-sm text-body-sm font-medium flex items-center gap-1 ml-auto">
+<span>Inspect</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container transition-colors cursor-pointer group" id="row-8902" onclick="selectIncident('8902')">
+<td class="px-3 py-3.5 font-telemetry-md text-telemetry-md text-on-surface font-semibold">#PK-1122-8902</td>
+<td class="px-3 py-3.5 font-telemetry-sm text-telemetry-sm text-on-surface-variant whitespace-nowrap">24 May 07:30</td>
+<td class="px-3 py-3.5">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-telemetry-sm text-telemetry-sm font-semibold whitespace-nowrap">
+                    Code Red
+                  </span>
+</td>
+<td class="px-3 py-3.5">
+<div class="font-body-strong text-body-strong text-on-surface leading-tight">STEMI Myocardial Inf.</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Cardiac Arrest Risk</div>
+</td>
+<td class="px-3 py-3.5 font-body-sm text-body-sm text-on-surface-variant">Cantt Officers Colony</td>
+<td class="px-3 py-3.5">
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-on-surface font-telemetry-sm text-telemetry-sm font-semibold">AMB-37</span>
+</td>
+<td class="px-3 py-3.5 font-body-sm text-body-sm text-on-surface">Nishtar CCU</td>
+<td class="px-3 py-3.5 font-telemetry-sm text-telemetry-sm text-on-surface-variant">31m</td>
+<td class="px-3 py-3.5">
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-telemetry-sm text-telemetry-sm">
+<span class="material-symbols-outlined text-[13px]">key</span> Verified
+                  </span>
+</td>
+<td class="px-3 py-3.5 text-right whitespace-nowrap">
+<button class="px-2 py-1 rounded-lg text-primary hover:bg-surface-container font-body-sm text-body-sm font-medium flex items-center gap-1 ml-auto">
+<span>Inspect</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-surface-container transition-colors cursor-pointer group" id="row-8894" onclick="selectIncident('8894')">
+<td class="px-3 py-3.5 font-telemetry-md text-telemetry-md text-on-surface font-semibold">#PK-1122-8894</td>
+<td class="px-3 py-3.5 font-telemetry-sm text-telemetry-sm text-on-surface-variant whitespace-nowrap">24 May 06:14</td>
+<td class="px-3 py-3.5">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-telemetry-sm text-telemetry-sm font-semibold whitespace-nowrap">
+                    Code Red
+                  </span>
+</td>
+<td class="px-3 py-3.5">
+<div class="font-body-strong text-body-strong text-on-surface leading-tight">Severe Pediatric Asthma</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Hypoxia &lt;88% SpO2</div>
+</td>
+<td class="px-3 py-3.5 font-body-sm text-body-sm text-on-surface-variant">Bosan Road, Sector 4</td>
+<td class="px-3 py-3.5">
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-on-surface font-telemetry-sm text-telemetry-sm font-semibold">AMB-09</span>
+</td>
+<td class="px-3 py-3.5 font-body-sm text-body-sm text-on-surface">Children Hosp Multan</td>
+<td class="px-3 py-3.5 font-telemetry-sm text-telemetry-sm text-on-surface-variant">19m</td>
+<td class="px-3 py-3.5">
+<span class="px-1.5 py-0.5 rounded text-on-surface-variant font-telemetry-sm text-telemetry-sm">No</span>
+</td>
+<td class="px-3 py-3.5 text-right whitespace-nowrap">
+<button class="px-2 py-1 rounded-lg text-primary hover:bg-surface-container font-body-sm text-body-sm font-medium flex items-center gap-1 ml-auto">
+<span>Inspect</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Empty State Container (Hidden by default) -->
+<div class="hidden py-16 px-4 flex flex-col items-center justify-center text-center" id="emptyStatePlaceholder">
+<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant mb-space-sm">
+<span class="material-symbols-outlined text-[32px]">manage_search</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-surface">No Records Match Query Parameters</span>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md mt-1">There are no dispatched or logged incidents in this jurisdiction matching your active filters. Try resetting the date range or severity filters.</p>
+<button class="mt-4 px-4 py-2 bg-primary-container text-on-primary rounded-lg font-body-strong text-body-strong hover:bg-primary transition-all" onclick="resetFilters()">
+            Reset Active Filters
+          </button>
+</div>
+<!-- Pagination Bar -->
+<div class="px-space-md py-space-sm bg-surface-container-low flex flex-col sm:flex-row items-center justify-between gap-2 border-t border-surface-container">
+<div class="flex items-center gap-3">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Showing <span class="font-semibold text-on-surface">1–5</span> of <span class="font-semibold text-on-surface">1,284</span> Incidents</span>
+<span class="text-on-surface-variant">·</span>
+<div class="flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant">
+<span>Rows per page:</span>
+<span class="font-telemetry-sm text-telemetry-sm font-bold text-on-surface bg-surface-container px-2 py-0.5 rounded">25</span>
+</div>
+</div>
+<div class="flex items-center gap-1">
+<button class="p-1.5 rounded hover:bg-surface-container text-on-surface-variant disabled:opacity-30" disabled="">
+<span class="material-symbols-outlined text-[18px]">first_page</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-on-surface-variant disabled:opacity-30" disabled="">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<span class="px-2 font-telemetry-sm text-telemetry-sm font-semibold text-on-surface">Page 1 of 257</span>
+<button class="p-1.5 rounded hover:bg-surface-container text-on-surface hover:text-primary">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-on-surface hover:text-primary">
+<span class="material-symbols-outlined text-[18px]">last_page</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Secondary Data Visualization: Sector Dispatch Velocity Breakdown -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-headline-sm text-headline-sm text-on-surface">Regional Triage Velocity by District (Punjab South)</span>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">Response Target: &lt;10.0 min</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<div class="p-space-sm bg-surface rounded-lg">
+<div class="flex justify-between items-center mb-1">
+<span class="font-body-strong text-body-strong text-on-surface">Multan Urban Cantt</span>
+<span class="font-telemetry-sm text-telemetry-sm text-primary font-bold">06m 12s</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-2 overflow-hidden">
+<div class="bg-primary h-full w-[62%]"></div>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-1 block">48 Dispatches · 0 Delayed</span>
+</div>
+<div class="p-space-sm bg-surface rounded-lg">
+<div class="flex justify-between items-center mb-1">
+<span class="font-body-strong text-body-strong text-on-surface">Bahawalpur North</span>
+<span class="font-telemetry-sm text-telemetry-sm text-primary font-bold">08m 45s</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-2 overflow-hidden">
+<div class="bg-primary h-full w-[84%]"></div>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-1 block">31 Dispatches · 1 Rerouted</span>
+</div>
+<div class="p-space-sm bg-surface rounded-lg">
+<div class="flex justify-between items-center mb-1">
+<span class="font-body-strong text-body-strong text-on-surface">D.G. Khan Rural Sector</span>
+<span class="font-telemetry-sm text-telemetry-sm text-tertiary font-bold">11m 02s</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-2 overflow-hidden">
+<div class="bg-tertiary h-full w-[95%]"></div>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-1 block">19 Dispatches · Mountain pass relay</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Incident Dossier Inspection Drawer (4 Cols) -->
+<div class="lg:col-span-4 bg-surface-container-lowest rounded-xl shadow-sm p-space-lg sticky top-[76px] transition-all" id="inspectorPanel">
+<!-- Panel Header -->
+<div class="flex items-start justify-between pb-space-md border-b border-surface-container">
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-telemetry-sm text-telemetry-sm uppercase font-semibold text-primary tracking-wider">Audit Trail</span>
+<span class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-telemetry-sm text-telemetry-sm font-semibold">Active Case</span>
+</div>
+<span class="font-headline-md text-headline-md text-on-surface mt-1" id="inspectorId">#PK-1122-8921</span>
+</div>
+<button class="p-1 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" onclick="closeInspector()" title="Close Inspector">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Clinical Summary Badge Card -->
+<div class="my-space-md p-space-md bg-surface-container-low rounded-xl">
+<div class="flex items-center gap-2 mb-1.5">
+<span class="material-symbols-outlined text-primary text-[18px]">medical_information</span>
+<span class="font-body-strong text-body-strong text-on-surface">Clinical Patient Profile</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface leading-relaxed">
+<span class="font-semibold text-primary">24F Citizen</span> · Suspected Acute Coronary Syndrome · <span class="text-tertiary font-semibold">Penicillin Anaphylaxis Flagged</span> in Transit · 12-Lead Pre-Hospital ECG Broadcasted to Cath Lab.
+        </p>
+<div class="mt-2.5 pt-2 border-t border-surface-container flex items-center justify-between font-telemetry-sm text-telemetry-sm text-on-surface-variant">
+<span>Triage Acuity: <strong class="text-error font-bold">P1 IMMEDIATE</strong></span>
+<span>Lead Unit: <strong>AMB-37</strong></span>
+</div>
+</div>
+<!-- Immutable Milestone Timeline -->
+<div class="mb-space-md">
+<div class="flex items-center justify-between mb-3">
+<span class="font-label-md text-label-md text-on-surface font-semibold uppercase tracking-wider">Immutable Milestone Timeline</span>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">7 Chrono Logs</span>
+</div>
+<div class="relative pl-6 space-y-4 before:content-[''] before:absolute before:left-2 before:top-2 before:bottom-2 before:w-0.5 before:bg-surface-container">
+<!-- Event 1 -->
+<div class="relative group">
+<span class="absolute -left-6 top-1 w-2.5 h-2.5 rounded-full bg-primary-container ring-4 ring-surface-container-lowest"></span>
+<div class="flex flex-col">
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant font-semibold">09:41:02 PKT</span>
+<span class="font-body-sm text-body-sm text-on-surface font-semibold">SOS Button Pressed</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Citizen Emergency Mobile App v4.2 (GPS Lock: +/- 4m)</span>
+</div>
+</div>
+<!-- Event 2 -->
+<div class="relative group">
+<span class="absolute -left-6 top-1 w-2.5 h-2.5 rounded-full bg-primary-container ring-4 ring-surface-container-lowest"></span>
+<div class="flex flex-col">
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant font-semibold">09:41:45 PKT</span>
+<span class="font-body-sm text-body-sm text-on-surface font-semibold">CAD Automated Dispatch Confirmed</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Cantt Gateway Node #04 routed to nearest patrol</span>
+</div>
+</div>
+<!-- Event 3 -->
+<div class="relative group">
+<span class="absolute -left-6 top-1 w-2.5 h-2.5 rounded-full bg-primary-container ring-4 ring-surface-container-lowest"></span>
+<div class="flex flex-col">
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant font-semibold">09:42:10 PKT</span>
+<span class="font-body-sm text-body-sm text-on-surface font-semibold">Unit AMB-37 En Route</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Paramedic Lead: A. Khan (#4421) acknowledged MDT</span>
+</div>
+</div>
+<!-- Event 4 -->
+<div class="relative group">
+<span class="absolute -left-6 top-1 w-2.5 h-2.5 rounded-full bg-tertiary-container ring-4 ring-surface-container-lowest"></span>
+<div class="flex flex-col">
+<span class="font-telemetry-sm text-telemetry-sm text-tertiary font-bold">09:44:22 PKT</span>
+<span class="font-body-sm text-body-sm text-on-surface font-semibold">EMR Allergy Alert Broadcast</span>
+<span class="font-body-sm text-body-sm text-tertiary">Severe Penicillin Anaphylaxis auto-synced from NDHA Cloud</span>
+</div>
+</div>
+<!-- Event 5 -->
+<div class="relative group">
+<span class="absolute -left-6 top-1 w-2.5 h-2.5 rounded-full bg-primary ring-4 ring-surface-container-lowest"></span>
+<div class="flex flex-col">
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant font-semibold">09:48:15 PKT</span>
+<span class="font-body-sm text-body-sm text-on-surface font-semibold">Paramedic Vitals Captured</span>
+<div class="inline-flex gap-2 font-telemetry-sm text-telemetry-sm bg-surface-container px-2 py-0.5 rounded mt-0.5 text-on-surface">
+<span>BP 118/76</span>·<span>HR 104 bpm</span>·<span>SpO2 96%</span>
+</div>
+</div>
+</div>
+<!-- Event 6 -->
+<div class="relative group">
+<span class="absolute -left-6 top-1 w-2.5 h-2.5 rounded-full bg-primary ring-4 ring-surface-container-lowest"></span>
+<div class="flex flex-col">
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant font-semibold">09:51:30 PKT</span>
+<span class="font-body-sm text-body-sm text-on-surface font-semibold">Nishtar ER Resus Bay 03 Reserved</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">WebSocket handshake verified with Charge Nurse</span>
+</div>
+</div>
+<!-- Event 7 -->
+<div class="relative group">
+<span class="absolute -left-6 top-1 w-2.5 h-2.5 rounded-full bg-secondary-container ring-4 ring-surface-container-lowest"></span>
+<div class="flex flex-col">
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant font-semibold">09:55:00 PKT</span>
+<span class="font-body-sm text-body-sm text-on-surface font-semibold">Patient Custody Transferred</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Handover accepted by Dr. F. Alam (#8812, MD)</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Cryptographic Ledger Verification Block -->
+<div class="p-space-sm bg-surface rounded-lg mb-space-md">
+<div class="flex items-center gap-1.5 text-on-surface-variant mb-1">
+<span class="material-symbols-outlined text-[15px] text-primary">fingerprint</span>
+<span class="font-telemetry-sm text-telemetry-sm font-semibold uppercase">SHA-256 Ledger Signature</span>
+</div>
+<div class="font-telemetry-sm text-telemetry-sm text-on-surface break-all bg-surface-container-lowest p-2 rounded select-all font-mono">
+          e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+        </div>
+<div class="flex items-center justify-between mt-1 text-[11px] text-on-surface-variant">
+<span>Chain Block: #714,920</span>
+<span class="text-primary font-semibold">Merkle Validated ✓</span>
+</div>
+</div>
+<!-- Inspector Footer Action Buttons -->
+<div class="flex flex-col gap-2">
+<button class="w-full py-2.5 rounded-lg bg-primary-container text-on-primary hover:bg-primary transition-all font-body-strong text-body-strong flex items-center justify-center gap-1.5 shadow-sm" onclick="printLegalRecord()">
+<span class="material-symbols-outlined text-[18px]">print</span>
+<span>Print Full Legal Audit Record</span>
+</button>
+<div class="grid grid-cols-2 gap-2">
+<button class="w-full py-2 rounded-lg bg-surface-container text-tertiary hover:bg-surface-container-high font-body-sm text-body-sm font-semibold flex items-center justify-center gap-1" onclick="flagReviewDirector()">
+<span class="material-symbols-outlined text-[16px]">flag</span>
+<span>Flag to Director</span>
+</button>
+<button class="w-full py-2 rounded-lg bg-surface text-on-surface hover:bg-surface-container font-body-sm text-body-sm font-medium flex items-center justify-center gap-1" onclick="closeInspector()">
+<span>Close Inspector</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Mock Modal: Export Query to CSV -->
+<div class="fixed inset-0 bg-[#243746]/40 backdrop-blur-xs z-50 hidden flex items-center justify-center p-4" id="csvModal">
+<div class="bg-surface-container-lowest rounded-xl max-w-lg w-full p-space-lg shadow-xl relative animate-in fade-in duration-200">
+<div class="flex items-center justify-between pb-space-sm border-b border-surface-container">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">table_chart</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Export Filtered Incident Dataset</span>
+</div>
+<button class="p-1 rounded text-on-surface-variant hover:bg-surface-container" onclick="closeCsvModal()">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="py-space-md flex flex-col gap-space-sm">
+<p class="font-body-md text-body-md text-on-surface">You are preparing a sanitized export of <strong class="font-telemetry-sm">1,284</strong> records matching the jurisdiction <span class="bg-surface-container px-2 py-0.5 rounded font-body-strong">Punjab</span>.</p>
+<div class="p-space-sm bg-surface-container-low rounded-lg flex flex-col gap-1 font-body-sm text-body-sm">
+<label class="flex items-center gap-2 cursor-pointer">
+<input checked="" class="accent-primary w-4 h-4" type="checkbox"/>
+<span>Include Cryptographic Block Timestamps</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer">
+<input checked="" class="accent-primary w-4 h-4" type="checkbox"/>
+<span>Include Break-Glass Audit Trail Log IDs</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer">
+<input checked="" class="accent-primary w-4 h-4" type="checkbox"/>
+<span>Mask Cadre Personnel CNIC Identifiers (NDHA Mandate)</span>
+</label>
+</div>
+<div class="flex items-center gap-2 font-telemetry-sm text-telemetry-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-primary">lock</span>
+<span>Zero-Trust Anonymization token: PII-SALT-SHA256</span>
+</div>
+</div>
+<div class="flex items-center justify-end gap-2 pt-space-sm border-t border-surface-container">
+<button class="px-4 py-2 rounded-lg bg-surface text-on-surface hover:bg-surface-container font-body-md text-body-md" onclick="closeCsvModal()">Cancel</button>
+<button class="px-4 py-2 rounded-lg bg-primary-container text-on-primary font-body-strong text-body-strong hover:bg-primary shadow-sm flex items-center gap-1.5" onclick="downloadMockCsv()">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span>Download De-Identified .CSV (1.4 MB)</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Notification Toast for Simulated Actions -->
+<div class="fixed bottom-6 right-6 z-50 hidden bg-inverse-surface text-inverse-on-surface px-4 py-3 rounded-xl shadow-lg flex items-center gap-3" id="toastNotification">
+<span class="material-symbols-outlined text-primary-fixed text-[20px]" id="toastIcon">check_circle</span>
+<span class="font-body-md text-body-md" id="toastMessage">Ministry PDF Brief generated successfully.</span>
+</div>
+<script>
+    const incidentData = {
+      '8921': {
+        id: '#PK-1122-8921',
+        title: 'Acute Coronary Synd.',
+        summary: '24F Citizen · Suspected ACS · Penicillin Anaphylaxis Flagged in Transit · 12-Lead Pre-Hospital ECG Broadcasted to Cath Lab.',
+        unit: 'AMB-37',
+        acuity: 'Code Red',
+        hash: 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
+      },
+      '8919': {
+        id: '#PK-1122-8919',
+        title: '2-Wheeler Collision',
+        summary: '32M Citizen · Moderate lower extremity trauma · Immobilized on-scene · Direct transit to Nishtar ER.',
+        unit: 'AMB-14',
+        acuity: 'Code Yellow',
+        hash: '9f833a10c8b7423982f12702c012d6e30f35e38354c9bc19970093e189eb6092'
+      },
+      '8915': {
+        id: '#PK-1122-8915',
+        title: 'Ankle Sprain / Sports',
+        summary: '19M Student · Non-displaced ankle ligament injury · Basic first aid and splint applied · Referred to outpatient clinic.',
+        unit: 'AMB-22',
+        acuity: 'Code Green',
+        hash: '2c26b46b68ffc68ff99b453c1d30413413422d706483bfa0f98a5e886266e7ae'
+      },
+      '8902': {
+        id: '#PK-1122-8902',
+        title: 'STEMI Myocardial Inf.',
+        summary: '58M Retired Officer · Severe anterior wall STEMI · Tele-cardiology consultation completed · Direct CCU catheterization transfer.',
+        unit: 'AMB-37',
+        acuity: 'Code Red',
+        hash: 'fc4838b0a1eb5f751f81a47ec05c9ec69d319f2324f5ecd380f8b9240105e261'
+      },
+      '8894': {
+        id: '#PK-1122-8894',
+        title: 'Severe Pediatric Asthma',
+        summary: '7F Child · Status asthmaticus · In-transit nebulization and high-flow oxygen administered · Handed to Pediatric ICU.',
+        unit: 'AMB-09',
+        acuity: 'Code Red',
+        hash: '7d793037a0760186574b0282f2f435e7b1e50774690f473b7244520480accb4d'
+      }
+    };
+
+    function selectIncident(id) {
+      const data = incidentData[id];
+      if (!data) return;
+
+      // Update Inspector Panel UI
+      document.getElementById('inspectorId').textContent = data.id;
+      
+      // Update selected row style
+      const rows = document.querySelectorAll('#incidentTableBody tr');
+      rows.forEach(r => r.classList.remove('bg-surface-container-low/70'));
+      const activeRow = document.getElementById('row-' + id);
+      if (activeRow) {
+        activeRow.classList.add('bg-surface-container-low/70');
+      }
+
+      showToast('Inspecting Incident Record ' + data.id, 'folder_open');
+    }
+
+    function toggleEmptyState() {
+      const tbody = document.getElementById('incidentTableBody');
+      const emptyState = document.getElementById('emptyStatePlaceholder');
+      const btn = document.getElementById('toggleEmptyBtn');
+      
+      if (tbody.classList.contains('hidden')) {
+        tbody.classList.remove('hidden');
+        emptyState.classList.add('hidden');
+        btn.textContent = 'Toggle Empty State';
+        showToast('Restored default 1,284 incidents view.', 'replay');
+      } else {
+        tbody.classList.add('hidden');
+        emptyState.classList.remove('hidden');
+        btn.textContent = 'Restore Sample Data';
+        showToast('Switched to Zero Results State.', 'filter_alt_off');
+      }
+    }
+
+    function resetFilters() {
+      const tbody = document.getElementById('incidentTableBody');
+      const emptyState = document.getElementById('emptyStatePlaceholder');
+      const btn = document.getElementById('toggleEmptyBtn');
+      const searchInput = document.getElementById('incidentSearch');
+
+      tbody.classList.remove('hidden');
+      emptyState.classList.add('hidden');
+      btn.textContent = 'Toggle Empty State';
+      if (searchInput) searchInput.value = '';
+      showToast('Filters reset to default national view.', 'restart_alt');
+    }
+
+    function openCsvModal() {
+      document.getElementById('csvModal').classList.remove('hidden');
+    }
+
+    function closeCsvModal() {
+      document.getElementById('csvModal').classList.add('hidden');
+    }
+
+    function downloadMockCsv() {
+      closeCsvModal();
+      showToast('CSV export initialized. Check your downloads.', 'download_done');
+    }
+
+    function simulatePdfExport() {
+      showToast('Generating Statutory Ministry Brief... Rendering PDF', 'hourglass_top');
+      setTimeout(() => {
+        showToast('Ministry Brief PDF downloaded with SHA-256 seal.', 'verified');
+      }, 1400);
+    }
+
+    function printLegalRecord() {
+      showToast('Preparing legal-grade evidence package for print...', 'print');
+    }
+
+    function flagReviewDirector() {
+      showToast('Incident audit flagged to Medical Director inbox.', 'priority_high');
+    }
+
+    function closeInspector() {
+      const panel = document.getElementById('inspectorPanel');
+      panel.classList.add('opacity-40');
+      setTimeout(() => panel.classList.remove('opacity-40'), 300);
+      showToast('Audit Inspector refreshed.', 'refresh');
+    }
+
+    function showToast(message, iconName = 'check_circle') {
+      const toast = document.getElementById('toastNotification');
+      const toastMsg = document.getElementById('toastMessage');
+      const toastIcon = document.getElementById('toastIcon');
+
+      toastMsg.textContent = message;
+      toastIcon.textContent = iconName;
+      toast.classList.remove('hidden');
+
+      setTimeout(() => {
+        toast.classList.add('hidden');
+      }, 3200);
+    }
+  </script>
+</div></main></div></body></html>

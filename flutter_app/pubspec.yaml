@@ -16,6 +16,11 @@ dependencies:
   shared_preferences: ^2.3.3
   firebase_auth: ^6.7.0
   firebase_core: ^4.15.0
+  nemras_design:
+    path: ../packages/nemras_design
+  nemras_layout:
+    path: ../packages/nemras_layout
+  supabase_flutter: ^2.18.3
 
 dev_dependencies:
   flutter_test:

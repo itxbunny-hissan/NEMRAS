@@ -1,0 +1,3 @@
+Sora / Inter / JetBrains Mono static .ttf files belong here, alongside their
+SIL OFL 1.1 licence files. They are supplied separately and are not declared
+in pubspec.yaml yet - see the TODO(phase-1a-fonts) note there.

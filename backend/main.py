@@ -8,66 +8,137 @@ Run:
     uvicorn main:app --reload --host 0.0.0.0 --port 8000
 
 Docs available at http://localhost:8000/docs
+Health probe at http://localhost:8000/health
+
+Tests:
+    pip install -r requirements-dev.txt
+    pytest
 """
 
-from fastapi import FastAPI, HTTPException, Query
+from contextlib import asynccontextmanager
+from fastapi import Depends, FastAPI, HTTPException, Query, Response
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-from typing import Optional, List
+from typing import Optional, List, Tuple
 import pandas as pd
 import numpy as np
+import logging
 import os
 import json
+import threading
+
+import auth
+import patient_id
+import patient_id_issuance
+
+logger = logging.getLogger("nemras")
 
 DATA_PATH = os.path.join(os.path.dirname(__file__), "NEMRAS_Dataset.csv")
 PHONE_REGISTRY_PATH = os.path.join(os.path.dirname(__file__), "phone_registry.json")
 
-app = FastAPI(
-    title="NEMRAS API",
-    description="National Emergency Medical Record Access System - demo backend",
-    version="1.0.0",
-)
-
-# Allow Flutter (mobile/web/desktop) to call the API during development.
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
-
 # ------------------------------------------------------------------
-# Data loading (loaded once at startup, kept in memory for fast lookup)
+# In-memory state (loaded once at startup, kept in memory for fast lookup)
 # ------------------------------------------------------------------
 DF: pd.DataFrame = pd.DataFrame()
+PHONE_REGISTRY: dict = {}
+DATA_LOAD_ERROR: Optional[str] = None
 
 
 def load_data() -> pd.DataFrame:
+    # NEMRAS_Dataset.csv is read-only source data - never written back to.
     df = pd.read_csv(DATA_PATH)
     # CNIC is the unique key for patient lookup (one row per patient in this dataset).
     df["CNIC"] = df["CNIC"].astype(str).str.strip()
     return df
 
 
-PHONE_REGISTRY: dict = {}
+def load_phone_registry() -> dict:
+    """
+    Development-only CNIC -> contact mapping used to decide whether a CNIC is
+    eligible for OTP delivery. Keys beginning with "_" are documentation and
+    are skipped.
+
+    TODO(production-auth): replace this JSON file with the authenticated
+    identity mapping (database + Firebase Authentication UID). Raw phone
+    numbers must never be served to clients, and OTP values must never be
+    stored here or in Firestore.
+    """
+    if not os.path.exists(PHONE_REGISTRY_PATH):
+        return {}
+    try:
+        with open(PHONE_REGISTRY_PATH, "r", encoding="utf-8") as f:
+            raw = json.load(f)
+    except (OSError, json.JSONDecodeError) as exc:
+        logger.error("[NEMRAS] Could not read phone registry: %s", exc)
+        return {}
+    return {k: v for k, v in raw.items() if not k.startswith("_")}
 
 
-@app.on_event("startup")
-def _startup() -> None:
-    global DF, PHONE_REGISTRY
-    DF = load_data()
-    if os.path.exists(PHONE_REGISTRY_PATH):
-        with open(PHONE_REGISTRY_PATH, "r") as f:
-            PHONE_REGISTRY = json.load(f)
-    print(f"[NEMRAS] Loaded {len(DF):,} patient records from {DATA_PATH}")
+@asynccontextmanager
+async def lifespan(_app: FastAPI):
+    """Replaces the deprecated @app.on_event("startup") handler."""
+    global DF, PHONE_REGISTRY, DATA_LOAD_ERROR
+    try:
+        DF = load_data()
+        DATA_LOAD_ERROR = None
+        print(f"[NEMRAS] Loaded {len(DF):,} patient records from {DATA_PATH}")
+    except Exception as exc:  # noqa: BLE001 - surfaced via /health and 503s
+        DF = pd.DataFrame()
+        DATA_LOAD_ERROR = f"{type(exc).__name__}: {exc}"
+        logger.error("[NEMRAS] Failed to load dataset: %s", DATA_LOAD_ERROR)
+
+    PHONE_REGISTRY = load_phone_registry()
     print(f"[NEMRAS] Phone registry: {len(PHONE_REGISTRY)} registered numbers")
+    yield
+
+
+app = FastAPI(
+    title="NEMRAS API",
+    description="National Emergency Medical Record Access System - demo backend",
+    version="1.0.0",
+    lifespan=lifespan,
+)
+
+# Allow Flutter (mobile/web/desktop) to call the API during development.
+# TODO(production): restrict allow_origins to the deployed NEMRAS clients.
+#
+# Credentials stay off: clients authenticate with an Authorization: Bearer
+# header, never cookies. With a wildcard origin, allow_credentials=True makes
+# Starlette echo any requesting origin back as trusted.
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=False,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 # ------------------------------------------------------------------
 # Helpers
 # ------------------------------------------------------------------
 RISK_RANK = {"Stable": 0, "Elevated": 1, "Critical": 2}
+
+
+def require_data() -> pd.DataFrame:
+    """Guard so endpoints return 503 instead of crashing if the CSV never loaded."""
+    if DF.empty:
+        raise HTTPException(
+            status_code=503,
+            detail="Patient dataset is not loaded. Check the NEMRAS backend logs.",
+        )
+    return DF
+
+
+def mask_phone(phone: str) -> Optional[str]:
+    """
+    Reduce a stored number to a non-identifying hint (country code + last 2
+    digits). Never return enough digits to reconstruct the number.
+    """
+    digits = "".join(ch for ch in str(phone) if ch.isdigit())
+    if len(digits) < 6:
+        return None
+    return f"+{digits[:2]}{'*' * (len(digits) - 4)}{digits[-2:]}"
 
 
 def _clean(value):
@@ -137,14 +208,14 @@ def build_alerts(row: pd.Series) -> List[dict]:
         alerts.append({
             "severity": "critical",
             "title": "Critical Risk Tier",
-            "detail": "AI risk model classifies this patient as CRITICAL. "
+            "detail": "The dataset risk label for this patient is Critical. "
                       "Recommend ICU pre-allocation and specialist activation.",
         })
     elif str(row["Risk_Score"]).strip() == "Elevated":
         alerts.append({
             "severity": "high",
             "title": "Elevated Risk Tier",
-            "detail": "AI risk model classifies this patient as ELEVATED. "
+            "detail": "The dataset risk label for this patient is Elevated. "
                       "Prioritise assessment.",
         })
 
@@ -177,40 +248,63 @@ class ChatRequest(BaseModel):
 # ------------------------------------------------------------------
 @app.get("/")
 def root():
+    # Response shape is unchanged - the Flutter client uses this as its ping.
     return {"service": "NEMRAS API", "records": len(DF), "status": "ok"}
+
+
+@app.get("/health")
+def health():
+    """
+    Liveness/readiness probe. Reports whether the dataset actually loaded so a
+    half-started backend is visible instead of failing one request at a time.
+    """
+    ready = not DF.empty
+    return {
+        "status": "ok" if ready else "degraded",
+        "dataset_loaded": ready,
+        "records": int(len(DF)),
+        "phone_registry_entries": len(PHONE_REGISTRY),
+        "error": DATA_LOAD_ERROR,
+    }
 
 
 @app.get("/api/stats")
 def stats():
     """Population-level numbers for the hospital / central dashboard."""
+    df = require_data()
+
     def vc(col):
-        return {str(k): int(v) for k, v in DF[col].value_counts().items()}
+        return {str(k): int(v) for k, v in df[col].value_counts().items()}
 
     return {
-        "total_patients": int(len(DF)),
+        "total_patients": int(len(df)),
         "risk_score": vc("Risk_Score"),
         "triage_level": vc("Triage_Level"),
         "drug_interaction_risk": vc("Drug_Interaction_Risk"),
         "medical_condition": vc("Medical_Condition"),
         "admission_type": vc("Admission_Type"),
         "chronic_condition": vc("Chronic_Condition"),
-        "avg_age": round(float(DF["Age"].mean()), 1),
+        "avg_age": round(float(df["Age"].mean()), 1),
     }
 
 
 @app.get("/api/patients/sample")
 def sample_patients(n: int = Query(10, ge=1, le=50)):
     """A few real CNICs from the dataset so the demo always has valid logins."""
+    df = require_data()
     cols = ["CNIC", "Patient_Name", "Age", "Medical_Condition", "Risk_Score"]
-    sample = DF[cols].head(n)
+    sample = df[cols].head(n)
     return sample.to_dict(orient="records")
 
 
 @app.get("/api/patient/{cnic}")
 def get_patient(cnic: str):
     """Core lookup: scan/enter a CNIC -> Critical Health Summary + alerts."""
+    df = require_data()
     cnic = cnic.strip()
-    match = DF[DF["CNIC"] == cnic]
+    if not cnic:
+        raise HTTPException(status_code=400, detail="CNIC must not be empty")
+    match = df[df["CNIC"] == cnic]
     if match.empty:
         raise HTTPException(status_code=404, detail=f"No patient found for CNIC {cnic}")
     row = match.iloc[0]
@@ -223,7 +317,7 @@ def get_patient(cnic: str):
 @app.get("/api/dashboard/critical")
 def critical_patients(limit: int = Query(20, ge=1, le=100)):
     """Live emergency tracker feed - highest-risk patients first."""
-    df = DF.copy()
+    df = require_data().copy()
     df["rank"] = df["Risk_Score"].map(RISK_RANK).fillna(0)
     df = df.sort_values("rank", ascending=False).head(limit)
     cols = ["CNIC", "Patient_Name", "Age", "Medical_Condition",
@@ -239,7 +333,10 @@ def chat(req: ChatRequest):
     record as context; here it is a deterministic, record-grounded responder
     so the demo runs offline.
     """
-    match = DF[DF["CNIC"] == req.cnic.strip()]
+    df = require_data()
+    if not req.message.strip():
+        raise HTTPException(status_code=400, detail="message must not be empty")
+    match = df[df["CNIC"] == req.cnic.strip()]
     if match.empty:
         raise HTTPException(status_code=404, detail="Unknown CNIC")
     row = match.iloc[0]
@@ -275,16 +372,165 @@ def chat(req: ChatRequest):
 @app.get("/api/auth/phone/{cnic}")
 def get_phone(cnic: str):
     """
-    Returns masked phone number for this CNIC if registered.
-    Client uses this to trigger Firebase OTP to the real number.
-    Returns 404 if CNIC not in dataset, 200 with masked/null phone otherwise.
+    Reports whether a CNIC has a contact number registered for OTP delivery,
+    and returns a masked hint the patient can recognise ("+92********93").
+
+    The raw phone number is NEVER returned. Clients must not need it: OTP
+    delivery is the identity provider's job, not the client's.
+
+    TODO(production-auth): the client will call Firebase Authentication to send
+    the OTP, and the backend will resolve CNIC -> Firebase UID server-side from
+    the authenticated identity store. Until then this endpoint only confirms
+    eligibility. OTP values are never generated, returned or stored here.
+
+    404 if the CNIC is not in the dataset; 200 with has_phone=false otherwise.
     """
+    df = require_data()
     cnic = cnic.strip()
-    if DF[DF["CNIC"] == cnic].empty:
+    if df[df["CNIC"] == cnic].empty:
         raise HTTPException(status_code=404, detail=f"No patient found for CNIC {cnic}")
     entry = PHONE_REGISTRY.get(cnic)
-    if entry:
-        phone = entry["phone"]
-        masked = phone[:5] + "****" + phone[-3:]
-        return {"cnic": cnic, "has_phone": True, "masked_phone": masked, "phone": phone}
-    return {"cnic": cnic, "has_phone": False, "masked_phone": None, "phone": None}
+    if entry and entry.get("phone"):
+        return {
+            "cnic": cnic,
+            "has_phone": True,
+            "masked_phone": mask_phone(entry["phone"]),
+        }
+    return {"cnic": cnic, "has_phone": False, "masked_phone": None}
+
+
+# ------------------------------------------------------------------
+# /api/v1 - authenticated surface
+#
+# New endpoints are versioned. The unversioned routes above keep their current
+# behaviour unchanged, including their current lack of authentication, until a
+# migration is approved. Do not read the presence of this section as securing
+# them.
+# ------------------------------------------------------------------
+class IdentityResponse(BaseModel):
+    uid: str
+    binding_status: str
+    bound: bool
+    detail: str
+
+
+@app.get("/api/v1/me/identity", response_model=IdentityResponse)
+def me_identity(
+    caller: auth.CallerIdentity = Depends(auth.verify_caller),
+) -> IdentityResponse:
+    """
+    Report the caller's verified identity (Firebase UID, or ``supabase:<uuid>``).
+
+    Takes no parameters by design: the UID comes from the verified ID token,
+    never from the client. Returns no patient or personal data - the CNIC
+    binding that would authorise record access does not exist yet.
+    """
+    return IdentityResponse(
+        uid=caller.uid,
+        binding_status="not_implemented",
+        bound=False,
+        detail=(
+            "CNIC binding is not implemented yet. This endpoint reports "
+            "authenticated identity only and grants no record access."
+        ),
+    )
+
+
+# ------------------------------------------------------------------
+# NEMRAS Patient ID issuance
+#
+# Issues one Patient ID per verified Firebase UID. The ID locates a future
+# record slot only: it is not bound to a CNIC and opens no patient record.
+# ------------------------------------------------------------------
+_issuance_lock = threading.Lock()
+_issuance_backends: Optional[
+    Tuple[patient_id_issuance.PatientIdIssuanceLedger, patient_id.PatientIdStore]
+] = None
+
+
+def patient_id_issuance_backends() -> Tuple[
+    patient_id_issuance.PatientIdIssuanceLedger, patient_id.PatientIdStore
+]:
+    """
+    Open the issuance ledger and the configured Patient ID registry once.
+
+    The registry comes from open_patient_id_registry(), which never falls back
+    from PostgreSQL to SQLite. Only a SQLite registry has its schema created
+    here; PostgreSQL DDL stays a manual step. A failure is not cached, so the
+    next request tries again.
+    """
+    global _issuance_backends
+    with _issuance_lock:
+        if _issuance_backends is not None:
+            return _issuance_backends
+        registry = patient_id.open_patient_id_registry()
+        if isinstance(registry, patient_id.PatientIdRegistry):
+            registry.initialize_schema(create_parent=True)
+        ledger = patient_id_issuance.PatientIdIssuanceLedger()
+        ledger.initialize_schema(create_parent=True)
+        _issuance_backends = (ledger, registry)
+        return _issuance_backends
+
+
+def reset_patient_id_issuance_backends() -> None:
+    """Drop the cached ledger and registry. Used by tests."""
+    global _issuance_backends
+    with _issuance_lock:
+        _issuance_backends = None
+
+
+class PatientIdIssuanceResponse(BaseModel):
+    nemras_id: str
+    display_id: str
+    status: str
+    created_at: str
+    issued_at: str
+    newly_issued: bool
+    binding_status: str
+    record_access: str
+    detail: str
+
+
+@app.post("/api/v1/me/patient-id", response_model=PatientIdIssuanceResponse)
+def issue_my_patient_id(
+    response: Response,
+    caller: auth.CallerIdentity = Depends(auth.verify_caller),
+) -> PatientIdIssuanceResponse:
+    """
+    Issue the caller's NEMRAS Patient ID, or return the one already issued.
+
+    Takes no parameters by design: the UID comes from the verified ID token.
+    No CNIC, name, phone number or client-chosen ID is accepted. Returns 201
+    for a new issuance and 200 for a replay with the original timestamps.
+    """
+    try:
+        ledger, registry = patient_id_issuance_backends()
+        result = ledger.issue(caller.uid, registry)
+    except patient_id_issuance.IssuedIdInactiveError:
+        logger.warning("[NEMRAS] patient-id issuance: replay of an inactive ID refused")
+        raise HTTPException(
+            status_code=409,
+            detail="This account's NEMRAS Patient ID is not active. Contact support.",
+        ) from None
+    except (patient_id.PatientIdError, patient_id_issuance.IssuanceError) as exc:
+        logger.error("[NEMRAS] patient-id issuance unavailable: %s", type(exc).__name__)
+        raise HTTPException(
+            status_code=503,
+            detail="NEMRAS Patient ID issuance is temporarily unavailable.",
+        ) from None
+
+    response.status_code = 201 if result.newly_issued else 200
+    return PatientIdIssuanceResponse(
+        nemras_id=result.nemras_id,
+        display_id=result.display,
+        status=result.status,
+        created_at=result.created_at,
+        issued_at=result.issued_at,
+        newly_issued=result.newly_issued,
+        binding_status="not_bound",
+        record_access="none",
+        detail=(
+            "This NEMRAS Patient ID is not bound to a CNIC and does not open "
+            "or authorize access to any patient record."
+        ),
+    )

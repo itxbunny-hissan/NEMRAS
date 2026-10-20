@@ -1,0 +1,95 @@
+---
+description: Permanent NEMRAS development rules
+alwaysApply: true
+---
+
+# NEMRAS Development Rules
+
+## Project
+- This is an existing final-year healthcare project called NEMRAS.
+- Do not recreate the project from scratch.
+- Preserve the existing architecture unless a change is explicitly approved.
+- Inspect existing code before creating new files or components.
+
+## Flutter
+- Preserve the existing NEMRAS visual identity.
+- Reuse existing screens, widgets, models and navigation where appropriate.
+- Do not delete existing screens without explicit approval.
+- Do not create duplicate screens or duplicate app entry points.
+- Keep Android, iOS, Web, Windows and macOS builds working.
+- Run flutter analyze after Flutter changes.
+- Run relevant Flutter tests after implementation.
+
+## Backend
+- FastAPI is the NEMRAS backend.
+- Keep API contracts documented and versioned.
+- Do not expose patient data without authorization.
+- Do not modify the source dataset directly.
+- Use the backend for healthcare business logic.
+- Never put healthcare business logic only in Flutter UI.
+
+## Firebase
+- Firebase Authentication is the identity layer.
+- CNIC is a NEMRAS patient identifier, not a Firebase UID.
+- Firebase-generated UID must remain the identity identifier.
+- Never store OTP values in Firestore.
+- Temporary demo OTP is allowed only when explicitly requested.
+- Production authentication must use Firebase Authentication.
+
+## Healthcare data
+- Treat NEMRAS_Dataset.csv as read-only.
+- Never invent real patient medical records.
+- Clearly label synthetic/demo data.
+- Do not expose unnecessary patient information.
+- Patient access must be authorization-controlled and auditable.
+
+## Security
+- Never commit passwords, API secrets, private keys, service-account files or real credentials.
+- Do not expose raw patient phone numbers.
+- Emergency/break-glass access must be explicitly authorized and audited.
+- Authentication and authorization must be enforced by the backend.
+- Never rely on Flutter UI restrictions as the security boundary.
+
+## AI/ML
+- Never claim a feature is AI/ML if it is only a rule or hardcoded demo.
+- Clearly distinguish:
+  - rule-based logic
+  - trained ML models
+  - RAG
+  - LLM responses
+  - demo/mock behaviour
+- Every trained model must have reproducible evaluation.
+- AI responses must remain grounded in approved data sources.
+
+## UI/UX
+- NEMRAS must have a professional enterprise healthcare interface.
+- Maintain consistent typography, spacing, colors, cards, tables, navigation and status indicators.
+- Support responsive layouts.
+- Patient/mobile UI and hospital/desktop UI may use different layout patterns while sharing the same design language.
+- Do not randomly redesign existing screens.
+- UI references supplied by the project owner should be treated as design direction.
+
+## Architecture
+- Prefer reusable packages/components over duplicated code.
+- Keep patient, paramedic, hospital, ministry and portfolio experiences logically separated.
+- Keep shared models, API clients and design components reusable.
+- Do not introduce unnecessary dependencies.
+
+## Git
+- Never commit or push changes unless explicitly requested.
+- Before major changes, inspect git status.
+- Do not overwrite unrelated user changes.
+- Keep changes focused on the requested task.
+
+## Agent workflow
+- Work incrementally.
+- Before large changes, explain the files that will be changed.
+- Implement only the requested phase/module.
+- After implementation, run appropriate tests/analyzer.
+- Report:
+  1. files changed
+  2. features implemented
+  3. tests run
+  4. errors fixed
+  5. remaining issues
+- Do not silently implement future phases.

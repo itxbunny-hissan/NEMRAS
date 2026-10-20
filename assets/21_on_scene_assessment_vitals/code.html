@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;700&amp;family=Sora:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-surface": "#091d2b", "surface": "#f6f9ff", "tertiary-fixed-dim": "#ffb3ae", "on-secondary-container": "#266d68", "primary-container": "#0f766e", "primary-fixed-dim": "#80d5cb", "on-secondary-fixed-variant": "#00504b", "on-primary": "#ffffff", "on-surface-variant": "#3e4947", "secondary-container": "#a8ece5", "error-container": "#ffdad6", "surface-bright": "#f6f9ff", "surface-container-low": "#ecf5ff", "on-primary-fixed-variant": "#00504a", "primary-fixed": "#9cf2e8", "on-tertiary-fixed-variant": "#8f0e1a", "on-tertiary-fixed": "#410005", "secondary-fixed-dim": "#8fd3cc", "surface-container": "#e1f0ff", "error": "#ba1a1a", "surface-dim": "#c8dcf0", "inverse-surface": "#1f3241", "outline": "#6e7977", "on-background": "#091d2b", "surface-variant": "#d1e5f8", "primary": "#005c55", "tertiary": "#9e1c23", "surface-container-lowest": "#ffffff", "inverse-on-surface": "#e6f2ff", "outline-variant": "#bdc9c6", "secondary-fixed": "#abefe8", "surface-container-high": "#d6ebfe", "on-primary-container": "#a3faef", "on-secondary-fixed": "#00201e", "surface-container-highest": "#d1e5f8", "inverse-primary": "#80d5cb", "surface-tint": "#006a63", "background": "#f6f9ff", "on-primary-fixed": "#00201d", "on-error": "#ffffff", "tertiary-fixed": "#ffdad7", "on-tertiary-container": "#ffe4e1", "on-tertiary": "#ffffff", "tertiary-container": "#c03638", "on-error-container": "#93000a", "secondary": "#216963", "on-secondary": "#ffffff" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-xs": "0.25rem", "space-lg": "1.5rem", "space-sm": "0.5rem", "margin": "2rem", "gutter": "1.5rem", "space-md": "1rem", "gutter-mobile": "1rem", "margin-mobile": "1rem", "space-xl": "2rem" }, "fontFamily": { "headline-lg": ["Sora"], "headline-md": ["Sora"], "label-md": ["Inter"], "display-lg": ["Sora"], "telemetry-lg": ["JetBrains Mono"], "telemetry-sm": ["JetBrains Mono"], "headline-sm": ["Sora"], "telemetry-md": ["JetBrains Mono"], "body-sm": ["Inter"], "body-strong": ["Inter"], "body-lg": ["Inter"], "body-md": ["Inter"], "headline-lg-mobile": ["Sora"] }, "fontSize": { "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }], "label-md": ["13px", { "lineHeight": "16px", "fontWeight": "500" }], "display-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "telemetry-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "telemetry-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "500" }], "headline-sm": ["16px", { "lineHeight": "24px", "fontWeight": "600" }], "telemetry-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }], "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }], "body-strong": ["14px", { "lineHeight": "20px", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(9,29,43,0.04)]"><div class="h-16 px-gutter-mobile flex items-center justify-between"><div class="flex items-center gap-space-sm"><button aria-label="Back to overview" class="w-11 h-11 flex items-center justify-center rounded-lg text-on-surface active:bg-surface-container transition-colors" onclick="history.back()" type="button"><span class="material-symbols-outlined text-[22px]">arrow_back</span></button><div class="flex flex-col"><h1 class="font-headline-sm text-headline-sm text-on-surface tracking-tight leading-snug line-clamp-1">Clinical Record Access</h1><div class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span><span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant uppercase">CRITICAL INCIDENT</span></div></div></div><div class="flex items-center gap-space-sm"><div class="px-2 py-0.5 rounded bg-error-container text-on-error-container font-telemetry-sm text-telemetry-sm uppercase font-bold">AMB-37</div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-[0_1px_3px_rgba(0,92,85,0.2)]"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full pt-16 pb-safe bg-surface min-h-screen"><div class="flex flex-col w-full pb-8">
+<!-- Subtle Clinical Ambient Header Canvas -->
+<div class="px-gutter-mobile pt-3 pb-2 flex flex-col gap-2">
+<!-- Patient Info Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-xs">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">ecg_heart</span>
+</div>
+<div class="min-w-0">
+<h2 class="font-headline-sm text-headline-sm text-on-surface truncate">Kashaf Sajjad</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">24Y Female · Incident #PK-1122-8921</p>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 px-2 py-1 rounded bg-secondary-container text-on-secondary-container font-telemetry-sm text-telemetry-sm shrink-0">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+          09:46 PKT
+        </span>
+</div>
+<div class="flex items-center justify-between pt-1 text-on-surface-variant font-body-sm text-body-sm">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">location_on</span>
+          Sector G-9/4, On-Scene Field Triage
+        </span>
+<span class="font-telemetry-sm text-telemetry-sm text-primary font-bold">STABLE TRIAGE II</span>
+</div>
+</div>
+</div>
+<!-- Telemetry Vitals Section Header -->
+<div class="px-gutter-mobile pt-2 pb-1 flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[18px]">vital_signs</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Baseline Observations</h3>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">GLOVE-FRIENDLY CONTROLS</span>
+</div>
+<!-- Vital Cards Grid (2-column tactile layout for rapid field thumb input) -->
+<div class="px-gutter-mobile py-2 grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
+<!-- Blood Pressure -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[18px]">blood_pressure</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Blood Pressure</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-telemetry-sm text-telemetry-sm">Normotensive</span>
+</div>
+<div class="flex items-baseline justify-between">
+<div class="flex items-baseline gap-1">
+<span class="font-telemetry-lg text-telemetry-lg text-on-surface" id="bp-val">118 / 76</span>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">mmHg</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Step ±2</span>
+</div>
+<!-- Stepper Controls -->
+<div class="grid grid-cols-2 gap-2 pt-1">
+<button aria-label="Decrease blood pressure" class="h-12 bg-surface-container hover:bg-surface-container-high active:scale-95 text-on-surface font-telemetry-md text-telemetry-md rounded-lg flex items-center justify-center transition-all select-none" onclick="adjustBP(-2)" type="button">
+<span class="material-symbols-outlined text-[20px]">remove</span>
+</button>
+<button aria-label="Increase blood pressure" class="h-12 bg-surface-container hover:bg-surface-container-high active:scale-95 text-on-surface font-telemetry-md text-telemetry-md rounded-lg flex items-center justify-center transition-all select-none" onclick="adjustBP(2)" type="button">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</button>
+</div>
+</div>
+<!-- Heart Rate / Pulse -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-tertiary text-[18px]">favorite</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Heart Rate</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-telemetry-sm text-telemetry-sm font-semibold">Mild Tachycardia</span>
+</div>
+<div class="flex items-baseline justify-between">
+<div class="flex items-baseline gap-1">
+<span class="font-telemetry-lg text-telemetry-lg text-on-surface" id="hr-val">104</span>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">bpm</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+<span class="font-telemetry-sm text-telemetry-sm">Sinus</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-2 pt-1">
+<button aria-label="Decrease heart rate" class="h-12 bg-surface-container hover:bg-surface-container-high active:scale-95 text-on-surface font-telemetry-md text-telemetry-md rounded-lg flex items-center justify-center transition-all select-none" onclick="adjustVal('hr-val', -1, 30, 220)" type="button">
+<span class="material-symbols-outlined text-[20px]">remove</span>
+</button>
+<button aria-label="Increase heart rate" class="h-12 bg-surface-container hover:bg-surface-container-high active:scale-95 text-on-surface font-telemetry-md text-telemetry-md rounded-lg flex items-center justify-center transition-all select-none" onclick="adjustVal('hr-val', 1, 30, 220)" type="button">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</button>
+</div>
+</div>
+<!-- SpO2 Oxygen Saturation -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[18px]">air</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">SpO2 Saturation</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-telemetry-sm text-telemetry-sm">Ambient Air</span>
+</div>
+<div class="flex items-baseline justify-between">
+<div class="flex items-baseline gap-1">
+<span class="font-telemetry-lg text-telemetry-lg text-on-surface" id="spo2-val">96</span>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">%</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Target ≥94%</span>
+</div>
+<div class="grid grid-cols-2 gap-2 pt-1">
+<button aria-label="Decrease SpO2" class="h-12 bg-surface-container hover:bg-surface-container-high active:scale-95 text-on-surface font-telemetry-md text-telemetry-md rounded-lg flex items-center justify-center transition-all select-none" onclick="adjustVal('spo2-val', -1, 50, 100)" type="button">
+<span class="material-symbols-outlined text-[20px]">remove</span>
+</button>
+<button aria-label="Increase SpO2" class="h-12 bg-surface-container hover:bg-surface-container-high active:scale-95 text-on-surface font-telemetry-md text-telemetry-md rounded-lg flex items-center justify-center transition-all select-none" onclick="adjustVal('spo2-val', 1, 50, 100)" type="button">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</button>
+</div>
+</div>
+<!-- Respiratory Rate -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[18px]">pulmonology</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Respiratory Rate</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-telemetry-sm text-telemetry-sm">Normal Range</span>
+</div>
+<div class="flex items-baseline justify-between">
+<div class="flex items-baseline gap-1">
+<span class="font-telemetry-lg text-telemetry-lg text-on-surface" id="rr-val">20</span>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">bpm</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Regular</span>
+</div>
+<div class="grid grid-cols-2 gap-2 pt-1">
+<button aria-label="Decrease respiratory rate" class="h-12 bg-surface-container hover:bg-surface-container-high active:scale-95 text-on-surface font-telemetry-md text-telemetry-md rounded-lg flex items-center justify-center transition-all select-none" onclick="adjustVal('rr-val', -1, 6, 60)" type="button">
+<span class="material-symbols-outlined text-[20px]">remove</span>
+</button>
+<button aria-label="Increase respiratory rate" class="h-12 bg-surface-container hover:bg-surface-container-high active:scale-95 text-on-surface font-telemetry-md text-telemetry-md rounded-lg flex items-center justify-center transition-all select-none" onclick="adjustVal('rr-val', 1, 6, 60)" type="button">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Blood Glucose (RBS) Full Row -->
+<div class="px-gutter-mobile py-1">
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[22px]">water_drop</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Blood Glucose (RBS)</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-telemetry-sm text-telemetry-sm">Normal</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Capillary glucometry field sample</p>
+</div>
+</div>
+<div class="flex items-center justify-between sm:justify-end gap-4">
+<div class="flex items-baseline gap-1">
+<span class="font-telemetry-lg text-telemetry-lg text-on-surface" id="rbs-val">112</span>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">mg/dL</span>
+</div>
+<div class="flex items-center gap-2">
+<button aria-label="Decrease RBS" class="w-11 h-11 bg-surface-container hover:bg-surface-container-high active:scale-95 text-on-surface rounded-lg flex items-center justify-center transition-all select-none" onclick="adjustVal('rbs-val', -5, 20, 600)" type="button">
+<span class="material-symbols-outlined text-[20px]">remove</span>
+</button>
+<button aria-label="Increase RBS" class="w-11 h-11 bg-surface-container hover:bg-surface-container-high active:scale-95 text-on-surface rounded-lg flex items-center justify-center transition-all select-none" onclick="adjustVal('rbs-val', 5, 20, 600)" type="button">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Neurological / Consciousness Assessment -->
+<div class="px-gutter-mobile pt-4 pb-1">
+<div class="flex items-center justify-between pb-2">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[18px]">psychology</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Consciousness &amp; Neuro</h3>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">RAPID SCALE</span>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-4">
+<!-- AVPU Selection -->
+<div class="flex flex-col gap-2">
+<span class="font-label-md text-label-md text-on-surface-variant font-medium">AVPU Responsive State</span>
+<div aria-label="AVPU Scale" class="grid grid-cols-4 gap-2" role="radiogroup">
+<button class="avpu-btn h-12 rounded-lg bg-primary text-on-primary font-telemetry-md text-telemetry-md flex items-center justify-center transition-all shadow-sm" onclick="selectAvpu(this)" type="button">
+            Alert
+          </button>
+<button class="avpu-btn h-12 rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high font-telemetry-md text-telemetry-md flex items-center justify-center transition-all" onclick="selectAvpu(this)" type="button">
+            Verbal
+          </button>
+<button class="avpu-btn h-12 rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high font-telemetry-md text-telemetry-md flex items-center justify-center transition-all" onclick="selectAvpu(this)" type="button">
+            Pain
+          </button>
+<button class="avpu-btn h-12 rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high font-telemetry-md text-telemetry-md flex items-center justify-center transition-all" onclick="selectAvpu(this)" type="button">
+            Unresp
+          </button>
+</div>
+</div>
+<!-- Glasgow Coma Scale (GCS) Detail Tile -->
+<div class="bg-surface-container-low rounded-lg p-space-sm flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">neurology</span>
+</div>
+<div>
+<span class="font-body-strong text-body-strong text-on-surface">Glasgow Coma Scale</span>
+<p class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">Breakdown: E4 · V5 · M6</p>
+</div>
+</div>
+<div class="text-right">
+<span class="font-telemetry-lg text-telemetry-lg text-primary">15</span>
+<span class="font-telemetry-md text-telemetry-md text-on-surface-variant">/ 15</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Structured Clinical Observations & Symptoms -->
+<div class="px-gutter-mobile pt-4 pb-1">
+<div class="flex items-center justify-between pb-2">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[18px]">stethoscope</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Clinical Findings</h3>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Quick-Tap Assessment</span>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-4">
+<!-- Quick Checkbox Chips -->
+<div class="flex flex-col gap-2">
+<span class="font-label-md text-label-md text-on-surface-variant font-medium">Presenting Signs</span>
+<div class="grid grid-cols-2 gap-2">
+<label class="symptom-toggle flex items-center gap-2.5 p-3 rounded-lg bg-surface-container-low cursor-pointer transition-colors select-none">
+<input checked="" class="w-5 h-5 rounded accent-primary text-on-primary shrink-0" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface">Pale Skin</span>
+</label>
+<label class="symptom-toggle flex items-center gap-2.5 p-3 rounded-lg bg-surface-container-low cursor-pointer transition-colors select-none">
+<input checked="" class="w-5 h-5 rounded accent-primary text-on-primary shrink-0" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface">Diaphoretic</span>
+</label>
+<label class="symptom-toggle flex items-center gap-2.5 p-3 rounded-lg bg-surface-container-low cursor-pointer transition-colors select-none">
+<input checked="" class="w-5 h-5 rounded accent-primary text-on-primary shrink-0" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface">Sternal Tenderness</span>
+</label>
+<label class="symptom-toggle flex items-center gap-2.5 p-3 rounded-lg bg-surface-container-low cursor-pointer transition-colors select-none">
+<input checked="" class="w-5 h-5 rounded accent-primary text-on-primary shrink-0" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface">Clear Lung Sounds</span>
+</label>
+</div>
+</div>
+<!-- Whisper Audio / Field Narrative Observation Box -->
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant font-medium">Observation Narrative</span>
+<span class="flex items-center gap-1 font-telemetry-sm text-telemetry-sm text-primary">
+<span class="material-symbols-outlined text-[14px]">graphic_eq</span>
+            Whisper Transcribing
+          </span>
+</div>
+<div class="relative bg-surface-container-low rounded-xl p-3 flex flex-col gap-2">
+<textarea class="w-full bg-transparent text-on-surface font-body-md text-body-md resize-none focus:outline-none" id="obs-textarea" placeholder="Record voice observation..." rows="3">Patient reports sudden onset retrosternal chest pain following exertion. Nil radiating to jaw. Responding well to reassurance.</textarea>
+<div class="flex items-center justify-between pt-1">
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">Auto-captured at 09:48 PKT</span>
+<button aria-label="Microphone Voice Input" class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center active:scale-90 transition-transform shadow-sm" onclick="toggleVoiceInput(this)" type="button">
+<span class="material-symbols-outlined text-[20px]" id="mic-icon">mic</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Clinical Notice Pill -->
+<div class="px-gutter-mobile pt-4 pb-2">
+<div class="rounded-xl p-space-sm bg-surface-container-low flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">verified_user</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+        Field prototype tool. Does not substitute standard clinical protocols or certified telemetry devices.
+      </p>
+</div>
+</div>
+<!-- Action Buttons (Persistent Field Execution Dock) -->
+<div class="px-gutter-mobile pt-3 flex flex-col gap-2.5">
+<!-- Primary Transmission Trigger -->
+<button class="w-full h-14 bg-primary hover:bg-primary-container text-on-primary rounded-xl font-body-strong text-body-strong flex items-center justify-center gap-2 active:scale-[0.99] transition-all shadow-md" id="transmit-btn" onclick="transmitVitals()" type="button">
+<span class="material-symbols-outlined text-[22px]">send</span>
+<span id="transmit-label">Save &amp; Transmit Vitals to Receiving ER →</span>
+</button>
+<!-- Secondary Draft Button -->
+<button class="w-full h-12 bg-surface-container-lowest hover:bg-surface-container-low text-on-surface rounded-xl font-body-md text-body-md flex items-center justify-center gap-2 active:scale-[0.99] transition-all shadow-sm" onclick="saveLocalDraft()" type="button">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">save</span>
+<span>Save Local Draft (Offline)</span>
+</button>
+</div>
+<!-- Interactive Feedback Toast (Hidden by default) -->
+<div class="fixed bottom-6 left-4 right-4 z-50 bg-inverse-surface text-inverse-on-surface p-4 rounded-xl shadow-lg flex items-center gap-3 transition-opacity duration-300 opacity-0 pointer-events-none" id="toast-notify">
+<span class="material-symbols-outlined text-primary-fixed-dim text-[24px]">cloud_done</span>
+<div class="flex flex-col min-w-0">
+<span class="font-body-strong text-body-strong" id="toast-title">Vitals Synchronized</span>
+<span class="font-body-sm text-body-sm text-inverse-on-surface/80" id="toast-body">Dispatched directly to Allied Hospital Emergency Center</span>
+</div>
+</div>
+</div>
+<script>
+  let sys = 118;
+  let dia = 76;
+
+  function adjustBP(delta) {
+    sys = Math.max(70, Math.min(240, sys + delta));
+    dia = Math.max(40, Math.min(140, dia + (delta > 0 ? 1 : -1)));
+    const el = document.getElementById('bp-val');
+    if (el) el.textContent = `${sys} / ${dia}`;
+  }
+
+  function adjustVal(elementId, step, min, max) {
+    const el = document.getElementById(elementId);
+    if (!el) return;
+    let current = parseInt(el.textContent, 10);
+    if (isNaN(current)) return;
+    current = Math.max(min, Math.min(max, current + step));
+    el.textContent = current;
+  }
+
+  function selectAvpu(btn) {
+    document.querySelectorAll('.avpu-btn').forEach(b => {
+      b.className = 'avpu-btn h-12 rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high font-telemetry-md text-telemetry-md flex items-center justify-center transition-all';
+    });
+    btn.className = 'avpu-btn h-12 rounded-lg bg-primary text-on-primary font-telemetry-md text-telemetry-md flex items-center justify-center transition-all shadow-sm';
+  }
+
+  function toggleVoiceInput(btn) {
+    const mic = document.getElementById('mic-icon');
+    const ta = document.getElementById('obs-textarea');
+    if (!mic || !ta) return;
+    if (mic.textContent === 'mic') {
+      mic.textContent = 'mic_off';
+      btn.classList.add('bg-tertiary');
+      btn.classList.remove('bg-primary');
+      showToast('Whisper Microphone Active', 'Listening to field dictation...');
+    } else {
+      mic.textContent = 'mic';
+      btn.classList.add('bg-primary');
+      btn.classList.remove('bg-tertiary');
+      showToast('Recording Appended', 'Dictated voice note processed cleanly');
+    }
+  }
+
+  function transmitVitals() {
+    const btn = document.getElementById('transmit-btn');
+    const label = document.getElementById('transmit-label');
+    if (!btn || !label) return;
+
+    label.textContent = 'Transmitting to ER...';
+    btn.classList.add('opacity-80');
+
+    setTimeout(() => {
+      label.textContent = 'Transmitted to ER (Packet #8921-A)';
+      btn.classList.remove('opacity-80');
+      btn.classList.remove('bg-primary');
+      btn.classList.add('bg-secondary');
+      showToast('Vitals Transmitted', 'Telemetric payload received by ER Receiving Bay 02');
+    }, 700);
+  }
+
+  function saveLocalDraft() {
+    showToast('Saved Offline', 'Encrypted local cache updated on device AMB-37');
+  }
+
+  function showToast(title, msg) {
+    const toast = document.getElementById('toast-notify');
+    const tTitle = document.getElementById('toast-title');
+    const tBody = document.getElementById('toast-body');
+    if (!toast || !tTitle || !tBody) return;
+
+    tTitle.textContent = title;
+    tBody.textContent = msg;
+
+    toast.classList.remove('opacity-0', 'pointer-events-none');
+    toast.classList.add('opacity-100');
+
+    setTimeout(() => {
+      toast.classList.add('opacity-0', 'pointer-events-none');
+      toast.classList.remove('opacity-100');
+    }, 2800);
+  }
+</script></main></body></html>

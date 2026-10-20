@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;600&amp;family=Sora:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-primary-fixed-variant": "#00504a", "tertiary-container": "#616a74", "secondary-container": "#a8ece5", "on-error-container": "#93000a", "on-primary-container": "#a3faef", "on-secondary-fixed-variant": "#00504b", "on-primary-fixed": "#00201d", "on-tertiary-container": "#e1ebf6", "surface-container-lowest": "#ffffff", "on-secondary": "#ffffff", "on-primary": "#ffffff", "surface-container-low": "#ecf5ff", "surface-container": "#e1f0ff", "tertiary-fixed": "#dae3ef", "on-tertiary-fixed-variant": "#3f4851", "on-secondary-fixed": "#00201e", "secondary-fixed-dim": "#8fd3cc", "surface-variant": "#d1e5f8", "surface-dim": "#c8dcf0", "on-secondary-container": "#266d68", "on-error": "#ffffff", "inverse-primary": "#80d5cb", "primary-fixed-dim": "#80d5cb", "error-container": "#ffdad6", "on-tertiary-fixed": "#141c25", "background": "#f6f9ff", "primary-fixed": "#9cf2e8", "tertiary": "#49525c", "surface": "#f6f9ff", "on-tertiary": "#ffffff", "primary-container": "#0f766e", "on-surface": "#091d2b", "surface-container-highest": "#d1e5f8", "outline-variant": "#bdc9c6", "surface-bright": "#f6f9ff", "tertiary-fixed-dim": "#bec7d3", "inverse-surface": "#1f3241", "secondary": "#216963", "on-surface-variant": "#3e4947", "surface-tint": "#006a63", "primary": "#005c55", "on-background": "#091d2b", "secondary-fixed": "#abefe8", "outline": "#6e7977", "inverse-on-surface": "#e6f2ff", "surface-container-high": "#d6ebfe", "error": "#ba1a1a" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "margin": "1rem", "space-xs": "0.5rem", "space-lg": "1.5rem", "space-2xl": "3rem", "gutter-lg": "2rem", "space-xl": "2rem", "margin-lg": "2.5rem", "gutter-md": "1.5rem", "margin-md": "1.5rem", "gutter": "1rem", "space-2xs": "0.25rem", "space-sm": "0.75rem", "space-md": "1rem" }, fontFamily: { "label-md": ["Inter"], "headline-sm": ["Sora"], "headline-lg-mobile": ["Sora"], "metric-sm": ["JetBrains Mono"], "headline-md": ["Sora"], "metric-lg": ["JetBrains Mono"], "display-lg": ["Sora"], "body-sm": ["Inter"], "title-md": ["Inter"], "display-lg-mobile": ["Sora"], "headline-lg": ["Sora"], "title-lg": ["Inter"], "body-md": ["Inter"], "body-lg": ["Inter"], "metric-md": ["JetBrains Mono"], "label-sm": ["Inter"] }, fontSize: { "label-md": ["13px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "500" }], "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "600" }], "headline-lg-mobile": ["22px", { "lineHeight": "30px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "metric-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }], "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "600" }], "metric-lg": ["24px", { "lineHeight": "30px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "display-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "body-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "400" }], "title-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.005em", "fontWeight": "600" }], "display-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "title-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }], "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }], "metric-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "500" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }] } } } };</script><style>@layer base{html,body{width:100%;margin:0;padding:0;}body{overscroll-behavior:none;background-color:#f6f9ff;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface antialiased min-h-screen flex flex-col"><header class="fixed top-0 w-full z-50 pt-safe bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(9,29,43,0.04)]"><div class="h-6 px-margin flex items-center justify-between font-metric-sm text-metric-sm text-on-surface-variant"><span class="font-medium">09:41</span><div class="flex items-center gap-space-2xs"><span class="material-symbols-outlined text-[14px]">signal_cellular_alt</span><span class="font-semibold">5G</span><span class="material-symbols-outlined text-[16px]">battery_full</span></div></div><div class="h-16 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0 flex-1"><div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-primary text-[22px]">local_hospital</span></div><div class="flex flex-col min-w-0"><div class="flex items-center gap-space-2xs"><span class="font-headline-sm text-headline-sm text-on-surface truncate tracking-tight">Ems Transit Route</span></div><span class="font-label-sm text-label-sm text-on-surface-variant truncate">NEMRAS · National Health Network</span></div></div><div class="flex items-center gap-space-xs shrink-0"><button aria-label="Emergency Alert Beacon" class="min-w-[44px] min-h-[44px] p-space-2xs rounded-full bg-error-container text-error flex items-center justify-center hover:opacity-90 active:scale-95 transition-all" type="button"><span class="material-symbols-outlined text-[22px]">e911_emergency</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 w-full bg-surface pt-22 pb-24 px-margin flex flex-col"><div class="flex flex-col w-full space-y-space-md">
+<!-- TOP TURN-BY-TURN HUD (Light Clinical Card) -->
+<section class="relative bg-surface-container-lowest rounded-xl shadow-sm p-space-md overflow-hidden">
+<!-- Left Accent Rail -->
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-primary"></div>
+<div class="flex items-center justify-between gap-space-sm pl-space-xs">
+<!-- Turn Instruction & Icon -->
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-12 h-12 rounded-xl bg-secondary-container flex items-center justify-center shrink-0 shadow-sm text-primary">
+<span class="material-symbols-outlined text-[28px]">turn_right</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-2xs">
+<span class="font-headline-sm text-headline-sm text-on-surface truncate">In 450m</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">· Next Action</span>
+</div>
+<span class="font-title-md text-title-md text-on-surface-variant truncate">Turn Right onto Nishtar Rd</span>
+</div>
+</div>
+<!-- Speed readout in Mono -->
+<div class="flex flex-col items-end shrink-0 pl-space-xs">
+<span class="font-metric-lg text-metric-lg text-primary tracking-tight">45</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">km/h</span>
+</div>
+</div>
+<!-- Active Protocol Indicators -->
+<div class="mt-space-sm pt-space-xs flex items-center justify-between gap-space-xs">
+<div class="inline-flex items-center gap-space-2xs px-space-sm py-1 rounded-full bg-secondary-container/40 text-primary">
+<span class="material-symbols-outlined text-[16px]">traffic</span>
+<span class="font-label-sm text-label-sm">Emergency Green Wave Active</span>
+</div>
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant">
+<span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+<span class="font-label-sm text-label-sm">Siren Relay Synced</span>
+</div>
+</div>
+</section>
+<!-- DESTINATION & TIMING BANNER -->
+<section class="bg-surface-container-lowest rounded-xl shadow-sm p-space-md flex flex-col space-y-space-sm">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-2xs mb-0.5">
+<span class="material-symbols-outlined text-error text-[18px]">local_hospital</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-error font-semibold">Priority Trauma Transfer</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface truncate">Nishtar Hospital &amp; Medical University</h2>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Gate 2 Adult Emergency Complex</span>
+</div>
+<div class="px-space-sm py-1 rounded-full bg-secondary-container text-on-secondary-container shrink-0 self-start shadow-sm">
+<span class="font-label-sm text-label-sm">Saves 4 min</span>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-lg p-space-sm flex items-center justify-between">
+<div class="flex items-baseline gap-space-2xs">
+<span class="font-metric-lg text-metric-lg text-on-surface font-semibold tracking-tight">06:14</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Remaining</span>
+</div>
+<div class="flex items-center gap-space-xs font-metric-sm text-metric-sm text-on-surface-variant">
+<span class="font-medium text-on-surface">ETA 6 MIN</span>
+<span>•</span>
+<span>3.2 km</span>
+</div>
+</div>
+</section>
+<!-- LIGHT VECTOR MAP NAVIGATION VIEW -->
+<section class="relative w-full h-72 rounded-xl overflow-hidden shadow-sm bg-surface-container-high">
+<!-- Medical Cartography SVG Graphic -->
+<svg class="w-full h-full object-cover" preserveaspectratio="none" viewbox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<!-- Water body (Medical soft blue) -->
+<path d="M-10,220 C80,210 130,260 210,240 C280,220 340,270 420,250 L420,310 L-10,310 Z" fill="#d1e5f8"></path>
+<!-- Park Lands (Pale Mint) -->
+<rect fill="#a8ece5" height="90" opacity="0.45" rx="16" width="120" x="260" y="40"></rect>
+<rect fill="#a8ece5" height="70" opacity="0.35" rx="12" width="70" x="30" y="80"></rect>
+<!-- Street Grid Network (Cool Light Surface Background) -->
+<!-- Secondary grid lines -->
+<line stroke="#ffffff" stroke-width="6" x1="20" x2="20" y1="0" y2="300"></line>
+<line stroke="#ffffff" stroke-width="8" x1="140" x2="140" y1="0" y2="300"></line>
+<line stroke="#ffffff" stroke-width="6" x1="240" x2="240" y1="0" y2="300"></line>
+<line stroke="#ffffff" stroke-width="10" x1="360" x2="360" y1="0" y2="300"></line>
+<line stroke="#ffffff" stroke-width="7" x1="0" x2="400" y1="60" y2="60"></line>
+<line stroke="#ffffff" stroke-width="9" x1="0" x2="400" y1="130" y2="130"></line>
+<line stroke="#ffffff" stroke-width="6" x1="0" x2="400" y1="190" y2="190"></line>
+<!-- Transit/Traffic Green corridor halo -->
+<path d="M 60,250 L 140,210 L 140,110 L 290,110 L 330,50" fill="none" opacity="0.6" stroke="#a8ece5" stroke-linecap="round" stroke-linejoin="round" stroke-width="14"></path>
+<!-- Navigation Transit Route (Primary Teal) -->
+<path d="M 60,250 L 140,210 L 140,110 L 290,110 L 330,50" fill="none" id="ambulance-route" stroke="#005c55" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"></path>
+<!-- Checkpoint Markers along the line -->
+<circle cx="140" cy="160" fill="#005c55" r="5" stroke="#ffffff" stroke-width="2"></circle>
+<circle cx="215" cy="110" fill="#005c55" r="5" stroke="#ffffff" stroke-width="2"></circle>
+</svg>
+<!-- Overlay Tag: Checkpoint Liaquat -->
+<div class="absolute top-36 left-28 bg-surface-container-lowest/95 backdrop-blur-md px-2 py-0.5 rounded-full shadow-sm">
+<span class="font-metric-sm text-metric-sm text-on-surface">Liaquat: 11m</span>
+</div>
+<!-- Overlay Tag: Checkpoint Civil -->
+<div class="absolute top-20 left-48 bg-surface-container-lowest/95 backdrop-blur-md px-2 py-0.5 rounded-full shadow-sm">
+<span class="font-metric-sm text-metric-sm text-on-surface">Civil: 14m</span>
+</div>
+<!-- Ambulance Location Puck (Bottom Left) -->
+<div class="absolute bottom-9 left-11 transform -translate-x-1/2 -translate-y-1/2 flex items-center justify-center">
+<!-- Radiating Directional Cone -->
+<div class="absolute -top-10 w-16 h-16 bg-gradient-to-t from-primary/30 to-transparent clip-path-cone pointer-events-none rounded-full blur-xs"></div>
+<!-- Center Puck -->
+<div class="w-8 h-8 rounded-full bg-surface-container-lowest shadow-md flex items-center justify-center">
+<div class="w-4 h-4 rounded-full bg-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary text-[11px]">navigation</span>
+</div>
+</div>
+</div>
+<!-- Destination Hospital Pin (Top Right) -->
+<div class="absolute top-7 right-8 flex flex-col items-center">
+<div class="bg-error text-on-error rounded-full p-1.5 shadow-md flex items-center justify-center mb-1">
+<span class="material-symbols-outlined text-[18px]">local_hospital</span>
+</div>
+<div class="bg-surface-container-lowest/95 px-space-xs py-1 rounded-full shadow-md flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Bay #3 Reserved</span>
+</div>
+</div>
+<!-- Map Floating Compass & Recenter HUD -->
+<div class="absolute bottom-space-sm right-space-sm flex flex-col gap-space-2xs">
+<button aria-label="Compass" class="w-9 h-9 rounded-full bg-surface-container-lowest shadow-sm flex items-center justify-center text-on-surface-variant hover:text-primary active:scale-95 transition-transform" type="button">
+<span class="material-symbols-outlined text-[18px]">explore</span>
+</button>
+<button aria-label="Recenter Map" class="w-9 h-9 rounded-full bg-surface-container-lowest shadow-sm flex items-center justify-center text-primary active:scale-95 transition-transform" type="button">
+<span class="material-symbols-outlined text-[18px]">my_location</span>
+</button>
+</div>
+</section>
+<!-- LIVE STREAMING AMBULANCE TELEMETRY BAR -->
+<section class="bg-surface-container-low rounded-xl p-space-md shadow-sm space-y-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-secondary-container text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">sensors</span>
+</div>
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-wide">Live Stream to Hospital</span>
+<span class="font-metric-sm text-metric-sm text-on-surface-variant">42ms Latency</span>
+</div>
+<p class="font-metric-sm text-metric-sm text-on-surface font-medium truncate mt-0.5">
+          HR 118 <span class="text-on-surface-variant">·</span> BP 88/54 <span class="text-on-surface-variant">·</span> SpO2 94%
+        </p>
+</div>
+</div>
+<!-- Quick Alert Action -->
+<button class="w-full py-2.5 px-space-md rounded-lg bg-error-container text-error font-title-md text-title-md flex items-center justify-center gap-space-xs hover:bg-error-container/80 active:scale-98 transition-all" id="broadcastBtn" type="button">
+<span class="material-symbols-outlined text-[20px]">notification_important</span>
+<span>Broadcast 3-Minute Arrival Alert</span>
+</button>
+</section>
+<!-- ICU & EMERGENCY TELEMETRY READOUT (Light Card Grid) -->
+<section class="bg-surface-container-lowest rounded-xl shadow-sm p-space-md">
+<div class="flex items-center justify-between pb-space-sm">
+<div class="flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-primary text-[20px]">monitor_heart</span>
+<h3 class="font-title-lg text-title-lg text-on-surface">ICU &amp; Emergency Telemetry</h3>
+</div>
+<span class="font-metric-sm text-metric-sm text-on-surface-variant">Synced 10s ago</span>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<!-- 1. Cath Lab -->
+<div class="bg-surface-container-low p-space-sm rounded-lg flex flex-col justify-between space-y-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Cath Lab</span>
+<span class="w-2.5 h-2.5 rounded-full bg-primary ring-2 ring-secondary-container"></span>
+</div>
+<div>
+<span class="font-title-md text-title-md text-on-surface block font-semibold">Available</span>
+<span class="font-body-sm text-body-sm text-primary">Team Standby</span>
+</div>
+</div>
+<!-- 2. Resus Bays -->
+<div class="bg-surface-container-low p-space-sm rounded-lg flex flex-col justify-between space-y-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Resus Bays</span>
+<span class="font-metric-sm text-metric-sm text-primary font-bold">2/6 Free</span>
+</div>
+<div>
+<span class="font-title-md text-title-md text-on-surface block font-semibold">Assigned Bay 03</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Locked for Unit</span>
+</div>
+</div>
+<!-- 3. Trauma Staff -->
+<div class="bg-surface-container-low p-space-sm rounded-lg flex flex-col justify-between space-y-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Trauma Staff</span>
+<span class="material-symbols-outlined text-primary text-[18px]">verified</span>
+</div>
+<div>
+<span class="font-title-md text-title-md text-on-surface block font-semibold truncate">Dr. F. Alam</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Pre-briefed &amp; Ready</span>
+</div>
+</div>
+<!-- 4. Blood Bank -->
+<div class="bg-error-container/40 p-space-sm rounded-lg flex flex-col justify-between space-y-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-error font-medium">Blood Bank</span>
+<span class="material-symbols-outlined text-error text-[18px]">water_drop</span>
+</div>
+<div>
+<span class="font-title-md text-title-md text-error block font-semibold">8 Units B+</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Crossmatch Ready</span>
+</div>
+</div>
+</div>
+</section>
+<!-- BOTTOM HANDOVER ACTIONS -->
+<footer class="pt-space-xs flex flex-col space-y-space-xs">
+<button class="w-full h-12 rounded-lg bg-primary text-on-primary font-title-lg text-title-lg shadow-sm flex items-center justify-center gap-space-2xs active:scale-98 transition-all hover:bg-primary-container" id="confirmHandoverBtn" type="button">
+<span>Confirm Patient Handover at Bay</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+<button class="w-full h-11 rounded-lg bg-surface-container-lowest text-on-surface font-title-md text-title-md shadow-sm hover:bg-surface-container-low active:scale-98 transition-all flex items-center justify-center gap-space-2xs" type="button">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">alt_route</span>
+<span>Reroute to Alternate Hospital</span>
+</button>
+</footer>
+</div>
+<script>
+  (function() {
+    const broadcastBtn = document.getElementById('broadcastBtn');
+    if (broadcastBtn) {
+      broadcastBtn.addEventListener('click', function() {
+        const originalContent = this.innerHTML;
+        this.innerHTML = '<span class="material-symbols-outlined text-[20px] animate-spin">sync</span><span>Transmitting Alert Beacon...</span>';
+        this.classList.add('opacity-75');
+        
+        setTimeout(() => {
+          this.innerHTML = '<span class="material-symbols-outlined text-[20px]">check_circle</span><span>Bay 03 Team Acknowledged (Arrival in 3m)</span>';
+          this.classList.remove('opacity-75', 'bg-error-container', 'text-error');
+          this.classList.add('bg-secondary-container', 'text-on-secondary-container');
+        }, 800);
+      });
+    }
+
+    const handoverBtn = document.getElementById('confirmHandoverBtn');
+    if (handoverBtn) {
+      handoverBtn.addEventListener('click', function() {
+        this.textContent = 'Bay #03 Door Gate Unlocked · Ready';
+        this.classList.add('bg-secondary');
+      });
+    }
+  })();
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface-container-lowest/95 backdrop-blur-xl shadow-[0_-2px_12px_rgba(9,29,43,0.05)]" data-active-classes="text-primary [&amp;&gt;div]:bg-secondary-container [&amp;&gt;div]:text-primary font-semibold"><div class="h-16 px-space-xs flex items-center justify-around"><a class="flex flex-col items-center justify-center min-w-[54px] min-h-[44px] py-space-2xs text-on-surface-variant hover:text-on-surface transition-colors" data-path="paramedic-triage" href="#"><div class="w-10 h-7 rounded-full flex items-center justify-center mb-0.5 transition-colors"><span class="material-symbols-outlined text-[20px]">emergency</span></div><span class="font-label-sm text-label-sm">Triage</span></a><a class="flex flex-col items-center justify-center min-w-[54px] min-h-[44px] py-space-2xs text-on-surface-variant hover:text-on-surface transition-colors" data-path="quick-scan" href="#"><div class="w-10 h-7 rounded-full flex items-center justify-center mb-0.5 transition-colors"><span class="material-symbols-outlined text-[20px]">qr_code_scanner</span></div><span class="font-label-sm text-label-sm">Scan</span></a><a class="flex flex-col items-center justify-center min-w-[54px] min-h-[44px] py-space-2xs text-on-surface-variant hover:text-on-surface transition-colors" data-path="clinical-voice" href="#"><div class="w-10 h-7 rounded-full flex items-center justify-center mb-0.5 transition-colors"><span class="material-symbols-outlined text-[20px]">mic</span></div><span class="font-label-sm text-label-sm">Voice</span></a><a aria-current="page" class="flex flex-col items-center justify-center min-w-[54px] min-h-[44px] py-space-2xs transition-colors text-primary [&amp;&gt;div]:bg-secondary-container [&amp;&gt;div]:text-primary font-semibold" data-path="ems-transit-route" href="#"><div class="w-10 h-7 rounded-full flex items-center justify-center mb-0.5 transition-colors"><span class="material-symbols-outlined text-[20px]">alt_route</span></div><span class="font-label-sm text-label-sm">Route</span></a><a class="flex flex-col items-center justify-center min-w-[54px] min-h-[44px] py-space-2xs text-on-surface-variant hover:text-on-surface transition-colors" data-path="operator-profile" href="#"><div class="w-10 h-7 rounded-full flex items-center justify-center mb-0.5 transition-colors"><span class="material-symbols-outlined text-[20px]">account_circle</span></div><span class="font-label-sm text-label-sm">Profile</span></a></div></nav></body></html>

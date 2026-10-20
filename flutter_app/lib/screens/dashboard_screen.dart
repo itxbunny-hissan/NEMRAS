@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../theme.dart';
 import '../api.dart';
-import 'summary_screen.dart';
+import '../navigation/app_router.dart';
 
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({super.key});
@@ -37,9 +37,12 @@ class _DashboardScreenState extends State<DashboardScreen> {
         _critical = results[1] as List<Map<String, dynamic>>;
         _loading = false;
       });
-    } catch (e) {
+    } on ApiException catch (e) {
+      if (!mounted) return;
       setState(() {
-        _error = 'Cannot reach backend. Start the server and check kBaseUrl.';
+        _error = e.isConnectivityIssue
+            ? 'Cannot reach backend. Start the server and check NEMRAS_API_URL.'
+            : e.message;
         _loading = false;
       });
     }
@@ -250,12 +253,12 @@ class _DashboardScreenState extends State<DashboardScreen> {
               try {
                 final record = await Api.getPatient(p['CNIC']);
                 if (!mounted) return;
-                Navigator.push(context,
-                    MaterialPageRoute(
-                        builder: (_) => SummaryScreen(record: record)));
-              } catch (e) {
-                ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text('Error: $e')));
+                Navigator.push(
+                    context, AppRouter.patientSummary(record));
+              } on ApiException catch (e) {
+                if (!mounted) return;
+                ScaffoldMessenger.of(context)
+                    .showSnackBar(SnackBar(content: Text(e.message)));
               }
             },
             leading: CircleAvatar(

@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;700&amp;family=Sora:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-tertiary": "#ffffff", "error": "#ba1a1a", "surface-container-high": "#d6ebfe", "tertiary-fixed": "#ffdad7", "primary-fixed": "#9cf2e8", "inverse-primary": "#80d5cb", "secondary": "#216963", "on-primary-container": "#a3faef", "outline-variant": "#bdc9c6", "secondary-fixed": "#abefe8", "tertiary-container": "#c03638", "on-error-container": "#93000a", "on-primary-fixed-variant": "#00504a", "surface-container-low": "#ecf5ff", "on-secondary-fixed": "#00201e", "primary": "#005c55", "surface-variant": "#d1e5f8", "surface-container-highest": "#d1e5f8", "inverse-on-surface": "#e6f2ff", "background": "#f6f9ff", "outline": "#6e7977", "on-error": "#ffffff", "on-surface-variant": "#3e4947", "on-surface": "#091d2b", "surface-tint": "#006a63", "on-secondary": "#ffffff", "secondary-fixed-dim": "#8fd3cc", "inverse-surface": "#1f3241", "on-tertiary-fixed": "#410005", "surface-dim": "#c8dcf0", "surface-container": "#e1f0ff", "on-primary": "#ffffff", "tertiary-fixed-dim": "#ffb3ae", "on-primary-fixed": "#00201d", "on-secondary-container": "#266d68", "on-background": "#091d2b", "surface-bright": "#f6f9ff", "surface-container-lowest": "#ffffff", "error-container": "#ffdad6", "tertiary": "#9e1c23", "on-tertiary-fixed-variant": "#8f0e1a", "on-secondary-fixed-variant": "#00504b", "primary-container": "#0f766e", "surface": "#f6f9ff", "on-tertiary-container": "#ffe4e1", "primary-fixed-dim": "#80d5cb", "secondary-container": "#a8ece5" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "gutter": "1.5rem", "space-lg": "1.5rem", "space-xs": "0.25rem", "space-sm": "0.5rem", "space-md": "1rem", "margin-mobile": "1rem", "space-xl": "2rem", "gutter-mobile": "1rem", "margin": "2rem" }, fontFamily: { "telemetry-sm": ["JetBrains Mono"], "telemetry-lg": ["JetBrains Mono"], "headline-lg": ["Sora"], "headline-md": ["Sora"], "telemetry-md": ["JetBrains Mono"], "body-md": ["Inter"], "body-sm": ["Inter"], "body-lg": ["Inter"], "label-md": ["Inter"], "headline-sm": ["Sora"], "display-lg": ["Sora"], "headline-lg-mobile": ["Sora"], "body-strong": ["Inter"] }, fontSize: { "telemetry-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "500" }], "telemetry-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }], "telemetry-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "label-md": ["13px", { "lineHeight": "16px", "fontWeight": "500" }], "headline-sm": ["16px", { "lineHeight": "24px", "fontWeight": "600" }], "display-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "body-strong": ["14px", { "lineHeight": "20px", "fontWeight": "600" }] } } } };</script><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-background font-body-md text-on-surface antialiased flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-gutter-mobile flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><button aria-label="Back" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface hover:bg-surface-container-high transition-colors shrink-0" onclick="history.back()"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><div class="flex flex-col min-w-0"><h1 class="font-headline-sm text-headline-sm text-on-surface truncate">Emergency Intake Flow</h1><span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant truncate">NEMRAS Clinical Session</span></div></div><div class="flex items-center gap-space-xs shrink-0"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full pt-16 pb-safe bg-background min-h-screen"><div class="flex flex-col w-full pb-safe">
+<!-- Status Feedback Banner (Pre-confirmation live cue) -->
+<div class="mx-margin-mobile mt-space-md mb-space-sm p-space-md rounded-xl bg-surface-container-low shadow-sm flex items-center gap-space-md transition-all duration-300" id="handoff-feedback-banner">
+<div class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">published_with_changes</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="font-telemetry-sm text-telemetry-sm text-primary font-bold">CAD ACTIVE HANDOFF</span>
+<span class="inline-block w-2 h-2 rounded-full bg-primary animate-ping"></span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate" id="cad-status-text">
+        Syncing custody transfer · Incident #PK-1122-8921 pending signature
+      </p>
+</div>
+</div>
+<!-- Incident Identity Card (Top Clinical Anchor) -->
+<section class="mx-margin-mobile mb-space-md">
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex items-start justify-between gap-space-sm mb-space-sm">
+<div class="min-w-0">
+<div class="flex items-center gap-space-xs flex-wrap mb-1">
+<span class="bg-secondary-container text-on-secondary-container font-telemetry-sm text-telemetry-sm px-2.5 py-0.5 rounded-full font-bold">
+              #PK-1122-8921
+            </span>
+<span class="bg-surface-container-high text-on-surface-variant font-telemetry-sm text-telemetry-sm px-2 py-0.5 rounded-full">
+              Unit AMB-37 (Rescue 1122)
+            </span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface truncate">
+            Kashaf Sajjad <span class="font-telemetry-md text-telemetry-md text-on-surface-variant">(24F)</span>
+</h2>
+</div>
+<div class="bg-primary/10 text-primary px-3 py-1.5 rounded-lg flex flex-col items-end shrink-0 text-right">
+<span class="font-label-md text-label-md font-semibold">Bay 03</span>
+<span class="font-telemetry-sm text-telemetry-sm opacity-80">Trauma Resus</span>
+</div>
+</div>
+<!-- Lead Contact Details Split -->
+<div class="grid grid-cols-2 gap-space-sm pt-space-xs mt-space-xs bg-surface-container-low rounded-lg p-space-sm">
+<div class="flex items-center gap-space-xs min-w-0">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0">emergency</span>
+<div class="min-w-0">
+<p class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">Handing Over</p>
+<p class="font-body-strong text-body-strong text-on-surface truncate">Lead A. Khan (#4421)</p>
+</div>
+</div>
+<div class="flex items-center gap-space-xs min-w-0">
+<span class="material-symbols-outlined text-secondary text-[18px] shrink-0">stethoscope</span>
+<div class="min-w-0">
+<p class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">Receiving MD</p>
+<p class="font-body-strong text-body-strong text-on-surface truncate">Dr. F. Alam (#8812)</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Structured SBAR Cards Section -->
+<section class="mx-margin-mobile mb-space-lg flex flex-col gap-space-sm">
+<div class="flex items-center justify-between px-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">assignment_turned_in</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Structured SBAR Transfer</h3>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-primary font-semibold">RESCUE 1122 CERTIFIED</span>
+</div>
+<!-- S - Situation -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-primary"></div>
+<div class="flex items-start gap-space-sm">
+<span class="w-7 h-7 rounded-lg bg-primary-fixed text-on-primary-fixed-variant flex items-center justify-center font-telemetry-md text-telemetry-md font-bold shrink-0">
+          S
+        </span>
+<div class="min-w-0 flex-1">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Situation</span>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">09:35 PKT</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface mt-0.5 leading-snug">
+            Sudden onset retrosternal chest pain accompanied by acute dyspnea during transit.
+          </p>
+</div>
+</div>
+</div>
+<!-- B - Background -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-tertiary"></div>
+<div class="flex items-start gap-space-sm">
+<span class="w-7 h-7 rounded-lg bg-tertiary-fixed text-on-tertiary-fixed-variant flex items-center justify-center font-telemetry-md text-telemetry-md font-bold shrink-0">
+          B
+        </span>
+<div class="min-w-0 flex-1">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Background &amp; Allergies</span>
+<span class="bg-error-container text-on-error-container font-telemetry-sm text-telemetry-sm px-2 py-0.2 rounded-full font-bold">CRITICAL ALLERGY</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface mt-0.5 leading-snug">
+            Known bronchial asthma on regular Albuterol MDI. 
+            <span class="font-body-strong text-body-strong text-error block mt-1">
+              ⚠️ Severe Penicillin anaphylaxis history recorded in CAD.
+            </span>
+</p>
+</div>
+</div>
+</div>
+<!-- A - Assessment -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-secondary"></div>
+<div class="flex items-start gap-space-sm">
+<span class="w-7 h-7 rounded-lg bg-secondary-fixed text-on-secondary-fixed-variant flex items-center justify-center font-telemetry-md text-telemetry-md font-bold shrink-0">
+          A
+        </span>
+<div class="min-w-0 flex-1">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Assessment &amp; Vitals</span>
+<span class="font-telemetry-sm text-telemetry-sm text-secondary font-medium">On Arrival</span>
+</div>
+<!-- Quick Vitals Pill Matrix -->
+<div class="grid grid-cols-3 gap-2 mb-2">
+<div class="bg-surface-container-low p-2 rounded-lg text-center">
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant block">BP</span>
+<span class="font-telemetry-md text-telemetry-md text-on-surface font-bold">118/76</span>
+</div>
+<div class="bg-surface-container-low p-2 rounded-lg text-center">
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant block">HR</span>
+<span class="font-telemetry-md text-telemetry-md text-on-surface font-bold">104 <span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">sinus</span></span>
+</div>
+<div class="bg-surface-container-low p-2 rounded-lg text-center">
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant block">SpO2</span>
+<span class="font-telemetry-md text-telemetry-md text-primary font-bold">96%</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            IV access secured: 18G left antecubital primed with normal saline at 50 mL/hr KVO.
+          </p>
+</div>
+</div>
+</div>
+<!-- R - Recommendation -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-primary-container"></div>
+<div class="flex items-start gap-space-sm">
+<span class="w-7 h-7 rounded-lg bg-primary-container text-on-primary flex items-center justify-center font-telemetry-md text-telemetry-md font-bold shrink-0">
+          R
+        </span>
+<div class="min-w-0 flex-1">
+<span class="font-label-md text-label-md text-on-surface font-semibold block mb-0.5">Recommendation &amp; Orders</span>
+<p class="font-body-md text-body-md text-on-surface leading-snug">
+            Immediate 12-lead ECG, stat high-sensitivity Troponin panel, and portable AP chest radiograph.
+          </p>
+<div class="mt-2 bg-error-container text-on-error-container p-2 rounded-lg font-body-sm text-body-sm font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]">block</span>
+            Hold all beta-lactam antibiotics.
+          </div>
+</div>
+</div>
+</div>
+</section>
+<!-- Joint Handoff Checklist -->
+<section class="mx-margin-mobile mb-space-lg">
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex items-center justify-between mb-space-md">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Joint Verification Checklist</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Mandatory mutual clearance prior to sign-off</p>
+</div>
+<span class="bg-secondary-container text-on-secondary-container font-telemetry-sm text-telemetry-sm px-2.5 py-0.5 rounded-full font-bold" id="checklist-counter">
+          3/4 Complete
+        </span>
+</div>
+<div class="space-y-space-sm" id="checklist-group">
+<!-- Item 1 (Checked) -->
+<label class="flex items-center gap-space-sm p-3 rounded-lg bg-surface-container-low cursor-pointer transition-colors hover:bg-surface-container">
+<input checked="" class="w-5 h-5 rounded text-primary accent-primary cursor-pointer checklist-toggle" onchange="updateChecklistProgress()" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface flex-1">Verbal SBAR Briefing received &amp; verified</span>
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+</label>
+<!-- Item 2 (Checked) -->
+<label class="flex items-center gap-space-sm p-3 rounded-lg bg-surface-container-low cursor-pointer transition-colors hover:bg-surface-container">
+<input checked="" class="w-5 h-5 rounded text-primary accent-primary cursor-pointer checklist-toggle" onchange="updateChecklistProgress()" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface flex-1">Physical Custody transferred to Gurney Bay 03</span>
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+</label>
+<!-- Item 3 (Checked) -->
+<label class="flex items-center gap-space-sm p-3 rounded-lg bg-surface-container-low cursor-pointer transition-colors hover:bg-surface-container">
+<input checked="" class="w-5 h-5 rounded text-primary accent-primary cursor-pointer checklist-toggle" onchange="updateChecklistProgress()" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface flex-1">Paramedic field assessment notes &amp; EKG strip received</span>
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+</label>
+<!-- Item 4 (Unchecked initially for interactive delight) -->
+<label class="flex items-center gap-space-sm p-3 rounded-lg bg-surface-container-high cursor-pointer transition-all hover:bg-surface-container" id="item-valuables-container">
+<input class="w-5 h-5 rounded text-primary accent-primary cursor-pointer checklist-toggle" id="item-valuables" onchange="updateChecklistProgress()" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface font-semibold flex-1">Belongings &amp; Valuables logged (Bag &amp; ID verified)</span>
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]" id="valuables-icon">pending</span>
+</label>
+</div>
+</div>
+</section>
+<!-- Admission & Transfer Disposition -->
+<section class="mx-margin-mobile mb-space-lg">
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-1">Admission &amp; Transfer Disposition</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">Assign receiving clinical care unit pathway</p>
+<!-- Destination Decision Radio Cluster -->
+<div aria-label="Destination Decision" class="space-y-space-xs mb-space-md" role="radiogroup">
+<!-- Option 1: Selected -->
+<label class="disposition-option flex items-center justify-between p-3 rounded-xl bg-secondary-container/30 cursor-pointer transition-all">
+<div class="flex items-center gap-space-sm min-w-0">
+<input checked="" class="w-5 h-5 text-primary accent-primary" name="disposition" onchange="handleDispositionChange(this)" type="radio" value="obs"/>
+<div class="min-w-0">
+<span class="font-body-strong text-body-strong text-on-surface block">Admit to Emergency Observation</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Step-down continuous monitoring</span>
+</div>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm bg-surface-container-lowest text-primary px-2.5 py-1 rounded-full font-bold shrink-0">BED 03-B</span>
+</label>
+<!-- Option 2 -->
+<label class="disposition-option flex items-center justify-between p-3 rounded-xl bg-surface-container-low cursor-pointer transition-all">
+<div class="flex items-center gap-space-sm min-w-0">
+<input class="w-5 h-5 text-primary accent-primary" name="disposition" onchange="handleDispositionChange(this)" type="radio" value="ccu"/>
+<div class="min-w-0">
+<span class="font-body-strong text-body-strong text-on-surface block">Direct Transfer to CCU</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Critical cardiac care priority</span>
+</div>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant px-2 py-1 shrink-0">CCU-2</span>
+</label>
+<!-- Option 3 -->
+<label class="disposition-option flex items-center justify-between p-3 rounded-xl bg-surface-container-low cursor-pointer transition-all">
+<div class="flex items-center gap-space-sm min-w-0">
+<input class="w-5 h-5 text-primary accent-primary" name="disposition" onchange="handleDispositionChange(this)" type="radio" value="discharge"/>
+<div class="min-w-0">
+<span class="font-body-strong text-body-strong text-on-surface block">Discharge after Evaluation</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Outpatient cardiology follow-up</span>
+</div>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant px-2 py-1 shrink-0">AMB OPD</span>
+</label>
+</div>
+<!-- Attending Admission Notes Textbox -->
+<div>
+<div class="flex items-center justify-between mb-1.5">
+<label class="font-label-md text-label-md text-on-surface font-semibold" for="admission-notes">
+            Attending Admission Clinical Note
+          </label>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">Auto-appended to EHR</span>
+</div>
+<textarea class="w-full bg-surface-container-low text-on-surface rounded-xl p-space-sm font-body-md text-body-md focus:outline-none focus:bg-surface-container-lowest transition-colors" id="admission-notes" placeholder="Add specific attending clinical directives..." rows="3">Patient placed on continuous cardiac telemetry. 12-lead ECG ordered.</textarea>
+</div>
+</div>
+</section>
+<!-- Dual-Sign-off Verification Card -->
+<section class="mx-margin-mobile mb-space-lg">
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex items-center gap-space-xs mb-space-md">
+<span class="material-symbols-outlined text-primary text-[22px]">draw</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Dual-Sign-off Verification</h3>
+</div>
+<!-- Staff Signature Blocks -->
+<div class="space-y-space-sm">
+<!-- Paramedic Sign-off (Authenticated) -->
+<div class="p-space-sm rounded-xl bg-surface-container-low flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-9 h-9 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+</div>
+<div class="min-w-0">
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant block">Paramedic Authenticated</span>
+<span class="font-body-strong text-body-strong text-on-surface truncate block">A. Khan (Rescue 1122 #4421)</span>
+</div>
+</div>
+<span class="bg-surface-container-highest text-secondary font-telemetry-sm text-telemetry-sm px-2.5 py-1 rounded-full font-bold flex items-center gap-1 shrink-0">
+            09:58 PKT <span class="material-symbols-outlined text-[14px]">check</span>
+</span>
+</div>
+<!-- Receiving Clinician Sign-off Interactive Trigger -->
+<button class="w-full p-space-sm rounded-xl bg-surface-container text-left transition-all hover:bg-surface-container-high flex items-center justify-between gap-space-sm" id="signoff-button" onclick="toggleDoctorSignature()" type="button">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-9 h-9 rounded-full bg-primary/20 text-primary flex items-center justify-center shrink-0 transition-colors" id="signoff-icon-wrap">
+<span class="material-symbols-outlined text-[18px]" id="signoff-icon">edit_document</span>
+</div>
+<div class="min-w-0">
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant block" id="signoff-label">Receiving Resident Sign-off</span>
+<span class="font-body-strong text-body-strong text-on-surface truncate block" id="signoff-name">Dr. F. Alam (#8812) - Tap to Sign Digitally</span>
+</div>
+</div>
+<span class="bg-primary text-on-primary font-telemetry-sm text-telemetry-sm px-3 py-1.5 rounded-full font-semibold shrink-0" id="signoff-badge">
+            Tap to Sign
+          </span>
+</button>
+</div>
+<!-- Action Buttons Container -->
+<div class="mt-space-lg space-y-space-sm">
+<!-- Primary Confirmation Action -->
+<button class="w-full min-h-[48px] px-space-md py-3 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-body-strong text-body-strong shadow-md flex items-center justify-center gap-space-sm transition-all active:scale-[0.98]" id="confirm-handoff-btn" onclick="executeHandoffCompletion()" type="button">
+<span class="material-symbols-outlined text-[20px]">handshake</span>
+<span>Complete Clinical Handoff &amp; Confirm Admission →</span>
+</button>
+<!-- Secondary Flag Issue Action -->
+<button class="w-full min-h-[44px] px-space-md py-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-body-md text-body-md flex items-center justify-center gap-space-xs transition-colors" onclick="handleFlagDiscrepancy()" type="button">
+<span class="material-symbols-outlined text-tertiary text-[18px]">flag</span>
+<span class="text-tertiary font-semibold">Flag Discrepancy / Incomplete Handoff</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Interactive Modal / Notification Drawer Simulation for Completion Delight -->
+<div class="hidden fixed bottom-6 left-4 right-4 z-50 p-space-md bg-secondary text-on-secondary rounded-xl shadow-xl flex items-center gap-space-md transition-all" id="completion-toast">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">verified</span>
+</div>
+<div class="min-w-0 flex-1">
+<p class="font-headline-sm text-headline-sm text-on-secondary">Handoff Confirmed!</p>
+<p class="font-body-sm text-body-sm text-on-secondary opacity-90 truncate">Electronic custody transferred. Incident #PK-1122-8921 closed in CAD.</p>
+</div>
+</div>
+<!-- Clinical Verification Footer Disclaimer -->
+<footer class="mx-margin-mobile mb-space-xl text-center px-space-md">
+<p class="font-telemetry-sm text-telemetry-sm text-on-surface-variant opacity-75">
+      Simulated clinical handoff protocol for interface validation.
+    </p>
+<div class="flex items-center justify-center gap-2 mt-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant font-mono">NEMRAS v2.4 · CAD Interop Active</span>
+</div>
+</footer>
+</div>
+<script>
+  let isDoctorSigned = false;
+
+  function updateChecklistProgress() {
+    const checkboxes = document.querySelectorAll('.checklist-toggle');
+    const checkedCount = Array.from(checkboxes).filter(cb => cb.checked).length;
+    const counterBadge = document.getElementById('checklist-counter');
+    const valuablesBox = document.getElementById('item-valuables');
+    const valuablesContainer = document.getElementById('item-valuables-container');
+    const valuablesIcon = document.getElementById('valuables-icon');
+
+    if (counterBadge) {
+      counterBadge.textContent = `${checkedCount}/${checkboxes.length} Complete`;
+    }
+
+    if (valuablesBox && valuablesBox.checked) {
+      valuablesContainer.classList.remove('bg-surface-container-high');
+      valuablesContainer.classList.add('bg-surface-container-low');
+      valuablesIcon.textContent = 'check_circle';
+      valuablesIcon.classList.remove('text-on-surface-variant');
+      valuablesIcon.classList.add('text-primary');
+    } else if (valuablesBox) {
+      valuablesContainer.classList.add('bg-surface-container-high');
+      valuablesContainer.classList.remove('bg-surface-container-low');
+      valuablesIcon.textContent = 'pending';
+      valuablesIcon.classList.add('text-on-surface-variant');
+      valuablesIcon.classList.remove('text-primary');
+    }
+  }
+
+  function handleDispositionChange(radio) {
+    const labels = document.querySelectorAll('.disposition-option');
+    labels.forEach(lbl => {
+      lbl.classList.remove('bg-secondary-container/30');
+      lbl.classList.add('bg-surface-container-low');
+    });
+    const parentLabel = radio.closest('.disposition-option');
+    if (parentLabel) {
+      parentLabel.classList.remove('bg-surface-container-low');
+      parentLabel.classList.add('bg-secondary-container/30');
+    }
+  }
+
+  function toggleDoctorSignature() {
+    isDoctorSigned = !isDoctorSigned;
+    const icon = document.getElementById('signoff-icon');
+    const iconWrap = document.getElementById('signoff-icon-wrap');
+    const nameText = document.getElementById('signoff-name');
+    const badge = document.getElementById('signoff-badge');
+    const label = document.getElementById('signoff-label');
+
+    if (isDoctorSigned) {
+      const now = new Date();
+      const timeStr = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: false });
+      icon.textContent = 'verified';
+      iconWrap.className = 'w-9 h-9 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center shrink-0 transition-colors';
+      nameText.textContent = `Dr. F. Alam (#8812) - Authenticated ${timeStr} PKT`;
+      badge.textContent = 'Signed ✓';
+      badge.className = 'bg-secondary-fixed text-on-secondary-fixed-variant font-telemetry-sm text-telemetry-sm px-3 py-1 rounded-full font-bold shrink-0';
+      label.textContent = 'Physician Verified';
+    } else {
+      icon.textContent = 'edit_document';
+      iconWrap.className = 'w-9 h-9 rounded-full bg-primary/20 text-primary flex items-center justify-center shrink-0 transition-colors';
+      nameText.textContent = 'Dr. F. Alam (#8812) - Tap to Sign Digitally';
+      badge.textContent = 'Tap to Sign';
+      badge.className = 'bg-primary text-on-primary font-telemetry-sm text-telemetry-sm px-3 py-1.5 rounded-full font-semibold shrink-0';
+      label.textContent = 'Receiving Resident Sign-off';
+    }
+  }
+
+  function executeHandoffCompletion() {
+    // Check if checklist is complete
+    const valuablesBox = document.getElementById('item-valuables');
+    if (valuablesBox && !valuablesBox.checked) {
+      valuablesBox.checked = true;
+      updateChecklistProgress();
+    }
+
+    if (!isDoctorSigned) {
+      toggleDoctorSignature();
+    }
+
+    // Feedback update
+    const banner = document.getElementById('handoff-feedback-banner');
+    const statusText = document.getElementById('cad-status-text');
+    const toast = document.getElementById('completion-toast');
+    const btn = document.getElementById('confirm-handoff-btn');
+
+    if (banner && statusText) {
+      banner.classList.remove('bg-surface-container-low');
+      banner.classList.add('bg-secondary-container');
+      statusText.innerHTML = '<strong>Electronic custody transferred.</strong> Incident #PK-1122-8921 closed in CAD.';
+    }
+
+    if (btn) {
+      btn.innerHTML = `<span class="material-symbols-outlined text-[20px]">check_circle</span><span>Handoff Formalized &amp; Admitted</span>`;
+      btn.disabled = true;
+      btn.classList.add('opacity-90');
+    }
+
+    if (toast) {
+      toast.classList.remove('hidden');
+      setTimeout(() => {
+        toast.classList.add('opacity-0');
+        setTimeout(() => toast.remove(), 400);
+      }, 4000);
+    }
+  }
+
+  function handleFlagDiscrepancy() {
+    const reason = prompt("Enter specific clinical or custodial discrepancy note for CAD dispatch:", "Belongings mismatch or vital sign variation on arrival");
+    if (reason) {
+      const banner = document.getElementById('handoff-feedback-banner');
+      const statusText = document.getElementById('cad-status-text');
+      if (banner && statusText) {
+        banner.classList.remove('bg-surface-container-low');
+        banner.classList.add('bg-error-container');
+        statusText.innerHTML = `<span class="text-on-error-container font-semibold">Flag Logged:</span> ${reason}`;
+      }
+    }
+  }
+</script></main></body></html>

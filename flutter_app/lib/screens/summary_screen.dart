@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../theme.dart';
 import '../api.dart';
 import '../widgets/common.dart';
-import 'chat_screen.dart';
+import '../navigation/app_router.dart';
 
 class SummaryScreen extends StatelessWidget {
   final PatientRecord record;
@@ -110,8 +110,7 @@ class SummaryScreen extends StatelessWidget {
             child: OutlinedButton.icon(
               onPressed: () => Navigator.push(
                   context,
-                  MaterialPageRoute(
-                      builder: (_) => ChatScreen(cnic: s.cnic, name: s.patientName))),
+                  AppRouter.chat(cnic: s.cnic, name: s.patientName)),
               style: OutlinedButton.styleFrom(
                 foregroundColor: AppTheme.accent,
                 side: const BorderSide(color: AppTheme.accent),

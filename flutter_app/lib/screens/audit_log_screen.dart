@@ -12,7 +12,7 @@ class AuditLogScreen extends StatelessWidget {
 
     final entries = [
       _Entry(
-        dot: AppTheme.stable,
+        dot: Colors.white,
         name: 'Dr. ${s.doctor}',
         institution: s.hospital,
         badge: 'CLINICAL',

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><title>NEMRAS</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;700&amp;family=Sora:wght@500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "tertiary-fixed-dim": "#ffb3ae", "on-tertiary-fixed-variant": "#8f0e1a", "on-primary": "#ffffff", "on-tertiary-container": "#ffe4e1", "surface-dim": "#c8dcf0", "error-container": "#ffdad6", "on-surface-variant": "#3e4947", "tertiary": "#9e1c23", "on-background": "#091d2b", "on-surface": "#091d2b", "error": "#ba1a1a", "primary": "#005c55", "secondary": "#216963", "on-error": "#ffffff", "inverse-surface": "#1f3241", "surface-container-lowest": "#ffffff", "surface-bright": "#f6f9ff", "surface-container-high": "#d6ebfe", "outline": "#6e7977", "surface-tint": "#006a63", "on-secondary": "#ffffff", "surface-container": "#e1f0ff", "secondary-fixed-dim": "#8fd3cc", "surface-container-low": "#ecf5ff", "tertiary-fixed": "#ffdad7", "on-secondary-container": "#266d68", "on-tertiary": "#ffffff", "surface-variant": "#d1e5f8", "surface-container-highest": "#d1e5f8", "on-tertiary-fixed": "#410005", "primary-fixed-dim": "#80d5cb", "primary-container": "#0f766e", "background": "#f6f9ff", "on-primary-container": "#a3faef", "on-secondary-fixed-variant": "#00504b", "secondary-fixed": "#abefe8", "outline-variant": "#bdc9c6", "inverse-on-surface": "#e6f2ff", "on-primary-fixed-variant": "#00504a", "on-error-container": "#93000a", "tertiary-container": "#c03638", "surface": "#f6f9ff", "secondary-container": "#a8ece5", "inverse-primary": "#80d5cb", "on-primary-fixed": "#00201d", "primary-fixed": "#9cf2e8", "on-secondary-fixed": "#00201e" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "margin-mobile": "1rem", "space-sm": "0.5rem", "space-xs": "0.25rem", "gutter-mobile": "1rem", "space-lg": "1.5rem", "margin": "2rem", "gutter": "1.5rem", "space-xl": "2rem", "space-md": "1rem" }, "fontFamily": { "headline-sm": ["Sora"], "display-lg": ["Sora"], "label-md": ["Inter"], "headline-lg-mobile": ["Sora"], "body-strong": ["Inter"], "body-md": ["Inter"], "body-lg": ["Inter"], "body-sm": ["Inter"], "headline-lg": ["Sora"], "headline-md": ["Sora"], "telemetry-md": ["JetBrains Mono"], "telemetry-lg": ["JetBrains Mono"], "telemetry-sm": ["JetBrains Mono"] }, "fontSize": { "headline-sm": ["16px", { "lineHeight": "24px", "fontWeight": "600" }], "display-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "label-md": ["13px", { "lineHeight": "16px", "fontWeight": "500" }], "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "body-strong": ["14px", { "lineHeight": "20px", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }], "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }], "telemetry-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }], "telemetry-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "telemetry-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "500" }] } } } }</script><style>@layer base{html,body{width:100vw;margin:0;padding:0;min-height:100vh;}body{overscroll-behavior-y:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface antialiased flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.03)]"><div class="h-14 px-margin-mobile flex items-center justify-between"><div class="flex items-center gap-space-sm"><button aria-label="Go Back" class="w-10 h-10 -ml-2 rounded-full flex items-center justify-center text-on-surface hover:bg-surface-container transition-colors" onclick="history.back()"><span class="material-symbols-outlined text-[22px]">arrow_back</span></button><h1 class="font-headline-sm text-headline-sm text-on-surface font-semibold tracking-tight truncate max-w-[200px]">Active Emergency Dispatch</h1></div><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-14 pb-safe bg-surface px-margin-mobile"><div class="flex flex-col w-full pb-8 space-y-4">
+<!-- Active Incident Alert Banner -->
+<div class="w-full bg-tertiary-container text-on-tertiary-container rounded-xl p-4 shadow-sm relative overflow-hidden">
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-2">
+<span class="relative flex h-3 w-3">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary-fixed opacity-75"></span>
+<span class="relative inline-flex rounded-full h-3 w-3 bg-tertiary-fixed"></span>
+</span>
+<span class="font-telemetry-sm text-telemetry-sm font-semibold tracking-wider uppercase">INCIDENT #PK-1122-8921</span>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm px-2 py-0.5 rounded-full bg-tertiary text-on-tertiary font-bold tracking-wider">CODE RED DISPATCH</span>
+</div>
+<p class="font-body-sm text-body-sm mt-1 text-on-tertiary-container/90">Critical cardiac &amp; respiratory support requested. Unit deployed with sirens active.</p>
+</div>
+<!-- Primary ETA & Vital Live Transit Card -->
+<div class="w-full bg-surface-container-lowest rounded-xl p-5 shadow-sm space-y-4">
+<div class="flex items-start justify-between">
+<div>
+<div class="flex items-center space-x-1.5 text-primary mb-1">
+<span class="material-symbols-outlined text-[18px]">near_me</span>
+<span class="font-label-md text-label-md tracking-tight uppercase font-semibold">Live Traffic Green Wave Enabled</span>
+</div>
+<div class="flex items-baseline space-x-2">
+<span class="font-telemetry-lg text-telemetry-lg text-on-surface text-primary" id="countdown-display">04:28</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-medium">REMAINING</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-label-md text-label-md text-on-surface-variant block">Est. Range</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">4–6 MIN</span>
+</div>
+</div>
+<!-- Distance & Progress Track -->
+<div class="bg-surface-container-low rounded-lg p-3 flex items-center justify-between">
+<div class="flex items-center space-x-2.5">
+<div class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">speed</span>
+</div>
+<div>
+<span class="font-body-sm text-body-sm text-on-surface-variant block">Remaining Distance</span>
+<span class="font-telemetry-md text-telemetry-md font-semibold text-on-surface">1.8 km away</span>
+</div>
+</div>
+<div class="flex items-center space-x-1 bg-surface-container-lowest px-2.5 py-1 rounded-full text-secondary">
+<span class="material-symbols-outlined text-[16px]">traffic</span>
+<span class="font-telemetry-sm text-telemetry-sm font-semibold uppercase">Signals Cleared</span>
+</div>
+</div>
+</div>
+<!-- Tactical Vector Map Container -->
+<div class="w-full bg-surface-container-lowest rounded-xl p-3 shadow-sm space-y-3">
+<div class="flex items-center justify-between px-1">
+<div class="flex items-center space-x-2">
+<span class="material-symbols-outlined text-primary text-[20px]">explore</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Rapid Route Navigation</span>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-primary px-2 py-0.5 rounded-full bg-surface-container font-medium">Telemetry Synchronized</span>
+</div>
+<!-- Map viewport -->
+<div class="relative w-full h-56 rounded-lg overflow-hidden bg-surface-container shadow-inner">
+<div class="w-full h-full bg-cover bg-center" data-location="Nishtar Road, Multan, Pakistan" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBb3E9bOh9Xd8gfqQu-PSrFr8vZPuOxWnL5Qxv4bjv974ex8YFg3XFmZevxM3Aot0FcFFREWERSiqXZpmjoIwhCIqKbMdgcLyFYYi-PRmbdreTnNiyjXskXPR1oDfJnnXSWvEUBGAEV6URi1kjBh1pVe87sWiJyxqcSJm9P5YbWF_wRBDAAyXHwyX27A5OYl67qtvMK4UboD2nXwoYQdQgZIwfyZ_pCmnGxDXp_C1RpJa1DK30GZYhQ')"></div>
+<!-- Vector Route Overlay Illustration -->
+<svg class="absolute inset-0 w-full h-full pointer-events-none" fill="none" viewbox="0 0 340 220">
+<!-- Route Path Line -->
+<path class="opacity-80" d="M 45 45 C 90 45, 120 110, 180 115 C 240 120, 260 165, 290 175" stroke="#005c55" stroke-dasharray="7 5" stroke-linecap="round" stroke-width="5"></path>
+<!-- Signal Corridor Glow -->
+<path class="opacity-90" d="M 45 45 C 90 45, 120 110, 180 115" stroke="#80d5cb" stroke-linecap="round" stroke-width="3"></path>
+<!-- User Pickup Location Pin -->
+<g transform="translate(290, 175)">
+<circle class="animate-ping" cx="0" cy="0" fill="#ba1a1a" fill-opacity="0.2" r="14"></circle>
+<circle cx="0" cy="0" fill="#ba1a1a" r="9"></circle>
+<circle cx="0" cy="0" fill="#ffffff" r="4"></circle>
+</g>
+<!-- Nishtar Hospital Trauma Bay Anchor Pin -->
+<g transform="translate(45, 45)">
+<circle cx="0" cy="0" fill="#216963" fill-opacity="0.3" r="10"></circle>
+<circle cx="0" cy="0" fill="#005c55" r="7"></circle>
+<text fill="#091d2b" font-family="Inter" font-size="9" font-weight="600" x="12" y="4">Nishtar Trauma Bay</text>
+</g>
+</svg>
+<!-- Dynamic Moving Ambulance Marker -->
+<div class="absolute z-10 transition-all duration-1000 ease-linear flex flex-col items-center" id="ambulance-marker" style="left: 48%; top: 48%; transform: translate(-50%, -50%);">
+<div class="flex items-center space-x-1 px-2 py-0.5 rounded-full bg-primary text-on-primary shadow-md">
+<span class="material-symbols-outlined text-[14px]">emergency</span>
+<span class="font-telemetry-sm text-telemetry-sm font-bold">AMB-37</span>
+</div>
+<div class="w-3 h-3 bg-primary rotate-45 -mt-1.5"></div>
+</div>
+<!-- User Pickup Overlay Card -->
+<div class="absolute bottom-2 left-2 right-2 bg-surface-container-lowest/95 backdrop-blur-sm p-2 rounded-lg flex items-center justify-between shadow-sm">
+<div class="flex items-center space-x-2">
+<div class="w-2.5 h-2.5 rounded-full bg-error"></div>
+<span class="font-body-sm text-body-sm font-medium text-on-surface truncate">Pickup: Nishtar Road Sector 4B, Gate 2</span>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant font-medium">GPS Confirmed</span>
+</div>
+</div>
+</div>
+<!-- Real-time Status Timeline (5 Stages) -->
+<div class="w-full bg-surface-container-lowest rounded-xl p-5 shadow-sm space-y-4">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Incident Lifecycle</span>
+<span class="font-telemetry-sm text-telemetry-sm text-primary font-medium">Stage 3 of 5</span>
+</div>
+<div class="space-y-4 relative">
+<!-- Continuous Background Track Line -->
+<div class="absolute left-4 top-3 bottom-3 w-0.5 bg-surface-variant -z-0"></div>
+<!-- Stage 1: Submitted (Done) -->
+<div class="flex items-start space-x-3 relative z-10">
+<div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center flex-shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</div>
+<div class="flex-1 pt-0.5">
+<div class="flex items-center justify-between">
+<span class="font-body-strong text-body-strong text-on-surface">Emergency Submitted</span>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">09:41 AM</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">CAD dispatch ticket logged via 1122 automated gateway.</span>
+</div>
+</div>
+<!-- Stage 2: Responder Assigned (Done) -->
+<div class="flex items-start space-x-3 relative z-10">
+<div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center flex-shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</div>
+<div class="flex-1 pt-0.5">
+<div class="flex items-center justify-between">
+<span class="font-body-strong text-body-strong text-on-surface">Responder Assigned</span>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">09:42 AM</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Unit AMB-37 stationed at Rescue 1122 Cantt dispatched.</span>
+</div>
+</div>
+<!-- Stage 3: En Route (Active Current State) -->
+<div class="flex items-start space-x-3 relative z-10">
+<div class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center flex-shrink-0 relative">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary-fixed-dim opacity-75"></span>
+<span class="material-symbols-outlined text-[18px] relative z-10 text-primary">directions_car</span>
+</div>
+<div class="flex-1 pt-0.5 bg-surface-container-low p-2.5 rounded-lg">
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-1.5">
+<span class="font-body-strong text-body-strong text-primary">En Route to Location</span>
+<span class="h-2 w-2 rounded-full bg-primary animate-pulse"></span>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-primary font-bold">ACTIVE</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant block mt-0.5">Moving on Nishtar Road. High-speed siren priority.</span>
+</div>
+</div>
+<!-- Stage 4: Arrived at Scene (Pending) -->
+<div class="flex items-start space-x-3 relative z-10 opacity-50">
+<div class="w-8 h-8 rounded-full bg-surface-container text-on-surface-variant flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[18px]">fmd_good</span>
+</div>
+<div class="flex-1 pt-0.5">
+<div class="flex items-center justify-between">
+<span class="font-body-strong text-body-strong text-on-surface">Arrived at Scene</span>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">Pending</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">First responders assess patient baseline on-site.</span>
+</div>
+</div>
+<!-- Stage 5: Handover Completed (Pending) -->
+<div class="flex items-start space-x-3 relative z-10 opacity-50">
+<div class="w-8 h-8 rounded-full bg-surface-container text-on-surface-variant flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[18px]">local_hospital</span>
+</div>
+<div class="flex-1 pt-0.5">
+<div class="flex items-center justify-between">
+<span class="font-body-strong text-body-strong text-on-surface">Handover Completed</span>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">Pending</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Transfer of care to Nishtar Trauma Emergency Team.</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Responder Information Card -->
+<div class="w-full bg-surface-container-lowest rounded-xl p-5 shadow-sm space-y-4">
+<div class="flex items-center space-x-3">
+<div class="w-12 h-12 rounded-xl bg-surface-container-high overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="A portrait of an emergency medical responder wearing clinical uniform in teal tones, confident and reassuring presence, daylight lighting, clean clinical ambiance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-CBwj-07N5d98kzFd5P1yN9v5ufFJhIVpJSGpdPe7eixcHlCGRAOLQMy_z8ZynleXI_J6KGskuEj4kDydLsbq2o1f3SA1va-V2pq5-H2Z5m3y-Swi39btWlr53JxY2BByS219Q0m4lNey6y6s0RfalG5RwrTf1UzZ2vAutFfrXcrcquktvFtIDhddgP7NMB8tj9t8OoJuLvlnZbstM4XGRMgNoKbvAy0M_uPQrqBVBIv4U47sCB1u"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center space-x-1.5">
+<span class="font-headline-sm text-headline-sm text-on-surface truncate">Unit AMB-37</span>
+<span class="font-telemetry-sm text-telemetry-sm px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant font-medium">Type-A ALS</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant block truncate">Rescue 1122 Multan Cantt Station</span>
+<span class="font-body-sm text-body-sm text-secondary font-medium block">Lead: A. Khan (#4421) • EMT Team</span>
+</div>
+</div>
+<!-- Paramedic Telemetry Tablet Sync Status -->
+<div class="flex items-start space-x-2.5 p-3 rounded-lg bg-surface-container-low">
+<span class="material-symbols-outlined text-primary text-[20px] flex-shrink-0">verified_user</span>
+<div class="text-left">
+<span class="font-body-strong text-body-strong text-on-surface block">Health Summary Transmitted</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant block">Patient Critical Health Summary successfully received by paramedic tablet.</span>
+</div>
+</div>
+<!-- Direct Action Triggers -->
+<div class="grid grid-cols-2 gap-3 pt-1">
+<a class="flex items-center justify-center space-x-2 bg-primary text-on-primary py-3 px-3 rounded-lg font-body-strong text-body-strong shadow-sm active:opacity-90" href="tel:1122">
+<span class="material-symbols-outlined text-[18px]">call</span>
+<span>Call Crew</span>
+</a>
+<button class="flex items-center justify-center space-x-2 bg-surface-container text-on-surface py-3 px-3 rounded-lg font-body-strong text-body-strong active:bg-surface-container-high" onclick="handleVoiceNoteModal()">
+<span class="material-symbols-outlined text-[18px]">mic</span>
+<span>Audio Note</span>
+</button>
+</div>
+</div>
+<!-- Cancellation Safeguard Button -->
+<div class="w-full pt-2 flex flex-col items-center">
+<button class="w-full py-3 px-4 rounded-lg bg-error-container text-on-error-container font-body-strong text-body-strong flex items-center justify-center space-x-2 active:opacity-90 transition-opacity" onclick="openCancelModal()">
+<span class="material-symbols-outlined text-[18px]">cancel</span>
+<span>Cancel Emergency Request</span>
+</button>
+<p class="font-body-sm text-body-sm text-on-surface-variant/70 text-center mt-3">
+      Sample tracking simulation. Real GPS tracking and CAD dispatch not connected.
+    </p>
+</div>
+<!-- Cancellation Confirmation Modal (Safeguard) -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-inverse-surface/40 backdrop-blur-sm hidden" id="cancel-modal">
+<div class="bg-surface-container-lowest w-full max-w-sm rounded-xl p-5 shadow-xl space-y-4">
+<div class="w-12 h-12 rounded-full bg-error-container text-on-error-container flex items-center justify-center mx-auto">
+<span class="material-symbols-outlined text-[26px]">warning</span>
+</div>
+<div class="text-center space-y-1">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Abort Dispatch?</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Unit AMB-37 is already underway. Only cancel if the incident is resolved or entered in error.
+        </p>
+</div>
+<div class="space-y-2 pt-2">
+<button class="w-full py-3 rounded-lg bg-tertiary text-on-tertiary font-body-strong text-body-strong active:opacity-90" onclick="confirmCancellation()">
+          Yes, Abort Incident
+        </button>
+<button class="w-full py-3 rounded-lg bg-surface-container text-on-surface font-body-strong text-body-strong active:bg-surface-container-high" onclick="closeCancelModal()">
+          Resume Response (Keep Active)
+        </button>
+</div>
+</div>
+</div>
+<!-- Audio Note Sheet Feedback Toast -->
+<div class="fixed bottom-6 left-4 right-4 z-50 bg-inverse-surface text-inverse-on-surface p-3.5 rounded-xl shadow-lg flex items-center justify-between hidden" id="toast-note">
+<div class="flex items-center space-x-2">
+<span class="material-symbols-outlined text-[20px] text-primary-fixed">mic_none</span>
+<span class="font-body-sm text-body-sm font-medium">Recording 5s gate/entrance instruction note...</span>
+</div>
+<span class="material-symbols-outlined text-[18px] cursor-pointer" onclick="document.getElementById('toast-note').classList.add('hidden')">close</span>
+</div>
+</div>
+<script>
+  // Countdown simulation for ETA
+  let totalSeconds = 268;
+  const timerElement = document.getElementById('countdown-display');
+  const timerInterval = setInterval(() => {
+    if (totalSeconds <= 0) {
+      clearInterval(timerInterval);
+      if (timerElement) timerElement.textContent = "00:00";
+      return;
+    }
+    totalSeconds--;
+    const minutes = Math.floor(totalSeconds / 60);
+    const seconds = totalSeconds % 60;
+    if (timerElement) {
+      timerElement.textContent = 
+        String(minutes).padStart(2, '0') + ':' + String(seconds).padStart(2, '0');
+    }
+  }, 1000);
+
+  // Micro-interaction for moving ambulance pin jitter/advance
+  const marker = document.getElementById('ambulance-marker');
+  let step = 0;
+  setInterval(() => {
+    if (marker) {
+      step = (step + 1) % 4;
+      const offsets = [
+        { left: '48%', top: '48%' },
+        { left: '52%', top: '49%' },
+        { left: '56%', top: '53%' },
+        { left: '60%', top: '58%' }
+      ];
+      marker.style.left = offsets[step].left;
+      marker.style.top = offsets[step].top;
+    }
+  }, 3500);
+
+  // Modal controls
+  function openCancelModal() {
+    const modal = document.getElementById('cancel-modal');
+    if (modal) modal.classList.remove('hidden');
+  }
+
+  function closeCancelModal() {
+    const modal = document.getElementById('cancel-modal');
+    if (modal) modal.classList.add('hidden');
+  }
+
+  function confirmCancellation() {
+    closeCancelModal();
+    alert('Incident #PK-1122-8921 cancellation sent to Multan Dispatch Controller.');
+  }
+
+  function handleVoiceNoteModal() {
+    const toast = document.getElementById('toast-note');
+    if (toast) {
+      toast.classList.remove('hidden');
+      setTimeout(() => {
+        toast.classList.add('hidden');
+      }, 4000);
+    }
+  }
+</script></main></body></html>

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>09 Profile Setup - NEMRAS Emergency Health App</title>
+<!-- Google Fonts: Sora, Inter, JetBrains Mono -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Sora:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            nemras: {
+              bg: '#F7FAFC',
+              teal: '#0F766E',
+              'teal-dark': '#0B5953',
+              'teal-light': '#E6F4F2',
+              slate: '#243746',
+              muted: '#64748B',
+              border: '#E2E8F0',
+              red: '#D94848',
+              'red-light': '#FDF2F2'
+            }
+          },
+          fontFamily: {
+            sora: ['Sora', 'sans-serif'],
+            inter: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          boxShadow: {
+            'card': '0 1px 3px 0 rgba(0, 0, 0, 0.04), 0 1px 2px -1px rgba(0, 0, 0, 0.04)',
+            'teal-glow': '0 8px 20px -4px rgba(15, 118, 110, 0.35)',
+          }
+        }
+      }
+    }
+  </script>
+<!-- Custom Styles for Form Details & Scroller -->
+<style data-purpose="custom-layout">
+    /* Hide scrollbar for clean horizontal tabs on iOS */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-nemras-bg text-nemras-slate font-inter antialiased min-h-screen flex justify-center selection:bg-teal-100">
+<!-- BEGIN: MobileContainer -->
+<!-- Constrained strictly to mobile iOS viewport (approx 390px) -->
+<div class="w-full max-w-[390px] min-h-screen bg-nemras-bg flex flex-col justify-between pb-8">
+<!-- BEGIN: TopBarAndHeader -->
+<header class="px-5 pt-3 pb-4">
+<!-- iOS Status Bar Simulation Indicator -->
+<div class="flex justify-between items-center text-[12px] font-semibold text-nemras-slate mb-3 px-1" data-purpose="ios-status-bar">
+<span>09:41</span>
+<div class="flex items-center space-x-1.5 font-mono text-[11px] text-nemras-muted">
+<span>5G</span>
+<span class="inline-block w-2 h-2 rounded-full bg-nemras-teal"></span>
+<span>100%</span>
+</div>
+</div>
+<!-- Navigation & Step Progress -->
+<div class="flex items-center justify-between mt-2">
+<!-- Back Navigation Button -->
+<button aria-label="Go back" class="w-9 h-9 rounded-full bg-white border border-nemras-border flex items-center justify-center text-nemras-slate hover:bg-slate-50 transition active:scale-95 shadow-sm" type="button">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24">
+<path d="M15.75 19.5L8.25 12l7.5-7.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<!-- Current Stage Pill -->
+<div class="bg-nemras-teal-light text-nemras-teal px-3 py-1 rounded-full text-[11px] font-mono font-semibold tracking-wider uppercase border border-teal-100">
+          STEP 3 OF 3 · PROFILE SETUP
+        </div>
+</div>
+<!-- Main Headline Title & Subtext -->
+<div class="mt-4">
+<h1 class="font-sora text-[23px] font-bold tracking-tight text-nemras-slate leading-tight">
+          Complete Profile
+        </h1>
+<p class="text-[13px] text-nemras-muted leading-relaxed mt-1 font-normal">
+          Adapt profile data anchored to CNIC for emergency dispatch and clinical accuracy.
+        </p>
+</div>
+</header>
+<!-- END: TopBarAndHeader -->
+<!-- BEGIN: MainContent -->
+<main class="px-5 space-y-4 flex-1">
+<!-- BEGIN: RoleSelectorTabs -->
+<!-- Adaptive role picker to show dynamic field contexts -->
+<section data-purpose="role-tabs">
+<div class="flex items-center space-x-2 overflow-x-auto no-scrollbar py-1">
+<!-- Active Tab -->
+<button class="whitespace-nowrap px-3.5 py-1.5 rounded-full bg-nemras-teal text-white text-[12px] font-medium shadow-sm transition" type="button">
+            Patient / Citizen
+          </button>
+<!-- Secondary Inactive Tabs -->
+<button class="whitespace-nowrap px-3.5 py-1.5 rounded-full bg-white border border-nemras-border text-nemras-muted text-[12px] font-medium hover:border-slate-300 transition" type="button">
+            Responder 1122
+          </button>
+<button class="whitespace-nowrap px-3.5 py-1.5 rounded-full bg-white border border-nemras-border text-nemras-muted text-[12px] font-medium hover:border-slate-300 transition" type="button">
+            Hospital Staff
+          </button>
+<button class="whitespace-nowrap px-3.5 py-1.5 rounded-full bg-white border border-nemras-border text-nemras-muted text-[12px] font-medium hover:border-slate-300 transition" type="button">
+            Admin
+          </button>
+</div>
+<!-- Role Badge & NADRA status -->
+<div class="flex items-center space-x-2 mt-2.5 px-0.5">
+<span class="inline-flex items-center gap-1.5 text-[11px] font-mono font-medium text-emerald-800 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-md">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse"></span>
+            Citizen Self-Registration · NADRA Linked
+          </span>
+</div>
+</section>
+<!-- END: RoleSelectorTabs -->
+<!-- BEGIN: CitizenRegistrationCard -->
+<section class="bg-white border border-nemras-border rounded-[16px] p-4 shadow-card space-y-3.5" data-purpose="core-identity-form">
+<!-- Field 1: Full Legal Name (Pre-verified) -->
+<div>
+<div class="flex justify-between items-center mb-1">
+<label class="text-[11px] font-semibold uppercase tracking-wider text-nemras-slate font-mono">
+              Full Legal Name
+            </label>
+<span class="text-[10px] text-emerald-600 font-mono flex items-center gap-1 font-medium">
+<svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24">
+<path d="M4.5 12.75l6 6 9-13.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+              Matches CNIC (NADRA Verified)
+            </span>
+</div>
+<div class="relative">
+<input class="w-full bg-emerald-50/50 border border-emerald-200 text-nemras-slate text-[13px] font-medium rounded-xl py-2 px-3 pr-8 focus:ring-0 focus:outline-none cursor-default" readonly="" type="text" value="Kashaf Sajjad"/>
+<div class="absolute inset-y-0 right-0 flex items-center pr-2.5 pointer-events-none">
+<svg class="w-4 h-4 text-emerald-600" fill="currentColor" viewbox="0 0 20 20">
+<path clip-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" fill-rule="evenodd"></path>
+</svg>
+</div>
+</div>
+</div>
+<!-- Field 2: Primary Emergency Mobile -->
+<div>
+<div class="flex justify-between items-center mb-1">
+<label class="text-[11px] font-semibold uppercase tracking-wider text-nemras-slate font-mono">
+              Emergency Mobile
+            </label>
+<span class="text-[10px] text-nemras-muted font-mono">Verified OTP Device</span>
+</div>
+<div class="relative">
+<input class="w-full bg-slate-50 border border-nemras-border text-nemras-slate text-[13px] font-mono font-medium rounded-xl py-2 px-3 pr-9 focus:ring-0 focus:outline-none" readonly="" type="tel" value="+92 300 1234567"/>
+<div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none text-nemras-muted">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+</div>
+</div>
+<!-- Field 3: Next of Kin Sub-Card -->
+<div class="border border-nemras-border bg-slate-50/70 rounded-xl p-3 space-y-2.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-1.5">
+<span class="text-[11px] font-semibold uppercase font-mono text-nemras-slate">Next of Kin (NOK)</span>
+<span class="text-[9px] bg-amber-100 text-amber-800 font-mono px-1.5 py-0.2 rounded font-semibold">Priority 1</span>
+</div>
+<span class="text-[10px] font-mono text-nemras-teal font-medium">SMS &amp; Critical Alert Proxy</span>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<div>
+<label class="text-[10px] text-nemras-muted font-mono block mb-0.5">Contact Name</label>
+<input class="w-full bg-white border border-nemras-border rounded-lg text-[12px] font-medium py-1.5 px-2.5 text-nemras-slate focus:border-nemras-teal focus:ring-1 focus:ring-nemras-teal" type="text" value="Sajjad Ahmed"/>
+</div>
+<div>
+<label class="text-[10px] text-nemras-muted font-mono block mb-0.5">Relationship</label>
+<div class="relative">
+<select class="w-full bg-white border border-nemras-border rounded-lg text-[12px] font-medium py-1.5 px-2.5 text-nemras-slate pr-6 focus:border-nemras-teal focus:ring-1 focus:ring-nemras-teal appearance-none">
+<option selected="">Father</option>
+<option>Mother</option>
+<option>Spouse</option>
+<option>Sibling</option>
+</select>
+<div class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none text-nemras-muted">
+<svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M19.5 8.25l-7.5 7.5-7.5-7.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</div>
+</div>
+</div>
+</div>
+<div>
+<label class="text-[10px] text-nemras-muted font-mono block mb-0.5">Contact Phone Number</label>
+<div class="relative">
+<input class="w-full bg-white border border-nemras-border rounded-lg text-[12px] font-mono font-medium py-1.5 px-2.5 pr-8 text-nemras-slate focus:border-nemras-teal focus:ring-1 focus:ring-nemras-teal" type="tel" value="+92 300 9821411"/>
+<div class="absolute inset-y-0 right-0 flex items-center pr-2.5 pointer-events-none text-emerald-600">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24"><path d="M4.5 12.75l6 6 9-13.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: CitizenRegistrationCard -->
+<!-- BEGIN: MedicalBaselineCard -->
+<section class="bg-white border border-nemras-border rounded-[16px] p-4 shadow-card space-y-3.5" data-purpose="critical-health-flags">
+<div class="flex items-center justify-between border-b border-slate-100 pb-2">
+<div class="flex items-center gap-1.5">
+<div class="w-2 h-2 rounded-full bg-nemras-red"></div>
+<h2 class="text-[12px] font-mono font-bold tracking-wide uppercase text-nemras-slate">Critical Health Baseline</h2>
+</div>
+<span class="text-[10px] text-nemras-muted bg-slate-100 px-2 py-0.5 rounded font-mono">Paramedic Field View</span>
+</div>
+<!-- Blood Group Chips -->
+<div>
+<label class="text-[11px] font-mono font-semibold text-nemras-slate block mb-1.5">
+            Blood Group <span class="text-nemras-muted font-normal">(Required for triage)</span>
+</label>
+<div class="grid grid-cols-5 gap-1.5">
+<!-- Selected O+ Pill -->
+<button class="py-1.5 px-1 bg-nemras-teal text-white rounded-lg text-[11px] font-mono font-bold text-center border border-nemras-teal shadow-sm" type="button">
+              O+ POS
+            </button>
+<button class="py-1.5 px-1 bg-white hover:bg-slate-50 text-nemras-slate rounded-lg text-[11px] font-mono font-semibold text-center border border-nemras-border" type="button">
+              A+
+            </button>
+<button class="py-1.5 px-1 bg-white hover:bg-slate-50 text-nemras-slate rounded-lg text-[11px] font-mono font-semibold text-center border border-nemras-border" type="button">
+              B+
+            </button>
+<button class="py-1.5 px-1 bg-white hover:bg-slate-50 text-nemras-slate rounded-lg text-[11px] font-mono font-semibold text-center border border-nemras-border" type="button">
+              AB+
+            </button>
+<button class="py-1.5 px-1 bg-white hover:bg-slate-50 text-nemras-slate rounded-lg text-[11px] font-mono font-semibold text-center border border-nemras-border" type="button">
+              O-
+            </button>
+</div>
+</div>
+<!-- Known Allergies Input -->
+<div>
+<div class="flex justify-between items-center mb-1">
+<label class="text-[11px] font-mono font-semibold text-nemras-slate">Known Drug/Food Allergies</label>
+<span class="text-[10px] text-nemras-red font-mono font-semibold">Immediate Hazard</span>
+</div>
+<input class="w-full bg-white border border-nemras-border rounded-xl text-[12px] font-medium py-2 px-3 text-nemras-slate focus:border-nemras-teal focus:ring-1 focus:ring-nemras-teal" placeholder="e.g. Sulfa, Latex, Aspirin" type="text" value="Penicillin (Severe), Peanuts"/>
+</div>
+<!-- Chronic Conditions Input -->
+<div>
+<label class="text-[11px] font-mono font-semibold text-nemras-slate block mb-1">Pre-existing Medical Conditions</label>
+<input class="w-full bg-slate-50 border border-nemras-border rounded-xl text-[12px] font-medium py-2 px-3 text-nemras-muted focus:border-nemras-teal focus:ring-1 focus:ring-nemras-teal" placeholder="e.g. Type 2 Diabetes, Asthma" type="text" value="None on record"/>
+</div>
+</section>
+<!-- END: MedicalBaselineCard -->
+<!-- BEGIN: PrivilegedRoleNoticeBanner -->
+<!-- Info banner regarding responder/hospital credentialing requirements -->
+<section class="bg-amber-50/70 border border-amber-200/80 rounded-[14px] p-3 text-slate-700" data-purpose="privileged-roles-notice">
+<div class="flex items-start space-x-2.5">
+<div class="mt-0.5 text-amber-600 flex-shrink-0">
+<svg class="w-4 h-4" fill="currentColor" viewbox="0 0 20 20">
+<path clip-rule="evenodd" d="M8.485 2.495c.673-1.167 2.357-1.167 3.03 0l6.28 10.875c.673 1.167-.17 2.625-1.516 2.625H3.72c-1.347 0-2.189-1.458-1.515-2.625L8.485 2.495zM10 5a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0v-3.5A.75.75 0 0110 5zm0 9a1 1 0 100-2 1 1 0 000 2z" fill-rule="evenodd"></path>
+</svg>
+</div>
+<div class="text-[11px] leading-relaxed">
+<span class="font-semibold text-slate-800">Privileged Access Note:</span> Selecting Responder 1122 or Hospital Clinician requires official service badge scan and NDHA admin sign-off before field activation.
+          </div>
+</div>
+</section>
+<!-- END: PrivilegedRoleNoticeBanner -->
+</main>
+<!-- END: MainContent -->
+<!-- BEGIN: FooterActions -->
+<footer class="px-5 pt-3 mt-4 space-y-3" data-purpose="bottom-cta-area">
+<!-- Validation Status Indicator -->
+<div class="flex items-center justify-center space-x-1.5 text-[11px] font-mono text-emerald-700 font-semibold">
+<svg class="w-3.5 h-3.5 text-emerald-600" fill="currentColor" viewbox="0 0 20 20">
+<path clip-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" fill-rule="evenodd"></path>
+</svg>
+<span>4 of 4 required fields verified</span>
+</div>
+<!-- Primary Action CTA -->
+<button class="w-full bg-nemras-teal hover:bg-nemras-teal-dark active:scale-[0.98] text-white font-semibold py-3.5 px-4 rounded-[14px] text-[14px] tracking-wide shadow-teal-glow flex items-center justify-center space-x-2 transition" type="button">
+<span>Save &amp; Proceed to Permissions</span>
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24">
+<path d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<!-- Secondary Skip Action -->
+<div class="text-center">
+<button class="text-[12px] font-medium text-nemras-muted hover:text-nemras-slate transition py-1" type="button">
+          Skip optional medical history for now
+        </button>
+</div>
+<!-- iOS Home Indicator -->
+<div class="w-32 h-1 bg-slate-300 rounded-full mx-auto mt-2"></div>
+</footer>
+<!-- END: FooterActions -->
+</div>
+<!-- END: MobileContainer -->
+</body></html>

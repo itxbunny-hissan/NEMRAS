@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=390, initial-scale=1.0">
+<title>02 Welcome & Onboarding · NEMRAS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg-app: #F7FAFC;
+  --surface-card: #FFFFFF;
+  --brand-teal: #0F766E;
+  --brand-teal-subtle: #CCFBF1;
+  --brand-teal-light: #E8F6F3;
+  --text-main: #243746;
+  --text-secondary: #64748B;
+  --text-muted: #94A3B8;
+  --border-light: #E2E8F0;
+  --blue-soft: #EAF3FF;
+  --blue-border: #BFDBFE;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  width: 390px;
+  height: 844px;
+  background: var(--bg-app);
+  font-family: 'Inter', sans-serif;
+  color: var(--text-main);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0 20px 24px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+.status-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 14px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  font-weight: 600;
+}
+.hero-illu {
+  width: 100%;
+  height: 250px;
+  background: linear-gradient(180deg, #FFFFFF 0%, var(--brand-teal-light) 100%);
+  border: 1px solid var(--border-light);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  margin-top: 10px;
+}
+.badge-top {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  padding: 4px 8px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--brand-teal);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.illu-graphic {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.network-ring {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  border: 1.5px dashed rgba(15, 118, 110, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.6);
+}
+.center-card {
+  width: 72px;
+  height: 72px;
+  border-radius: 18px;
+  background: var(--brand-teal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  box-shadow: 0 8px 20px rgba(15, 118, 110, 0.25);
+}
+.orbit-tag {
+  position: absolute;
+  background: #FFFFFF;
+  border: 1px solid var(--border-light);
+  border-radius: 6px;
+  padding: 3px 6px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  font-weight: 600;
+  color: var(--text-main);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+}
+.tag-1 { top: 12px; right: 18px; }
+.tag-2 { bottom: 16px; left: 20px; }
+.content-block {
+  text-align: center;
+  padding: 0 8px;
+}
+.content-block h2 {
+  font-family: 'Sora', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+.content-block p {
+  font-size: 13.5px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 9999px;
+  background: #CBD5E1;
+}
+.dot.active {
+  width: 22px;
+  background: var(--brand-teal);
+}
+.roles-preview-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-light);
+  border-radius: 14px;
+  padding: 10px 14px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.role-mini {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+}
+.role-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: var(--brand-teal-light);
+  color: var(--brand-teal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.role-mini span {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.btn-primary {
+  width: 100%;
+  height: 48px;
+  background: var(--brand-teal);
+  color: #FFFFFF;
+  border: none;
+  border-radius: 12px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(15, 118, 110, 0.2);
+}
+.btn-secondary {
+  width: 100%;
+  height: 48px;
+  background: #FFFFFF;
+  color: var(--text-main);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.emergency-direct {
+  text-align: center;
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+.emergency-direct a {
+  color: #D94848;
+  font-weight: 600;
+  text-decoration: none;
+}
+</style>
+</head>
+<body>
+
+<div class="status-bar">
+  <span>09:41</span>
+  <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text-secondary);">4G · 100%</span>
+</div>
+
+<div class="hero-illu">
+  <div class="badge-top">
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0F766E" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+    SUB-90s TRAUMA INTEL
+  </div>
+  <div class="illu-graphic">
+    <div class="network-ring">
+      <div class="center-card">
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5">
+          <path d="M12 2v20M2 12h20"/>
+          <circle cx="12" cy="12" r="4"/>
+        </svg>
+      </div>
+    </div>
+    <div class="orbit-tag tag-1">Rescue 1122 Synced</div>
+    <div class="orbit-tag tag-2">NADRA Enclave</div>
+  </div>
+</div>
+
+<div class="content-block">
+  <h2>One Emergency Dossier.<br>Nationwide Access.</h2>
+  <p>Connecting citizens, 1122 ambulances, and ER resuscitation bays through cryptographically verified emergency records.</p>
+  <div class="dots">
+    <div class="dot active"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+  </div>
+</div>
+
+<div class="roles-preview-card">
+  <div class="role-mini">
+    <div class="role-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21v-2a6 6 0 0112 0v2"/></svg></div>
+    <span>Patient</span>
+  </div>
+  <div class="role-mini">
+    <div class="role-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1 .4-1 1v7c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg></div>
+    <span>Responder</span>
+  </div>
+  <div class="role-mini">
+    <div class="role-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V5a2 2 0 012-2h10a2 2 0 012 2v16M9 9h6M9 13h6"/></svg></div>
+    <span>Clinician</span>
+  </div>
+  <div class="role-mini">
+    <div class="role-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div>
+    <span>Admin</span>
+  </div>
+</div>
+
+<div class="actions">
+  <button class="btn-primary" onclick="location.href='#'">
+    <span>Sign In to Account</span>
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+  </button>
+  <button class="btn-secondary" onclick="location.href='#'">
+    Create Citizen Account
+  </button>
+  <div class="emergency-direct">
+    Field Paramedic on Active Shift? <a href="#">NFC Badge Rapid Tap →</a>
+  </div>
+</div>
+
+</body>
+</html>
